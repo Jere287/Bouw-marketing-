@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Bouw — maquetas de posts</title>
+<style>
+@font-face { font-family: "Space Grotesk"; src: url(fonts/SpaceGrotesk.woff2) format("woff2"); font-weight: 300 700; }
+@font-face { font-family: "Inter"; src: url(fonts/Inter.woff2) format("woff2"); font-weight: 100 900; }
+:root {
+  --ink: #14161A; --paper: #F3EFE7; --orange: #FF5B1F; --sand: #E4DCCB;
+  --muted: #6B6A66; --ok: #1E9E5A; --night: #0E1116;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #999; font-family: "Inter", sans-serif; display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; }
+.post { width: 1080px; height: 1350px; position: relative; overflow: hidden; padding: 96px 88px; display: flex; flex-direction: column; }
+.h { font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: -0.03em; line-height: 0.98; }
+.logo { font-family: "Space Grotesk"; font-weight: 700; font-size: 44px; letter-spacing: -0.04em; display: flex; align-items: center; gap: 10px; }
+.logo i { width: 18px; height: 18px; background: var(--orange); display: inline-block; }
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 28px; }
+.tag { font-size: 26px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.pill { display: inline-block; padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: 28px; }
+.swipe { font-weight: 600; }
+
+/* 1. Contraste de tiempos (estilo dato grande HubSpot) */
+.p1 { background: var(--paper); color: var(--ink); }
+.p1 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 64px; }
+.p1 .card { border-radius: 36px; padding: 48px 44px; }
+.p1 .card .n { white-space: nowrap; font-family: "Space Grotesk"; font-weight: 700; font-size: 128px; letter-spacing: -0.05em; line-height: 1; }
+.p1 .card small { display: block; font-size: 30px; margin-top: 18px; line-height: 1.3; }
+.p1 .bad { background: var(--ink); color: var(--paper); }
+.p1 .good { background: var(--orange); color: var(--ink); }
+
+/* 2. Chat (estilo producto/Kommo) */
+.p2 { background: var(--sand); color: var(--ink); }
+.phone { margin: 40px auto 0; width: 720px; background: #fff; border-radius: 48px; padding: 36px 32px; box-shadow: 0 30px 60px rgba(20,22,26,.18); }
+.phone .top { display: flex; align-items: center; gap: 18px; padding-bottom: 22px; border-bottom: 2px solid #eee; }
+.phone .av { width: 64px; height: 64px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font-family: "Space Grotesk"; font-weight: 700; font-size: 30px; }
+.phone .top b { font-size: 30px; display: block; } .phone .top span { font-size: 22px; color: var(--ok); }
+.msg { max-width: 82%; padding: 16px 22px; border-radius: 24px; font-size: 25px; line-height: 1.32; margin-top: 14px; position: relative; }
+.msg em { display: block; font-style: normal; font-size: 19px; color: var(--muted); text-align: right; margin-top: 6px; }
+.in { background: #F1F1F1; }
+.out { background: #FFE6DB; margin-left: auto; }
+
+/* 3. Frase gigante (estilo Nubank) */
+.p3 { background: var(--orange); color: var(--ink); }
+.p3 .q { font-size: 118px; margin-top: 90px; }
+.p3 .q span { color: var(--paper); }
+
+/* 4. Guayaquil noche (estilo oscuro Linear) */
+.p4 { background: radial-gradient(1200px 800px at 80% 10%, #2A1A12 0%, var(--night) 60%); color: #F5F2EC; }
+.p4 .q { font-size: 92px; margin-top: 70px; }
+.p4 .q span { color: var(--orange); }
+.clock { display: flex; gap: 24px; margin-top: 70px; }
+.clock div { flex: 1; border: 2px solid #2B2F36; border-radius: 28px; padding: 32px; }
+.clock b { font-family: "Space Grotesk"; font-size: 84px; display: block; letter-spacing: -0.04em; }
+.clock span { font-size: 26px; color: #A7A39B; }
+
+/* 5. Checklist (estilo Notion) */
+.p5 { background: #FFFFFF; color: var(--ink); }
+.p5 ol { list-style: none; margin-top: 56px; }
+.p5 li { display: flex; gap: 28px; align-items: flex-start; font-size: 36px; line-height: 1.3; padding: 22px 0; border-bottom: 2px solid #EEE; }
+.p5 li .b { flex: 0 0 48px; height: 48px; border: 3px solid var(--ink); border-radius: 10px; display: grid; place-items: center; font-size: 30px; font-weight: 800; margin-top: 2px; }
+.p5 li.done .b { background: var(--orange); border-color: var(--orange); color: #fff; }
+.p5 li small { display: block; font-size: 26px; color: var(--muted); }
+
+/* 6. Alerta SRI (estilo educativo Alegra) */
+.p6 { background: var(--ink); color: var(--paper); }
+.p6 .alert { display: inline-flex; align-items: center; gap: 14px; background: var(--orange); color: var(--ink); }
+.p6 .vs { margin-top: 60px; display: grid; gap: 24px; }
+.p6 .vs div { border-radius: 32px; padding: 40px 44px; font-size: 34px; line-height: 1.3; }
+.p6 .old { background: #23262C; color: #9C988F; text-decoration: line-through; text-decoration-thickness: 3px; }
+.p6 .new { background: var(--paper); color: var(--ink); }
+.p6 .new b { font-family: "Space Grotesk"; font-size: 56px; display: block; letter-spacing: -0.03em; }
+
+/* 7. Calculadora de pérdida */
+.p7 { background: var(--paper); color: var(--ink); }
+.eq { margin-top: 48px; display: grid; gap: 16px; }
+.eq .l { display: flex; justify-content: space-between; align-items: baseline; font-size: 32px; padding: 16px 36px; background: #fff; border-radius: 26px; }
+.eq .l b { font-family: "Space Grotesk"; font-size: 54px; letter-spacing: -0.03em; }
+.eq .tot { background: var(--ink); color: var(--paper); }
+.eq .tot b { color: var(--orange); font-size: 80px; }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="post p1" id="p1-tiempos">
+  <div class="logo"><i></i>bouw</div>
+  <div class="tag" style="margin-top:80px;color:var(--orange)">Clínicas · Quito</div>
+  <h1 class="h" style="font-size:100px;margin-top:24px">El mismo paciente.<br>Dos respuestas.</h1>
+  <div class="row">
+    <div class="card bad"><div class="n">3h 38m</div><small>Lo que tardó una clínica en responder un mensaje que llegó desde un anuncio.</small></div>
+    <div class="card good"><div class="n">12 s</div><small>Lo que tarda un sistema con respuesta automática y seguimiento.</small></div>
+  </div>
+  <div class="foot"><span>¿Cuál de los dos agenda la cita?</span><span class="swipe">Desliza →</span></div>
+</section>
+
+<!-- 2 -->
+<section class="post p2" id="p2-chat">
+  <div class="logo"><i></i>bouw</div>
+  <h1 class="h" style="font-size:72px;margin-top:48px">Son las 11:08 p. m.<br>Tu negocio está cerrado.</h1>
+  <div class="phone">
+    <div class="top"><div class="av">S</div><div><b>Sonrisa Dental Norte</b><span>en línea · responde al instante</span></div></div>
+    <div class="msg in">Hola, ¿cuánto cuesta un blanqueamiento? Vi su anuncio 🙂<em>23:08</em></div>
+    <div class="msg out">¡Hola! 😊 El blanqueamiento va desde $120 e incluye valoración. ¿Te agendo mañana? Tengo 10:00 o 16:30.<em>23:08 ✓✓</em></div>
+    <div class="msg in">16:30 porfa<em>23:09</em></div>
+    <div class="msg out">Listo ✅ Mañana 16:30. Te recuerdo 2 horas antes.<em>23:09 ✓✓</em></div>
+  </div>
+  <div class="foot"><span>Así se ve una cita que no se pierde.</span><span class="pill" style="background:var(--ink);color:var(--paper)">Escribe DIAGNÓSTICO</span></div>
+</section>
+
+<!-- 3 -->
+<section class="post p3" id="p3-recepcion">
+  <div class="logo"><i style="background:var(--ink)"></i>bouw</div>
+  <p class="h q">Tu recepcionista no es lenta.<br><span>Tiene 4 chats, 2 llamadas y un paciente enfrente.</span></p>
+  <div class="foot"><span style="font-weight:600">El problema no es la persona. Es el sistema.</span><span class="swipe">→</span></div>
+</section>
+
+<!-- 4 -->
+<section class="post p4" id="p4-gye-noche">
+  <div class="logo"><i></i>bouw</div>
+  <div class="tag" style="margin-top:80px;color:var(--orange)">Guayaquil</div>
+  <p class="h q">Tu local cierra a las&nbsp;7.<br><span>Tus clientes piden hasta las 11.</span></p>
+  <div class="clock">
+    <div><b>19:00</b><span>Bajas la persiana</span></div>
+    <div style="border-color:var(--orange)"><b style="color:var(--orange)">23:00</b><span>Sigues tomando pedidos y cobrando por WhatsApp</span></div>
+  </div>
+  <div class="foot"><span>Vende sin estar en el local.</span><span class="pill" style="background:var(--orange);color:var(--night)">De una →</span></div>
+</section>
+
+<!-- 5 -->
+<section class="post p5" id="p5-checklist">
+  <div class="logo"><i></i>bouw</div>
+  <h1 class="h" style="font-size:82px;margin-top:64px">WhatsApp Business<br>bien configurado</h1>
+  <p style="font-size:30px;color:var(--muted);margin-top:16px">Guárdalo y revisa cuántos cumples 👇</p>
+  <ol>
+    <li class="done"><span class="b">✓</span><div>Mensaje de bienvenida<small>Responde en 0 s, aunque estés ocupado</small></div></li>
+    <li class="done"><span class="b">✓</span><div>Catálogo con precios<small>El cliente no tiene que preguntar "¿cuánto?"</small></div></li>
+    <li><span class="b"></span><div>Respuestas rápidas<small>Horarios, ubicación, formas de pago</small></div></li>
+    <li><span class="b"></span><div>Etiquetas por etapa<small>Nuevo · Cotizado · Agendado · Cliente</small></div></li>
+    <li><span class="b"></span><div>Seguimiento a las 24 h<small>Muchos no compran solo porque se olvidaron</small></div></li>
+  </ol>
+  <div class="foot"><span>¿Menos de 4? Te ayudo gratis.</span><span class="swipe">bouw</span></div>
+</section>
+
+<!-- 6 -->
+<section class="post p6" id="p6-sri">
+  <div class="logo"><i></i>bouw</div>
+  <div style="margin-top:80px"><span class="pill alert">⚠ SRI 2026</span></div>
+  <h1 class="h" style="font-size:96px;margin-top:32px">La factura ya no espera.</h1>
+  <div class="vs">
+    <div class="old">Antes: tenías hasta 4 días hábiles para enviar el comprobante al SRI.</div>
+    <div class="new"><b>Ahora: al instante.</b>Si tu venta entra por WhatsApp y facturas a mano al final del día, ya vas tarde.</div>
+  </div>
+  <div class="foot"><span>Conecta venta y factura en un solo flujo.</span><span class="swipe">Desliza →</span></div>
+</section>
+
+<!-- 7 -->
+<section class="post p7" id="p7-calculo">
+  <div class="logo"><i></i>bouw</div>
+  <h1 class="h" style="font-size:76px;margin-top:56px">¿Cuánto te cuesta no<br>contestar a tiempo?</h1>
+  <div class="eq">
+    <div class="l"><span>Mensajes por semana</span><b>40</b></div>
+    <div class="l"><span>Se enfrían sin respuesta</span><b>× 30%</b></div>
+    <div class="l"><span>Valor de un cliente</span><b>× $80</b></div>
+    <div class="l"><span>Semanas al mes</span><b>× 4</b></div>
+    <div class="l tot"><span>Se te van al mes</span><b>$3.840</b></div>
+  </div>
+  <div class="foot"><span>Haz tu cuenta. Te la reviso gratis.</span><span class="pill" style="background:var(--orange)">DIAGNÓSTICO</span></div>
+</section>
+
+</body>
+</html>
