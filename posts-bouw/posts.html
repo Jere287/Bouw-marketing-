@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Bouw — publicaciones</title>
+<style>
+@font-face { font-family: "Space Grotesk"; src: url(../ideas-posts/mockups/fonts/SpaceGrotesk.woff2) format("woff2"); font-weight: 300 700; }
+@font-face { font-family: "Inter"; src: url(../ideas-posts/mockups/fonts/Inter.woff2) format("woff2"); font-weight: 100 900; }
+:root { --ink:#14161A; --paper:#F3EFE7; --orange:#FF5B1F; --sand:#E4DCCB; --muted:#6B6A66; --line:#D9D1C1; --night:#0E1116; --ok:#1E9E5A; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:#888; font-family:"Inter",sans-serif; display:flex; flex-wrap:wrap; gap:40px; padding:40px; align-items:flex-start; }
+.post { width:1080px; height:1350px; position:relative; overflow:hidden; padding:88px 88px; display:flex; flex-direction:column; background:var(--paper); color:var(--ink); }
+/* cuadrícula de plano: motivo de marca */
+.grid::before { content:""; position:absolute; inset:0; background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size:54px 54px; opacity:.55; pointer-events:none; }
+.dark.grid::before { background-image:linear-gradient(#23272E 1px, transparent 1px), linear-gradient(90deg, #23272E 1px, transparent 1px); opacity:1; }
+.post > * { position:relative; }
+.dark { background:var(--night); color:#F3EFE7; }
+.orange { background:var(--orange); color:var(--ink); }
+.h { font-family:"Space Grotesk",sans-serif; font-weight:700; letter-spacing:-0.03em; line-height:1; }
+.logo { font-family:"Space Grotesk"; font-weight:700; font-size:40px; letter-spacing:-0.04em; display:flex; align-items:center; gap:10px; }
+.logo i { width:16px; height:16px; background:var(--orange); display:inline-block; }
+.orange .logo i { background:var(--ink); }
+.top { display:flex; justify-content:space-between; align-items:center; }
+.pill { display:inline-block; padding:10px 20px; border-radius:999px; font-weight:600; font-size:24px; letter-spacing:.02em; }
+.tag { font-size:24px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.foot { margin-top:auto; display:flex; justify-content:space-between; align-items:center; font-size:26px; gap:24px; }
+.cta { background:var(--ink); color:var(--paper); padding:18px 30px; border-radius:14px; font-weight:700; font-size:28px; white-space:nowrap; }
+.dark .cta { background:var(--orange); color:var(--ink); }
+.orange .cta { background:var(--ink); color:var(--paper); }
+.card { background:#fff; border:2px solid var(--ink); border-radius:18px; }
+.muted { color:var(--muted); }
+
+/* listas numeradas */
+.list { display:grid; gap:18px; margin-top:52px; }
+.list .row { display:grid; grid-template-columns:72px 1fr; gap:24px; align-items:start; background:#fff; border:2px solid var(--ink); border-radius:18px; padding:22px 26px; }
+.list .n { font-family:"Space Grotesk"; font-weight:700; font-size:44px; color:var(--orange); line-height:1; }
+.list b { font-size:32px; display:block; line-height:1.2; }
+.list small { font-size:23px; color:var(--muted); display:block; margin-top:4px; line-height:1.3; }
+
+/* ecuación */
+.eq { margin-top:44px; display:grid; gap:14px; }
+.eq .l { display:flex; justify-content:space-between; align-items:baseline; background:#fff; border:2px solid var(--ink); border-radius:16px; padding:18px 30px; font-size:30px; }
+.eq .l b { font-family:"Space Grotesk"; font-size:48px; letter-spacing:-0.03em; }
+.eq .tot { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.eq .tot b { color:var(--orange); font-size:72px; }
+
+/* método */
+.steps { margin-top:56px; display:grid; gap:0; }
+.step { display:grid; grid-template-columns:110px 1fr; align-items:stretch; }
+.step .dot { display:flex; flex-direction:column; align-items:center; }
+.step .dot span { width:74px; height:74px; border-radius:50%; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:"Space Grotesk"; font-weight:700; font-size:34px; flex:none; }
+.step:last-child .dot span { background:var(--orange); color:var(--ink); }
+.step .dot i { width:4px; flex:1; background:var(--ink); min-height:24px; }
+.step:last-child .dot i { display:none; }
+.step .txt { padding:10px 0 34px; }
+.step .txt b { font-family:"Space Grotesk"; font-size:40px; letter-spacing:-0.02em; display:block; }
+.step .txt small { font-size:24px; color:var(--muted); }
+
+/* socios */
+.duo { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:56px; }
+.duo .card { padding:26px; display:grid; gap:16px; }
+.photo { height:380px; border-radius:12px; background:repeating-linear-gradient(45deg,#EFE8DA,#EFE8DA 14px,#E6DECE 14px,#E6DECE 28px); display:grid; place-items:center; color:var(--muted); font-size:24px; font-weight:600; }
+.duo b { font-family:"Space Grotesk"; font-size:36px; }
+.duo small { font-size:22px; color:var(--muted); line-height:1.35; }
+.plus { position:absolute; left:50%; top:58%; transform:translate(-50%,-50%); width:84px; height:84px; border-radius:50%; background:var(--orange); display:grid; place-items:center; font-family:"Space Grotesk"; font-weight:700; font-size:56px; color:var(--ink); border:4px solid var(--paper); }
+
+/* protocolo apagón */
+.clock { display:grid; gap:16px; margin-top:50px; }
+.clock .c { display:grid; grid-template-columns:170px 1fr; gap:24px; align-items:center; border:2px solid #2B2F36; border-radius:18px; padding:22px 26px; }
+.clock .c b { font-family:"Space Grotesk"; font-size:52px; color:var(--orange); letter-spacing:-0.03em; }
+.clock .c span { font-size:28px; line-height:1.3; }
+
+/* portada FB */
+.cover { width:1640px; height:624px; padding:70px 96px; display:grid; grid-template-columns:1.25fr 1fr; gap:40px; align-items:center; background:var(--paper); color:var(--ink); position:relative; overflow:hidden; }
+.cover > * { position:relative; }
+.pillars { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.pillars div { background:#fff; border:2px solid var(--ink); border-radius:16px; padding:22px 24px; font-family:"Space Grotesk"; font-weight:700; font-size:34px; display:flex; align-items:center; gap:14px; }
+.pillars div i { width:14px; height:14px; background:var(--orange); flex:none; }
+
+/* historia */
+.story { width:1080px; height:1920px; padding:140px 88px 160px; }
+</style>
+</head>
+<body>
+
+<!-- Portada de Facebook (1640×624) -->
+<section class="cover grid" id="fb-portada">
+  <div>
+    <div class="logo" style="font-size:52px"><i></i>bouw</div>
+    <h1 class="h" style="font-size:70px;margin-top:36px">Construimos empresas que funcionan mejor.</h1>
+    <p style="font-size:28px;margin-top:22px;max-width:760px;line-height:1.35" class="muted">Consultoría para pymes · Quito, Ecuador</p>
+  </div>
+  <div class="pillars">
+    <div><i></i>Procesos</div><div><i></i>Datos</div><div><i></i>Seguridad</div><div><i></i>IA aplicada</div>
+  </div>
+</section>
+
+<!-- 01 Manifiesto -->
+<section class="post dark grid" id="p01-manifiesto">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag" style="color:var(--orange)">Quito · Ecuador</span></div>
+  <h1 class="h" style="font-size:150px;margin-top:150px">Bouw no vende software.</h1>
+  <p style="font-size:44px;line-height:1.25;margin-top:48px;max-width:860px;color:#CFC9BE">Diagnosticamos cómo funciona tu empresa y construimos procesos <span style="color:var(--orange)">más eficientes, medibles y seguros.</span></p>
+  <div class="foot"><span style="color:#A7A39B">Procesos · Datos · Seguridad · IA aplicada</span><span class="cta">Agenda tu diagnóstico</span></div>
+</section>
+
+<!-- 02 Señales de Excel -->
+<section class="post grid" id="p02-senales-excel">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="pill" style="background:var(--ink);color:var(--paper)">Guárdalo</span></div>
+  <h1 class="h" style="font-size:86px;margin-top:64px">5 señales de que tu empresa vive en Excel</h1>
+  <div class="list">
+    <div class="row"><span class="n">01</span><div><b>El mismo dato se escribe en 3 lugares</b><small>Factura, inventario y reporte, cada uno a mano</small></div></div>
+    <div class="row"><span class="n">02</span><div><b>El cierre de mes toma más de una semana</b><small>Y siempre alguien "cuadra" al final</small></div></div>
+    <div class="row"><span class="n">03</span><div><b>Solo una persona sabe cómo funciona</b><small>Si se enferma, la operación se detiene</small></div></div>
+    <div class="row"><span class="n">04</span><div><b>Los números llegan tarde</b><small>Decides con información del mes pasado</small></div></div>
+    <div class="row"><span class="n">05</span><div><b>Nadie sabe dónde está el respaldo</b><small>Ni si funciona</small></div></div>
+  </div>
+  <div class="foot"><span>¿Cuántas marcaste?</span><span class="cta">Escríbenos: DIAGNÓSTICO</span></div>
+</section>
+
+<!-- 03 Doble digitación -->
+<section class="post grid" id="p03-doble-digitacion">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="pill" style="background:var(--sand)">Ejemplo</span></div>
+  <h1 class="h" style="font-size:84px;margin-top:64px">¿Cuánto te cuesta escribir el mismo dato dos veces?</h1>
+  <div class="eq">
+    <div class="l"><span>Personas que re-digitan</span><b>2</b></div>
+    <div class="l"><span>Horas al día cada una</span><b>× 1,5</b></div>
+    <div class="l"><span>Días laborables al mes</span><b>× 22</b></div>
+    <div class="l"><span>Costo por hora</span><b>× $4</b></div>
+    <div class="l tot"><span>Al año</span><b>$3.168</b></div>
+  </div>
+  <div class="foot"><span>Haz la cuenta con tus números.</span><span class="cta">Te ayudamos gratis</span></div>
+</section>
+
+<!-- 04 Método -->
+<section class="post grid" id="p04-metodo">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag" style="color:var(--orange)">Método Bouw</span></div>
+  <h1 class="h" style="font-size:88px;margin-top:56px">Primero entendemos. Después construimos.</h1>
+  <div class="steps">
+    <div class="step"><div class="dot"><span>1</span><i></i></div><div class="txt"><b>Entender</b><small>Entrevistas y recorrido por la operación</small></div></div>
+    <div class="step"><div class="dot"><span>2</span><i></i></div><div class="txt"><b>Diagnosticar</b><small>Procesos, datos, seguridad y costos</small></div></div>
+    <div class="step"><div class="dot"><span>3</span><i></i></div><div class="txt"><b>Priorizar</b><small>Hoja de ruta: impacto vs. esfuerzo</small></div></div>
+    <div class="step"><div class="dot"><span>4</span><i></i></div><div class="txt"><b>Construir</b><small>Automatizar, tableros, IA en procesos</small></div></div>
+    <div class="step"><div class="dot"><span>5</span><i></i></div><div class="txt"><b>Asegurar y medir</b><small>Seguridad, continuidad e indicadores mensuales</small></div></div>
+  </div>
+  <div class="foot"><span>Sin vender software que no necesitas.</span><span class="cta">Conócenos</span></div>
+</section>
+
+<!-- 05 Seguridad -->
+<section class="post orange" id="p05-seguridad">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag">Seguridad</span></div>
+  <h1 class="h" style="font-size:112px;margin-top:80px">Automatizar sin proteger es abrir otra puerta.</h1>
+  <div class="list" style="margin-top:64px">
+    <div class="row" style="border-color:var(--ink)"><span class="n" style="color:var(--ink)">01</span><div><b>Doble factor en correo y sistemas</b><small style="color:#3B3A36">La forma más barata de frenar el robo de cuentas</small></div></div>
+    <div class="row"><span class="n" style="color:var(--ink)">02</span><div><b>Respaldos probados</b><small style="color:#3B3A36">Un respaldo que nunca se restauró es una esperanza</small></div></div>
+    <div class="row"><span class="n" style="color:var(--ink)">03</span><div><b>Accesos por rol</b><small style="color:#3B3A36">Cada persona ve solo lo que necesita</small></div></div>
+  </div>
+  <div class="foot"><span style="font-weight:600">Cada proyecto Bouw incluye seguridad.</span><span class="cta">Pregúntanos</span></div>
+</section>
+
+<!-- 06 Apagón -->
+<section class="post dark grid" id="p06-apagon">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag" style="color:var(--orange)">Temporada seca</span></div>
+  <h1 class="h" style="font-size:96px;margin-top:64px">Si mañana se va la luz 8 horas, ¿tu operación tiene un plan <span style="color:var(--orange)">o una esperanza?</span></h1>
+  <div class="clock">
+    <div class="c"><b>0 min</b><span>¿Quién decide y a quién se avisa?</span></div>
+    <div class="c"><b>30 min</b><span>¿Qué equipos van al generador primero?</span></div>
+    <div class="c"><b>2 h</b><span>¿Cómo sigues vendiendo, despachando y facturando?</span></div>
+  </div>
+  <div class="foot"><span style="color:#A7A39B">Si no tienes las 3 respuestas, conversemos.</span><span class="cta">Plan de continuidad</span></div>
+</section>
+
+<!-- 07 Socios -->
+<section class="post grid" id="p07-socios">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag" style="color:var(--orange)">Quiénes somos</span></div>
+  <h1 class="h" style="font-size:92px;margin-top:56px">Dos ingenierías. Una consultora.</h1>
+  <div class="duo">
+    <div class="card"><div class="photo">[ Foto socio 1 ]</div><b>Procesos</b><small>[Nombre] · Ing. Industrial<br>Procesos, calidad, productividad y datos</small></div>
+    <div class="card"><div class="photo">[ Foto socio 2 ]</div><b>Ciberseguridad</b><small>[Nombre] · Ing. en Ciberseguridad<br>Seguridad, infraestructura y continuidad</small></div>
+  </div>
+  <div class="plus">+</div>
+  <div class="foot"><span>Casi nadie en Quito junta las dos.</span><span class="cta">Conversemos</span></div>
+</section>
+
+<!-- 08 CTA diagnóstico -->
+<section class="post orange grid" id="p08-mini-diagnostico">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="pill" style="background:var(--ink);color:var(--paper)">Gratis · 1 hora</span></div>
+  <h1 class="h" style="font-size:118px;margin-top:80px">Mini diagnóstico para tu empresa.</h1>
+  <div class="list" style="margin-top:56px">
+    <div class="row"><span class="n" style="color:var(--ink)">✓</span><div><b>Mapeamos 1 proceso clave</b><small style="color:#3B3A36">Ventas, inventario, despacho o cierre de mes</small></div></div>
+    <div class="row"><span class="n" style="color:var(--ink)">✓</span><div><b>Te mostramos dónde se pierde tiempo o dinero</b><small style="color:#3B3A36">Con tus números, no con teoría</small></div></div>
+    <div class="row"><span class="n" style="color:var(--ink)">✓</span><div><b>Revisamos 5 puntos de seguridad</b><small style="color:#3B3A36">Respaldos, accesos, correo</small></div></div>
+  </div>
+  <div class="foot"><span style="font-weight:600">Cupos limitados este mes · Quito</span><span class="cta">Escríbenos</span></div>
+</section>
+
+<!-- LinkedIn carrusel: portada -->
+<section class="post dark grid" id="li-01-kpis-portada">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag" style="color:var(--orange)">Carrusel · 1/3</span></div>
+  <h1 class="h" style="font-size:122px;margin-top:150px">5 indicadores que todo gerente debería ver <span style="color:var(--orange)">cada lunes.</span></h1>
+  <div class="foot"><span style="color:#A7A39B">Sin esperar al cierre de mes.</span><span style="font-weight:700;color:var(--orange)">Desliza →</span></div>
+</section>
+
+<!-- LinkedIn carrusel: contenido -->
+<section class="post grid" id="li-02-kpis-lista">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag muted">2/3</span></div>
+  <div class="list" style="margin-top:40px">
+    <div class="row"><span class="n">01</span><div><b>Ventas de la semana vs. meta</b><small>¿Vamos o no vamos a llegar?</small></div></div>
+    <div class="row"><span class="n">02</span><div><b>Días de inventario</b><small>Plata parada en bodega</small></div></div>
+    <div class="row"><span class="n">03</span><div><b>Cartera vencida</b><small>Lo que ya vendiste y no cobraste</small></div></div>
+    <div class="row"><span class="n">04</span><div><b>Pedidos entregados a tiempo</b><small>La promesa que cumples (o no)</small></div></div>
+    <div class="row"><span class="n">05</span><div><b>Horas en tareas repetitivas</b><small>Lo que se puede automatizar</small></div></div>
+  </div>
+  <div class="foot"><span class="muted">Si alguno tarda más de 1 día en calcularse, hay un proceso que mejorar.</span></div>
+</section>
+
+<!-- LinkedIn carrusel: cierre -->
+<section class="post orange grid" id="li-03-kpis-cierre">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag">3/3</span></div>
+  <h1 class="h" style="font-size:110px;margin-top:180px">Te ayudamos a tenerlos en un tablero, cada lunes.</h1>
+  <div class="foot"><span style="font-weight:600">Mini diagnóstico gratis · Quito</span><span class="cta">Escríbenos</span></div>
+</section>
+
+<!-- LinkedIn: ERP -->
+<section class="post grid" id="li-04-erp">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag" style="color:var(--orange)">Antes de comprar</span></div>
+  <h1 class="h" style="font-size:88px;margin-top:56px">5 preguntas antes de comprar un ERP</h1>
+  <div class="list">
+    <div class="row"><span class="n">?</span><div><b>¿Tengo mis procesos dibujados?</b></div></div>
+    <div class="row"><span class="n">?</span><div><b>¿Qué problema exacto quiero resolver?</b></div></div>
+    <div class="row"><span class="n">?</span><div><b>¿Quién va a usarlo todos los días?</b></div></div>
+    <div class="row"><span class="n">?</span><div><b>¿Cómo migro mis datos sin perderlos?</b></div></div>
+    <div class="row"><span class="n">?</span><div><b>¿Quién protege el acceso y los respaldos?</b></div></div>
+  </div>
+  <div class="foot"><span>El software no arregla un proceso desordenado.</span><span class="cta">Hablemos</span></div>
+</section>
+
+<!-- Historia Instagram / Facebook (1080×1920) -->
+<section class="post story orange grid" id="ig-historia-diagnostico">
+  <div class="top"><div class="logo" style="font-size:48px"><i></i>bouw</div></div>
+  <h1 class="h" style="font-size:136px;margin-top:220px">¿Tu empresa vive en Excel y WhatsApp?</h1>
+  <p style="font-size:48px;margin-top:60px;line-height:1.3;font-weight:600">Mini diagnóstico gratis de 1 hora. Te mostramos dónde se pierde tiempo y dinero.</p>
+  <div style="margin-top:auto;display:grid;gap:24px;justify-items:center">
+    <span class="cta" style="font-size:44px;padding:30px 56px">Escríbenos: DIAGNÓSTICO</span>
+    <span style="font-size:32px;font-weight:600">Quito · Procesos · Datos · Seguridad</span>
+  </div>
+</section>
+
+</body>
+</html>
