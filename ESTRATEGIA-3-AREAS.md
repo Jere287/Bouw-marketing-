@@ -1,5 +1,7 @@
 # Bouw: consultora de 3 áreas (Ing. Industrial × Ciberseguridad × IA)
 
+> 🎯 **Foco actual:** [`NICHO-BOUW.md`](NICHO-BOUW.md): preparar a proveedores pymes de bancos y cooperativas para pasar sus evaluaciones. Este documento queda como referencia.
+
 > Equipo: **tú** (Ingeniería Industrial) + **tu socio** (Ingeniería en Ciberseguridad) + **Claude** (IA para investigar, analizar, documentar y automatizar).
 > Objetivo: una consultora que pueda abarcar varias soluciones, **centrada en 3 áreas con poca competencia**.
 > ➡️ **Versión aterrizada para vender (qué área abrir primero, ofertas con precio y guiones):** [`VENTA-ATERRIZADA.md`](VENTA-ATERRIZADA.md) · Cuestionarios: [`chequeo-360/`](chequeo-360/)

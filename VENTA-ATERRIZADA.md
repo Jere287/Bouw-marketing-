@@ -1,5 +1,7 @@
 # Cómo vender Bouw (aterrizado): quién paga, por qué, cuándo y cuánto
 
+> 🎯 **Foco actual:** [`NICHO-BOUW.md`](NICHO-BOUW.md): preparar a proveedores pymes de bancos y cooperativas para pasar sus evaluaciones. Este documento queda como referencia.
+
 > Respuesta a: *"Puede haber un buen producto, pero si la gente no lo quiere, ¿cómo lo vendo?"*
 > Regla base: **no vendas lo que tú crees que necesitan. Vende aquello en lo que ya gastan dinero, ya les duele y ya tiene una línea en su presupuesto.**
 > Complementa [`ESTRATEGIA-3-AREAS.md`](ESTRATEGIA-3-AREAS.md). Los cuestionarios están en [`chequeo-360/`](chequeo-360/).
