@@ -93,7 +93,11 @@ Lo acumulado en el **Fondo Bouw**, menos gastos, impuestos y reservas, es la uti
 
 ---
 
-## 5. Resumen para decidir hoy
+## 5. Hoja de cálculo
+
+[`finanzas/Reparto-Bouw.xlsx`](finanzas/Reparto-Bouw.xlsx): registro de horas, proyectos y gastos, cálculo automático del pago por trabajo de cada socio, parte de dueño (50/50) y cierre anual con dividendos. Instrucciones dentro del archivo.
+
+## 6. Resumen para decidir hoy
 
 1. **Acciones 50/50**, con consolidación gradual en 3–4 años.
 2. **Por proyecto:** 20% Bouw · 10% quien consigue · 10% quien lidera · 60% según horas.
