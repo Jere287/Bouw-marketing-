@@ -1,0 +1,363 @@
+<title>Calificador Bouw de WhatsApp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: preguntas a la izquierda agrupadas por el Método 3R; panel de nota fijo a la derecha (debajo en móvil, con barra inferior de nota). Identidad Bouw existente. */
+:root {
+  --bg: #F3EFE7;
+  --surface: #FFFFFF;
+  --surface-2: #EBE5DA;
+  --fg: #14161A;
+  --muted: #625F58;
+  --line: #DDD6C9;
+  --accent: #FF5B1F;
+  --accent-ink: #14161A;
+  --accent-soft: #FFE3D6;
+  --good: #1E8A50;
+  --warn: #B26A00;
+  --bad: #C0321A;
+  --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --r: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121418; --surface: #1B1E23; --surface-2: #24282E; --fg: #F1EDE6; --muted: #A8A399;
+    --line: #2F343B; --accent: #FF6A33; --accent-ink: #14161A; --accent-soft: #3A2419;
+    --good: #4CC585; --warn: #E3A33B; --bad: #FF7A5C; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121418; --surface: #1B1E23; --surface-2: #24282E; --fg: #F1EDE6; --muted: #A8A399;
+  --line: #2F343B; --accent: #FF6A33; --accent-ink: #14161A; --accent-soft: #3A2419;
+  --good: #4CC585; --warn: #E3A33B; --bad: #FF7A5C; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 120px; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.logo { font-family: var(--font-display); font-weight: 700; font-size: 26px; letter-spacing: -0.04em; display: flex; align-items: center; gap: 8px; }
+.logo i { width: 12px; height: 12px; background: var(--accent); display: inline-block; }
+.top small { color: var(--muted); font-size: 13px; }
+
+.hero { padding-block: 28px 20px; display: grid; gap: 12px; max-width: 720px; }
+.hero h1 { font-size: clamp(32px, 5.4vw, 54px); line-height: 1.02; }
+.hero p { margin: 0; color: var(--muted); font-size: 17px; max-width: 60ch; }
+
+.seg { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.seg button { border: 1.5px solid var(--line); background: var(--surface); padding: 10px 16px; border-radius: 999px; cursor: pointer; font-weight: 600; }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 28px; align-items: start; margin-top: 12px; }
+@media (max-width: 900px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+
+.block { display: grid; gap: 14px; margin-bottom: 28px; }
+.block-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; border-bottom: 2px solid var(--fg); padding-bottom: 8px; }
+.block-head h2 { font-size: 24px; }
+.block-head .r { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 24px; }
+.block-head span { color: var(--muted); font-size: 14px; }
+.block-head .pts { margin-left: auto; font-variant-numeric: tabular-nums; font-size: 14px; color: var(--muted); }
+
+.q { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; display: grid; gap: 12px; min-width: 0; }
+.q legend { font-weight: 600; font-size: 17px; padding: 0; }
+.q fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; min-width: 0; }
+.opt { display: flex; gap: 12px; align-items: flex-start; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 10px; cursor: pointer; }
+.opt:hover { border-color: var(--muted); }
+.opt input { accent-color: var(--accent); margin-top: 4px; flex: none; width: 18px; height: 18px; }
+.opt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+
+.calc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; display: grid; gap: 12px; }
+.calc .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 520px) { .calc .row { grid-template-columns: 1fr; } }
+.calc label { display: grid; gap: 6px; font-weight: 600; font-size: 14px; }
+.calc input { border: 1.5px solid var(--line); background: var(--bg); border-radius: 10px; padding: 10px 12px; font-variant-numeric: tabular-nums; width: 100%; }
+.calc p { margin: 0; color: var(--muted); font-size: 14px; }
+
+.panel { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); background: var(--fg); color: var(--bg); border-radius: 20px; padding: 24px; display: grid; gap: 18px; }
+.panel .lbl { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: color-mix(in srgb, var(--bg) 65%, transparent); font-weight: 600; }
+.score { display: flex; align-items: baseline; gap: 8px; }
+.score b { font-family: var(--font-display); font-size: 92px; line-height: .9; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+.score span { font-size: 22px; opacity: .6; }
+.level { display: inline-block; padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 14px; background: var(--accent); color: var(--accent-ink); justify-self: start; }
+.bar { height: 10px; border-radius: 999px; background: color-mix(in srgb, var(--bg) 18%, transparent); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .35s ease; }
+.rs { display: grid; gap: 10px; }
+.rs div { display: grid; grid-template-columns: 96px 1fr 48px; gap: 10px; align-items: center; font-size: 14px; font-variant-numeric: tabular-nums; }
+.rs div span:last-child { text-align: right; }
+.loss { border-top: 1px solid color-mix(in srgb, var(--bg) 20%, transparent); padding-top: 16px; display: grid; gap: 4px; }
+.loss b { font-family: var(--font-display); font-size: 36px; color: var(--accent); font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+.loss small { opacity: .7; font-size: 12px; }
+.tips { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: t; }
+.tips li { font-size: 14px; line-height: 1.4; display: grid; grid-template-columns: 22px 1fr; gap: 8px; }
+.tips li::before { counter-increment: t; content: counter(t); font-family: var(--font-display); font-weight: 700; color: var(--accent); }
+.demo-note { font-size: 12px; background: color-mix(in srgb, var(--bg) 12%, transparent); border-radius: 8px; padding: 8px 10px; }
+.cta { display: grid; gap: 8px; }
+.btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; border: 0; border-radius: 12px; padding: 14px 16px; font-weight: 700; cursor: pointer; text-decoration: none; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { background: transparent; color: var(--bg); border: 1.5px solid color-mix(in srgb, var(--bg) 35%, transparent); }
+.cta small { opacity: .7; font-size: 12px; }
+.status { font-size: 13px; min-height: 1.2em; }
+
+.mobilebar { display: none; }
+@media (max-width: 900px) {
+  .panel { position: static; }
+  .mobilebar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 20px calc(10px + env(safe-area-inset-bottom, 0px)); background: var(--fg); color: var(--bg); align-items: center; justify-content: space-between; gap: 12px; z-index: 5; }
+  .mobilebar b { font-family: var(--font-display); font-size: 24px; font-variant-numeric: tabular-nums; }
+  .mobilebar a { color: var(--accent); font-weight: 700; text-decoration: none; }
+}
+footer { color: var(--muted); font-size: 13px; margin-top: 12px; max-width: 70ch; }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="logo"><i></i>bouw</div>
+    <small>Método 3R: Responder · Recordar · Reportar</small>
+  </header>
+
+  <section class="hero">
+    <h1>¿Qué nota saca el WhatsApp de tu negocio?</h1>
+    <p>11 preguntas, 2 minutos. Recibes una nota de 0 a 100, cuánto dinero se te puede estar escapando y los 3 cambios que más te suben la nota.</p>
+    <div class="seg" role="group" aria-label="Tipo de negocio">
+      <button type="button" id="seg-clinica" data-seg="clinica" aria-pressed="true">🦷 Clínica o consultorio</button>
+      <button type="button" id="seg-gym" data-seg="gym" aria-pressed="false">🏋️ Gimnasio o estudio</button>
+    </div>
+  </section>
+
+  <div class="grid">
+    <form id="quiz" novalidate>
+      <div id="blocks"></div>
+      <div class="calc">
+        <h3 style="font-size:20px">Tu cuenta (opcional)</h3>
+        <p>Con estos dos números estimamos cuánto se te escapa al mes.</p>
+        <div class="row">
+          <label for="msgs">Mensajes de interesados por semana
+            <input id="msgs" type="number" inputmode="numeric" min="0" step="1" value="30">
+          </label>
+          <label for="ticket"><span id="ticket-label">Valor de un paciente nuevo (USD)</span>
+            <input id="ticket" type="number" inputmode="numeric" min="0" step="1" value="80">
+          </label>
+        </div>
+      </div>
+    </form>
+
+    <aside class="panel" id="resultado" aria-live="polite">
+      <div>
+        <div class="lbl">Tu nota</div>
+        <div class="score"><b id="score">0</b><span>/100</span></div>
+      </div>
+      <span class="level" id="level">Responde para ver tu nivel</span>
+      <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+      <div class="rs" id="rs"></div>
+      <div class="loss">
+        <div class="lbl">Se te puede estar escapando</div>
+        <b id="loss">$0 / mes</b>
+        <small id="loss-explain">Estimación: mensajes × 4 semanas × % de fuga según tu nota × valor de cliente.</small>
+      </div>
+      <div>
+        <div class="lbl" style="margin-bottom:10px">Tus 3 cambios prioritarios</div>
+        <ol class="tips" id="tips"></ol>
+      </div>
+      <div class="demo-note" id="demo-note">Vista de ejemplo: así se ve el resultado de una clínica típica. Tu nota aparece al responder la primera pregunta.</div>
+      <div class="cta">
+        <a class="btn primary" id="wa" href="#" target="_blank" rel="noopener">Recibir mi informe completo por WhatsApp</a>
+        <button type="button" class="btn ghost" id="copy">Copiar mi resultado</button>
+        <div class="status" id="status" role="status"></div>
+        <small>No guardamos tus respuestas. Solo se envían si tú decides mandarlas por WhatsApp.</small>
+      </div>
+    </aside>
+  </div>
+
+  <footer>Calificador Bouw de WhatsApp · Quito, Ecuador. La estimación de pérdida es orientativa y depende de tus datos reales.</footer>
+</div>
+
+<div class="mobilebar" aria-hidden="true"><span>Tu nota: <b id="mscore">0</b>/100</span><a href="#resultado">Ver resultado ↓</a></div>
+
+<script>
+// ── Configuración ─────────────────────────────────────────────
+// Número de WhatsApp de Bouw en formato internacional sin "+" ni espacios, ej. "593991234567".
+// Si queda vacío, el botón copia el resultado en vez de abrir WhatsApp.
+const WA_NUMBER = "";
+
+const T = {
+  clinica: { persona: "paciente", personas: "pacientes", cita: "cita", agendar: "agendar", cliente: "paciente nuevo", ticketLabel: "Valor de un paciente nuevo (USD)", msgs: 30, ticket: 80 },
+  gym:     { persona: "interesado", personas: "socios", cita: "clase o membresía", agendar: "inscribirse", cliente: "socio nuevo", ticketLabel: "Valor de un socio nuevo (USD, primeros 3 meses)", msgs: 25, ticket: 90 }
+};
+
+// Cada pregunta: bloque 3R, texto (función del segmento), opciones [texto, puntos] y consejo si no llega al máximo.
+const Q = [
+  { r: "Responder", t: s => `¿Cuánto tardas normalmente en responder un mensaje nuevo?`,
+    o: [["Menos de 5 minutos", 15], ["Menos de 1 hora", 10], ["El mismo día", 4], ["Al día siguiente o más", 0]],
+    tip: s => `Baja tu primera respuesta a menos de 5 minutos con un mensaje de bienvenida que ya pida el dato clave (${s === "clinica" ? "tratamiento y horario" : "objetivo y horario"}).` },
+  { r: "Responder", t: s => `Si te escriben de noche o el fin de semana, ¿qué pasa?`,
+    o: [["Se responde automático con info útil y opción de " + "{agendar}", 10], ["Sale un mensaje de ausencia genérico", 4], ["Nada hasta el siguiente día hábil", 0]],
+    tip: s => `Activa respuestas fuera de horario que den precios o rangos y dejen la ${T[s].cita} pre-agendada para el día siguiente.` },
+  { r: "Responder", t: s => `Cuando preguntan "¿precio?", ¿qué respondes?`,
+    o: [["El precio o un rango, más el siguiente paso", 8], ["\"Venga y le explicamos\"", 3], ["A veces no alcanzamos a responder", 0]],
+    tip: s => `Da el precio o un rango y termina siempre con una pregunta de cierre ("¿te agendo mañana a las 10 o a las 16?").` },
+  { r: "Responder", t: s => `¿Tienes catálogo y respuestas rápidas (${s === "clinica" ? "tratamientos" : "planes"}, horarios, ubicación, formas de pago)?`,
+    o: [["Sí, completos y actualizados", 6], ["Algunos", 3], ["No", 0]],
+    tip: s => `Arma el catálogo de WhatsApp Business con ${s === "clinica" ? "tratamientos" : "planes"} y precios, y 5 respuestas rápidas: horarios, ubicación, pagos, ${s === "clinica" ? "valoración" : "clase de prueba"} y promociones.` },
+  { r: "Responder", t: s => `¿Quién atiende el WhatsApp del negocio?`,
+    o: [["Un equipo, en bandeja compartida o CRM", 6], ["Un solo celular que se turnan", 2], ["El celular personal del dueño", 0]],
+    tip: s => `Pasa de un solo celular a una bandeja compartida: varias personas atienden el mismo número sin perder conversaciones.` },
+  { r: "Recordar", t: s => `Si alguien pregunta y no llega a ${T[s].agendar}, ¿le vuelves a escribir?`,
+    o: [["Sí, seguimiento programado (24 h, 3 y 7 días)", 12], ["A veces, a mano", 5], ["Nunca", 0]],
+    tip: s => `Programa 3 seguimientos (24 h, 3 días, 7 días) para cada ${T[s].persona} que no cerró. Muchos solo se olvidaron.` },
+  { r: "Recordar", t: s => s === "clinica" ? `¿Envías recordatorios de cita?` : `¿Envías recordatorios de clase o de renovación de membresía?`,
+    o: [["Sí, automáticos", 12], ["A mano, cuando se puede", 5], ["No", 0]],
+    tip: s => s === "clinica" ? `Activa recordatorios automáticos 24 h y 2 h antes, con botón para confirmar o reagendar. Cada inasistencia evitada es ingreso recuperado.` : `Activa un aviso automático 5 días antes de que venza la membresía y otro si un socio falta 2 semanas.` },
+  { r: "Recordar", t: s => `¿Sabes en qué etapa está cada interesado (nuevo, cotizado, ${s === "clinica" ? "agendado" : "clase de prueba"}, cliente)?`,
+    o: [["Sí, con etiquetas o un CRM", 11], ["Más o menos, de memoria o en libreta", 4], ["No", 0]],
+    tip: s => `Usa etiquetas por etapa (Nuevo · Cotizado · ${s === "clinica" ? "Agendado" : "Prueba"} · Cliente) para ver a quién escribir hoy.` },
+  { r: "Reportar", t: s => `¿Sabes cuántos mensajes de interesados recibiste el mes pasado?`,
+    o: [["Sí, el número exacto", 7], ["Más o menos", 3], ["Ni idea", 0]],
+    tip: s => `Cuenta los interesados que entran cada semana. Sin ese número no sabes si tus anuncios funcionan.` },
+  { r: "Reportar", t: s => `¿Sabes cuántos de esos se volvieron ${T[s].personas}?`,
+    o: [["Sí, mido mi tasa de conversión", 8], ["Una idea aproximada", 3], ["No", 0]],
+    tip: s => `Mide tu conversión (interesados → ${T[s].personas}). Es el número que más rápido te dice dónde se escapa el dinero.` },
+  { r: "Reportar", t: s => `¿Sabes de dónde viene cada interesado (anuncio, Instagram, recomendación, Google)?`,
+    o: [["Sí, por canal", 5], ["A veces", 2], ["No", 0]],
+    tip: s => `Pregunta "¿cómo nos encontraste?" en el primer mensaje y anótalo. Así inviertes solo en lo que trae ${T[s].personas}.` }
+];
+const R = { Responder: 45, Recordar: 35, Reportar: 20 };
+
+// Ejemplo inicial (clínica típica): índice de opción elegida por pregunta.
+const DEMO = [2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 1];
+
+let seg = "clinica";
+let answers = new Array(Q.length).fill(null);
+let isDemo = true;
+
+const $ = id => document.getElementById(id);
+const fmt = n => "$" + Math.round(n).toLocaleString("es-EC");
+
+function render() {
+  const s = T[seg];
+  const byR = {};
+  Q.forEach((q, i) => { (byR[q.r] = byR[q.r] || []).push(i); });
+  const blocks = $("blocks");
+  blocks.innerHTML = "";
+  const sub = { Responder: "Que nadie espere", Recordar: "Que nadie se olvide", Reportar: "Que veas tus números" };
+  Object.keys(byR).forEach((r, bi) => {
+    const b = document.createElement("section");
+    b.className = "block";
+    b.innerHTML = `<div class="block-head"><span class="r">${r[0]}</span><h2>${r}</h2><span>${sub[r]}</span><span class="pts">${R[r]} pts</span></div>`;
+    byR[r].forEach(i => {
+      const q = Q[i];
+      const d = document.createElement("div");
+      d.className = "q";
+      const opts = q.o.map(([txt], oi) => {
+        const label = txt.replace("{agendar}", s.agendar);
+        const checked = answers[i] === oi && !isDemo ? "checked" : "";
+        return `<label class="opt" for="q${i}o${oi}"><input type="radio" id="q${i}o${oi}" name="q${i}" value="${oi}" ${checked}><span>${label}</span></label>`;
+      }).join("");
+      d.innerHTML = `<fieldset><legend>${i + 1}. ${q.t(seg)}</legend>${opts}</fieldset>`;
+      b.appendChild(d);
+    });
+    blocks.appendChild(b);
+  });
+  $("ticket-label").textContent = s.ticketLabel;
+  update();
+}
+
+function compute(ans) {
+  let total = 0; const per = { Responder: 0, Recordar: 0, Reportar: 0 }; const lost = [];
+  Q.forEach((q, i) => {
+    const max = Math.max(...q.o.map(o => o[1]));
+    const pts = ans[i] == null ? 0 : q.o[ans[i]][1];
+    total += pts; per[q.r] += pts;
+    if (pts < max) lost.push({ i, gap: max - pts });
+  });
+  lost.sort((a, b) => b.gap - a.gap);
+  return { total, per, lost };
+}
+
+function level(n) {
+  if (n >= 85) return ["Excelente", "var(--good)"];
+  if (n >= 70) return ["Bien, con fugas", "var(--good)"];
+  if (n >= 40) return ["En riesgo", "var(--warn)"];
+  return ["Crítico", "var(--bad)"];
+}
+
+function update() {
+  const ans = isDemo ? DEMO : answers;
+  const { total, per, lost } = compute(ans);
+  const answered = isDemo ? Q.length : answers.filter(a => a != null).length;
+  $("score").textContent = total;
+  $("mscore").textContent = total;
+  $("bar").style.width = total + "%";
+  const [lv, col] = level(total);
+  const lvEl = $("level");
+  lvEl.textContent = (isDemo ? "Ejemplo · " : "") + lv + (answered < Q.length && !isDemo ? ` · ${answered}/${Q.length} respondidas` : "");
+  lvEl.style.background = col;
+  $("rs").innerHTML = Object.keys(R).map(r =>
+    `<div><span>${r}</span><div class="bar"><i style="width:${Math.round(per[r] / R[r] * 100)}%"></i></div><span>${per[r]}/${R[r]}</span></div>`).join("");
+  const msgs = Math.max(0, +$("msgs").value || 0);
+  const ticket = Math.max(0, +$("ticket").value || 0);
+  const leak = 0.05 + 0.40 * (1 - total / 100);
+  const loss = msgs * 4 * leak * ticket;
+  const complete = answered === Q.length;
+  $("loss").textContent = complete ? fmt(loss) + " / mes" : "Responde las " + Q.length + " preguntas";
+  $("loss-explain").textContent = complete
+    ? `Estimación: ${msgs} mensajes × 4 semanas × ${Math.round(leak * 100)}% de fuga según tu nota × ${fmt(ticket)} por ${T[seg].cliente}.`
+    : `Faltan ${Q.length - answered}. La estimación usa tu nota final.`;
+  const top = lost.slice(0, 3);
+  $("tips").innerHTML = top.length ? top.map(l => `<li><span>${Q[l.i].tip(seg)}</span></li>`).join("")
+    : `<li><span>Tu WhatsApp está al máximo. El siguiente paso es medir y escalar tus anuncios.</span></li>`;
+  $("demo-note").hidden = !isDemo;
+  const text = resultText(total, lv, per, top, loss);
+  const wa = $("wa");
+  if (WA_NUMBER) { wa.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text); wa.hidden = false; }
+  else { wa.hidden = true; }
+  $("copy").textContent = WA_NUMBER ? "Copiar mi resultado" : "Copiar mi resultado para enviarlo a Bouw";
+}
+
+function resultText(total, lv, per, top, loss) {
+  const segName = seg === "clinica" ? "clínica/consultorio" : "gimnasio/estudio";
+  return `Hola Bouw 👋 Hice el Calificador de WhatsApp (${segName}).\n` +
+    `Nota: ${total}/100 (${lv})\n` +
+    `Responder ${per.Responder}/45 · Recordar ${per.Recordar}/35 · Reportar ${per.Reportar}/20\n` +
+    `Posible fuga: ${fmt(loss)}/mes\n` +
+    (top.length ? `Quiero ayuda con: ${top.map(l => Q[l.i].r + " (preg. " + (l.i + 1) + ")").join(", ")}\n` : "") +
+    `¿Me envían el informe completo?`;
+}
+
+document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+  seg = b.dataset.seg;
+  document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  $("msgs").value = T[seg].msgs; $("ticket").value = T[seg].ticket;
+  render();
+}));
+
+$("quiz").addEventListener("change", e => {
+  const m = e.target.name && e.target.name.match(/^q(\d+)$/);
+  if (m) { if (isDemo) { isDemo = false; } answers[+m[1]] = +e.target.value; }
+  update();
+});
+$("quiz").addEventListener("input", e => { if (e.target.type === "number") update(); });
+$("quiz").addEventListener("submit", e => e.preventDefault());
+
+$("copy").addEventListener("click", () => {
+  const { total, per, lost } = compute(isDemo ? DEMO : answers);
+  const msgs = +$("msgs").value || 0, ticket = +$("ticket").value || 0;
+  const loss = msgs * 4 * (0.05 + 0.40 * (1 - total / 100)) * ticket;
+  const text = resultText(total, level(total)[0], per, lost.slice(0, 3), loss);
+  const done = () => { $("status").textContent = "Copiado. Pégalo en el WhatsApp de Bouw."; };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallback(text));
+  } else fallback(text);
+});
+function fallback(text) {
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.setAttribute("readonly", ""); ta.style.width = "100%"; ta.rows = 6; ta.id = "copy-fallback";
+  const st = $("status"); st.textContent = "Selecciona y copia este texto:"; st.appendChild(ta); ta.select();
+}
+
+render();
+</script>
