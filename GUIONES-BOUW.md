@@ -120,3 +120,32 @@ Complemento de [`PLAN-BOUW.md`](PLAN-BOUW.md). Copia, adapta con tu forma de hab
 | 30 | Carrusel | Recap del mes y lo que viene | Tú |
 
 **Todos los días:** 5 auditorías fantasma, 3–5 historias y responder cada comentario y DM en menos de 5 minutos (predica con el ejemplo).
+
+---
+
+## 7. Versión gimnasios y clínicas (foco de 90 días)
+
+### Auditoría de cliente fantasma: gimnasio
+Escribe por IG o WhatsApp: *"Hola, info precio 🙏 ¿Tienen clase de prueba?"* Anota:
+- Tiempo de la 1.ª respuesta
+- ¿Dio el precio o solo "ven y te explicamos"?
+- ¿Te ofreció la clase de prueba con día y hora?
+- ¿Te escribió de nuevo si no respondiste en 24 h?
+
+### Video de hallazgos: gimnasio (60 s)
+> "Hola [Nombre], soy [Tu nombre] de Bouw. Ayudo a gimnasios de Quito a convertir más 'info precio' en socios.
+> El lunes le escribí a [gimnasio] preguntando precio y clase de prueba. Me respondieron en [tiempo], sin precio, y nadie me volvió a escribir.
+> Ese 'info precio' era alguien listo para entrenar. Te preparé 3 cambios concretos, gratis. ¿Te los muestro en 15 minutos?"
+
+### Video de hallazgos: clínica (versión corta)
+> "Hola Dra./Dr. [Nombre], soy [Tu nombre] de Bouw. Trabajo solo con clínicas de Quito.
+> Pedí una cita de valoración como paciente: me respondieron en [tiempo] y nadie confirmó ni recordó la cita.
+> Te preparé una radiografía de una página con 3 cambios para que ningún paciente se pierda entre el anuncio y la silla. ¿20 minutos esta semana?"
+
+### Preguntas de calificación por segmento
+| 🦷 Clínica | 🏋️ Gimnasio |
+|---|---|
+| ¿Cuántas consultas por WhatsApp o IG recibes a la semana? | ¿Cuántos "info precio" te llegan a la semana? |
+| ¿Cuántos pacientes no llegan a su cita al mes? | ¿Cuántos socios no renuevan al mes? |
+| ¿Quién responde hoy el WhatsApp? | ¿Quién responde, tú o un coach? |
+| ¿Cuánto inviertes en anuncios al mes? | ¿Haces promociones en enero o septiembre? |

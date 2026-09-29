@@ -79,6 +79,29 @@ body { background: #999; font-family: "Inter", sans-serif; display: flex; flex-w
 .eq .l b { font-family: "Space Grotesk"; font-size: 54px; letter-spacing: -0.03em; }
 .eq .tot { background: var(--ink); color: var(--paper); }
 .eq .tot b { color: var(--orange); font-size: 80px; }
+
+/* 8. Gimnasio "info precio" (dato, arena + naranja) */
+.p8 { background: var(--ink); color: var(--paper); }
+.p8 .chips { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 90px; }
+.p8 .chips span { background: #23262C; color: #D9D4CA; border-radius: 999px; padding: 22px 32px; font-size: 34px; }
+.p8 .chips span.x { background: transparent; border: 2px dashed #3A3E46; color: #6F6B63; }
+.p8 .big { font-family: "Space Grotesk"; font-weight: 700; font-size: 220px; letter-spacing: -0.06em; line-height: .9; color: var(--orange); margin-top: 60px; }
+
+/* 9. Membresía (chat sobre naranja) */
+.p9 { background: var(--orange); color: var(--ink); }
+.p9 .phone { box-shadow: 0 30px 60px rgba(20,22,26,.25); }
+.p9 .out { background: #FFE6DB; }
+
+/* 10. Paciente que no llegó (agenda) */
+.p10 { background: var(--paper); color: var(--ink); }
+.agenda { margin-top: 52px; background: #fff; border-radius: 32px; padding: 20px 36px; }
+.agenda .s { display: flex; align-items: center; gap: 28px; padding: 22px 0; border-bottom: 2px solid #EEE; font-size: 30px; }
+.agenda .s:last-child { border-bottom: 0; }
+.agenda .s b { font-family: "Space Grotesk"; font-size: 34px; width: 110px; }
+.agenda .s .st { margin-left: auto; font-size: 24px; font-weight: 600; padding: 8px 18px; border-radius: 999px; }
+.agenda .ok { background: #E3F4EA; color: var(--ok); }
+.agenda .no { background: var(--ink); color: var(--paper); }
+.agenda .s.miss span:not(.st) { text-decoration: line-through; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -167,6 +190,44 @@ body { background: #999; font-family: "Inter", sans-serif; display: flex; flex-w
     <div class="l tot"><span>Se te van al mes</span><b>$3.840</b></div>
   </div>
   <div class="foot"><span>Haz tu cuenta. Te la reviso gratis.</span><span class="pill" style="background:var(--orange)">DIAGNÓSTICO</span></div>
+</section>
+
+<!-- 8 -->
+<section class="post p8" id="p8-gym-precio">
+  <div class="logo"><i></i>bouw</div>
+  <div class="tag" style="margin-top:80px;color:var(--orange)">Gimnasios · Quito</div>
+  <h1 class="h" style="font-size:96px;margin-top:24px">¿Cuántos “info precio” se te quedaron sin cerrar este mes?</h1>
+  <div class="chips">
+    <span>info precio 🙏</span><span>¿cuánto el mes?</span><span>precio porfa</span>
+    <span>¿tienen clase de prueba?</span><span class="x">visto ✓✓</span><span class="x">sin respuesta</span>
+  </div>
+  <div class="foot"><span>Cada “info” es alguien listo para entrenar.</span><span class="pill" style="background:var(--orange);color:var(--ink)">DIAGNÓSTICO</span></div>
+</section>
+
+<!-- 9 -->
+<section class="post p9" id="p9-gym-membresia">
+  <div class="logo"><i style="background:var(--ink)"></i>bouw</div>
+  <h1 class="h" style="font-size:76px;margin-top:48px">El mensaje que evita que tus socios se vayan.</h1>
+  <div class="phone">
+    <div class="top"><div class="av">F</div><div><b>Forma Studio</b><span>en línea · responde al instante</span></div></div>
+    <div class="msg out">¡Hola Carla! 💪 Tu membresía vence este viernes. ¿La renovamos? Si pagas hoy, mantienes tu precio actual.<em>09:00 ✓✓</em></div>
+    <div class="msg in">Uy sí, casi se me pasa 😅 ¿Me mandas el link?<em>09:12</em></div>
+    <div class="msg out">¡Claro! Aquí tienes 👉 link de pago. Nos vemos en la clase de las 18:00 🔥<em>09:12 ✓✓</em></div>
+  </div>
+  <div class="foot"><span style="font-weight:600">Automático. Cada mes. Para cada socio.</span><span class="swipe">→</span></div>
+</section>
+
+<!-- 10 -->
+<section class="post p10" id="p10-paciente-no-llego">
+  <div class="logo"><i></i>bouw</div>
+  <h1 class="h" style="font-size:76px;margin-top:56px">El paciente que no llegó te costó dinero.<br><span style="color:var(--orange)">El recordatorio cuesta $0.</span></h1>
+  <div class="agenda">
+    <div class="s"><b>09:00</b><span>Limpieza dental</span><span class="st ok">Confirmó ✓</span></div>
+    <div class="s miss"><b>10:30</b><span>Valoración ortodoncia</span><span class="st no">No llegó</span></div>
+    <div class="s"><b>12:00</b><span>Blanqueamiento</span><span class="st ok">Confirmó ✓</span></div>
+    <div class="s miss"><b>15:30</b><span>Control</span><span class="st no">No llegó</span></div>
+  </div>
+  <div class="foot"><span>Recordatorio 24 h + 2 h antes. Sin llamar a nadie.</span><span class="pill" style="background:var(--ink);color:var(--paper)">DM CITAS</span></div>
 </section>
 
 </body>

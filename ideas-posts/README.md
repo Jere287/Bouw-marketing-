@@ -2,9 +2,9 @@
 
 | Archivo | Qué hay |
 |---|---|
-| [`BANCO-DE-IDEAS.md`](BANCO-DE-IDEAS.md) | 46 ideas de posts organizadas por dolor, ciudad (Quito/Guayaquil) y formato |
+| [`BANCO-DE-IDEAS.md`](BANCO-DE-IDEAS.md) | 60 ideas para **clínicas y gimnasios de Quito** organizadas en las 6 ramas de marketing, más un calendario de 4 semanas |
 | [`REFERENTES.md`](REFERENTES.md) | Marcas con buen diseño (HubSpot, Notion, Linear, Nubank, Kommo, Alegra, DeUna…) y qué copiarle a cada una |
-| `mockups/png/` | 7 maquetas listas (1080×1350, formato vertical de IG/FB) |
+| `mockups/png/` | 10 maquetas listas (1080×1350, formato vertical de IG/FB) |
 | `mockups/posts.html` | Fuente editable de las maquetas |
 | `mockups/render.js` | Script que convierte el HTML en PNG |
 
@@ -15,10 +15,13 @@
 | `p1-tiempos.png` | El mismo paciente. Dos respuestas. | Dato gigante (HubSpot) |
 | `p2-chat.png` | Son las 11:08 p. m. Tu negocio está cerrado. | Chat (Kommo) |
 | `p3-recepcion.png` | Tu recepcionista no es lenta… | Frase gigante (Nubank) |
-| `p4-gye-noche.png` | Tu local cierra a las 7 (Guayaquil) | Noche premium (Linear) |
+| `p4-gye-noche.png` | Tu local cierra a las 7 (Guayaquil, fase 2) | Noche premium (Linear) |
 | `p5-checklist.png` | WhatsApp Business bien configurado | Checklist (Notion) |
 | `p6-sri.png` | SRI 2026: la factura ya no espera | Alerta regulatoria (Alegra) |
 | `p7-calculo.png` | ¿Cuánto te cuesta no contestar a tiempo? | Calculadora (HubSpot) |
+| `p8-gym-precio.png` | ¿Cuántos "info precio" se te quedaron sin cerrar? (gimnasios) | Dato oscuro (HubSpot/Linear) |
+| `p9-gym-membresia.png` | El mensaje que evita que tus socios se vayan (gimnasios) | Chat (Kommo) |
+| `p10-paciente-no-llego.png` | El paciente que no llegó te costó dinero (clínicas) | Agenda (Notion) |
 
 > `p1` usa un tiempo de ejemplo (3 h 38 m). Antes de publicarlo, cámbialo por un resultado real de tus auditorías de cliente fantasma.
 
