@@ -1,7 +1,7 @@
 # Bouw = la Hanova de Quito
 
 > Objetivo: replicar en Quito el modelo de **Hanova Consulting** (Monterrey), adaptado a su equipo (Ing. Industrial + Ing. en Ciberseguridad + Claude).
-> **Este es el documento principal.** Los demás del repositorio quedan como piezas de apoyo (sección 8).
+> **Este es el documento principal.** Plan de marketing: [`PLAN-MARKETING-BOUW.md`](PLAN-MARKETING-BOUW.md). Los demás del repositorio quedan como piezas de apoyo (sección 8).
 
 ---
 
