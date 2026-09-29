@@ -1,5 +1,7 @@
 # El nicho de Bouw: preparar a los proveedores pymes para pasar las evaluaciones de sus clientes regulados
 
+> 🧭 **Modelo principal de Bouw:** [`HANOVA-QUITO.md`](HANOVA-QUITO.md) (la Hanova de Quito). Este documento queda como pieza de apoyo.
+
 > **En una frase:** los bancos y las cooperativas **están obligados por norma** a evaluar la continuidad, la seguridad y el manejo de datos de sus proveedores. Los proveedores pymes (software, call center, cobranza, soporte de TI, custodia de documentos…) **reciben esas evaluaciones y no tienen cómo pasarlas.** Bouw los deja listos.
 >
 > Reemplaza como foco a [`ESTRATEGIA-3-AREAS.md`](ESTRATEGIA-3-AREAS.md) y [`VENTA-ATERRIZADA.md`](VENTA-ATERRIZADA.md). No es una idea nueva: es el punto exacto donde se cruzan las tres áreas y donde nadie está parado.

@@ -1,6 +1,6 @@
 # Bouw: consultora de 3 áreas (Ing. Industrial × Ciberseguridad × IA)
 
-> 🎯 **Foco actual:** [`NICHO-BOUW.md`](NICHO-BOUW.md): preparar a proveedores pymes de bancos y cooperativas para pasar sus evaluaciones. Este documento queda como referencia.
+> 🧭 **Modelo principal de Bouw:** [`HANOVA-QUITO.md`](HANOVA-QUITO.md) (la Hanova de Quito). Este documento queda como pieza de apoyo.
 
 > Equipo: **tú** (Ingeniería Industrial) + **tu socio** (Ingeniería en Ciberseguridad) + **Claude** (IA para investigar, analizar, documentar y automatizar).
 > Objetivo: una consultora que pueda abarcar varias soluciones, **centrada en 3 áreas con poca competencia**.
