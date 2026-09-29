@@ -2,6 +2,7 @@
 
 > Equipo: **tú** (Ingeniería Industrial) + **tu socio** (Ingeniería en Ciberseguridad) + **Claude** (IA para investigar, analizar, documentar y automatizar).
 > Objetivo: una consultora que pueda abarcar varias soluciones, **centrada en 3 áreas con poca competencia**.
+> ➡️ **Versión aterrizada para vender (qué área abrir primero, ofertas con precio y guiones):** [`VENTA-ATERRIZADA.md`](VENTA-ATERRIZADA.md) · Cuestionarios: [`chequeo-360/`](chequeo-360/)
 > Fecha: sept. 2026. Reemplaza el foco de [`PLAN-BOUW.md`](PLAN-BOUW.md). Lo anterior (WhatsApp, clínicas) no se pierde: pasa a ser un producto de entrada (sección 6).
 
 ---
