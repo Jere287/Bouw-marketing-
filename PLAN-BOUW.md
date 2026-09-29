@@ -1,5 +1,7 @@
 # BOUW — Plan de negocio y marketing (Quito, Ecuador)
 
+> 🔄 **Actualización (sept. 2026):** el foco principal de Bouw ahora está en [`ESTRATEGIA-3-AREAS.md`](ESTRATEGIA-3-AREAS.md) (cumplimiento de ciberseguridad, continuidad del negocio e IA segura). Este plan de WhatsApp para clínicas sigue vigente como **producto de entrada**.
+
 > Objetivo: que Bouw te pague un sueldo en 90 días mientras buscas empleo, y que si funciona, no necesites buscarlo.
 > Canales iniciales: **Facebook + Instagram** (+ WhatsApp como caja registradora).
 > Fecha: septiembre 2026.
