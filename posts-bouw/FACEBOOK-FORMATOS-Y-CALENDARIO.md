@@ -1,22 +1,23 @@
 # Facebook BOUW: formatos, sello y calendario día por día
 
 > Todo sigue el [`MANUAL-DE-MARCA.md`](../MANUAL-DE-MARCA.md): navy, cian técnico, **un solo naranja por pieza (el botón)**, Archivo Expanded + IBM Plex.
-> **El sello de BOUW es el dragón del sitio** (modelo 3D `dragon.glb` de bouw-eight.vercel.app, renderizado con la luz y el linework cian de la marca).
+> **El sello de BOUW es el dragón del sitio**, redibujado como silueta heráldica plana (un solo color, vector). Se ve igual de nítido en una foto de perfil de 176 px que en una lona.
 
 ---
 
-## 1. El sello: dónde va el dragón
+## 1. El sello: sistema de logo "responsivo"
+
+Como hacen las marcas grandes (Starbucks, Mastercard, Firefox), el logo tiene **versiones según el tamaño**: con texto cuando hay espacio y solo el símbolo cuando es pequeño. Así "QUITO · MONTERREY" nunca se pone ilegible.
 
 | Archivo (`sello/`) | Qué es | Dónde se usa |
 |---|---|---|
-| `sello-circular.png` (1200×1200, fondo transparente) | Sello redondo: cabeza del dragón + "BOUW · DEL DISEÑO A LA REALIDAD · QUITO · MONTERREY" | Pie de **todas** las publicaciones (112 px), propuestas, firma de correo |
-| `fb-perfil-720.png` (720×720) | El sello sobre navy | **Foto de perfil** de Facebook, Instagram y WhatsApp Business |
-| `dragon-frontal.png` | Dragón de frente, alas abiertas | Piezas "héroe": manifiesto (F02), historia H01 |
-| `dragon-tres-cuartos.png` | Dragón en 3/4, en vuelo | Portada de Facebook |
-| `dragon-perfil.png` | Dragón de lado | Formatos horizontales (LinkedIn, presentaciones) |
-| `dragon-plano-frontal.png` | Solo líneas cian, "plano técnico" | Marca de agua (F11 Radiografía) |
+| `sello-bouw.png` / `.svg` (1200×1200, fondo transparente) | Sello completo: dragón + **BOUW** grande arriba + **QUITO · MONTERREY** abajo | Tamaños **de 300 px en adelante**: propuestas, portada de documentos, firma de correo grande, stickers, lona |
+| `marca-dragon.png` / `.svg` | Solo el dragón dentro de un anillo, **sin texto** | Tamaños chicos: pie de las publicaciones (108 px), avatar, favicon |
+| `fb-perfil-720.png` (720×720) | La marca sobre navy | **Foto de perfil** de Facebook, Instagram y WhatsApp Business |
+| `emblema-dragon.svg` (cian) · `-blanco.svg` · `-navy.svg` | El dragón solo, detallado | Piezas "héroe" (F02, H01, portada), marca de agua (F11 en contorno) |
+| `emblema-dragon-simple.svg` | Dragón con menos detalle | Cuando el dragón mide **menos de 120 px** |
 
-**Reglas del sello:** siempre sobre navy `#04101F`, nunca sobre fondo claro; no se deforma ni se recolorea; una sola aparición grande por pieza (el sello chico del pie no cuenta).
+**Reglas del sello:** va sobre navy `#04101F` (o en navy sobre fondo claro con `emblema-dragon-navy.svg`); no se deforma, no se le ponen sombras ni efectos 3D; una sola aparición grande por pieza (la marca chica del pie no cuenta). Debajo de 300 px **no** se usa el sello con texto: se usa `marca-dragon`.
 
 ---
 
@@ -41,19 +42,19 @@
 
 ## 3. Diseños en Adobe Express (editables)
 
-Cada documento se abre en Adobe Express con los textos editables, las tipografías de la marca (Adobe Fonts), la retícula y el logo como vectores, y el dragón como imagen.
+Cada documento se abre en Adobe Express con los textos editables, las tipografías de la marca (Adobe Fonts), la retícula, el logo y el dragón como **vectores editables** (puedes cambiarles color o tamaño sin perder calidad).
 
 | Documento | Páginas | Enlace |
 |---|---|---|
-| Portada Facebook 1640×624 | 1 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:d0707851-513c-42f1-9960-6e9d02ec767e) |
-| Semana 1 (5–8 oct) | F01 · F02 · F03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:710c1843-4990-44aa-9864-8c3246f3c893) |
-| Semana 2 (12–16 oct) | F04 · F05 · F06 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:6927867e-ccf2-4117-94c0-93fa11494f1f) |
-| Semana 3 (19–23 oct) | F07 · F08 · F09 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:fd128802-9cd4-4928-a0ec-55f7aa416d16) |
-| Semana 4 (26–28 oct) | F11 · F10 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:f13ec27e-bd18-4970-b727-3f59a3f5f8ee) |
-| Historias 1080×1920 | H01 · H02 · H03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:8fc51d31-4881-43b8-8a06-c722b1853980) |
+| Portada Facebook 1640×624 | 1 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:a10ed361-20f4-4b84-a611-26823ca1e720) |
+| Semana 1 (5–8 oct) | F01 · F02 · F03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:1a28cf60-e38d-41e1-9907-a49f4497a168) |
+| Semana 2 (12–16 oct) | F04 · F05 · F06 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:b72cfcc0-0dda-4d78-bf43-aa817c380793) |
+| Semana 3 (19–23 oct) | F07 · F08 · F09 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:e172aff3-605e-4a8f-b8c1-61b2193abdd5) |
+| Semana 4 (26–28 oct) | F11 · F10 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:e819cbf4-7a97-4829-bee9-540f432a81c5) |
+| Historias 1080×1920 | H01 · H02 · H03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:98209196-2e07-43eb-8065-aef8992924dc) |
 
 > **F03 (Dos ingenieros):** antes de publicarla, reemplaza los recuadros "[ Foto socio 1/2 ]" por fotos reales (en Express: arrastra la foto sobre el recuadro) y pon los nombres.
-> En la cuenta de Adobe también quedaron cuatro documentos de prueba técnica ("prueba imagen", "prueba css", "prueba svg" y una primera "Portada" sin imágenes). Se pueden borrar.
+> En la cuenta de Adobe quedaron las versiones anteriores (con el dragón 3D, sin "(v2)" en el nombre) y cuatro documentos de prueba ("prueba imagen", "prueba css", "prueba svg" y una primera "Portada"). Se pueden borrar: los buenos son los que dicen **(v2)**.
 
 ---
 
@@ -101,7 +102,7 @@ Cada documento se abre en Adobe Express con los textos editables, las tipografí
 ### Semana 4: pedir la Radiografía
 | Día | Hora | Qué | Pieza | Texto |
 |---|---|---|---|---|
-| **Lun 26** | 07:30 | Publicación | F11 Radiografía (dragón en plano) | §5 · F11 |
+| **Lun 26** | 07:30 | Publicación | F11 Radiografía (dragón en contorno) | §5 · F11 |
 | Lun 26 | — | **Promoción pagada** (opcional) de F11: USD 3/día × 7 días. Público: Quito + 25 km, 28–60 años, intereses *pequeñas empresas, emprendimiento, administración de empresas*. Botón: *Enviar mensaje de WhatsApp* | F11 | — |
 | Mar 27 | 12:30 | Historia | H02 ¿1, 2 o 3? | — |
 | **Mié 28** | 12:30 | Publicación | F10 Antes de comprar un ERP | §5 · F10 |
