@@ -1,5 +1,7 @@
 # Plan de marketing de Bouw: el modelo Hanova aplicado a Quito
 
+> 📌 **Definición oficial de Bouw (3 áreas):** [`BOUW-EN-UNA-PAGINA.md`](BOUW-EN-UNA-PAGINA.md). Si algo de este documento la contradice, manda la definición.
+
 > Basado en [`HANOVA-QUITO.md`](HANOVA-QUITO.md). Horizonte: **6 meses** (oct. 2026 – mar. 2027).
 > Principio: una consultora B2B **no se vende con publicidad, se vende con confianza.** Hanova creció con marca personal, autoridad, contenido y casos. Bouw hace lo mismo con canales que existen en Quito.
 

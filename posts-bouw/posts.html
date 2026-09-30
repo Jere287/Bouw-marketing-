@@ -73,12 +73,20 @@ body { background:#888; font-family:"Inter",sans-serif; display:flex; flex-wrap:
 /* portada FB */
 .cover { width:1640px; height:624px; padding:70px 96px; display:grid; grid-template-columns:1.25fr 1fr; gap:40px; align-items:center; background:var(--paper); color:var(--ink); position:relative; overflow:hidden; }
 .cover > * { position:relative; }
-.pillars { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.pillars { display:grid; grid-template-columns:1fr; gap:14px; }
 .pillars div { background:#fff; border:2px solid var(--ink); border-radius:16px; padding:22px 24px; font-family:"Space Grotesk"; font-weight:700; font-size:34px; display:flex; align-items:center; gap:14px; }
 .pillars div i { width:14px; height:14px; background:var(--orange); flex:none; }
 
 /* historia */
 .story { width:1080px; height:1920px; padding:140px 88px 160px; }
+
+/* 3 áreas */
+.areas { display:grid; gap:20px; margin-top:52px; }
+.area { display:grid; grid-template-columns:96px 1fr; gap:26px; align-items:start; background:#fff; border:2px solid var(--ink); border-radius:20px; padding:28px 30px; }
+.area .num { width:96px; height:96px; border-radius:18px; background:var(--ink); color:var(--paper); display:grid; place-items:center; font-family:"Space Grotesk"; font-weight:700; font-size:52px; }
+.area:nth-child(2) .num { background:var(--orange); color:var(--ink); }
+.area b { font-family:"Space Grotesk"; font-size:40px; letter-spacing:-0.02em; display:block; line-height:1.05; }
+.area small { font-size:25px; color:var(--muted); display:block; margin-top:10px; line-height:1.35; }
 </style>
 </head>
 <body>
@@ -91,7 +99,7 @@ body { background:#888; font-family:"Inter",sans-serif; display:flex; flex-wrap:
     <p style="font-size:28px;margin-top:22px;max-width:760px;line-height:1.35" class="muted">Consultoría para pymes · Quito, Ecuador</p>
   </div>
   <div class="pillars">
-    <div><i></i>Procesos</div><div><i></i>Datos</div><div><i></i>Seguridad</div><div><i></i>IA aplicada</div>
+    <div><i></i>Evaluación y estrategia</div><div><i></i>Procesos, automatización e IA</div><div><i></i>Datos y seguridad</div>
   </div>
 </section>
 
@@ -100,7 +108,7 @@ body { background:#888; font-family:"Inter",sans-serif; display:flex; flex-wrap:
   <div class="top"><div class="logo"><i></i>bouw</div><span class="tag" style="color:var(--orange)">Quito · Ecuador</span></div>
   <h1 class="h" style="font-size:150px;margin-top:150px">Bouw no vende software.</h1>
   <p style="font-size:44px;line-height:1.25;margin-top:48px;max-width:860px;color:#CFC9BE">Diagnosticamos cómo funciona tu empresa y construimos procesos <span style="color:var(--orange)">más eficientes, medibles y seguros.</span></p>
-  <div class="foot"><span style="color:#A7A39B">Procesos · Datos · Seguridad · IA aplicada</span><span class="cta">Agenda tu diagnóstico</span></div>
+  <div class="foot"><span style="color:#A7A39B">Evaluamos · Diseñamos · Te lo entregamos funcionando</span><span class="cta">Agenda tu evaluación</span></div>
 </section>
 
 <!-- 02 Señales de Excel -->
@@ -243,6 +251,18 @@ body { background:#888; font-family:"Inter",sans-serif; display:flex; flex-wrap:
     <span class="cta" style="font-size:44px;padding:30px 56px">Escríbenos: DIAGNÓSTICO</span>
     <span style="font-size:32px;font-weight:600">Quito · Procesos · Datos · Seguridad</span>
   </div>
+</section>
+
+<!-- 09 Tres áreas -->
+<section class="post grid" id="p09-tres-areas">
+  <div class="top"><div class="logo"><i></i>bouw</div><span class="tag" style="color:var(--orange)">Qué hacemos</span></div>
+  <h1 class="h" style="font-size:78px;margin-top:52px">Evaluamos tu empresa y te entregamos soluciones que funcionan.</h1>
+  <div class="areas">
+    <div class="area"><span class="num">1</span><div><b>Evaluación y estrategia</b><small>Te decimos dónde está el problema y qué hacer primero.</small></div></div>
+    <div class="area"><span class="num">2</span><div><b>Procesos, automatización e IA</b><small>Menos tareas repetitivas, menos errores, menos costo.</small></div></div>
+    <div class="area"><span class="num">3</span><div><b>Datos y seguridad</b><small>Tus números para decidir a tiempo, y tu información protegida.</small></div></div>
+  </div>
+  <div class="foot"><span>No vendemos tecnología. Construimos soluciones.</span><span class="cta">Evaluación gratis</span></div>
 </section>
 
 </body>

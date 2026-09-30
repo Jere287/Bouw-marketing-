@@ -1,5 +1,7 @@
 # Bouw = la Hanova de Quito
 
+> 📌 **Definición oficial de Bouw (3 áreas):** [`BOUW-EN-UNA-PAGINA.md`](BOUW-EN-UNA-PAGINA.md). Si algo de este documento la contradice, manda la definición.
+
 > Objetivo: replicar en Quito el modelo de **Hanova Consulting** (Monterrey), adaptado a su equipo (Ing. Industrial + Ing. en Ciberseguridad + Claude).
 > **Este es el documento principal.** Plan de marketing: [`PLAN-MARKETING-BOUW.md`](PLAN-MARKETING-BOUW.md). Los demás del repositorio quedan como piezas de apoyo (sección 8).
 

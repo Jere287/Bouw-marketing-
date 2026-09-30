@@ -6,6 +6,7 @@ Sistema visual: tinta, papel, naranja + **cuadrícula de plano** como motivo (*b
 | Archivo | Uso | Tamaño |
 |---|---|---|
 | `png/fb-portada.png` | Portada de la página de Facebook | 1640×624 |
+| `png/p09-tres-areas.png` | **Qué hacemos: las 3 áreas.** Publícala primero y fíjala en Facebook | 1080×1350 |
 | `png/p01…p08` | Feed de **Facebook e Instagram** (sirven también en LinkedIn) | 1080×1350 |
 | `png/li-01…li-03` | **Carrusel de LinkedIn** (súbelo como documento PDF o como imágenes) | 1080×1350 |
 | `png/li-04-erp.png` | Publicación de LinkedIn (sirve también en Facebook) | 1080×1350 |
@@ -22,7 +23,7 @@ Sistema visual: tinta, papel, naranja + **cuadrícula de plano** como motivo (*b
 
 | Semana | Facebook (principal) | Instagram | LinkedIn |
 |---|---|---|---|
-| 1 | Portada + **p01 Manifiesto** + **p07 Socios** | p01 + historia | Presentación de los socios desde sus perfiles + p01 |
+| 1 | Portada + **p09 Tres áreas (fijada)** + **p01 Manifiesto** + **p07 Socios** | p01 + historia | Presentación de los socios desde sus perfiles + p01 |
 | 2 | **p02 Señales de Excel** + **p03 Doble digitación** | p02 + historia | **Carrusel li-01/02/03** (indicadores) |
 | 3 | **p04 Método** + **p06 Apagón** | p04 + historia | **li-04 ERP** + p06 |
 | 4 | **p05 Seguridad** + **p08 Mini diagnóstico** | p08 + historia | p05 + p08 |
@@ -130,3 +131,11 @@ Sistema visual: tinta, papel, naranja + **cuadrícula de plano** como motivo (*b
 
 ### Historia · Mini diagnóstico
 Usa el sticker de enlace o "Enviar mensaje" y una encuesta: *"¿Tu empresa vive en Excel? Sí / Un poco"*.
+
+### p09 · Qué hacemos: las 3 áreas (fijar en Facebook)
+> Evaluamos tu empresa y te entregamos soluciones que funcionan. 🧱
+> 1️⃣ Evaluación y estrategia: te decimos dónde está el problema y qué hacer primero.
+> 2️⃣ Procesos, automatización e IA: menos tareas repetitivas, menos errores, menos costo.
+> 3️⃣ Datos y seguridad: tus números para decidir a tiempo, y tu información protegida.
+> No vendemos tecnología. Construimos soluciones que hacen que tu empresa funcione mejor.
+> 📍 Quito · Agenda tu evaluación gratuita por mensaje.
