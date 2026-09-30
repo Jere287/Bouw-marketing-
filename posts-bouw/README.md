@@ -2,6 +2,8 @@
 
 Sistema visual y de palabras según [`MANUAL-DE-MARCA.md`](../MANUAL-DE-MARCA.md), tomado del sitio oficial: navy, cian técnico, naranja escaso, Archivo expandida + IBM Plex, estética de plano técnico.
 
+> **Facebook primero:** los diseños finales con el **dragón como sello** están en Adobe Express, y el calendario día por día de octubre está en [`FACEBOOK-FORMATOS-Y-CALENDARIO.md`](FACEBOOK-FORMATOS-Y-CALENDARIO.md). Las PNG listas para subir están en `adobe/png/` y el sello en `sello/`.
+
 | Archivo | Uso | Tamaño |
 |---|---|---|
 | `png/fb-portada.png` | Portada de Facebook | 1640×624 |

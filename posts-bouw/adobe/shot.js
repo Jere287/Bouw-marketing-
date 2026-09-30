@@ -3,7 +3,7 @@ const { chromium } = require('playwright');
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1700, height: 2000 } });
   for (const d of process.argv.slice(2)) {
-    await p.goto('file://' + process.cwd() + '/out/' + d + '.preview.html');
+    await p.goto('file://' + process.cwd() + '/html/' + d + '.preview.html');
     await p.evaluate(() => document.fonts.ready);
     await p.waitForTimeout(400);
     const n = await p.locator('.slide').count();

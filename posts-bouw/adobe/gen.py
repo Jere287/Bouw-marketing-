@@ -6,8 +6,8 @@ Salida: out/<doc>.html (exportar) y out/<doc>.preview.html (fuentes locales, par
 import base64, os, html
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-A = os.path.join(HERE, 'a')
-OUT = os.path.join(HERE, 'out')
+A = os.path.join(HERE, 'assets')
+OUT = os.path.join(HERE, 'html')
 os.makedirs(OUT, exist_ok=True)
 FONTS = '/home/user/Bouw-marketing-/posts-bouw/fonts'
 KIT = '<link rel="stylesheet" href="https://use.typekit.net/dnh2wmm.css">'
@@ -18,7 +18,20 @@ def uri(name):
         return 'data:image/png;base64,' + base64.b64encode(f.read()).decode()
 
 
-IMG = {k: uri(k + '.png') for k in ['front', 'd34', 'plano', 'seal', 'perfil', 'logo']}
+# Express no descarga imágenes por URL ni lee background-image: van en base64, livianas (paleta de 32 colores)
+IMG = {k: uri('x-' + k + '.png') for k in ['front', 'd34', 'plano', 'seal']}
+
+# Logo como vector plano (Express lo convierte en formas editables). Sin degradados, según el manual.
+LOGO_SVG = ('<svg class="abs" style="left:{x}px;top:{y}px" width="{w}" height="{h}" viewBox="-2 -3.15 3.95 6.3" xmlns="http://www.w3.org/2000/svg">'
+            '<path d="M -1.8 -2.5 H 0.5 V -2.86 L 1.22 -2.125 L 0.5 -1.39 V -1.75 H -0.9 V -0.25 H -1.8 Z" fill="#1f5488"/>'
+            '<path d="M -1.8 0.25 H -0.9 V 1.75 H 0.2 V 2.5 H -1.8 Z" fill="#1f5488"/>'
+            '<path d="M 0.2 -2.65 A 1.5 1.5 0 0 1 0.2 0.35 L 0.2 -0.2 A 0.95 0.95 0 0 0 0.2 -2.1 Z" fill="#22b5cf"/>'
+            '<path d="M 0.2 -0.35 A 1.5 1.5 0 0 1 0.2 2.65 L -0.5 2.65 L -0.5 2.97 L -1.28 2.375 L -0.5 1.78 L -0.5 2.1 L 0.2 2.1 A 0.95 0.95 0 0 0 0.2 0.2 Z" fill="#e87722"/>'
+            '<circle cx="1.31" cy="-1.668" r="0.44" fill="#22b5cf"/><circle cx="1.31" cy="0.632" r="0.44" fill="#f79b4a"/></svg>')
+
+
+def logo(x, y, h):
+    return LOGO_SVG.format(x=x, y=y, w=round(h * 3.95 / 6.3), h=h)
 
 CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
@@ -47,7 +60,7 @@ PREVIEW_FONTS = f"""
 </style>"""
 
 
-def grid_svg(w, h, step=60, marks=True):
+def grid_svg_inline(w, h, step=60, marks=True):
     """Retícula cian + marcas de corte como SVG en base64 (una sola capa de imagen)."""
     lines = []
     for x in range(step, w, step):
@@ -72,7 +85,18 @@ def e(s):
 def slide(w, h, body, name):
     return (f'<section class="slide" data-canvas-width="{w}" data-canvas-height="{h}" data-name="{e(name)}" '
             f'style="width:{w}px;height:{h}px">'
-            f'<img class="grid" src="{grid_svg(w, h)}" width="{w}" height="{h}" alt="">{body}</section>')
+            f'{grid(w, h)}{body}</section>')
+
+
+def grid(w, h, step=60):
+    """Retícula y marcas de corte como SVG en línea: Express la convierte en 2 trazos vectoriales."""
+    d = ''.join(f'M{x} 0V{h}' for x in range(step, w, step)) + ''.join(f'M0 {y}H{w}' for y in range(step, h, step))
+    D, L = 36, 34
+    m = ''.join(f'M{x} {y + sy * L}V{y}H{x + sx * L}' for x, y, sx, sy in
+                [(D, D, 1, 1), (w - D, D, -1, 1), (D, h - D, 1, -1), (w - D, h - D, -1, -1)])
+    return (f'<svg class="grid" width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg">'
+            f'<path d="{d}" fill="none" stroke="#4fd6e8" stroke-opacity="0.07" stroke-width="2"/>'
+            f'<path d="{m}" fill="none" stroke="#4fd6e8" stroke-width="3"/></svg>')
 
 
 # ---------- piezas del feed 1080×1350 ----------
@@ -81,7 +105,7 @@ M = 84
 
 
 def header(hoja):
-    return (f'<img class="abs" src="{IMG["logo"]}" style="left:{M}px;top:74px;height:58px" alt="">'
+    return (logo(M, 74, 58) +
             f'<div class="abs brandtxt" style="left:{M + 50}px;top:80px;font-size:34px;line-height:46px">BOUW</div>'
             f'<div class="abs mono" style="right:{M}px;top:88px;font-size:21px;line-height:30px;text-align:right;width:560px">{e(hoja)}</div>'
             f'<div class="rule" style="left:{M}px;top:160px;width:{W - 2 * M}px"></div>')
@@ -111,7 +135,7 @@ def spec(rows, top, gap=150, kw=150):
     return out
 
 
-def dragon_band(top, img='front', w=1000):
+def dragon_band(top, img='front', w=800):
     return f'<img class="abs" src="{IMG[img]}" style="left:{(W - w) // 2}px;top:{top}px;width:{w}px" alt="">'
 
 
@@ -249,7 +273,7 @@ stories = []
 
 
 def st_head(label):
-    return (f'<img class="abs" src="{IMG["logo"]}" style="left:{M}px;top:270px;height:62px" alt="">'
+    return (logo(M, 270, 62) +
             f'<div class="abs brandtxt" style="left:{M + 54}px;top:278px;font-size:36px;line-height:48px">BOUW</div>'
             f'<div class="abs mono" style="right:{M}px;top:288px;width:500px;text-align:right;font-size:22px">{e(label)}</div>'
             f'<div class="rule" style="left:{M}px;top:366px;width:{SW - 2 * M}px"></div>')
@@ -263,7 +287,7 @@ def st_cta(txt, top=1500):
 
 stories.append(('H01 · ¿Excel y WhatsApp?', st_head('Radiografía')
                 + f'<div class="abs h" style="left:{M}px;top:430px;width:{SW - 2 * M}px;font-size:104px">¿Tu empresa vive en Excel y <span class="o">WhatsApp?</span></div>'
-                + f'<img class="abs" src="{IMG["front"]}" style="left:40px;top:900px;width:1000px" alt="">'
+                + f'<img class="abs" src="{IMG["front"]}" style="left:140px;top:910px;width:800px" alt="">'
                 + f'<div class="abs p" style="left:{M}px;top:1190px;width:{SW - 2 * M}px;font-size:40px;line-height:54px">Una hora en tu empresa, gratis. Al día siguiente te decimos qué haríamos primero.</div>'
                 + st_cta('Escríbenos: RADIOGRAFÍA')))
 
@@ -295,21 +319,18 @@ stories.append(('H03 · Caso real', st_head('Proyecto real')
 CW, CH = 1640, 624
 cover = [('Portada Facebook', ''
           + f'<img class="abs" src="{IMG["d34"]}" style="left:830px;top:190px;width:540px" alt="">'
-          + f'<img class="abs" src="{IMG["logo"]}" style="left:280px;top:130px;height:52px" alt="">'
+          + logo(280, 130, 52)
           + f'<div class="abs brandtxt" style="left:326px;top:136px;font-size:30px;line-height:42px">BOUW</div>'
           + f'<div class="abs h" style="left:280px;top:208px;width:560px;font-size:64px;line-height:72px">Del diseño<br><span class="o">a la realidad.</span></div>'
           + f'<div class="abs mono" style="left:280px;top:376px;width:560px;font-size:20px;line-height:30px;color:#4fd6e8">Orden · Tiempo · Control</div>'
           + f'<div class="abs mono" style="left:280px;top:414px;width:560px;font-size:18px;line-height:28px">Consultoría técnica · Quito · Monterrey</div>')]
-profile = [('Foto de perfil', f'<img class="abs" src="{IMG["perfil"]}" style="left:0;top:0;width:720px;height:720px" alt="">')]
 
 
-def build(name, title_, w, h, slides, grid=True):
+def build(name, title_, w, h, slides):
     body = ''.join(slide(w, h, b, n) for n, b in slides)
     if name != 'bouw-fb-portada':
         # regla de marca: un solo naranja por pieza (el botón)
         body = body.replace('<span class="o">', '<span>')
-    if not grid:
-        body = body.replace(f'<img class="grid" src="{grid_svg(w, h)}" width="{w}" height="{h}" alt="">', '')
     head = (f'<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{e(title_)}</title>'
             f'<meta name="hz:slide-selector" content=".slide">'
             f'<meta name="hz:canvas-width" content="{w}"><meta name="hz:canvas-height" content="{h}">'
@@ -322,7 +343,12 @@ def build(name, title_, w, h, slides, grid=True):
     print(name, len(doc) // 1024, 'KB', len(slides), 'slides')
 
 
-build('bouw-fb-feed', 'BOUW · Facebook feed', W, H, feed)
+F = dict(feed)
+S1 = ['F01 · ¿Qué te quita más el sueño?', 'F02 · Del diseño a la realidad', 'F03 · Dos ingenieros']
+S2 = ['F04 · Marca lo que reconozcas', 'F05 · Caso real: programa contable', 'F06 · La cuenta']
+S3 = ['F07 · Plazos que se pueden escribir', 'F08 · Respaldo', 'F09 · Se va la luz 8 horas']
+S4 = ['F11 · Radiografía', 'F10 · Antes de comprar un ERP']
+for i, grp in enumerate([S1, S2, S3, S4], 1):
+    build(f'bouw-fb-semana{i}', f'BOUW · Facebook semana {i}', W, H, [(n, F[n]) for n in grp])
 build('bouw-fb-historias', 'BOUW · Historias', SW, SH, stories)
 build('bouw-fb-portada', 'BOUW · Portada Facebook', CW, CH, cover)
-build('bouw-fb-perfil', 'BOUW · Foto de perfil', 720, 720, profile, grid=False)
