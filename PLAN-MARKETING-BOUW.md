@@ -29,7 +29,7 @@
 |---|---|
 | **Marca personal de la fundadora** (profesora de consultoría en transformación digital en el Tec de Monterrey) | Tú y tu socio como **caras visibles**: perfiles de LinkedIn impecables, publicaciones propias, clases en educación continua (USFQ, PUCE, EPN, ESPE, UDLA) |
 | **Entrevistas en medios locales** (*Players of Life*) | Notas y columnas en *Revista Gestión*, *Ekos*, *Primicias*, *El Comercio*, podcasts de negocios de Quito |
-| Mensaje propio de la marca | Mensaje central de Bouw: *"Tu empresa, bien construida."* Orden · Tiempo · Control |
+| Mensaje propio de la marca | Mensaje central de Bouw: *"Del diseño a la realidad."* Orden · Tiempo · Control |
 | **Diagnóstico primero** (4–10 semanas) | **Mini diagnóstico gratis** como oferta de entrada en todos los canales |
 | **Pilares:** automatización, seguridad, innovación, adaptabilidad | **Pilares Bouw:** Procesos · Datos · Seguridad · IA aplicada |
 | **Testimonios de clientes** | 2–3 pilotos con descuento a cambio de testimonio y caso |
@@ -54,7 +54,7 @@
 ## 4. Mensajes
 
 **Frase principal:**
-> **"Tu empresa, bien construida."** Te devolvemos el orden, el tiempo y el control de tu empresa. (Ver [`BOUW-EN-UNA-PAGINA.md`](BOUW-EN-UNA-PAGINA.md))
+> **"Del diseño a la realidad."** Te devolvemos el orden, el tiempo y el control de tu empresa. (Ver [`BOUW-EN-UNA-PAGINA.md`](BOUW-EN-UNA-PAGINA.md))
 
 **Mensajes de apoyo por pilar:**
 | Pilar | Mensaje |

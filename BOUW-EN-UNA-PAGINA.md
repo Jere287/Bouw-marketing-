@@ -5,13 +5,15 @@
 
 ---
 
-## La frase de Bouw
-> ## **Tu empresa, bien construida.**
-> *(bouw = construir)*
+## La frase de BOUW
+> ## **Del diseño a la realidad.**
+> *(lema oficial del sitio; identidad visual y de palabras en [`MANUAL-DE-MARCA.md`](MANUAL-DE-MARCA.md))*
 
 **Promesa:** *Te devolvemos el **orden**, el **tiempo** y el **control** de tu empresa.*
 
-**Quiénes somos:** dos ingenieros de Quito, uno de **procesos** y uno de **informática y ciberseguridad**, que entran a tu empresa, encuentran qué te está frenando y lo dejan resuelto.
+**Quiénes somos:** un equipo de ingeniería con más de 7 años de experiencia combinada entre **Quito y Monterrey**: uno de **procesos** y uno de **informática y ciberseguridad**. Entramos a tu empresa, hacemos la cuenta y dejamos las cosas funcionando.
+
+**Contacto:** WhatsApp +593 96 368 4012 · bouw.contacto@gmail.com
 
 ---
 

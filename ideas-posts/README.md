@@ -1,5 +1,7 @@
 # ideas-posts/: contenido de Bouw para Facebook e Instagram
 
+> ⚠️ **Sistema visual descartado.** El papel, la tinta y el naranja #FF5B1F de estas maquetas ya no se usan. La marca oficial está en [`MANUAL-DE-MARCA.md`](../MANUAL-DE-MARCA.md) y las piezas vigentes en [`posts-bouw/`](../posts-bouw/).
+
 | Archivo | Qué hay |
 |---|---|
 | [`BANCO-DE-IDEAS.md`](BANCO-DE-IDEAS.md) | 60 ideas para **clínicas y gimnasios de Quito** organizadas en las 6 ramas de marketing, más un calendario de 4 semanas |

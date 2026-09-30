@@ -42,7 +42,7 @@
 ## 3. El portafolio de Bouw (calcado de Hanova, adaptado a Quito)
 
 **Frase de posicionamiento (estilo Hanova):**
-> *(Reemplazado.)* El mensaje propio de Bouw es **"Tu empresa, bien construida."** con las necesidades Orden · Tiempo · Control. Ver [`BOUW-EN-UNA-PAGINA.md`](BOUW-EN-UNA-PAGINA.md).
+> *(Reemplazado.)* El mensaje propio de Bouw es **"Del diseño a la realidad."** con las necesidades Orden · Tiempo · Control. Ver [`BOUW-EN-UNA-PAGINA.md`](BOUW-EN-UNA-PAGINA.md).
 
 | # | Servicio | Qué incluye | Quién lidera | Precio de referencia en Quito (a validar) |
 |---|---|---|---|---|
