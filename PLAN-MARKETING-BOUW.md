@@ -29,7 +29,7 @@
 |---|---|
 | **Marca personal de la fundadora** (profesora de consultoría en transformación digital en el Tec de Monterrey) | Tú y tu socio como **caras visibles**: perfiles de LinkedIn impecables, publicaciones propias, clases en educación continua (USFQ, PUCE, EPN, ESPE, UDLA) |
 | **Entrevistas en medios locales** (*Players of Life*) | Notas y columnas en *Revista Gestión*, *Ekos*, *Primicias*, *El Comercio*, podcasts de negocios de Quito |
-| **"No vendemos tecnología"** (independencia) | Mensaje central: *"Bouw no vende software. Diagnosticamos y construimos procesos eficientes, medibles y seguros."* |
+| Mensaje propio de la marca | Mensaje central de Bouw: *"Tu empresa, bien construida."* Orden · Tiempo · Control |
 | **Diagnóstico primero** (4–10 semanas) | **Mini diagnóstico gratis** como oferta de entrada en todos los canales |
 | **Pilares:** automatización, seguridad, innovación, adaptabilidad | **Pilares Bouw:** Procesos · Datos · Seguridad · IA aplicada |
 | **Testimonios de clientes** | 2–3 pilotos con descuento a cambio de testimonio y caso |
@@ -54,7 +54,7 @@
 ## 4. Mensajes
 
 **Frase principal:**
-> **"Bouw no vende software. Diagnosticamos cómo funciona tu empresa y construimos procesos más eficientes, medibles y seguros."**
+> **"Tu empresa, bien construida."** Te devolvemos el orden, el tiempo y el control de tu empresa. (Ver [`BOUW-EN-UNA-PAGINA.md`](BOUW-EN-UNA-PAGINA.md))
 
 **Mensajes de apoyo por pilar:**
 | Pilar | Mensaje |

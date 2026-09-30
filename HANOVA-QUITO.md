@@ -42,7 +42,7 @@
 ## 3. El portafolio de Bouw (calcado de Hanova, adaptado a Quito)
 
 **Frase de posicionamiento (estilo Hanova):**
-> **"Bouw no vende software. Diagnosticamos cómo funciona tu empresa y construimos procesos más eficientes, medibles y seguros."** (*bouw* = construir)
+> *(Reemplazado.)* El mensaje propio de Bouw es **"Tu empresa, bien construida."** con las necesidades Orden · Tiempo · Control. Ver [`BOUW-EN-UNA-PAGINA.md`](BOUW-EN-UNA-PAGINA.md).
 
 | # | Servicio | Qué incluye | Quién lidera | Precio de referencia en Quito (a validar) |
 |---|---|---|---|---|

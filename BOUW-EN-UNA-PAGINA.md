@@ -1,101 +1,91 @@
 # Bouw en una página
 
-> **Este documento define en qué se centra Bouw.** Todo lo demás (marketing, publicaciones, precios) se alinea con esto.
+> **Este documento define qué vende Bouw.** Marketing, publicaciones y conversaciones de venta se alinean con esto.
+> Regla: Bouw **no vende servicios**, vende la solución a **tres necesidades** que todo dueño de pyme reconoce.
 
 ---
 
-## Quiénes somos
+## La frase de Bouw
+> ## **Tu empresa, bien construida.**
+> *(bouw = construir)*
 
-**Bouw es una consultora de transformación digital para empresas de Quito.**
-Somos dos socios: uno de **procesos** (Ing. Industrial) y uno de **informática y ciberseguridad**.
+**Promesa:** *Te devolvemos el **orden**, el **tiempo** y el **control** de tu empresa.*
 
-### Nuestra promesa
-> **Evaluamos tu empresa, diseñamos la solución y te la entregamos funcionando: eficiente, medible y segura.**
-
-### Nuestra frase (al estilo Hanova)
-> **"No vendemos tecnología. Construimos soluciones que hacen que tu empresa funcione mejor."**
-> (*bouw* = construir)
+**Quiénes somos:** dos ingenieros de Quito, uno de **procesos** y uno de **informática y ciberseguridad**, que entran a tu empresa, encuentran qué te está frenando y lo dejan resuelto.
 
 ---
 
-## Nuestras 3 áreas
+## Las 3 necesidades que resolvemos
 
-### 1. Evaluación y estrategia
-**"Evaluamos tu empresa y te decimos dónde está el problema y qué hacer primero."**
-Analizamos cómo trabaja tu empresa hoy (procesos, sistemas, datos y seguridad) para encontrar dónde se pierde tiempo, dinero o información, y te entregamos un plan claro con prioridades.
-- **Entregas:** diagnóstico, mapa de procesos, hoja de ruta priorizada (qué hacer primero, cuánto cuesta, qué ganas).
-- **Lo lideran:** los dos socios.
+### 🧱 1. ORDEN: *"Que tu empresa funcione aunque no estés encima"*
+**Lo que dice el dueño:**
+- "Todo pasa por mí."
+- "Cada uno hace las cosas a su manera."
+- "Si alguien falta, se para todo."
 
-### 2. Procesos, automatización e IA
-**"Rediseñamos y automatizamos tus procesos para que tu equipo trabaje menos en lo repetitivo y mejor en lo que importa."**
-Eliminamos pasos innecesarios, doble digitación y tareas manuales. Aplicamos inteligencia artificial donde de verdad ayuda: **no reemplaza a tu equipo, lo hace más productivo.**
-- **Entregas:** procesos rediseñados y documentados, flujos automáticos, IA aplicada a tareas concretas, capacitación del equipo.
-- **Lo lidera:** el socio de procesos (Ing. Industrial).
+**Lo que necesita:** una empresa que camine sola, con procesos claros y responsables definidos.
+**Lo que Bouw entrega:** procesos ordenados y documentados, responsables por tarea, reglas simples que el equipo sí sigue.
+**Cómo sabe el cliente que funcionó:** deja de apagar incendios y la operación sigue aunque falte alguien.
+**Lo lidera:** el socio de procesos.
 
-### 3. Datos y seguridad
-**"Convertimos tus datos en decisiones y los protegemos."**
-Ponemos tus números en tableros claros para decidir a tiempo, y protegemos tu información: accesos, respaldos, continuidad ante fallas y cumplimiento de la Ley de Protección de Datos.
-- **Entregas:** tableros e indicadores, evaluación de seguridad, respaldos y plan de continuidad, políticas de uso de información.
-- **Lo lidera:** el socio de informática y ciberseguridad.
+### ⏱️ 2. TIEMPO: *"Que tu equipo haga más, sin contratar más"*
+**Lo que dice el dueño:**
+- "No nos alcanza el día."
+- "Escribimos lo mismo tres veces."
+- "Los errores nos cuestan plata."
+
+**Lo que necesita:** recuperar las horas que se van en tareas repetitivas y en corregir errores.
+**Lo que Bouw entrega:** automatización de lo repetitivo, eliminación de la doble digitación, inteligencia artificial en tareas concretas (cotizaciones, reportes, respuestas).
+**Cómo sabe el cliente que funcionó:** **horas recuperadas por semana**, medidas antes y después.
+**Lo lideran:** el socio de procesos, con el socio informático en las herramientas.
+
+### 🛡️ 3. CONTROL: *"Saber qué pasa en tu empresa y dormir tranquilo"*
+**Lo que dice el dueño:**
+- "Me entero de los números a fin de mes."
+- "No sé si mi información está segura."
+- "Si se daña la computadora, perdemos todo."
+
+**Lo que necesita:** ver sus números a tiempo y tener su información protegida.
+**Lo que Bouw entrega:** un tablero con los números clave cada lunes, respaldos que funcionan, accesos ordenados y un plan para fallas, ataques informáticos y apagones.
+**Cómo sabe el cliente que funcionó:** decide con datos de esta semana y sabe exactamente qué hacer si algo falla.
+**Lo lidera:** el socio de informática y ciberseguridad.
 
 ---
 
-## Cómo trabajamos
+## Cómo empieza todo: la **Radiografía Bouw**
+Una conversación gratuita de **1 hora** en la empresa del cliente:
+1. **Preguntamos:** *"¿Qué te quita más el sueño: el desorden, el tiempo o no tener el control?"*
+2. **Revisamos** un proceso clave y 5 puntos de seguridad.
+3. **Entregamos** en 24 horas una hoja con lo que encontramos y qué haríamos primero.
 
-```
-EVALUAR  →  DISEÑAR  →  IMPLEMENTAR  →  ACOMPAÑAR
-Entendemos   Proponemos    Lo construimos   Medimos resultados
-tu empresa   la solución    y lo dejamos     y ajustamos
-             que conviene   funcionando      mes a mes
-```
-
-- **Primero evaluamos, después proponemos.** Nunca vendemos una herramienta antes de entender el problema.
-- **Somos independientes:** no vendemos software de ninguna marca. Elegimos lo que le conviene a tu empresa.
-- **La seguridad va incluida** en todo lo que implementamos.
+Después: **propuesta → solución implementada → acompañamiento mensual**.
 
 ---
 
 ## Para quién
-Pequeñas y medianas empresas de Quito (de 10 a 200 personas) de **cualquier sector** que:
-- trabajan con Excel, papeles y WhatsApp, y sienten que se les va el tiempo en tareas repetitivas;
-- tienen un sistema que no aprovechan;
-- no ven sus números a tiempo;
-- nunca han revisado la seguridad de su información.
+Dueños y gerentes de pymes de Quito (10 a 200 personas), de **cualquier sector**, que sienten al menos una de las tres necesidades.
 
 ---
 
-## Lo que NO hacemos
-- No vendemos software ni licencias.
-- No hacemos marketing en redes ni publicidad para clientes.
-- No desarrollamos aplicaciones a medida desde cero: si hace falta, lo coordinamos con un aliado.
+## Cómo se habla de Bouw (guía de mensajes)
 
----
-
-## Hanova → Bouw (de dónde sale esto)
-
-| Hanova Consulting (Monterrey) | Bouw (Quito) |
+| En vez de decir… | Decimos… |
 |---|---|
-| Consultoría estratégica y evaluación tecnológica: *"Analizamos tu negocio para identificar oportunidades de mejora y definir dónde la digitalización genera mayor impacto"* | **1. Evaluación y estrategia** |
-| Optimización y automatización de procesos: *"Rediseñamos y automatizamos tus procesos para eliminar fricciones, reducir costos y ganar eficiencia operativa"* | **2. Procesos, automatización e IA** |
-| Inteligencia artificial: *"No reemplazamos a tu equipo, lo hacemos extraordinario"* | (dentro del área 2) |
-| Inteligencia de negocio: *"Convertimos tus datos en decisiones"* | **3. Datos y seguridad** |
-| Ciberseguridad industrial (portafolio anterior) | (dentro del área 3: es la fortaleza de tu socio) |
-| "No vendemos tecnología, diseñamos estrategias digitales" | "No vendemos tecnología. Construimos soluciones que hacen que tu empresa funcione mejor" |
-| "Tus socios en transformación digital" · 2–10 personas · fundada en 2021 | Dos socios · Quito · 2026 |
+| "Hacemos optimización de procesos" | "Tu empresa funciona aunque no estés encima" |
+| "Automatizamos con IA" | "Tu equipo recupera horas cada semana" |
+| "Hacemos BI y ciberseguridad" | "Ves tus números cada lunes y tu información está protegida" |
+| "Ofrecemos un diagnóstico" | "Te hacemos la Radiografía Bouw: 1 hora, gratis" |
+| "Somos consultores" | "Somos dos ingenieros que entran, encuentran qué te frena y lo dejan resuelto" |
 
-Hanova tiene 4 áreas. Bouw las resume en 3 porque la IA vive dentro de los procesos y porque su diferencia es juntar **datos + seguridad**, que es la especialidad de tu socio.
+**Regla de oro:** toda publicación y toda conversación empieza por **el problema del cliente** (sus palabras) y termina en **una de las tres necesidades** + *"Agenda tu Radiografía Bouw."*
 
 ---
 
-## Cómo se usa esto en el marketing
-- **Toda publicación cae en una de las 3 áreas** (o en "quiénes somos").
-- **Cierre de todo mensaje:** *"Agenda una evaluación gratuita."*
-- **Web, Facebook, Instagram y LinkedIn** muestran las mismas 3 áreas, con las mismas frases.
-- Pieza gráfica lista: `posts-bouw/png/p09-tres-areas.png`.
+## Lo que Bouw no hace
+- No revende licencias de software (usamos la herramienta que le conviene al cliente).
+- No maneja redes sociales ni publicidad para clientes.
+- No desarrolla aplicaciones grandes desde cero (si hace falta, coordinamos con un aliado).
 
 ---
 
-## Fuentes
-- [Hanova, sitio en español](https://hanova.mx/es/) · [Servicios](https://www.hanova.mx/servicios.html) · [Services (EN)](https://hanova.mx/services.html) · [Nosotros (EN)](https://hanova.mx/en/nosotros/) · [Contacto](https://hanova.mx/en/contacto/) · [LinkedIn](https://mx.linkedin.com/company/hanova-consulting) · [ZoomInfo](https://www.zoominfo.com/c/hanova-consulting/1311623585)
-
-> Mi entorno no pudo abrir el sitio de Hanova directamente. Las frases citadas vienen de los resúmenes de búsqueda de su sitio.
+*Referencia: el modelo de consultora de Hanova (Monterrey) sirvió como inspiración para la estructura (evaluar primero, pocas áreas, dos socios complementarios). El mensaje, los nombres y la promesa son propios de Bouw.*

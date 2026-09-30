@@ -6,7 +6,7 @@ Sistema visual: tinta, papel, naranja + **cuadrícula de plano** como motivo (*b
 | Archivo | Uso | Tamaño |
 |---|---|---|
 | `png/fb-portada.png` | Portada de la página de Facebook | 1640×624 |
-| `png/p09-tres-areas.png` | **Qué hacemos: las 3 áreas.** Publícala primero y fíjala en Facebook | 1080×1350 |
+| `png/p09-tres-areas.png` | **¿Qué te quita más el sueño? Orden · Tiempo · Control.** Publícala primero y fíjala en Facebook | 1080×1350 |
 | `png/p01…p08` | Feed de **Facebook e Instagram** (sirven también en LinkedIn) | 1080×1350 |
 | `png/li-01…li-03` | **Carrusel de LinkedIn** (súbelo como documento PDF o como imágenes) | 1080×1350 |
 | `png/li-04-erp.png` | Publicación de LinkedIn (sirve también en Facebook) | 1080×1350 |
@@ -23,7 +23,7 @@ Sistema visual: tinta, papel, naranja + **cuadrícula de plano** como motivo (*b
 
 | Semana | Facebook (principal) | Instagram | LinkedIn |
 |---|---|---|---|
-| 1 | Portada + **p09 Tres áreas (fijada)** + **p01 Manifiesto** + **p07 Socios** | p01 + historia | Presentación de los socios desde sus perfiles + p01 |
+| 1 | Portada + **p09 Orden·Tiempo·Control (fijada)** + **p01 Manifiesto** + **p07 Socios** | p01 + historia | Presentación de los socios desde sus perfiles + p01 |
 | 2 | **p02 Señales de Excel** + **p03 Doble digitación** | p02 + historia | **Carrusel li-01/02/03** (indicadores) |
 | 3 | **p04 Método** + **p06 Apagón** | p04 + historia | **li-04 ERP** + p06 |
 | 4 | **p05 Seguridad** + **p08 Mini diagnóstico** | p08 + historia | p05 + p08 |
@@ -36,18 +36,20 @@ Sistema visual: tinta, papel, naranja + **cuadrícula de plano** como motivo (*b
 
 ### p01 · Manifiesto
 **Facebook / Instagram**
-> Bouw no vende software. 🧱
-> Muchas empresas compran un sistema esperando que ordene todo… y terminan con el mismo desorden, pero más caro.
-> Nosotros empezamos al revés: entendemos cómo funciona tu empresa, encontramos dónde se pierde tiempo y dinero, y recién ahí construimos la solución, sea o no un software.
-> Procesos · Datos · Seguridad · IA aplicada.
-> 📍 Quito · Agenda tu mini diagnóstico gratis por mensaje.
-> #Quito #PymesEcuador #Emprendedores #Procesos #TransformaciónDigital
+> Tu empresa, bien construida. 🧱
+> Orden, para que funcione aunque no estés encima.
+> Tiempo, para que tu equipo haga más sin contratar más.
+> Control, para ver tus números a tiempo y dormir tranquilo.
+> Somos dos ingenieros de Quito: entramos a tu empresa, encontramos qué te frena y lo dejamos resuelto.
+> 📍 Agenda tu Radiografía Bouw gratis (1 hora) por mensaje.
+> #Quito #PymesEcuador #Emprendedores #Procesos #Productividad
 
 **LinkedIn** (desde el perfil de un socio)
-> Hoy lanzamos Bouw con una idea sencilla: **no vendemos software.**
-> En muchas pymes de Quito el problema no es la falta de un sistema, sino procesos que nadie ha dibujado, datos repetidos en 3 lugares y cero protección de la información.
-> Somos dos ingenieros, uno de procesos y otro de ciberseguridad, y trabajamos con un método: entender, diagnosticar, priorizar, construir, asegurar y medir.
-> Si diriges una pyme y quieres saber dónde se escapa el tiempo en tu operación, este mes hacemos mini diagnósticos gratuitos de 1 hora. Escríbeme.
+> Hoy lanzamos Bouw. Después de hablar con muchos dueños de pymes, escuchamos siempre tres frases:
+> "Todo pasa por mí." "No nos alcanza el día." "Me entero de los números a fin de mes."
+> Detrás de esas frases hay tres necesidades: **orden, tiempo y control**. Eso es lo que resolvemos.
+> Somos dos ingenieros, uno de procesos y otro de informática y ciberseguridad. Entramos a la empresa, encontramos qué la frena y lo dejamos resuelto.
+> Este mes hacemos Radiografías Bouw gratuitas de 1 hora. Si una de esas frases te suena, escríbeme.
 
 ### p02 · 5 señales de que tu empresa vive en Excel
 **Facebook / Instagram**
@@ -132,10 +134,10 @@ Sistema visual: tinta, papel, naranja + **cuadrícula de plano** como motivo (*b
 ### Historia · Mini diagnóstico
 Usa el sticker de enlace o "Enviar mensaje" y una encuesta: *"¿Tu empresa vive en Excel? Sí / Un poco"*.
 
-### p09 · Qué hacemos: las 3 áreas (fijar en Facebook)
-> Evaluamos tu empresa y te entregamos soluciones que funcionan. 🧱
-> 1️⃣ Evaluación y estrategia: te decimos dónde está el problema y qué hacer primero.
-> 2️⃣ Procesos, automatización e IA: menos tareas repetitivas, menos errores, menos costo.
-> 3️⃣ Datos y seguridad: tus números para decidir a tiempo, y tu información protegida.
-> No vendemos tecnología. Construimos soluciones que hacen que tu empresa funcione mejor.
-> 📍 Quito · Agenda tu evaluación gratuita por mensaje.
+### p09 · ¿Qué te quita más el sueño? (fijar en Facebook)
+> ¿Qué te quita más el sueño? 👇
+> 1️⃣ ORDEN: "Todo pasa por mí." Te dejamos una empresa que funciona aunque no estés encima.
+> 2️⃣ TIEMPO: "No nos alcanza el día." Tu equipo recupera horas cada semana, sin contratar más.
+> 3️⃣ CONTROL: "Me entero a fin de mes." Tus números cada lunes y tu información protegida.
+> Cuéntanos en los comentarios: ¿1, 2 o 3?
+> Tu empresa, bien construida. 📍 Quito · Agenda tu Radiografía Bouw gratis por mensaje.
