@@ -22,3 +22,13 @@ C05-carrusel-proyectos:1080x1350
 C06-carrusel-proyectos:1080x1350
 C07-carrusel-proyectos:1080x1350
 A01-anuncio-la-cuenta-1200x627:1200x627
+Q01-calidad-el-inspector:1080x1350
+Q02-calidad-trazabilidad:1080x1350
+Q03-calidad-informe-auditoria:1080x1350
+Q04-calidad-capa-8d:1080x1350
+Q05-calidad-lotes-retenidos:1080x1350
+Z01-automatizacion-si-se-repite:1080x1350
+Z02-automatizacion-copiar-datos:1080x1350
+Z03-automatizacion-cierre-de-mes:1080x1350
+Z04-automatizacion-tres-archivos:1080x1350
+Z05-automatizacion-no-todo:1080x1350

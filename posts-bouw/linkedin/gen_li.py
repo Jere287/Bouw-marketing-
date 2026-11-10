@@ -508,6 +508,221 @@ add('A01-anuncio-la-cuenta-1200x627', 1200, 627,
     + '<div class="abs mono" style="left:808px;top:456px;width:200px;font-size:14px;line-height:22px">Al año</div>'
     + '<div class="abs h" style="left:808px;top:480px;width:300px;font-size:50px;line-height:54px;color:#4fd6e8">48 horas</div>')
 
+# =====================================================================
+# 5. SERIES 1080×1350 · CALIDAD (Q01–Q05) y AUTOMATIZACIÓN (Z01–Z05)
+#    Todo sale del sitio: servicio Cumplimiento & BPM, informe de auditoría, Programa contable,
+#    "¿Cuál te suena?" y la calculadora con sus tres veredictos.
+# =====================================================================
+OR, CY, RED, YEL, GRN = '#f79b4a', '#4fd6e8', '#ff6b5e', '#f2c94c', '#5ad19a'
+
+
+def serie(code, n, tema, color):
+    return (logo(M, 50, 190)
+            + f'<div class="abs" style="left:{W - M - 330}px;top:78px;width:330px;height:44px;border:2px solid {color};border-radius:22px"></div>'
+            + f'<div class="abs mono" style="left:{W - M - 330}px;top:78px;width:330px;height:44px;text-align:center;font-size:16px;line-height:40px;color:{color}">{tema} · {n} / 5</div>'
+            + f'<div class="rule" style="left:{M}px;top:156px;width:{IW}px"></div>')
+
+
+def check(x, y, txt, col=GRN, size=28, w=IW):
+    return (f'<div class="abs" style="left:{x}px;top:{y + 4}px;width:36px;height:36px;border-radius:18px;background:{col};color:#04101f;'
+            f'font-family:Archivo;font-weight:800;font-size:24px;line-height:36px;text-align:center">✓</div>'
+            f'<div class="abs p" style="left:{x + 56}px;top:{y}px;width:{w - 56}px;font-size:{size}px;line-height:44px;color:#e8eef6">{txt}</div>')
+
+
+def cross(x, y, txt, size=28, w=IW):
+    return (f'<div class="abs" style="left:{x}px;top:{y + 4}px;width:36px;height:36px;border-radius:18px;border:2px solid {RED};color:{RED};'
+            f'font-family:Archivo;font-weight:800;font-size:22px;line-height:32px;text-align:center">✕</div>'
+            f'<div class="abs p" style="left:{x + 56}px;top:{y}px;width:{w - 56}px;font-size:{size}px;line-height:44px;color:#c6d4e4">{txt}</div>')
+
+
+def box(x, y, w, h, txt, col='#23415f', tc='#e8eef6', fs=24, bg='#071a2f'):
+    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:{bg};border:2px solid {col};border-radius:12px"></div>'
+            f'<div class="abs k" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;text-align:center;font-size:{fs}px;line-height:{h}px;color:{tc}">{txt}</div>')
+
+
+def line(x1, y1, x2, y2, col='#23415f', wd=3, dash=''):
+    d = f' stroke-dasharray="{dash}"' if dash else ''
+    return (f'<svg class="abs" style="left:0;top:0" width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">'
+            f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{col}" stroke-width="{wd}"{d}/></svg>')
+
+
+def callout(top, h, label, txt, col=CY, size=27):
+    return (f'<div class="panel" style="left:{M}px;top:{top}px;width:{IW}px;height:{h}px"></div>'
+            f'<div class="abs" style="left:{M}px;top:{top}px;width:6px;height:{h}px;background:{col};border-radius:3px"></div>'
+            f'<div class="abs mono" style="left:{M + 40}px;top:{top + 26}px;width:600px;font-size:17px;line-height:24px;color:{col}">{label}</div>'
+            + para(txt, top + 62, size=size, lh=round(size * 1.38), color='#e8eef6', width=IW - 80, left=M + 40))
+
+
+# ---------- CALIDAD ----------
+post('Q01-calidad-el-inspector',
+     serie('Q', 1, 'Calidad', OR)
+     + kicker('Cumplimiento normativo &amp; BPM', color=OR)
+     + title('¿Y si el inspector llega <span class="o">mañana</span>, sin avisar?', 92, top=256)
+     + para('Si hoy tendrías que pasar la noche buscando papeles, el problema no es la auditoría: es el sistema.', 560, size=30, lh=42)
+     + f'<div class="panel" style="left:{M}px;top:700px;width:{IW}px;height:430px"></div>'
+     + f'<div class="abs mono" style="left:{M + 40}px;top:730px;width:600px;font-size:17px;line-height:24px;color:{CY}">Con BOUW, la carpeta ya está armada</div>'
+     + check(M + 40, 780, 'Expedientes estandarizados', w=IW - 80)
+     + check(M + 40, 862, 'Cada registro con su sitio y su responsable', w=IW - 80)
+     + check(M + 40, 944, 'La trazabilidad en pantalla', w=IW - 80)
+     + check(M + 40, 1026, 'Carpetas de inspección listas 24/7', w=IW - 80)
+     + footer('Prepara tu planta antes de tu próxima inspección.', 'Diagnóstico gratis'))
+
+# Q02 · Trazabilidad: el lote 2410 del informe de auditoría del sitio
+tr = (box(M, 640, 250, 76, 'PT 2410', CY, CY, 26) + box(M + 331, 640, 250, 76, 'Mezcla 118') + box(M + 662, 640, 250, 76, 'Envase 77')
+      + line(M + 250, 678, M + 331, 678, CY) + line(M + 581, 678, M + 662, 678, CY))
+for i, (mp, bad) in enumerate([('MP-03', 0), ('MP-07', 0), ('✕ MP-12', 1), ('MP-21', 0)]):
+    x = M + i * 234
+    tr += line(M + 456, 716, x + 102, 800, RED if bad else '#23415f', 3, '8 6' if bad else '')
+    tr += box(x, 800, 204, 72, mp, RED if bad else '#23415f', RED if bad else '#c6d4e4', 24, '#2a1416' if bad else '#071a2f')
+tr += f'<div class="abs mono" style="left:{M}px;top:890px;width:{IW}px;text-align:right;font-size:16px;line-height:24px;color:{RED}">MP-12 sin registro: el rastro se corta</div>'
+post('Q02-calidad-trazabilidad',
+     serie('Q', 2, 'Calidad', OR)
+     + kicker('Trazabilidad · lote 2410', color=OR)
+     + title('El rastro se corta en <span style="color:#ff6b5e">MP-12</span>.', 88, top=256)
+     + para('Un solo registro que falta y ya no puedes demostrar de qué materia prima salió tu producto terminado.', 456, size=29, lh=40)
+     + f'<div class="abs mono" style="left:{M}px;top:592px;width:{IW}px;font-size:16px;line-height:24px">Genealogía del lote · planta de ejemplo</div>'
+     + tr
+     + callout(948, 196, 'Con BOUW', 'Control de lotes y genealogía rastreable en minutos: del producto terminado a sus materias primas, sus equipos y quién lo hizo.', size=25)
+     + footer('Sin revolver archivos.', 'Diagnóstico gratis'))
+
+# Q03 · Informe de auditoría BPM (planta de ejemplo del sitio)
+hall = [('Trazabilidad', 'Crítico', RED), ('CAPA', 'Mayor', OR), ('Expedientes digitales', 'Menor', YEL),
+        ('Liberación', 'Menor', YEL), ('Registros de lote', 'Cumple', GRN), ('Integridad de datos', 'Cumple', GRN)]
+tab = f'<div class="panel" style="left:{M}px;top:700px;width:{IW}px;height:420px"></div>'
+tab += f'<div class="abs mono" style="left:{M + 34}px;top:722px;width:500px;font-size:15px;line-height:22px">Hallazgos del inspector</div>'
+tab += f'<div class="abs mono" style="left:{W - M - 234}px;top:722px;width:200px;text-align:right;font-size:15px;line-height:22px">Gravedad</div>'
+for i, (h_, g, c) in enumerate(hall):
+    y = 760 + i * 58
+    tab += (f'<div class="rule" style="left:{M + 2}px;top:{y}px;width:{IW - 4}px"></div>'
+            f'<div class="abs p" style="left:{M + 34}px;top:{y + 10}px;width:520px;font-size:25px;line-height:38px;color:#e8eef6">{h_}</div>'
+            f'<div class="abs" style="left:{W - M - 194}px;top:{y + 11}px;width:160px;height:36px;border-radius:18px;background:{c}22;border:2px solid {c}"></div>'
+            f'<div class="abs k" style="left:{W - M - 194}px;top:{y + 11}px;width:160px;text-align:center;font-size:18px;line-height:36px;color:{c}">{g.upper()}</div>')
+post('Q03-calidad-informe-auditoria',
+     serie('Q', 3, 'Calidad', OR)
+     + kicker('Informe de auditoría BPM · planta de ejemplo', color=OR)
+     + title('Preparación: <span class="o">33 %</span>.<br>No lista.', 96, top=256)
+     + stats([('1', 'Crítico'), ('1', 'Mayor'), ('2', 'Menor'), ('3', 'Lotes retenidos')], 470, num=88, color=OR)
+     + tab
+     + footer('Con BOUW: la lista en verde y el lote liberado.', 'Agendar diagnóstico'))
+
+# Q04 · Reincidencia de desviaciones → CAPA con 8D
+loop = ''
+for i, t_ in enumerate(['Desviación', 'Parche rápido', 'Vuelve a pasar']):
+    x = M + 40 + i * 284
+    loop += box(x, 690, 250, 70, t_, OR, '#e8eef6', 21)
+    if i < 2:
+        loop += line(x + 250, 725, x + 284, 725, OR)
+ok = ''
+for i, t_ in enumerate(['Causa raíz', 'Acción', 'Prueba ✓']):
+    x = M + 40 + i * 284
+    ok += box(x, 930, 250, 70, t_, CY, CY, 21)
+    if i < 2:
+        ok += line(x + 250, 965, x + 284, 965, CY)
+post('Q04-calidad-capa-8d',
+     serie('Q', 4, 'Calidad', OR)
+     + kicker('Reincidencia de desviaciones', color=OR)
+     + title('Si la desviación vuelve cada mes, no está cerrada.', 80, top=256)
+     + f'<div class="panel" style="left:{M}px;top:600px;width:{IW}px;height:190px"></div>'
+     + f'<div class="abs mono" style="left:{M + 40}px;top:626px;width:500px;font-size:17px;line-height:24px;color:{OR}">● Hoy</div>' + loop
+     + f'<div class="panel" style="left:{M}px;top:840px;width:{IW}px;height:190px"></div>'
+     + f'<div class="abs mono" style="left:{M + 40}px;top:866px;width:700px;font-size:17px;line-height:24px;color:{CY}">● Con BOUW · Sistema CAPA con causa raíz (8D)</div>' + ok
+     + para('Cada desviación se cierra con su causa, su acción y la prueba de que funcionó, para que no vuelva el mes siguiente.', 1056, size=25, lh=34)
+     + footer('CAPA · 8D · Causa raíz · Auditorías internas', 'Hablemos'))
+
+# Q05 · Burocracia y lotes retenidos
+post('Q05-calidad-lotes-retenidos',
+     serie('Q', 5, 'Calidad', OR)
+     + kicker('Burocracia y lotes retenidos', color=OR)
+     + title('Ningún lote debería esperar a que aparezca un papel.', 80, top=256)
+     + photo('cumplimiento-es-poster', M, 520, IW, 380)
+     + hoy_bouw('Papeles sueltos, archivadores desbordados, la alarma encendida y un lote retenido.',
+                'Revisiones en paralelo y una sola firma por paso. Expedientes en orden y el lote liberado.', 930, 216)
+     + footer('Agenda un diagnóstico de calidad gratis.', 'Diagnóstico gratis'))
+
+# ---------- AUTOMATIZACIÓN ----------
+post('Z01-automatizacion-si-se-repite',
+     serie('Z', 1, 'Automatización', CY)
+     + hero(250, 170, 720, 0.5)
+     + f'<div class="abs serif" style="left:{M}px;top:640px;width:{IW}px;font-size:118px;line-height:118px">Si se repite,<br>{grad("se automatiza.")}</div>'
+     + f'<div class="abs mono" style="left:{M}px;top:910px;width:{IW}px;font-size:17px;line-height:24px">¿Cuál de estas pasa en tu empresa?</div>'
+     + check(M, 950, 'El cierre de mes lo arma alguien a mano.', CY, 27)
+     + check(M, 1010, 'La misma información vive en tres archivos.', CY, 27)
+     + check(M, 1070, 'Alguien copia datos de un sitio a otro.', CY, 27)
+     + footer('Cuéntanos cuál y te decimos qué haríamos primero.', 'Hablemos'))
+
+calc2 = f'<div class="panel" style="left:{M}px;top:560px;width:{IW}px;height:330px"></div>'
+for i, (l_, v_) in enumerate([('Veces por semana', '5'), ('Minutos cada vez', '× 30'), ('Personas que intervienen', '× 2'), ('Semanas al año', '× 48')]):
+    y = 560 + i * 64
+    calc2 += (f'<div class="abs p" style="left:{M + 34}px;top:{y + 14}px;width:600px;font-size:26px;line-height:36px">{l_}</div>'
+              f'<div class="abs k" style="left:{W - M - 334}px;top:{y + 14}px;width:300px;text-align:right;font-size:28px;line-height:36px">{v_}</div>'
+              f'<div class="rule" style="left:{M + 2}px;top:{y + 63}px;width:{IW - 4}px"></div>')
+calc2 += (f'<div class="abs" style="left:{M + 2}px;top:818px;width:{IW - 4}px;height:70px;background:#0d2b48;border-radius:0 0 16px 16px"></div>'
+          f'<div class="abs mono" style="left:{M + 34}px;top:842px;width:300px;font-size:18px;line-height:24px;color:#c6d4e4">Al año</div>'
+          f'<div class="abs h" style="left:{W - M - 434}px;top:824px;width:400px;text-align:right;font-size:54px;line-height:58px;color:{CY}">240 horas</div>')
+post('Z02-automatizacion-copiar-datos',
+     serie('Z', 2, 'Automatización', CY)
+     + kicker('La cuenta')
+     + title('Alguien pasa horas cada semana copiando datos de un sitio a otro.', 66, top=256)
+     + para('Media hora, cinco veces por semana, entre dos personas. Parece poco. Haz la cuenta:', 470, size=27, lh=37)
+     + calc2
+     + f'<div class="abs mono" style="left:{M}px;top:920px;width:300px;font-size:17px;line-height:24px;color:{GRN}">Veredicto</div>'
+     + f'<div class="abs t" style="left:{M}px;top:952px;width:{IW}px;font-size:44px;line-height:50px">Aquí sí.</div>'
+     + para('Más de 150 horas al año: casi un mes de trabajo de una persona, todos los años. Se cierra alcance y precio en 3 a 5 días.', 1012, size=24, lh=33)
+     + footer('Haz la cuenta con tu tarea en la calculadora.', 'Hacer la cuenta'))
+
+post('Z03-automatizacion-cierre-de-mes',
+     serie('Z', 3, 'Automatización', CY)
+     + kicker('Proyecto real · Programa contable')
+     + title('El cierre de mes ya no se arma a mano.', 84, top=256)
+     + photo('contable-excel-pantalla-poster', M, 460, IW, 400, pos='top')
+     + stats([('11', 'Hojas conectadas'), ('1', 'Archivo, cero licencias'), ('0', 'Migraciones de sistema')], 890, num=80)
+     + para('<span class="k" style="font-size:17px;letter-spacing:0.2em">RESULTADO&nbsp;&nbsp;</span>Se genera solo desde los movimientos ya capturados. El equipo siguió en el Excel que ya sabía usar.', 1060, size=24, lh=33)
+     + footer('Excel · VBA · Inventario · Kits / BOM · Dashboard', 'Hablemos'))
+
+files = ''
+for i, (n_, t_) in enumerate([('ventas_final.xlsx', '$12 430'), ('ventas_final_v2.xlsx', '$12 910'), ('ventas_REAL.xlsx', '$11 870')]):
+    y = 560 + i * 110
+    files += (f'<div class="panel" style="left:{M}px;top:{y}px;width:400px;height:90px;border-color:#5a2a2a"></div>'
+              f'<div class="abs k" style="left:{M + 24}px;top:{y + 12}px;width:360px;font-size:20px;line-height:30px;color:#c6d4e4">{n_}</div>'
+              f'<div class="abs h" style="left:{M + 24}px;top:{y + 46}px;width:250px;font-size:30px;line-height:34px;color:{RED}">{t_}</div>')
+one = (f'<div class="abs" style="left:{M + 470}px;top:560px;width:442px;height:310px;background:#08243a;border:2px solid {CY};border-radius:18px"></div>'
+       f'<div class="abs mono" style="left:{M + 500}px;top:584px;width:400px;font-size:16px;line-height:24px;color:{CY}">1 archivo · 11 hojas conectadas</div>')
+for i, h_ in enumerate(['Clientes', 'Productos', 'Componentes', 'Kits', 'Ventas', 'Compras y gastos', 'Anticipos', 'Tablero']):
+    x = M + 500 + (i % 2) * 196
+    y = 628 + (i // 2) * 56
+    one += (f'<div class="abs" style="left:{x}px;top:{y}px;width:184px;height:44px;border-radius:8px;background:#0d3350"></div>'
+            f'<div class="abs p" style="left:{x}px;top:{y}px;width:184px;text-align:center;font-size:19px;line-height:44px;color:#e8eef6">{h_}</div>')
+post('Z04-automatizacion-tres-archivos',
+     serie('Z', 4, 'Automatización', CY)
+     + kicker('¿Te suena?')
+     + title('La misma información en tres archivos. <span class="dim">Ninguno cuadra.</span>', 70, top=256)
+     + f'<div class="abs mono" style="left:{M}px;top:520px;width:400px;font-size:16px;line-height:24px;color:{RED}">Hoy · ejemplo</div>'
+     + f'<div class="abs mono" style="left:{M + 470}px;top:520px;width:400px;font-size:16px;line-height:24px;color:{CY}">Con BOUW</div>'
+     + files
+     + line(M + 410, 715, M + 462, 715, CY, 4)
+     + one
+     + callout(920, 200, 'Resultado', 'Una sola fuente de verdad, sin migrar a otro sistema ni pagar licencias nuevas. El tablero se recalcula solo.', size=26)
+     + footer('Si se repite, se automatiza.', 'Hablemos'))
+
+ver = ''
+for i, (rng, ttl, body, c) in enumerate([
+        ('Menos de 40 h/año', 'No lo automatices', 'Un proyecto para esto cuesta más de lo que ahorra. Si la tarea crece, vuelve a hacer la cuenta.', RED),
+        ('40 a 150 h/año', 'Está en la frontera', 'Sale a cuenta si además te está costando errores. Si solo son las horas, espera.', YEL),
+        ('Más de 150 h/año', 'Aquí sí', 'Casi un mes de trabajo de una persona, todos los años. Se construye en 4 a 10 semanas.', GRN)]):
+    y = 560 + i * 196
+    ver += (f'<div class="panel" style="left:{M}px;top:{y}px;width:{IW}px;height:176px"></div>'
+            f'<div class="abs" style="left:{M}px;top:{y}px;width:8px;height:176px;background:{c};border-radius:4px"></div>'
+            f'<div class="abs k" style="left:{M + 40}px;top:{y + 26}px;width:360px;font-size:20px;line-height:30px;color:{c}">{rng}</div>'
+            f'<div class="abs t" style="left:{M + 400}px;top:{y + 20}px;width:480px;font-size:36px;line-height:42px">{ttl}</div>'
+            + para(body, y + 78, size=24, lh=33, width=IW - 80, left=M + 40))
+post('Z05-automatizacion-no-todo',
+     serie('Z', 5, 'Automatización', CY)
+     + kicker('Lo que nadie te dice')
+     + title('No todo hay que automatizarlo.', 92, top=256)
+     + para('Nuestra calculadora te lo dice antes que nosotros. Así decidimos qué vale la pena:', 470, size=28, lh=38)
+     + ver
+     + footer('Haz la cuenta con tu tarea en 30 segundos.', 'Hacer la cuenta'))
+
 # ---------- escribir ----------
 for f in os.listdir(OUT):
     if f.endswith('.html'):
