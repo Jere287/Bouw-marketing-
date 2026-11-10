@@ -1,23 +1,21 @@
 # Facebook BOUW: formatos, sello y calendario día por día
 
 > Todo sigue el [`MANUAL-DE-MARCA.md`](../MANUAL-DE-MARCA.md): navy, cian técnico, **un solo naranja por pieza (el botón)**, Archivo Expanded + IBM Plex.
-> **El sello de BOUW es el dragón del sitio**, redibujado como silueta heráldica plana (un solo color, vector). Se ve igual de nítido en una foto de perfil de 176 px que en una lona.
+> **El logo de BOUW es el del sitio oficial** (`logo-bouw.svg`, el mismo de bouw-eight.vercel.app), con sus colores y degradados originales. No se redibuja ni se recolorea.
 
 ---
 
-## 1. El sello: sistema de logo "responsivo"
-
-Como hacen las marcas grandes (Starbucks, Mastercard, Firefox), el logo tiene **versiones según el tamaño**: con texto cuando hay espacio y solo el símbolo cuando es pequeño. Así "QUITO · MONTERREY" nunca se pone ilegible.
+## 1. El logo: dónde va
 
 | Archivo (`sello/`) | Qué es | Dónde se usa |
 |---|---|---|
-| `sello-bouw.png` / `.svg` (1200×1200, fondo transparente) | Sello completo: dragón + **BOUW** grande arriba + **QUITO · MONTERREY** abajo | Tamaños **de 300 px en adelante**: propuestas, portada de documentos, firma de correo grande, stickers, lona |
-| `marca-dragon.png` / `.svg` | Solo el dragón dentro de un anillo, **sin texto** | Tamaños chicos: pie de las publicaciones (108 px), avatar, favicon |
-| `fb-perfil-720.png` (720×720) | La marca sobre navy | **Foto de perfil** de Facebook, Instagram y WhatsApp Business |
-| `emblema-dragon.svg` (cian) · `-blanco.svg` · `-navy.svg` | El dragón solo, detallado | Piezas "héroe" (F02, H01, portada), marca de agua (F11 en contorno) |
-| `emblema-dragon-simple.svg` | Dragón con menos detalle | Cuando el dragón mide **menos de 120 px** |
+| `logo-bouw.svg` | Logo oficial en vector | Imprenta, propuestas, cualquier tamaño |
+| `logo-bouw.png` (fondo transparente) | El mismo logo en imagen | Documentos, presentaciones, firma de correo |
+| `fb-perfil-720.png` (720×720) | Logo centrado sobre navy | **Foto de perfil** de Facebook, Instagram y WhatsApp Business |
 
-**Reglas del sello:** va sobre navy `#04101F` (o en navy sobre fondo claro con `emblema-dragon-navy.svg`); no se deforma, no se le ponen sombras ni efectos 3D; una sola aparición grande por pieza (la marca chica del pie no cuenta). Debajo de 300 px **no** se usa el sello con texto: se usa `marca-dragon`.
+En las piezas el logo aparece arriba (junto a "BOUW") y en el pie. Para LinkedIn mira [`linkedin/LINKEDIN-CAMPANA.md`](linkedin/LINKEDIN-CAMPANA.md).
+
+**Reglas:** siempre sobre navy `#04101F`; no se deforma ni se recolorea; una sola aparición grande por pieza.
 
 ---
 
@@ -26,7 +24,7 @@ Como hacen las marcas grandes (Starbucks, Mastercard, Firefox), el logo tiene **
 | Pieza | Tamaño que subes | Cómo se ve | Zona segura | Archivo listo |
 |---|---|---|---|---|
 | **Foto de perfil** | 720×720 (mínimo 196) | Círculo de 176 px en computadora y 196 px en celular | Lo importante dentro del círculo central | `sello/fb-perfil-720.png` |
-| **Portada** | **1640×624** | 820×312 en computadora; en celular se recorta a los lados | Texto y dragón entre x = 280 y x = 1370 (el centro). Nada importante en la esquina inferior izquierda (la tapa la foto de perfil) | Express: *Portada* · `adobe/png/bouw-fb-portada-01.png` |
+| **Portada** | **1640×624** | 820×312 en computadora; en celular se recorta a los lados | Texto y logo entre x = 280 y x = 1370 (el centro). Nada importante en la esquina inferior izquierda (la tapa la foto de perfil) | Express: *Portada* · `adobe/png/bouw-fb-portada-01.png` |
 | **Publicación del feed** | **1080×1350 (4:5)** | Ocupa más pantalla en el celular que el cuadrado | 60 px de margen; el pie con el sello queda dentro | Express: *Semana 1–4* · `adobe/png/bouw-fb-semana*.png` |
 | Publicación cuadrada | 1080×1080 | Para carruseles | — | Se genera desde `posts.html` si hace falta |
 | **Historia** | **1080×1920 (9:16)** | Pantalla completa | Deja libres **250 px arriba y abajo** (ahí van el nombre de la página y la caja de respuesta) | Express: *Historias* · `adobe/png/bouw-fb-historias-*.png` |
@@ -42,19 +40,19 @@ Como hacen las marcas grandes (Starbucks, Mastercard, Firefox), el logo tiene **
 
 ## 3. Diseños en Adobe Express (editables)
 
-Cada documento se abre en Adobe Express con los textos editables, las tipografías de la marca (Adobe Fonts), la retícula, el logo y el dragón como **vectores editables** (puedes cambiarles color o tamaño sin perder calidad).
+Cada documento se abre en Adobe Express con los textos editables, las tipografías de la marca (Adobe Fonts), la retícula y el logo oficial como **vectores editables** (con sus degradados).
 
 | Documento | Páginas | Enlace |
 |---|---|---|
-| Portada Facebook 1640×624 | 1 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:a10ed361-20f4-4b84-a611-26823ca1e720) |
-| Semana 1 (5–8 oct) | F01 · F02 · F03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:1a28cf60-e38d-41e1-9907-a49f4497a168) |
-| Semana 2 (12–16 oct) | F04 · F05 · F06 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:b72cfcc0-0dda-4d78-bf43-aa817c380793) |
-| Semana 3 (19–23 oct) | F07 · F08 · F09 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:e172aff3-605e-4a8f-b8c1-61b2193abdd5) |
-| Semana 4 (26–28 oct) | F11 · F10 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:e819cbf4-7a97-4829-bee9-540f432a81c5) |
-| Historias 1080×1920 | H01 · H02 · H03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:98209196-2e07-43eb-8065-aef8992924dc) |
+| Portada Facebook 1640×624 | 1 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:cb8c4ffe-bed7-4537-991f-c382a719e2cc) |
+| Semana 1 (5–8 oct) | F01 · F02 · F03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:4bc328bc-f1b1-4b3a-bb09-d2b06089e971) |
+| Semana 2 (12–16 oct) | F04 · F05 · F06 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:b4bd5448-aade-4e62-bdba-1f88dad84963) |
+| Semana 3 (19–23 oct) | F07 · F08 · F09 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:c7368554-2657-4d24-91f4-f474d5b773c0) |
+| Semana 4 (26–28 oct) | F11 · F10 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:5a8faf00-d51d-49a5-8076-ac94d40acc9f) |
+| Historias 1080×1920 | H01 · H02 · H03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:3dc91e3f-ac8b-4a9c-99e7-19f8c69f220b) |
 
 > **F03 (Dos ingenieros):** antes de publicarla, reemplaza los recuadros "[ Foto socio 1/2 ]" por fotos reales (en Express: arrastra la foto sobre el recuadro) y pon los nombres.
-> En la cuenta de Adobe quedaron las versiones anteriores (con el dragón 3D, sin "(v2)" en el nombre) y cuatro documentos de prueba ("prueba imagen", "prueba css", "prueba svg" y una primera "Portada"). Se pueden borrar: los buenos son los que dicen **(v2)**.
+> En la cuenta de Adobe quedaron versiones anteriores (con el dragón, y las que dicen "v2"). Se pueden borrar: las buenas son las que dicen **(logo oficial)**.
 
 ---
 
@@ -76,7 +74,7 @@ Cada documento se abre en Adobe Express con los textos editables, las tipografí
 |---|---|---|---|---|
 | **Lun 5** | 07:30 | Publicación · **fijarla arriba** | F01 ¿Qué te quita más el sueño? | ver §5 · F01 |
 | Lun 5 | 12:30 | Historia | H02 ¿1, 2 o 3? | "Respóndenos con el número" |
-| **Mié 7** | 12:30 | Publicación | F02 Del diseño a la realidad (dragón) | §5 · F02 |
+| **Mié 7** | 12:30 | Publicación | F02 Del diseño a la realidad  | §5 · F02 |
 | Mié 7 | 19:30 | Historia | H01 ¿Excel y WhatsApp? | — |
 | **Jue 8** | 19:30 | Publicación | F03 Dos ingenieros (con fotos) | §5 · F03 |
 | Vie 9 | — | **Feriado (Independencia de Guayaquil)**: no publicar | — | Solo responder mensajes |
@@ -102,7 +100,7 @@ Cada documento se abre en Adobe Express con los textos editables, las tipografí
 ### Semana 4: pedir la Radiografía
 | Día | Hora | Qué | Pieza | Texto |
 |---|---|---|---|---|
-| **Lun 26** | 07:30 | Publicación | F11 Radiografía (dragón en contorno) | §5 · F11 |
+| **Lun 26** | 07:30 | Publicación | F11 Radiografía  | §5 · F11 |
 | Lun 26 | — | **Promoción pagada** (opcional) de F11: USD 3/día × 7 días. Público: Quito + 25 km, 28–60 años, intereses *pequeñas empresas, emprendimiento, administración de empresas*. Botón: *Enviar mensaje de WhatsApp* | F11 | — |
 | Mar 27 | 12:30 | Historia | H02 ¿1, 2 o 3? | — |
 | **Mié 28** | 12:30 | Publicación | F10 Antes de comprar un ERP | §5 · F10 |

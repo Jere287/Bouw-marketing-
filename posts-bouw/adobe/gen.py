@@ -3,7 +3,7 @@
 Cada documento es una serie de .slide con posición absoluta. Las imágenes van en base64.
 Salida: out/<doc>.html (exportar) y out/<doc>.preview.html (fuentes locales, para revisar).
 """
-import base64, os, html
+import base64, os, html, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 A = os.path.join(HERE, 'assets')
@@ -18,41 +18,31 @@ def uri(name):
         return 'data:image/png;base64,' + base64.b64encode(f.read()).decode()
 
 
-# Express no descarga imágenes por URL ni lee background-image: van en base64, livianas (paleta de 32 colores)
-# El dragón es un emblema vectorial (silueta heráldica trazada del modelo 3D del sitio): Express lo importa como forma editable
-EMB = open(os.path.join(A, 'emblema.path')).read()
-EMB_H = 631  # alto del emblema cuando el ancho es 1000
-# Versión simplificada para tamaños chicos (pie de publicaciones), como hacen las marcas con logos "responsivos"
-EMB_S = open(os.path.join(A, 'emblema-chico.path')).read()
+# Logo oficial del sitio (posts-bouw/logo-bouw.svg = public/logo-bouw.svg de bouw-eight.vercel.app), con sus degradados.
+# Cada copia lleva ids propios para que no choquen dentro del mismo documento.
+_LOGO = open(os.path.join(HERE, '..', 'logo-bouw.svg')).read()
+_LOGO = _LOGO[_LOGO.index('<defs>'):_LOGO.rindex('</svg>')]
+_LOGO = re.sub(r'>\s+<', '><', _LOGO).strip()
+_n = [0]
 
 
-def emblem(x, y, w, fill='#4fd6e8', outline=False):
-    h = round(w * EMB_H / 1000)
-    paint = (f'fill="none" stroke="{fill}" stroke-width="5"' if outline else f'fill="{fill}"')
-    return (f'<svg class="abs" style="left:{x}px;top:{y}px" width="{w}" height="{h}" viewBox="0 0 1000 {EMB_H}" '
-            f'xmlns="http://www.w3.org/2000/svg"><path {paint} fill-rule="evenodd" d="{EMB}"/></svg>')
-
-
-def mark(x, y, size):
-    """Marca chica: anillo cian + dragón. Sin texto, para que se lea a cualquier tamaño."""
-    ring = (f'<svg class="abs" style="left:{x}px;top:{y}px" width="{size}" height="{size}" viewBox="0 0 100 100" '
-            f'xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="49" fill="#04101f"/>'
-            f'<circle cx="50" cy="50" r="46" fill="none" stroke="#4fd6e8" stroke-width="2.4"/></svg>')
-    w = round(size * 0.8); h = round(w * 158 / 250)
-    return ring + (f'<svg class="abs" style="left:{x + (size - w) // 2}px;top:{y + (size - h) // 2}px" width="{w}" height="{h}" '
-                   f'viewBox="0 0 250 158" xmlns="http://www.w3.org/2000/svg"><path fill="#4fd6e8" d="{EMB_S}"/></svg>')
-
-# Logo como vector plano (Express lo convierte en formas editables). Sin degradados, según el manual.
-LOGO_SVG = ('<svg class="abs" style="left:{x}px;top:{y}px" width="{w}" height="{h}" viewBox="-2 -3.15 3.95 6.3" xmlns="http://www.w3.org/2000/svg">'
-            '<path d="M -1.8 -2.5 H 0.5 V -2.86 L 1.22 -2.125 L 0.5 -1.39 V -1.75 H -0.9 V -0.25 H -1.8 Z" fill="#1f5488"/>'
-            '<path d="M -1.8 0.25 H -0.9 V 1.75 H 0.2 V 2.5 H -1.8 Z" fill="#1f5488"/>'
-            '<path d="M 0.2 -2.65 A 1.5 1.5 0 0 1 0.2 0.35 L 0.2 -0.2 A 0.95 0.95 0 0 0 0.2 -2.1 Z" fill="#22b5cf"/>'
-            '<path d="M 0.2 -0.35 A 1.5 1.5 0 0 1 0.2 2.65 L -0.5 2.65 L -0.5 2.97 L -1.28 2.375 L -0.5 1.78 L -0.5 2.1 L 0.2 2.1 A 0.95 0.95 0 0 0 0.2 0.2 Z" fill="#e87722"/>'
-            '<circle cx="1.31" cy="-1.668" r="0.44" fill="#22b5cf"/><circle cx="1.31" cy="0.632" r="0.44" fill="#f79b4a"/></svg>')
+def lw(h):
+    return round(h * 3.95 / 6.3)
 
 
 def logo(x, y, h):
-    return LOGO_SVG.format(x=x, y=y, w=round(h * 3.95 / 6.3), h=h)
+    _n[0] += 1
+    k = f'l{_n[0]}'
+    body = re.sub(r'id="(\w+)"', lambda m: f'id="{k}{m.group(1)}"', _LOGO)
+    body = re.sub(r'url\(#(\w+)\)', lambda m: f'url(#{k}{m.group(1)})', body)
+    return (f'<svg class="abs" style="left:{x}px;top:{y}px" width="{lw(h)}" height="{h}" '
+            f'viewBox="-2 -3.15 3.95 6.3" xmlns="http://www.w3.org/2000/svg">{body}</svg>')
+
+
+def mark(x, y, size):
+    """Logo del pie, centrado en una caja de size×size."""
+    return logo(x + (size - lw(size)) // 2, y, size)
+
 
 CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
@@ -135,7 +125,7 @@ def header(hoja):
 def footer(phrase, cta, cta_w=None):
     cw = cta_w or (len(cta) * 17 + 70)
     return (f'<div class="rule" style="left:{M}px;top:1160px;width:{W - 2 * M}px"></div>'
-            + mark(M - 4, 1184, 108) +
+            + mark(M - 4, 1180, 100) +
             f'<div class="abs p" style="left:{M + 126}px;top:1206px;width:{W - 2 * M - 126 - cw - 24}px;font-size:25px;line-height:32px;color:#93a7bf">{phrase}</div>'
             f'<div class="cta" style="left:{W - M - cw}px;top:1208px;width:{cw}px;height:62px;font-size:22px;line-height:62px">{e(cta)}</div>')
 
@@ -156,8 +146,8 @@ def spec(rows, top, gap=150, kw=150):
     return out
 
 
-def dragon_band(top, img='front', w=800):
-    return emblem((W - w) // 2, top, w, outline=(img == 'plano'))
+def logo_band(top, h):
+    return logo((W - lw(h)) // 2, top, h)
 
 
 feed = []
@@ -171,10 +161,10 @@ feed.append(('F01 · ¿Qué te quita más el sueño?', header('Hoja 01 · ¿Qué
                     top=480, gap=190, kw=230)
              + footer('Responde con 1, 2 o 3 y te decimos qué haríamos primero.', 'Responde aquí')))
 
-# F02 · Manifiesto con el dragón
+# F02 · Manifiesto con el logo
 feed.append(('F02 · Del diseño a la realidad', header('Hoja 02 · Qué hacemos')
              + title('Del diseño<br>a la realidad.', 104)
-             + dragon_band(462, w=400)
+             + logo_band(470, 240)
              + spec([('A—01', 'Orden', 'Que la empresa funcione aunque no estés encima.'),
                      ('A—02', 'Tiempo', 'Que tu equipo haga más sin contratar más.'),
                      ('A—03', 'Control', 'Tus números a tiempo y tu información segura.')],
@@ -278,10 +268,10 @@ feed.append(('F10 · Antes de comprar un ERP', header('Hoja 09 · Antes de compr
                      ('?—05', '¿Quién cuida accesos y respaldos?', '')], top=500, gap=120, kw=130)
              + footer('A veces la respuesta es el Excel que ya tienes, bien armado.', 'Hablemos')))
 
-# F11 · Radiografía con el dragón
+# F11 · Radiografía con el logo
 feed.append(('F11 · Radiografía', header('Hoja 10 · Radiografía')
              + title('Una hora en tu empresa. <span class="o">Gratis.</span>', 88)
-             + dragon_band(446, 'plano', w=380)
+             + logo_band(452, 220)
              + spec([('R—01', 'Un proceso clave', 'Ventas, inventario, despacho o cierre de mes.'),
                      ('R—02', 'La cuenta de horas', 'Con tus números. Si no da, te lo decimos.'),
                      ('R—03', 'Cinco puntos de seguridad', 'Respaldos, accesos y correo.')],
@@ -308,7 +298,7 @@ def st_cta(txt, top=1500):
 
 stories.append(('H01 · ¿Excel y WhatsApp?', st_head('Radiografía')
                 + f'<div class="abs h" style="left:{M}px;top:430px;width:{SW - 2 * M}px;font-size:104px">¿Tu empresa vive en Excel y <span class="o">WhatsApp?</span></div>'
-                + emblem(290, 840, 500)
+                + logo((SW - lw(300)) // 2, 850, 300)
                 + f'<div class="abs p" style="left:{M}px;top:1190px;width:{SW - 2 * M}px;font-size:40px;line-height:54px">Una hora en tu empresa, gratis. Al día siguiente te decimos qué haríamos primero.</div>'
                 + st_cta('Escríbenos: RADIOGRAFÍA')))
 
@@ -339,7 +329,7 @@ stories.append(('H03 · Caso real', st_head('Proyecto real')
 # ---------- portada 1640×624 y perfil 720×720 ----------
 CW, CH = 1640, 624
 cover = [('Portada Facebook', ''
-          + emblem(880, 150, 480)
+          + logo(1110, 110, 400)
           + logo(280, 130, 52)
           + f'<div class="abs brandtxt" style="left:326px;top:136px;font-size:30px;line-height:42px">BOUW</div>'
           + f'<div class="abs h" style="left:280px;top:208px;width:560px;font-size:64px;line-height:72px">Del diseño<br><span class="o">a la realidad.</span></div>'

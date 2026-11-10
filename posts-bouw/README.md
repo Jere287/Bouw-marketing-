@@ -2,7 +2,7 @@
 
 Sistema visual y de palabras según [`MANUAL-DE-MARCA.md`](../MANUAL-DE-MARCA.md), tomado del sitio oficial: navy, cian técnico, naranja escaso, Archivo expandida + IBM Plex, estética de plano técnico.
 
-> **Facebook primero:** los diseños finales con el **dragón como sello** están en Adobe Express, y el calendario día por día de octubre está en [`FACEBOOK-FORMATOS-Y-CALENDARIO.md`](FACEBOOK-FORMATOS-Y-CALENDARIO.md). Las PNG listas para subir están en `adobe/png/` y el sello en `sello/`.
+> **Con el logo oficial del sitio:** LinkedIn (perfil, portadas, campaña de 4 semanas, carrusel y anuncio) en [`linkedin/LINKEDIN-CAMPANA.md`](linkedin/LINKEDIN-CAMPANA.md), y Facebook en [`FACEBOOK-FORMATOS-Y-CALENDARIO.md`](FACEBOOK-FORMATOS-Y-CALENDARIO.md). Todo está también en Adobe Express. Las PNG están en `linkedin/png/` y `adobe/png/`, y el logo en `sello/`.
 
 | Archivo | Uso | Tamaño |
 |---|---|---|
