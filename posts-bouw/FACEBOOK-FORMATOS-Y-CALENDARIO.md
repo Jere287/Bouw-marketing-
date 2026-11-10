@@ -45,10 +45,10 @@ Cada documento se abre en Adobe Express con los textos editables, las tipografí
 | Documento | Páginas | Enlace |
 |---|---|---|
 | Portada Facebook 1640×624 | 1 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:cb8c4ffe-bed7-4537-991f-c382a719e2cc) |
-| Semana 1 (5–8 oct) | F01 · F02 · F03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:4bc328bc-f1b1-4b3a-bb09-d2b06089e971) |
-| Semana 2 (12–16 oct) | F04 · F05 · F06 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:b4bd5448-aade-4e62-bdba-1f88dad84963) |
-| Semana 3 (19–23 oct) | F07 · F08 · F09 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:c7368554-2657-4d24-91f4-f474d5b773c0) |
-| Semana 4 (26–28 oct) | F11 · F10 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:5a8faf00-d51d-49a5-8076-ac94d40acc9f) |
+| Semana 1 (16–20 nov) | F01 · F02 · F03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:4bc328bc-f1b1-4b3a-bb09-d2b06089e971) |
+| Semana 2 (23–27 nov) | F04 · F05 · F06 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:b4bd5448-aade-4e62-bdba-1f88dad84963) |
+| Semana 3 (30 nov–4 dic) | F07 · F08 · F09 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:c7368554-2657-4d24-91f4-f474d5b773c0) |
+| Semana 4 (7–9 dic) | F11 · F10 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:5a8faf00-d51d-49a5-8076-ac94d40acc9f) |
 | Historias 1080×1920 | H01 · H02 · H03 | [Abrir en Express](https://new.express.adobe.com/id/urn:aaid:sc:US:3dc91e3f-ac8b-4a9c-99e7-19f8c69f220b) |
 
 > **F03 (Dos ingenieros):** antes de publicarla, reemplaza los recuadros "[ Foto socio 1/2 ]" por fotos reales (en Express: arrastra la foto sobre el recuadro) y pon los nombres.
@@ -56,58 +56,59 @@ Cada documento se abre en Adobe Express con los textos editables, las tipografí
 
 ---
 
-## 4. Calendario día por día (octubre 2026)
+## 4. Calendario día por día (16 de noviembre – 12 de diciembre de 2026)
+
+Va en paralelo con la campaña de LinkedIn ([`linkedin/LINKEDIN-CAMPANA.md`](linkedin/LINKEDIN-CAMPANA.md)): **Facebook lunes, miércoles y viernes; LinkedIn martes, miércoles y jueves.**
 
 **Horarios:** 07:30 (el dueño revisa el celular antes de entrar), 12:30 (almuerzo) y 19:30. Después de dos semanas revisa en Meta Business Suite → *Estadísticas* a qué hora responde tu público y ajusta.
 **Ritmo:** 3 publicaciones por semana + 2 historias. Todos los días: responder comentarios y mensajes en menos de 1 hora (en Facebook eso pesa más que publicar mucho).
 
-### Antes de empezar: sábado 3 y domingo 4 de octubre
-- [ ] Foto de perfil: `sello/fb-perfil-720.png`
+### Antes de empezar: sábado 14 y domingo 15 de noviembre
+- [ ] Foto de perfil: `sello/fb-perfil-720.png` (logo oficial)
 - [ ] Portada: descargar de Express (1640×624)
 - [ ] Botón de la página: **Enviar mensaje de WhatsApp** → +593 96 368 4012
 - [ ] Categoría: *Consultor empresarial*. Ciudad: Quito. Sitio: bouw-eight.vercel.app
-- [ ] Descripción (máx. 255): *Orden, tiempo y control para pymes de Quito. Procesos, automatización y seguridad de la información. Radiografía gratis: 1 hora en tu empresa. Del diseño a la realidad.*
+- [ ] Descripción (máx. 255): *Del diseño a la realidad. Mejora de procesos, sistemas de calidad, automatización y diseño a producto. Radiografía gratis: 1 hora en tu empresa. Quito · Monterrey.*
 - [ ] Invitar a contactos de ambos socios (solo dueños y gerentes; calidad antes que cantidad)
 
 ### Semana 1: presentarse
 | Día | Hora | Qué | Pieza | Texto |
 |---|---|---|---|---|
-| **Lun 5** | 07:30 | Publicación · **fijarla arriba** | F01 ¿Qué te quita más el sueño? | ver §5 · F01 |
-| Lun 5 | 12:30 | Historia | H02 ¿1, 2 o 3? | "Respóndenos con el número" |
-| **Mié 7** | 12:30 | Publicación | F02 Del diseño a la realidad  | §5 · F02 |
-| Mié 7 | 19:30 | Historia | H01 ¿Excel y WhatsApp? | — |
-| **Jue 8** | 19:30 | Publicación | F03 Dos ingenieros (con fotos) | §5 · F03 |
-| Vie 9 | — | **Feriado (Independencia de Guayaquil)**: no publicar | — | Solo responder mensajes |
+| **Lun 16 nov** | 07:30 | Publicación · **fijarla arriba** | F01 ¿Qué te quita más el sueño? | §5 · F01 |
+| Lun 16 | 12:30 | Historia | H02 ¿1, 2 o 3? | "Respóndenos con el número" |
+| **Mié 18** | 12:30 | Publicación | F02 Del diseño a la realidad | §5 · F02 |
+| Mié 18 | 19:30 | Historia | H01 ¿Excel y WhatsApp? | — |
+| **Vie 20** | 12:30 | Publicación | F03 Dos ingenieros (con fotos) | §5 · F03 |
 
 ### Semana 2: mostrar que entendemos el problema
 | Día | Hora | Qué | Pieza | Texto |
 |---|---|---|---|---|
-| **Lun 12** | 07:30 | Publicación | F04 Marca lo que reconozcas | §5 · F04 |
-| Mar 13 | 12:30 | Historia | H02 ¿1, 2 o 3? (repetir) | — |
-| **Mié 14** | 12:30 | Publicación | F05 Caso real: programa contable | §5 · F05 |
-| Jue 15 | 19:30 | Historia | H03 Caso real | — |
-| **Vie 16** | 12:30 | Publicación | F06 La cuenta | §5 · F06 |
+| **Lun 23 nov** | 07:30 | Publicación | F04 Marca lo que reconozcas | §5 · F04 |
+| Mar 24 | 12:30 | Historia | H02 ¿1, 2 o 3? (repetir) | — |
+| **Mié 25** | 12:30 | Publicación | F05 Caso real: programa contable | §5 · F05 |
+| Jue 26 | 19:30 | Historia | H03 Caso real | — |
+| **Vie 27** | 12:30 | Publicación | F06 La cuenta | §5 · F06 |
 
 ### Semana 3: cómo trabajamos y control
 | Día | Hora | Qué | Pieza | Texto |
 |---|---|---|---|---|
-| **Lun 19** | 07:30 | Publicación | F07 Plazos que se pueden escribir | §5 · F07 |
-| Mar 20 | 12:30 | Historia | H01 ¿Excel y WhatsApp? | — |
-| **Mié 21** | 12:30 | Publicación | F08 Respaldo | §5 · F08 |
-| Jue 22 | 19:30 | Historia | H03 Caso real | — |
-| **Vie 23** | 12:30 | Publicación | F09 Se va la luz 8 horas | §5 · F09 |
+| **Lun 30 nov** | 07:30 | Publicación | F07 Plazos que se pueden escribir | §5 · F07 |
+| Mar 1 dic | 12:30 | Historia | H01 ¿Excel y WhatsApp? | — |
+| **Mié 2** | 12:30 | Publicación | F08 Respaldo | §5 · F08 |
+| Jue 3 | 19:30 | Historia | H03 Caso real | — |
+| **Vie 4** | 12:30 | Publicación | F09 Se va la luz 8 horas | §5 · F09 |
 
 ### Semana 4: pedir la Radiografía
 | Día | Hora | Qué | Pieza | Texto |
 |---|---|---|---|---|
-| **Lun 26** | 07:30 | Publicación | F11 Radiografía  | §5 · F11 |
-| Lun 26 | — | **Promoción pagada** (opcional) de F11: USD 3/día × 7 días. Público: Quito + 25 km, 28–60 años, intereses *pequeñas empresas, emprendimiento, administración de empresas*. Botón: *Enviar mensaje de WhatsApp* | F11 | — |
-| Mar 27 | 12:30 | Historia | H02 ¿1, 2 o 3? | — |
-| **Mié 28** | 12:30 | Publicación | F10 Antes de comprar un ERP | §5 · F10 |
-| Vie 30 | 12:30 | Compartir de nuevo F05 (caso real) con un texto nuevo: "Lo más preguntado del mes." | F05 | — |
-| Sáb 31 | — | **Revisión del mes** (ver §6) | — | — |
+| **Lun 7 dic** | 07:30 | Publicación | F11 Radiografía | §5 · F11 |
+| Lun 7 | — | **Promoción pagada** (opcional) de F11: USD 3/día × 7 días. Público: Quito + 25 km, 28–60 años, intereses *pequeñas empresas, emprendimiento, administración de empresas*. Botón: *Enviar mensaje de WhatsApp* | F11 | — |
+| Mar 8 | 12:30 | Historia | H02 ¿1, 2 o 3? | — |
+| **Mié 9** | 12:30 | Publicación | F10 Antes de comprar un ERP | §5 · F10 |
+| Vie 11 | 12:30 | Compartir de nuevo F05 (caso real) con un texto nuevo: "Lo más preguntado del mes." | F05 | — |
+| Sáb 12 | — | **Revisión del mes** (ver §6) | — | — |
 
-> Lun 2 y mar 3 de noviembre son feriados (Difuntos e Independencia de Cuenca): no publicar. Noviembre arranca el miércoles 4 con el mismo ritmo, rotando las piezas que mejor funcionaron y la serie de LinkedIn (`png/li-*`).
+> El domingo 6 de diciembre es la fundación de Quito. Si en tu sector el lunes 7 se toma como feriado, mueve F11 al martes 8 a las 07:30. Después del 12 de diciembre baja a 2 publicaciones por semana hasta el 4 de enero (en fiestas el alcance cae y los dueños no deciden compras).
 
 ---
 
@@ -189,4 +190,4 @@ Cada documento se abre en Adobe Express con los textos editables, las tipografí
 | Alcance por publicación | Qué temas mueve el algoritmo | Comparar entre piezas |
 | Guardados y compartidos | Señal de contenido útil (F06 y F10 deberían ganar) | — |
 
-**Revisión del sábado 31:** las 2 piezas con más conversaciones se repiten en noviembre con otro titular. La que tenga menos alcance y cero mensajes se reemplaza.
+**Revisión del sábado 12 de diciembre:** las 2 piezas con más conversaciones se repiten en enero con otro titular. La que tenga menos alcance y cero mensajes se reemplaza.
