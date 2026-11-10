@@ -6,7 +6,6 @@ Textos: sitio/TEXTOS-DEL-SITIO.md. Colores y letras: los del CSS del sitio (tema
 IBM Plex Mono e Instrument Serif.
 
 Genera html/<pieza>.html y list.txt; shot.js las pasa a png/ y pdf.js arma el carrusel en PDF.
-También escribe express/*.html para importar en Adobe Express.
 """
 import base64, html, os, re
 
@@ -505,36 +504,3 @@ for name, w, h, body in pieces:
 with open(os.path.join(OUT, 'list.txt'), 'w') as f:
     f.write('\n'.join(names))
 print(len(pieces), 'piezas')
-
-# ---------- documentos para Adobe Express ----------
-FONTLINK = ('<link rel="stylesheet" href="https://use.typekit.net/dnh2wmm.css">'
-            '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700'
-            '&amp;family=Instrument+Serif:ital@1&amp;display=swap">')
-XCSS = re.sub(r'@font-face\{[^}]*\}\n', '', CSS)
-XCSS = (XCSS.replace('font-family:"PlexMono"', 'font-family:"ibm-plex-mono",monospace')
-        .replace('font-family:"Plex",sans-serif', 'font-family:"ibm-plex-sans",sans-serif')
-        .replace('font-family:"Plex"', 'font-family:"ibm-plex-sans",sans-serif')
-        .replace('font-family:"Archivo"', 'font-family:"Archivo",sans-serif')
-        .replace('font-family:"Instrument"', 'font-family:"Instrument Serif",serif'))
-GROUPS = {
-    'bouw-li-perfil': ['01-', '02-'],
-    'bouw-li-portada-empresa': ['03-'],
-    'bouw-li-banner-personal': ['04-'],
-    'bouw-li-publicaciones-1': ['L01', 'L02', 'L03', 'L04', 'L05'],
-    'bouw-li-publicaciones-2': ['L06', 'L07', 'L08', 'L09', 'L10'],
-    'bouw-li-carrusel': ['C'],
-    'bouw-li-anuncio': ['A'],
-}
-XOUT = os.path.join(HERE, 'express')
-os.makedirs(XOUT, exist_ok=True)
-for doc, prefixes in GROUPS.items():
-    sel = [p for p in pieces if any(p[0].startswith(x) for x in prefixes)]
-    w, h = sel[0][1], sel[0][2]
-    slides = ''.join(f'<section class="slide" data-canvas-width="{pw}" data-canvas-height="{ph}" data-name="{e(n)}" '
-                     f'style="width:{pw}px;height:{ph}px">{b}</section>' for n, pw, ph, b in sel)
-    out = (f'<!doctype html><html lang="es"><head><meta charset="utf-8"><title>BOUW · LinkedIn</title>'
-           f'<meta name="hz:slide-selector" content=".slide"><meta name="hz:canvas-width" content="{w}">'
-           f'<meta name="hz:canvas-height" content="{h}">{FONTLINK}<style>{XCSS}</style></head><body>{slides}</body></html>')
-    with open(os.path.join(XOUT, doc + '.html'), 'w') as f:
-        f.write(out)
-    print(doc, len(sel), len(out) // 1024, 'KB')

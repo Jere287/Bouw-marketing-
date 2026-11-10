@@ -1,123 +1,157 @@
 # LinkedIn BOUW: perfil, portadas y campaña "Del diseño a la realidad"
 
-> Todo sale del sitio oficial (bouw-eight.vercel.app): **el logo** (`public/logo-bouw.svg`), el lema, el descriptor *Automation & Digital Solutions*, las sedes (Quito desde 2019, Monterrey desde 2023), los **4 campos con sus plazos**, la **Radiografía**, la calculadora **"la cuenta"** y la voz honesta del sitio ("si el número no da, te lo decimos").
-> Colores, letras y reglas: [`MANUAL-DE-MARCA.md`](../../MANUAL-DE-MARCA.md).
+> Todo sale de **bouw-eight.vercel.app**:
+> - **El logo:** el mismo PNG del encabezado y del pie de página, `marca/bouw-logo-negativo.png` (BOUW en cian con el dragón blanco). El dragón solo, `marca/bouw-dragon-blanco.png`, es el ícono del sitio.
+> - **Los colores y las letras:** los del sitio: Archivo, IBM Plex Sans, IBM Plex Mono e Instrument Serif.
+> - **El contenido:** el lema *Si se repite, se automatiza.*, los servicios, los proyectos, "¿Cuál te suena?", la calculadora, las condiciones y el contacto.
+>
+> El texto completo del sitio está en [`../sitio/TEXTOS-DEL-SITIO.md`](../sitio/TEXTOS-DEL-SITIO.md) y sus imágenes en `../sitio/imagenes/`.
+
+Todo está listo para subir en `png/`, y el carrusel en `BOUW-carrusel-proyectos.pdf`. Para cambiar un texto, edita `gen_li.py` y ejecuta:
+`python3 gen_li.py && node shot.js && node pdf.js`
 
 ---
 
-## 1. Primero: perfil y portadas (hazlo antes de publicar)
+## 1. Primero: perfil y portadas (antes del martes 17)
 
-| Pieza | Tamaño | Dónde se sube | Archivo (`png/`) | Adobe Express |
-|---|---|---|---|---|
-| Logo de la página de empresa | 400×400 | Página de empresa → Editar → Logo | `01-perfil-logo-400x400.png` | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:cf0fd535-bf93-44f2-baed-7a3831a1e9cc) (2 versiones) |
-| Logo con nombre (opcional) | 400×400 | Para WhatsApp Business o firmas | `02-perfil-logo-nombre-400x400.png` | mismo documento, página 2 |
-| Portada de la página de empresa | **1128×191** | Página de empresa → Editar → Imagen de portada | `03-portada-empresa-1128x191.png` | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:b0b821f5-a974-4684-8be1-b8c71b3f1a8d) |
-| Banner del perfil personal (cada socio) | **1584×396** | Tu perfil → lápiz sobre la portada | `04-banner-perfil-personal-1584x396.png` | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:5055e542-e440-4907-9611-e48a289f5f4c) |
+| Pieza | Tamaño | Dónde se sube | Archivo (`png/`) |
+|---|---|---|---|
+| Logo de la página de empresa | 400×400 | Página de empresa → Editar → Logo | `01-perfil-dragon-400x400.png` (el dragón, como el ícono del sitio) |
+| Logo con nombre (alternativa) | 400×400 | Si prefieres que se lea "BOUW" en el logo | `02-perfil-logo-completo-400x400.png` |
+| Portada de la página de empresa | **1128×191** | Página de empresa → Editar → Imagen de portada | `03-portada-empresa-1128x191.png` |
+| Banner del perfil personal (cada socio) | **1584×396** | Tu perfil → lápiz sobre la portada | `04-banner-perfil-personal-1584x396.png` |
+| Foto de perfil grande (WhatsApp, Facebook) | 720×720 | WhatsApp Business, Facebook, firmas | `05-perfil-logo-720x720.png` |
 
 **Zonas seguras:**
-- Portada de empresa: el logo de la página tapa la esquina inferior izquierda; por eso el texto empieza en x = 300.
-- Banner personal: tu foto tapa la parte izquierda abajo; el contenido empieza en x = 560. En el celular se recorta a los lados: lo importante va al centro.
+- **Portada de empresa:** el logo de la página tapa la esquina inferior izquierda, así que el texto empieza en x = 300 y el logo BOUW va a la derecha.
+- **Banner personal:** tu foto tapa la parte izquierda, así que el contenido empieza en x = 560. En el celular se recortan los lados.
 
-**Datos de la página de empresa (copiar tal cual):**
+**Datos de la página de empresa (copiar tal cual, son los del sitio):**
 - Nombre: **BOUW**
-- Eslogan (120 caracteres): *Del diseño a la realidad. Mejora de procesos, sistemas de calidad, automatización y diseño a producto.*
+- Eslogan: *Si se repite, se automatiza. Ingeniería de procesos, calidad y automatización para empresas que fabrican.*
 - Sector: Servicios y consultoría empresarial · Tamaño: 2–10 empleados · Sedes: Quito (principal) y Monterrey
-- Sitio web: bouw-eight.vercel.app · Botón personalizado: **"Contactar"** → WhatsApp +593 96 368 4012
+- Sitio web: bouw-eight.vercel.app · Botón personalizado **"Contactar"** → WhatsApp +593 96 368 4012
 - "Acerca de":
-  > BOUW es consultoría técnica: llevamos lo que se dibuja en papel a la operación real.
-  > Trabajamos en cuatro campos, con plazos escritos: mejora de procesos (4–8 semanas), sistemas de calidad (6–10), automatización (4–10) y diseño a producto (8–16).
-  > Empezamos con una Radiografía: una hora en tu empresa, gratis. Al día siguiente te decimos qué haríamos primero. Si el número no da, te lo decimos.
-  > Quito desde 2019 · Monterrey desde 2023.
+  > Del diseño a la realidad. Automatizamos procesos y convertimos ideas de ingeniería en productos que funcionan. Llevamos más de 7 años haciéndolo entre Ecuador y México.
+  > Lean manufacturing e ingeniería de planta · Cumplimiento normativo y BPM · Automatización · Simulación de flujos · Web y producto.
+  > Diagnóstico primero (1 a 2 semanas), precio cerrado por escrito (3 a 5 días), entrega cada semana (4 a 10 semanas) y 30 días de acompañamiento.
+  > Quito, Ecuador (desde 2019) · Monterrey, México (desde 2023). Nueve horas al día en común: siempre hay alguien para responderte.
+  > bouw.contacto@gmail.com · +593 96 368 4012
 
-**Titular del perfil personal (cada socio):** *Socio en BOUW · [Procesos y calidad / Sistemas y automatización] · Del diseño a la realidad · Quito*
+**Titular del perfil personal (cada socio):** *Socio en BOUW · Automation & Digital Solutions · Si se repite, se automatiza · Quito*
 
 ---
 
-## 2. Documentos en Adobe Express (editables)
+## 2. Las piezas
 
-| Documento | Contenido | Enlace |
+| Archivo | Tamaño | Qué es |
 |---|---|---|
-| Campaña · parte 1 | L01–L05 (presentación y los 4 campos) | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:67f52312-93d1-40de-a762-469fedfddc62) |
-| Campaña · parte 2 | L06–L10 (frases, método, la cuenta, test, Radiografía) | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:72a61850-21bf-4c39-a5da-683a47e590dd) |
-| Carrusel "4 campos" | C01–C06 (también en PDF: `BOUW-carrusel-4-campos.pdf`) | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:d76a4f3e-8878-46bb-b6fa-3e21d4e2710d) |
-| Anuncio / enlace | 1200×627, "Radiografía gratis" | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:b76a85ac-5bbc-4154-94a2-e73ceb5ca9f2) |
+| `L01-presentacion.png` | 1080×1350 | Del diseño a la realidad · lema · sedes · 7+ años |
+| `L02-lean-ingenieria-de-planta.png` | 1080×1350 | Servicio Lean: −15 % preparación, −20 % reprocesos; hoy / con BOUW |
+| `L03-cumplimiento-normativo-bpm.png` | 1080×1350 | Servicio BPM: lo que hacemos; hoy / con BOUW |
+| `L04-programa-contable-excel.png` | 1080×1350 | Proyecto: ERP sobre Excel (11 hojas, 1 archivo, 0 migraciones) |
+| `L05-simulacion-de-flujos.png` | 1080×1350 | Proyecto: mapa de flujo de valor (29 min de entrega, 3,7 min de valor agregado) |
+| `L06-cual-te-suena.png` | 1080×1350 | Las 9 frases de "¿Cuál te suena?" |
+| `L07-en-que-condiciones.png` | 1080×1350 | Diagnóstico → precio cerrado → entrega semanal → acompañamiento |
+| `L08-la-cuenta.png` | 1080×1350 | La calculadora: 3 × 20 min × 1 × 48 = 48 h, "Está en la frontera" |
+| `L09-donde-pierde-horas.png` | 1080×1350 | El juego del sitio, con la planta original |
+| `L10-contacto.png` | 1080×1350 | WhatsApp, correo, sedes, respuesta en menos de 24 h hábiles |
+| `C01`–`C07` + `BOUW-carrusel-proyectos.pdf` | 1080×1350 | Carrusel "Lo que hemos construido": Anatris, Simulación, Programa contable, Charms Ecuador, Informe de auditoría |
+| `A01-anuncio-la-cuenta-1200x627.png` | 1200×627 | Anuncio o enlace hacia la calculadora |
 
-Todo se abre con textos editables, las tipografías de la marca y el logo oficial como vector (con sus degradados).
-
-**Formatos de LinkedIn usados:** publicación vertical **1080×1350** (la que más pantalla ocupa en el celular), carrusel como **documento PDF** (LinkedIn lo muestra como diapositivas que se deslizan), y **1200×627** para enlaces y anuncios.
-
----
-
-## 3. Calendario de la campaña (4 semanas, martes a jueves)
-
-LinkedIn rinde mejor de martes a jueves, entre 7:30 y 9:00 de la mañana. Responde todos los comentarios durante la primera hora.
-
-| Fecha | Hora | Pieza | Objetivo |
-|---|---|---|---|
-| **Mar 17 nov** | 08:00 | L01 Presentación | Quiénes somos (fijarla en la página) |
-| Mié 18 nov | 08:00 | L02 Mejora de procesos | Campo A—01 |
-| Jue 19 nov | 08:00 | L06 Las frases con las que nos llaman | Conversación |
-| **Mar 24 nov** | 08:00 | L03 Sistemas de calidad | Campo A—02 |
-| Mié 25 nov | 08:00 | **Carrusel 4 campos (PDF)** | Alcance: los carruseles se guardan y comparten más |
-| Jue 26 nov | 08:00 | L07 Cómo trabajamos | Confianza: plazos escritos |
-| **Mar 1 dic** | 08:00 | L04 Automatización | Campo A—03 |
-| Mié 2 dic | 08:00 | L08 La cuenta | Prueba con números |
-| Jue 3 dic | 08:00 | L09 Marca lo que reconozcas | Autodiagnóstico |
-| **Mar 8 dic** | 08:00 | L05 Diseño a producto | Campo A—04 |
-| Mié 9 dic | 08:00 | L10 Radiografía | Cierre: llamada a la acción |
-| 8–22 dic | — | A01 Anuncio (opcional, pagado) | $5–10/día, Quito, cargos: gerente, dueño, jefe de operaciones/calidad |
-
-**Cada semana, además:** cada socio comparte la publicación desde su perfil personal con una línea propia (el perfil personal llega a 5–10 veces más gente que la página).
+**Formatos de LinkedIn:**
+- Las publicaciones son verticales, de **1080×1350**: es la que más pantalla ocupa en el celular.
+- El carrusel se sube como **documento PDF** (Publicar → Añadir documento), y LinkedIn lo muestra como láminas que se deslizan.
+- **1200×627** es para enlaces y anuncios.
 
 ---
 
-## 4. Textos para pegar (uno por publicación)
+## 3. Calendario (martes a jueves, 08:00)
+
+| Fecha | Pieza | Objetivo |
+|---|---|---|
+| **Mar 17 nov** | L01 Presentación | Quiénes somos (fijarla en la página) |
+| Mié 18 nov | L02 Lean & planta | Servicio |
+| Jue 19 nov | L06 ¿Cuál te suena? | Conversación en comentarios |
+| **Mar 24 nov** | L03 Cumplimiento & BPM | Servicio |
+| Mié 25 nov | **Carrusel "Lo que hemos construido" (PDF)** | Alcance: los carruseles se guardan y comparten más |
+| Jue 26 nov | L07 En qué condiciones | Confianza: plazos y precio por escrito |
+| **Mar 1 dic** | L04 Programa contable | Prueba: proyecto real |
+| Mié 2 dic | L08 La cuenta | Llevar gente a la calculadora |
+| Jue 3 dic | L09 ¿Dónde pierde horas esta planta? | Llevar gente al juego del sitio |
+| **Mar 8 dic** | L05 Simulación de flujos | Prueba: proyecto real |
+| Mié 9 dic | L10 Contacto | Cierre: llamada a la acción |
+| 8–22 dic | A01 Anuncio (opcional, pagado) | USD 5–10 al día, Quito y Monterrey; cargos: gerente, dueño, jefe de planta, operaciones o calidad |
+
+**Cada semana, además:** cada socio comparte la publicación desde su perfil con una línea propia. El perfil personal llega a 5–10 veces más gente que la página. Responde todos los comentarios durante la primera hora.
+
+---
+
+## 4. Textos para pegar (salen del sitio)
 
 **L01 · Presentación**
 > Del diseño a la realidad.
-> Somos BOUW, consultoría técnica. Desde 2019 en Quito y desde 2023 en Monterrey.
-> Trabajamos en cuatro campos, con plazos escritos: mejora de procesos, sistemas de calidad, automatización y diseño a producto.
-> No empezamos con una propuesta: empezamos con una Radiografía. Una hora en tu empresa, gratis.
-> #Quito #Ecuador #Procesos
+> Automatizamos procesos y convertimos ideas de ingeniería en productos que funcionan. Llevamos más de 7 años haciéndolo entre Ecuador y México.
+> Quito desde 2019 · Monterrey desde 2023. Nueve horas al día en común: siempre hay alguien para responderte.
+> Si se repite, se automatiza.
+> bouw-eight.vercel.app
+> #Quito #Monterrey #Manufactura #Automatización
 
-**L02 · Mejora de procesos**
-> "Cada uno hace la tarea a su manera."
-> Si lo escuchas en tu empresa, el problema no es la gente: es que el proceso no está escrito.
-> Lo dibujamos con quienes lo hacen, quitamos lo que sobra y lo dejamos funcionando. Plazo: 4 a 8 semanas.
+**L02 · Lean manufacturing & ingeniería de planta**
+> Elimina cuellos de botella y maximiza cada metro cuadrado de tu planta.
+> Hoy: recorridos que se cruzan, piezas apiladas en los pasillos y una máquina que frena a todas.
+> Con BOUW: un solo flujo, cada cosa en su sitio y el mapa de valor con su tablero vigilando la línea.
+> En el caso de mejora continua: −15 % en tiempo de preparación, −20 % en reprocesos y 4 operadores capacitados.
+> Agenda una evaluación técnica de tus procesos: bouw-eight.vercel.app
+> #Lean #SMED #VSM #5S
 
-**L03 · Sistemas de calidad**
-> Un sistema de calidad que solo se abre para la auditoría no es un sistema: es una carpeta.
-> Diagnóstico frente a la norma, documentos cortos que la gente entiende e indicadores que se revisan. Plazo: 6 a 10 semanas.
+**L03 · Cumplimiento normativo & BPM**
+> Pasa cualquier auditoría a la primera.
+> Si llega un inspector sin aviso, la carpeta ya está armada: expedientes estandarizados, cada registro en su sitio y con su responsable, y la trazabilidad en pantalla.
+> BPM · ISO · CAPA · Trazabilidad · Batch records · 8D · Causa raíz · Auditorías internas.
+> Agenda un diagnóstico de calidad gratis antes de tu próxima inspección.
+> #BPM #ISO #Calidad
 
-**L04 · Automatización**
-> Antes de automatizar, hacemos la cuenta: cuánto cuesta hacerlo a mano.
-> Si el número no da, te lo decimos. Si da, lo automatizamos con las herramientas que ya usas y lo entregamos documentado. Plazo: 4 a 10 semanas.
+**Carrusel · Lo que hemos construido**
+> Lo que tienen en común: procesos que antes costaban horas.
+> Anatris, una simulación de flujos, un ERP sobre Excel, la web de Charms Ecuador y un informe de auditoría. Cinco proyectos en 7 láminas.
 
-**L05 · Diseño a producto**
-> Tener la idea es el principio. Llevarla a algo que se puede fabricar es otro trabajo.
-> Concepto y requisitos, diseño y prototipo, documentación para producción. Plazo: 8 a 16 semanas.
+**L04 · Programa contable**
+> Un ERP pequeño montado sobre Excel: inventario, kits, ventas y caja en un solo archivo.
+> Once hojas conectadas por macros. El equipo siguió trabajando en la herramienta que ya sabía usar, sin migrar a otro sistema ni pagar licencias nuevas.
+> Resultado: el cierre mensual dejó de ser un armado manual.
 
-**L06 · Las frases**
-> Esta no es la lista de lo que vendemos. Es la lista de frases con las que nos llaman.
-> ¿Cuál dices tú? Te leemos en los comentarios.
+**L05 · Simulación de flujos**
+> Con los datos de tu operación armamos un modelo de la línea y probamos ahí cada cambio de layout o de proceso.
+> Sabes cuánto mejora el flujo antes de mover un solo equipo, sin parar la producción para hacer pruebas.
+> Pruébala en bouw-eight.vercel.app
 
-**Carrusel · 4 campos**
-> Qué hacemos y cuánto tarda cada cosa, en 6 láminas. Guárdalo para cuando lo necesites.
+**L06 · ¿Cuál te suena?**
+> Son frases que nos dicen los clientes cuando nos llaman. ¿Cuál dices tú? Te leemos en los comentarios.
+> Si ninguna se parece a tu semana, puede que todavía no nos necesites, y preferimos decírtelo.
 
-**L07 · Cómo trabajamos**
-> Plazos que se pueden escribir: Radiografía (1 hora, gratis) → alcance y precio cerrados, por escrito → construcción → entrega funcionando, con la documentación para mantenerlo sin nosotros.
+**L07 · En qué condiciones**
+> Diagnóstico primero (1 a 2 semanas): medimos tu proceso real antes de proponer nada.
+> Precio cerrado (3 a 5 días): alcance, entregables, plazo y precio por escrito.
+> Entrega cada semana (4 a 10 semanas). Acompañamiento de 30 días, sin contrato nuevo.
+> Si algo no se puede prometer, lo decimos desde el principio.
 
 **L08 · La cuenta**
-> 5 veces por semana × 30 minutos × 2 personas × 48 semanas = 240 horas al año.
-> Esa es la cuenta que hacemos antes de proponer nada. Haz la tuya y mándanosla.
+> 3 veces por semana × 20 minutos × 1 persona × 48 semanas = 48 horas al año.
+> Veredicto: está en la frontera. Sale a cuenta si además te está costando errores. Si solo son las horas, espera.
+> Haz la cuenta con tu tarea en la calculadora: bouw-eight.vercel.app
 
-**L09 · Marca lo que reconozcas**
-> Cinco señales. ¿Ninguna? Todavía no nos necesitas. ¿Dos o más? Conversemos.
+**L09 · ¿Dónde pierde horas esta planta?**
+> Hay seis desperdicios escondidos. ¿Cuántos ves?
+> Pruébalo en 30 segundos en bouw-eight.vercel.app: toca la planta y te decimos qué es, qué cuesta y cómo se ve arreglado.
 
-**L10 · Radiografía**
-> Una hora en tu empresa. Gratis.
-> Revisamos un proceso clave contigo y al día siguiente te decimos qué haríamos primero, con plazo y precio.
-> Escríbenos: WhatsApp +593 96 368 4012
+**L10 · Contacto**
+> Cuéntanos qué proceso te está costando horas y te respondemos con un plan concreto.
+> WhatsApp +593 96 368 4012 · bouw.contacto@gmail.com
+> Respondemos en menos de 24 horas hábiles.
+
+**A01 · Anuncio** (enlace a bouw-eight.vercel.app)
+> Titular: Cuánto cuesta hacerlo a mano · Texto: Rellena la fila con una tarea que hoy se haga a mano. Si no compensa automatizarla, también te lo dice.
 
 ---
 
@@ -128,6 +162,6 @@ LinkedIn rinde mejor de martes a jueves, entre 7:30 y 9:00 de la mañana. Respon
 | Seguidores de la página | +150 |
 | Interacción por publicación (reacciones + comentarios ÷ impresiones) | ≥ 3 % |
 | Mensajes o WhatsApp que llegan por LinkedIn | ≥ 8 |
-| Radiografías agendadas | ≥ 3 |
+| Diagnósticos agendados | ≥ 3 |
 
-Lo que más funcione (normalmente el carrusel y "La cuenta") se repite en enero con otro ejemplo.
+Lo que más funcione (normalmente el carrusel y "La cuenta") se repite en enero con otro proyecto.
