@@ -1,7 +1,7 @@
 """Piezas de LinkedIn de BOUW hechas con el logo y los textos de bouw-eight.vercel.app.
 
-Logo: marca/bouw-logo-negativo.png (el mismo PNG del encabezado y del pie del sitio: BOUW en cian con el dragón blanco)
-y marca/bouw-dragon-blanco.png (el dragón solo, como el ícono del sitio).
+Logo: el dragón 3D del sitio (marca/dragon-3d/, renderizado de /dragon.glb) y el dragón sobre BOUW en 3D (sitio/dragon/capturas/)
+(antes se usaba el PNG plano blanco; ya no).
 Textos: sitio/TEXTOS-DEL-SITIO.md. Colores y letras: los del CSS del sitio (tema oscuro), con Archivo, IBM Plex Sans,
 IBM Plex Mono e Instrument Serif.
 
@@ -23,10 +23,23 @@ def b64(path):
     return f'data:{mime};base64,' + base64.b64encode(open(path, 'rb').read()).decode()
 
 
-LOGO = b64(os.path.join(ROOT, 'marca', 'bouw-logo-negativo.png'))     # 720×304
-DRAGON = b64(os.path.join(ROOT, 'marca', 'bouw-dragon-blanco.png'))   # 900×648
-LOGO_R = 720 / 304
-DRAGON_R = 900 / 648
+# El logo de verdad: el dragón 3D del sitio (modelo /dragon.glb) sobre las letras BOUW en 3D del encabezado.
+LOGO = 'file://' + os.path.join(ROOT, 'sitio', 'dragon', 'capturas', 'dragon-oscuro-realidad-transparente.png')  # 2135×1121
+DRAGON = 'file://' + os.path.join(ROOT, 'marca', 'dragon-3d', 'bouw-dragon-3d.png')                            # 2662×1980
+LOGO_R = 2135 / 1121
+DRAGON_R = 2662 / 1980
+
+
+def glow(cx, cy, r, op=0.55, color='34,181,207'):
+    """Halo cian detrás del dragón, como la luz de borde del sitio."""
+    return (f'<div class="abs" style="left:{cx - r}px;top:{cy - r}px;width:{2 * r}px;height:{2 * r}px;border-radius:50%;'
+            f'background:radial-gradient(circle,rgba({color},{op}) 0%,rgba({color},{op * 0.35}) 38%,rgba({color},0) 70%)"></div>')
+
+
+def hero(x, y, w, halo=0.5):
+    """El dragón 3D grande con su halo."""
+    h = round(w / DRAGON_R)
+    return glow(x + w // 2, y + h // 2, int(w * 0.62), halo) + dragon(x, y, w)
 
 
 def logo(x, y, w):
@@ -36,7 +49,7 @@ def logo(x, y, w):
 
 def dragon(x, y, w, op=1):
     o = f';opacity:{op}' if op != 1 else ''
-    return f'<img class="abs" alt="" src="{DRAGON}" style="left:{x}px;top:{y}px;width:{w}px;height:{round(w / DRAGON_R)}px{o}">'
+    return f'<img class="abs" alt="" src="{DRAGON}" style="left:{x}px;top:{y}px;width:{w}px;height:{round(w / DRAGON_R)}px;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55)){o}">'
 
 
 def photo(name, x, y, w, h, fit='cover', pos='center'):
@@ -114,44 +127,51 @@ def dash(x, y, w):
 # 1. PERFIL Y PORTADAS
 # =====================================================================
 
-# 01 · Logo de la página de empresa 400×400: el dragón, igual que el ícono del sitio (se lee a 48 px).
-add('01-perfil-dragon-400x400', 400, 400, dragon(30, 92, 340), step=40)
+# 01 · Logo de la página de empresa 400×400: el dragón 3D del sitio (LinkedIn lo muestra cuadrado; en el celular, a 48 px)
+add('01-perfil-dragon-400x400', 400, 400,
+    '<div class="abs" style="left:0;top:0;width:400px;height:400px;background:radial-gradient(circle at 50% 46%,#0d2a44 0%,#04101f 70%)"></div>'
+    + hero(20, 70, 360, 0.45), step=40)
 
-# 02 · Variante con el logo completo (BOUW + dragón)
+# 02 · Variante: el dragón sobre las letras BOUW en 3D (como en la portada del sitio)
 add('02-perfil-logo-completo-400x400', 400, 400,
-    logo(36, 120, 328)
-    + '<div class="abs mono" style="left:0;top:286px;width:400px;text-align:center;font-size:12px;line-height:18px;letter-spacing:0.28em">Automation &amp; Digital</div>',
+    '<div class="abs" style="left:0;top:0;width:400px;height:400px;background:radial-gradient(circle at 50% 46%,#0d2a44 0%,#04101f 70%)"></div>'
+    + glow(200, 190, 190, 0.35) + logo(28, 96, 344)
+    + '<div class="abs mono" style="left:0;top:296px;width:400px;text-align:center;font-size:12px;line-height:18px;letter-spacing:0.28em">Automation &amp; Digital</div>',
     step=40)
 
 # 05 · Foto de perfil 720×720 (Facebook, Instagram, WhatsApp; se ve en círculo)
-add('05-perfil-logo-720x720', 720, 720,
-    logo(100, 222, 520)
-    + '<div class="abs mono" style="left:0;top:472px;width:720px;text-align:center;font-size:20px;line-height:28px;letter-spacing:0.3em">Automation &amp; Digital</div>')
+add('05-perfil-dragon-720x720', 720, 720,
+    '<div class="abs" style="left:0;top:0;width:720px;height:720px;background:radial-gradient(circle at 50% 46%,#0d2a44 0%,#04101f 70%)"></div>'
+    + hero(70, 130, 580, 0.45))
+add('06-perfil-logo-completo-720x720', 720, 720,
+    '<div class="abs" style="left:0;top:0;width:720px;height:720px;background:radial-gradient(circle at 50% 46%,#0d2a44 0%,#04101f 70%)"></div>'
+    + glow(360, 330, 330, 0.35) + logo(70, 186, 580)
+    + '<div class="abs mono" style="left:0;top:520px;width:720px;text-align:center;font-size:20px;line-height:28px;letter-spacing:0.3em">Automation &amp; Digital</div>')
 
 # 03 · Portada de la página de empresa 1128×191 (el logo de la página tapa abajo a la izquierda: el texto empieza en x=300)
 add('03-portada-empresa-1128x191', 1128, 191,
     '<div class="abs mono" style="left:300px;top:34px;width:520px;font-size:12px;line-height:18px;color:#4fd6e8">Quito · Monterrey &#8212; Est. 7+</div>'
-    + f'<div class="abs serif" style="left:300px;top:62px;width:560px;font-size:54px;line-height:60px">{LEMA}</div>'
-    + '<div class="abs mono" style="left:300px;top:138px;width:560px;font-size:11px;line-height:18px">Ingeniería de procesos, calidad y automatización</div>'
-    + logo(862, 44, 226),
+    + f'<div class="abs serif" style="left:300px;top:60px;width:560px;font-size:50px;line-height:58px">{LEMA}</div>'
+    + '<div class="abs mono" style="left:300px;top:136px;width:560px;font-size:11px;line-height:18px">Ingeniería de procesos, calidad y automatización</div>'
+    + glow(970, 96, 160, 0.45) + logo(836, 24, 268),
     step=30)
 
 # 04 · Banner del perfil personal 1584×396 (la foto tapa la parte izquierda: el contenido empieza en x=560)
 SERV = ['Lean &amp; planta', 'Calidad &amp; BPM', 'Automatización', 'Simulación', 'Web &amp; producto']
 chips = ''
 x = 560
-for s in SERV:
-    w = int(len(html.unescape(s)) * 10.6 + 44)
-    chips += f'<div class="chip" style="left:{x}px;top:316px;width:{w}px;height:40px;font-size:15px;line-height:36px">{s}</div>'
+for s_ in SERV:
+    w = int(len(html.unescape(s_)) * 10.6 + 44)
+    chips += f'<div class="chip" style="left:{x}px;top:316px;width:{w}px;height:40px;font-size:15px;line-height:36px">{s_}</div>'
     x += w + 12
 add('04-banner-perfil-personal-1584x396', 1584, 396,
     '<div class="abs mono" style="left:560px;top:52px;width:500px;font-size:14px;line-height:20px;color:#4fd6e8">Quito · Monterrey &#8212; Est. 7+</div>'
-    + '<div class="abs h" style="left:560px;top:96px;width:680px;font-size:62px;line-height:66px">'
+    + '<div class="abs h" style="left:560px;top:96px;width:640px;font-size:62px;line-height:66px">'
       '<span class="dim">Del dis</span>eño <span class="dim">a la rea</span><span class="c">lidad</span></div>'
-    + f'<div class="abs serif" style="left:560px;top:198px;width:820px;font-size:58px;line-height:64px">{LEMA}</div>'
+    + f'<div class="abs serif" style="left:560px;top:198px;width:700px;font-size:58px;line-height:64px">{LEMA}</div>'
     + chips
-    + logo(1262, 60, 270)
-    + '<div class="abs mono" style="left:1262px;top:190px;width:270px;font-size:12px;line-height:20px;letter-spacing:0.24em">Automation &amp; Digital<br>Solutions</div>')
+    + glow(1400, 160, 220, 0.4) + logo(1236, 44, 320)
+    + '<div class="abs mono" style="left:1236px;top:226px;width:320px;text-align:center;font-size:12px;line-height:20px;letter-spacing:0.24em">Automation &amp; Digital Solutions</div>')
 
 # =====================================================================
 # 2. PUBLICACIONES 1080×1350
@@ -161,7 +181,7 @@ IW = W - 2 * M
 
 
 def header(n, tema, raw=False):
-    return (logo(M, 62, 150)
+    return (logo(M, 50, 190)
             + f'<div class="abs mono" style="left:{W - M - 640}px;top:84px;width:640px;text-align:right;font-size:19px;line-height:28px">'
               f'{e(tema) if raw else f"Pliego {n:02d} · {e(tema)}"}</div>'
             + f'<div class="rule" style="left:{M}px;top:156px;width:{IW}px"></div>')
@@ -229,17 +249,14 @@ def post(name, body):
 
 # L01 · Presentación (la portada del sitio)
 post('L01-presentacion',
-     logo(M, 74, 380)
-     + f'<div class="abs mono" style="left:{W - M - 400}px;top:96px;width:400px;text-align:right;font-size:19px;line-height:30px">Pliego 01 · Quiénes somos</div>'
-     + f'<div class="abs mono" style="left:{M}px;top:296px;width:300px;font-size:19px;line-height:28px;color:#4fd6e8">Quito · Monterrey</div>'
-     + dash(M + 330, 310, 150)
-     + f'<div class="abs mono" style="left:{M + 510}px;top:296px;width:200px;font-size:19px;line-height:28px">Est. 7+</div>'
-     + title('<span class="dim">Del dis</span>eño<br><span class="dim">a la rea</span><span class="c">lidad</span>', 128, top=352)
-     + f'<div class="abs serif" style="left:{M}px;top:620px;width:{IW}px;font-size:76px;line-height:84px">{LEMA}</div>'
-     + para('Automatizamos procesos y convertimos ideas de ingeniería en productos que funcionan. '
-            'Llevamos más de 7 años haciéndolo entre Ecuador y México.', 752, size=31, lh=44)
-     + stats([('Quito', 'Ecuador · GMT-5<br>desde 2019'), ('Monterrey', 'México · GMT-6<br>desde 2023'),
-              ('7+', 'años de experiencia<br>combinada')], 920, num=56)
+     f'<div class="abs mono" style="left:{M}px;top:84px;width:300px;font-size:19px;line-height:28px;color:#4fd6e8">Quito · Monterrey</div>'
+     + dash(M, 124, 150)
+     + f'<div class="abs mono" style="left:{M}px;top:140px;width:300px;font-size:19px;line-height:28px">Est. 7+</div>'
+     + f'<div class="abs mono" style="left:{W - M - 400}px;top:84px;width:400px;text-align:right;font-size:19px;line-height:30px">Pliego 01 · Quiénes somos</div>'
+     + hero(150, 150, 840, 0.5)
+     + title('<span class="dim">Del dis</span>eño<br><span class="dim">a la rea</span><span class="c">lidad</span>', 112, top=760)
+     + f'<div class="abs serif" style="left:{M}px;top:990px;width:{IW}px;font-size:64px;line-height:70px">{LEMA}</div>'
+     + para('Automatizamos procesos y convertimos ideas de ingeniería en productos que funcionan. 7+ años entre Ecuador y México.', 1076, size=26, lh=36)
      + footer('Nueve horas al día en común: siempre hay alguien para responderte.', 'Hablemos'))
 
 
@@ -405,7 +422,8 @@ post('L10-contacto',
                f'<div class="abs t" style="left:{M + 300}px;top:{y + 26}px;width:{IW - 300}px;font-size:34px;line-height:42px">{b}</div>'
                for y, a, b in [(590, 'WhatsApp', '+593 96 368 4012'), (690, 'Correo', 'bouw.contacto@gmail.com'),
                                (790, 'Sedes', 'Quito, Ecuador · Monterrey, México'), (890, 'Respuesta', 'Menos de 24 horas hábiles')])
-     + f'<div class="abs serif" style="left:{M}px;top:1030px;width:{IW}px;font-size:66px;line-height:72px">{LEMA}</div>'
+     + f'<div class="abs serif" style="left:{M}px;top:1010px;width:560px;font-size:60px;line-height:66px">{LEMA}</div>'
+     + hero(650, 976, 280, 0.45)
      + footer('Escríbenos por correo o directo a WhatsApp.', 'Escríbenos por WhatsApp'))
 
 # =====================================================================

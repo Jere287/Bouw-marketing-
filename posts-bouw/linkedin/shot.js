@@ -11,6 +11,7 @@ const fs = require('fs');
     const p = await b.newPage({ viewport: { width: w, height: h } });
     await p.goto('file://' + process.cwd() + '/html/' + name + '.html');
     await p.evaluate(() => document.fonts.ready);
+    await p.evaluate(() => Promise.all([...document.images].map(i => i.complete ? 1 : new Promise(r => { i.onload = i.onerror = r; }))));
     await p.waitForTimeout(150);
     await p.screenshot({ path: 'png/' + name + '.png', clip: { x: 0, y: 0, width: w, height: h } });
     await p.close();

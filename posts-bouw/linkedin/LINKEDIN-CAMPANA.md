@@ -1,7 +1,7 @@
 # LinkedIn BOUW: perfil, portadas y campaña "Del diseño a la realidad"
 
 > Todo sale de **bouw-eight.vercel.app**:
-> - **El logo:** el mismo PNG del encabezado y del pie de página, `marca/bouw-logo-negativo.png` (BOUW en cian con el dragón blanco). El dragón solo, `marca/bouw-dragon-blanco.png`, es el ícono del sitio.
+> - **El logo:** el dragón 3D de la portada del sitio, sacado del modelo original `/dragon.glb` y renderizado con la luz de la página (`marca/dragon-3d/`), y el dragón sobre las letras BOUW en 3D del encabezado (`sitio/dragon/capturas/`).
 > - **Los colores y las letras:** los del sitio: Archivo, IBM Plex Sans, IBM Plex Mono e Instrument Serif.
 > - **El contenido:** el lema *Si se repite, se automatiza.*, los servicios, los proyectos, "¿Cuál te suena?", la calculadora, las condiciones y el contacto.
 >
@@ -16,11 +16,11 @@ Todo está listo para subir en `png/`, y el carrusel en `BOUW-carrusel-proyectos
 
 | Pieza | Tamaño | Dónde se sube | Archivo (`png/`) |
 |---|---|---|---|
-| Logo de la página de empresa | 400×400 | Página de empresa → Editar → Logo | `01-perfil-dragon-400x400.png` (el dragón, como el ícono del sitio) |
-| Logo con nombre (alternativa) | 400×400 | Si prefieres que se lea "BOUW" en el logo | `02-perfil-logo-completo-400x400.png` |
+| Logo de la página de empresa | 400×400 | Página de empresa → Editar → Logo | `01-perfil-dragon-400x400.png` (el dragón 3D del sitio) |
+| Logo con nombre (alternativa) | 400×400 | Si prefieres que se lea "BOUW" en el logo | `02-perfil-logo-completo-400x400.png` (dragón sobre BOUW en 3D) |
 | Portada de la página de empresa | **1128×191** | Página de empresa → Editar → Imagen de portada | `03-portada-empresa-1128x191.png` |
 | Banner del perfil personal (cada socio) | **1584×396** | Tu perfil → lápiz sobre la portada | `04-banner-perfil-personal-1584x396.png` |
-| Foto de perfil grande (WhatsApp, Facebook) | 720×720 | WhatsApp Business, Facebook, firmas | `05-perfil-logo-720x720.png` |
+| Foto de perfil grande (WhatsApp, Facebook) | 720×720 | WhatsApp Business, Facebook, firmas | `05-perfil-dragon-720x720.png` o `06-perfil-logo-completo-720x720.png` |
 
 **Zonas seguras:**
 - **Portada de empresa:** el logo de la página tapa la esquina inferior izquierda, así que el texto empieza en x = 300 y el logo BOUW va a la derecha.
@@ -46,7 +46,7 @@ Todo está listo para subir en `png/`, y el carrusel en `BOUW-carrusel-proyectos
 
 | Archivo | Tamaño | Qué es |
 |---|---|---|
-| `L01-presentacion.png` | 1080×1350 | Del diseño a la realidad · lema · sedes · 7+ años |
+| `L01-presentacion.png` | 1080×1350 | El dragón 3D grande · Del diseño a la realidad · lema |
 | `L02-lean-ingenieria-de-planta.png` | 1080×1350 | Servicio Lean: −15 % preparación, −20 % reprocesos; hoy / con BOUW |
 | `L03-cumplimiento-normativo-bpm.png` | 1080×1350 | Servicio BPM: lo que hacemos; hoy / con BOUW |
 | `L04-programa-contable-excel.png` | 1080×1350 | Proyecto: ERP sobre Excel (11 hojas, 1 archivo, 0 migraciones) |

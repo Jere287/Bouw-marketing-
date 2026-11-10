@@ -1,6 +1,7 @@
 01-perfil-dragon-400x400:400x400
 02-perfil-logo-completo-400x400:400x400
-05-perfil-logo-720x720:720x720
+05-perfil-dragon-720x720:720x720
+06-perfil-logo-completo-720x720:720x720
 03-portada-empresa-1128x191:1128x191
 04-banner-perfil-personal-1584x396:1584x396
 L01-presentacion:1080x1350
