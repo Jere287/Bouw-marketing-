@@ -7,6 +7,6 @@ const fs = require('fs');
   fs.writeFileSync('html/_carrusel.html', `<html><body style="margin:0">${imgs}</body></html>`);
   const b = await chromium.launch(); const p = await b.newPage();
   await p.goto('file://' + process.cwd() + '/html/_carrusel.html'); await p.waitForTimeout(400);
-  await p.pdf({ path: 'BOUW-carrusel-4-campos.pdf', width: '1080px', height: '1350px', printBackground: true, margin: { top: 0, bottom: 0, left: 0, right: 0 } });
+  await p.pdf({ path: 'BOUW-carrusel-proyectos.pdf', width: '1080px', height: '1350px', printBackground: true, margin: { top: 0, bottom: 0, left: 0, right: 0 } });
   await b.close();
 })();

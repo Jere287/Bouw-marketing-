@@ -1,0 +1,54 @@
+<!doctype html><html><body style="margin:0;background:transparent">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {MeshoptDecoder} from 'three/addons/libs/meshopt_decoder.module.js';
+const CYAN='#4fd6e8';
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.18;renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.setClearColor(0x000000,0);
+const scene=new THREE.Scene();
+scene.add(new THREE.AmbientLight(0xffffff,.22));
+const dl=(p,i,c)=>{const l=new THREE.DirectionalLight(c,i);l.position.set(...p);scene.add(l)};
+dl([8,10,5],2.8,'#fff1e0');dl([-6,-2,-8],2.8,CYAN);dl([-4,-6,4],1.1,'#6f8fb8');
+const pl=(p,i,c,d)=>{const l=new THREE.PointLight(c,i,d);l.position.set(...p);scene.add(l)};
+pl([3,1,6],22,'#ffc49a',28);pl([0,6,4],20,'#c0e8ff',20);
+// environment like drei Lightformers
+const es=new THREE.Scene();
+const lf=(i,p,s,c)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({color:new THREE.Color(c).multiplyScalar(i),side:2,toneMapped:false}));m.position.set(...p);m.scale.set(...s);m.lookAt(0,0,0);es.add(m)};
+lf(2,[0,5,-4],[14,5,1],'#f4f1ea');lf(3.5,[-7,0,0],[3,10,1],CYAN);lf(1.1,[7,-2,2],[3,8,1],'#ffc49a');lf(.8,[0,-6,3],[12,3,1],'#1d3550');
+const pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromScene(es,0,.1,100).texture;
+const camera=new THREE.PerspectiveCamera(30,1,.1,200);
+let root,mixer,actions={},mat;
+const loader=new GLTFLoader();loader.setMeshoptDecoder(MeshoptDecoder);
+loader.load('../../sitio/dragon/originales/dragon.glb',g=>{
+ root=g.scene;scene.add(root);
+ root.traverse(o=>{if(o.isMesh||o.isSkinnedMesh){const y=o.material;
+  const x=new THREE.MeshStandardMaterial({map:y.map,metalnessMap:y.metalnessMap,roughnessMap:y.roughnessMap,normalMap:y.normalMap,color:'#ffffff',metalness:y.metalnessMap?1:.15,roughness:y.roughnessMap?1:.55,envMapIntensity:1.8,emissive:'#e87722',emissiveIntensity:.02,side:2});
+  if(x.normalMap)x.normalScale=new THREE.Vector2(1.4,1.4);if(x.map)x.map.colorSpace=THREE.SRGBColorSpace;
+  x.onBeforeCompile=sh=>{sh.uniforms.uRim={value:new THREE.Color(CYAN)};
+   sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nuniform vec3 uRim;').replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\n float fr=pow(1.0-abs(dot(normalize(vViewPosition),normal)),2.8);\n totalEmissiveRadiance+=uRim*fr*0.35;');};
+  o.material=x;o.frustumCulled=false;mat=x;}});
+ mixer=new THREE.AnimationMixer(root);g.animations.forEach(a=>actions[a.name]=a);
+ window.ANIMS=g.animations.map(a=>a.name+':'+a.duration.toFixed(2));window.READY=true;});
+window.shot=(o)=>{
+ const {size=3000,anim=null,t=0,yaw=.75,pitch=-.06,rimBoost=1}=o;
+ renderer.setSize(size,size,false);
+ mixer.stopAllAction();if(anim){const a=mixer.clipAction(actions[anim]);a.reset().play();mixer.setTime(t);} else mixer.setTime(0);
+ if(!anim){root.traverse(o=>{if(o.isSkinnedMesh)o.skeleton.pose()});}
+ root.rotation.set(0,0,0);root.quaternion.setFromEuler(new THREE.Euler(pitch,yaw,0,'YXZ'));
+ root.updateMatrixWorld(true);
+ const box=new THREE.Box3();root.traverse(o=>{if(o.isSkinnedMesh){o.computeBoundingBox();const b=o.boundingBox.clone().applyMatrix4(o.matrixWorld);box.union(b)}});
+ const c=box.getCenter(new THREE.Vector3()),sz=box.getSize(new THREE.Vector3());
+ const r=Math.max(sz.x,sz.y,sz.z)*.62;
+ camera.position.set(c.x,c.y+r*.05,c.z+r/Math.tan(15*Math.PI/180));camera.lookAt(c);camera.near=r*.1;camera.far=r*20;camera.updateProjectionMatrix();
+ renderer.render(scene,camera);
+ // trim
+ const src=renderer.domElement;const cv=document.createElement('canvas');cv.width=size;cv.height=size;const cx=cv.getContext('2d');cx.drawImage(src,0,0);
+ const d=cx.getImageData(0,0,size,size).data;let x0=size,y0=size,x1=0,y1=0;
+ for(let y=0;y<size;y++)for(let x=0;x<size;x++){if(d[(y*size+x)*4+3]>8){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y;}}
+ const p=Math.round(size*.02);x0=Math.max(0,x0-p);y0=Math.max(0,y0-p);x1=Math.min(size-1,x1+p);y1=Math.min(size-1,y1+p);
+ const o2=document.createElement('canvas');o2.width=x1-x0+1;o2.height=y1-y0+1;o2.getContext('2d').drawImage(cv,x0,y0,o2.width,o2.height,0,0,o2.width,o2.height);
+ return o2.toDataURL('image/png');};
+</script></body></html>
