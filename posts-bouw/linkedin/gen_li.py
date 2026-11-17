@@ -123,6 +123,271 @@ def dash(x, y, w):
     return f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:2px;background:#22b5cf;opacity:.6"></div>'
 
 
+# Ayudas comunes de dibujo (series y visuales)
+W, H, M = 1080, 1350, 84
+IW = W - 2 * M
+OR, CY, RED, YEL, GRN = '#f79b4a', '#4fd6e8', '#ff6b5e', '#f2c94c', '#5ad19a'
+
+
+def serie(code, n, tema, color):
+    return (logo(M, 50, 190)
+            + f'<div class="abs" style="left:{W - M - 330}px;top:78px;width:330px;height:44px;border:2px solid {color};border-radius:22px"></div>'
+            + f'<div class="abs mono" style="left:{W - M - 330}px;top:78px;width:330px;height:44px;text-align:center;font-size:16px;line-height:40px;color:{color}">{tema} · {n} / 5</div>'
+            + f'<div class="rule" style="left:{M}px;top:156px;width:{IW}px"></div>')
+
+
+def check(x, y, txt, col=GRN, size=28, w=IW):
+    return (f'<div class="abs" style="left:{x}px;top:{y + 4}px;width:36px;height:36px;border-radius:18px;background:{col};color:#04101f;'
+            f'font-family:Archivo;font-weight:800;font-size:24px;line-height:36px;text-align:center">✓</div>'
+            f'<div class="abs p" style="left:{x + 56}px;top:{y}px;width:{w - 56}px;font-size:{size}px;line-height:44px;color:#e8eef6">{txt}</div>')
+
+
+def cross(x, y, txt, size=28, w=IW):
+    return (f'<div class="abs" style="left:{x}px;top:{y + 4}px;width:36px;height:36px;border-radius:18px;border:2px solid {RED};color:{RED};'
+            f'font-family:Archivo;font-weight:800;font-size:22px;line-height:32px;text-align:center">✕</div>'
+            f'<div class="abs p" style="left:{x + 56}px;top:{y}px;width:{w - 56}px;font-size:{size}px;line-height:44px;color:#c6d4e4">{txt}</div>')
+
+
+def box(x, y, w, h, txt, col='#23415f', tc='#e8eef6', fs=24, bg='#071a2f'):
+    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:{bg};border:2px solid {col};border-radius:12px"></div>'
+            f'<div class="abs k" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;text-align:center;font-size:{fs}px;line-height:{h}px;color:{tc}">{txt}</div>')
+
+
+def line(x1, y1, x2, y2, col='#23415f', wd=3, dash=''):
+    d = f' stroke-dasharray="{dash}"' if dash else ''
+    return (f'<svg class="abs" style="left:0;top:0" width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">'
+            f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{col}" stroke-width="{wd}"{d}/></svg>')
+
+
+def callout(top, h, label, txt, col=CY, size=27):
+    return (f'<div class="panel" style="left:{M}px;top:{top}px;width:{IW}px;height:{h}px"></div>'
+            f'<div class="abs" style="left:{M}px;top:{top}px;width:6px;height:{h}px;background:{col};border-radius:3px"></div>'
+            f'<div class="abs mono" style="left:{M + 40}px;top:{top + 26}px;width:600px;font-size:17px;line-height:24px;color:{col}">{label}</div>'
+            + para(txt, top + 62, size=size, lh=round(size * 1.38), color='#e8eef6', width=IW - 80, left=M + 40))
+
+
+# =====================================================================
+# 6. VISUALES DIBUJADOS (sin capturas): un dibujo por proyecto del sitio, en un lienzo de 912×460
+# =====================================================================
+VW, VH = 912, 460
+
+
+def vis(inner, x, y, scale=1.0):
+    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{VW}px;height:{VH}px;transform:scale({scale});transform-origin:0 0">'
+            f'{inner}</div>')
+
+
+def vpanel():
+    return f'<div class="abs" style="left:0;top:0;width:{VW}px;height:{VH}px;background:#071a2f;border:2px solid #15304d;border-radius:20px"></div>'
+
+
+def svg(body):
+    return f'<svg class="abs" style="left:0;top:0;overflow:visible" width="{VW}" height="{VH}" viewBox="0 0 {VW} {VH}" xmlns="http://www.w3.org/2000/svg">{body}</svg>'
+
+
+def tx(x, y, w, t, size=20, col='#e8eef6', cls='p', align='left', lh=None, extra=''):
+    lh = lh or round(size * 1.3)
+    return f'<div class="abs {cls}" style="left:{x}px;top:{y}px;width:{w}px;font-size:{size}px;line-height:{lh}px;color:{col};text-align:{align}{extra}">{t}</div>'
+
+
+def v_mejora():
+    """Caso de mejora continua: antes y después (índice, antes = 100)."""
+    out = vpanel() + tx(34, 26, 600, 'Índice · antes = 100', 15, '#8fa8c4', 'mono')
+    base = 400
+    for g, (lab, after, delta) in enumerate([('Tiempo de preparación', 85, '−15 %'), ('Reprocesos', 80, '−20 %')]):
+        gx = 70 + g * 430
+        for b, (val, col, nm) in enumerate([(100, OR, 'Antes'), (after, CY, 'Con BOUW')]):
+            bx = gx + b * 150
+            h = val * 2.6
+            out += (f'<div class="abs" style="left:{bx}px;top:{base - h}px;width:110px;height:{h}px;border-radius:10px 10px 0 0;'
+                    f'background:linear-gradient(180deg,{col},{col}55)"></div>'
+                    + tx(bx - 20, base - h - 34, 150, str(val), 22, col, 'k', 'center')
+                    + tx(bx - 20, base + 8, 150, nm, 15, '#8fa8c4', 'mono', 'center'))
+        out += tx(gx + 270, 120, 140, delta, 44, CY, 'h')
+        out += tx(gx, 64, 400, lab, 22, '#e8eef6', 't')
+    out += f'<div class="abs" style="left:40px;top:{base}px;width:832px;height:2px;background:#23415f"></div>'
+    return out
+
+
+def v_dmaic():
+    steps = [('D', 'Definir', 'Qué medir, con el mismo criterio en los 2 turnos'),
+             ('M', 'Medir', 'VSM del estado actual y toma de tiempos en la línea'),
+             ('A', 'Analizar', 'La causa se busca en el proceso, no en la persona'),
+             ('I', 'Mejorar', 'Trabajo estándar y estaciones con 5S'),
+             ('C', 'Controlar', 'KPI por turno y 4 operadores capacitados')]
+    body = '<line x1="96" y1="130" x2="816" y2="130" stroke="#22b5cf" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>'
+    out = vpanel()
+    for i, (l, n, d) in enumerate(steps):
+        cx = 96 + i * 180
+        col = CY if i < 4 else GRN
+        body += f'<circle cx="{cx}" cy="130" r="58" fill="#04101f" stroke="{col}" stroke-width="4"/>'
+        out += tx(cx - 58, 92, 116, l, 58, col, 'h', 'center', 76)
+        out += tx(cx - 86, 208, 172, n, 24, '#e8eef6', 't', 'center')
+        out += tx(cx - 84, 250, 168, d, 18, '#c6d4e4', 'p', 'center', 25)
+    return vpanel() + svg(body) + out[len(vpanel()):]
+
+
+def v_vsm():
+    out = vpanel() + tx(30, 22, 600, 'Mapa de flujo de valor · 4 estaciones', 15, '#8fa8c4', 'mono')
+    body = ''
+    est = [('E1', '57 s', '6,4'), ('E2', '60 s', '6,8'), ('E3', '54 s', '0,7'), ('Insp.', '48 s', '0,5')]
+    for i, (n, ct, inv) in enumerate(est):
+        x = 110 + i * 200
+        body += f'<path d="M{x - 52} 82 L{x - 30} 118 H{x - 74} Z" fill="none" stroke="{OR}" stroke-width="3" stroke-linejoin="round"/>'
+        out += tx(x - 82, 124, 60, inv, 17, OR, 'k', 'center')
+        out += (f'<div class="abs" style="left:{x}px;top:62px;width:140px;height:96px;border:2px solid #23415f;border-radius:10px;background:#04101f"></div>'
+                + tx(x, 72, 140, n, 28, '#e8eef6', 't', 'center') + tx(x, 112, 140, 'C/T ' + ct, 17, '#8fa8c4', 'k', 'center'))
+    pts, x = [], 40
+    for i in range(4):
+        pts += [f'{x},214', f'{x + 110},214', f'{x + 110},190', f'{x + 160},190', f'{x + 160},214']
+        x += 200
+    body += f'<polyline points="{" ".join(pts)} 872,214" fill="none" stroke="{CY}" stroke-width="3"/>'
+    # dona 13 %
+    import math
+    c = 2 * math.pi * 66
+    body += (f'<circle cx="760" cy="340" r="66" fill="none" stroke="#15304d" stroke-width="20"/>'
+             f'<circle cx="760" cy="340" r="66" fill="none" stroke="{CY}" stroke-width="20" stroke-dasharray="{c * 0.13:.1f} {c:.1f}" transform="rotate(-90 760 340)"/>')
+    out += tx(700, 318, 120, '13 %', 30, CY, 'h', 'center')
+    out += (tx(40, 262, 300, 'Entrega', 16, '#8fa8c4', 'mono') + tx(40, 292, 300, '29 min', 60, '#e8eef6', 'h')
+            + tx(340, 262, 320, 'Valor agregado', 16, '#8fa8c4', 'mono') + tx(340, 292, 320, '3,7 min', 60, CY, 'h')
+            + tx(40, 380, 600, 'El resto es espera e inventario entre estaciones.', 20, '#c6d4e4'))
+    return vpanel() + svg(body) + out[len(vpanel()):]
+
+
+def v_contable():
+    import math
+    hub = (456, 236)
+    nodes = ['Clientes', 'Productos', 'Componentes', 'Kits y despiece', 'Ventas', 'Compras y gastos', 'Anticipos']
+    body, out = '', ''
+    pos = []
+    for i, n in enumerate(nodes):
+        a = -math.pi / 2 + (i + 0.5) * 2 * math.pi / len(nodes)
+        x, y = hub[0] + 340 * math.cos(a), hub[1] + 168 * math.sin(a)
+        pos.append((x, y, n))
+        body += f'<line x1="{hub[0]}" y1="{hub[1]}" x2="{x:.0f}" y2="{y:.0f}" stroke="#22b5cf" stroke-opacity=".55" stroke-width="2.5"/>'
+    body += f'<circle cx="{hub[0]}" cy="{hub[1]}" r="92" fill="#08243a" stroke="{CY}" stroke-width="4"/>'
+    for x, y, n in pos:
+        out += (f'<div class="abs" style="left:{x - 98:.0f}px;top:{y - 25:.0f}px;width:196px;height:50px;border-radius:25px;background:#0d3350;border:2px solid #23415f"></div>'
+                + tx(round(x - 98), round(y - 25), 196, n, 19, '#e8eef6', 'p', 'center', 50))
+    out += tx(hub[0] - 90, hub[1] - 34, 180, 'Tablero', 30, CY, 'h', 'center')
+    out += tx(hub[0] - 90, hub[1] + 6, 180, 'se recalcula solo', 16, '#c6d4e4', 'p', 'center')
+    out += tx(24, 20, 400, '1 archivo · 11 hojas · macros', 15, '#8fa8c4', 'mono')
+    return vpanel() + svg(body) + out
+
+
+def v_charms():
+    out = vpanel()
+    steps = ['Catálogo con fotos reales', 'Cotizador en 4 pasos', 'El precio se calcula al elegir', 'El pedido sale a WhatsApp']
+    body = ''
+    for i, st in enumerate(steps):
+        y = 44 + i * 100
+        body += (f'<circle cx="64" cy="{y + 32}" r="26" fill="#04101f" stroke="{CY if i < 3 else GRN}" stroke-width="3"/>'
+                 + (f'<line x1="64" y1="{y + 58}" x2="64" y2="{y + 106}" stroke="#23415f" stroke-width="3"/>' if i < 3 else ''))
+        out += tx(38, y + 14, 52, str(i + 1), 24, CY if i < 3 else GRN, 'h', 'center', 36)
+        out += tx(112, y + 16, 380, st, 25, '#e8eef6', 't')
+    # teléfono
+    px, py = 590, 22
+    out += (f'<div class="abs" style="left:{px}px;top:{py}px;width:260px;height:416px;border-radius:34px;border:3px solid #3a5878;background:#0b141a"></div>'
+            f'<div class="abs" style="left:{px + 3}px;top:{py + 3}px;width:254px;height:62px;border-radius:31px 31px 0 0;background:#1f2c34"></div>'
+            f'<div class="abs" style="left:{px + 20}px;top:{py + 16}px;width:34px;height:34px;border-radius:17px;background:#e8a6b8"></div>'
+            + tx(px + 66, py + 14, 180, 'Charms Ecuador', 17, '#e9edef', 't') + tx(px + 66, py + 36, 180, 'WhatsApp', 13, '#8696a0', 'p')
+            + f'<div class="abs" style="left:{px + 40}px;top:{py + 110}px;width:200px;height:200px;border-radius:14px 2px 14px 14px;background:#005c4b"></div>'
+            + tx(px + 56, py + 124, 176, 'Hola, quiero hacer este pedido:', 16, '#e9edef', 'p', 'left', 22)
+            + ''.join(tx(px + 56, py + 178 + j * 30, 176, '✓ ' + t, 17, '#e9edef', 'p') for j, t in enumerate(['Pieza', 'Detalles', 'Precio estimado']))
+            + tx(px + 150, py + 284, 80, '✓✓', 13, '#53bdeb', 'p', 'right')
+            + f'<div class="abs" style="left:{px + 16}px;top:{py + 352}px;width:228px;height:44px;border-radius:22px;background:#1f2c34"></div>'
+            + tx(px + 16, py + 352, 228, 'Mensaje ya escrito', 13, GRN, 'mono', 'center', 44))
+    return vpanel() + svg(body) + out[len(vpanel()):]
+
+
+def v_anatris():
+    import math
+    cx, cy, r = 250, 330, 200
+    body = f'<path d="M{cx - r} {cy} A{r} {r} 0 0 1 {cx + r} {cy}" fill="none" stroke="#23415f" stroke-width="3"/>'
+    ang = 120
+    a = math.radians(180 - ang)
+    ex, ey = cx + r * math.cos(a), cy - r * math.sin(a)
+    body += f'<path d="M{cx} {cy} L{cx - r} {cy} A{r} {r} 0 0 1 {ex:.1f} {ey:.1f} Z" fill="{CY}" fill-opacity=".14" stroke="none"/>'
+    for d in range(0, 181, 15):
+        t = math.radians(180 - d)
+        l = 18 if d % 45 == 0 else 9
+        body += f'<line x1="{cx + r * math.cos(t):.1f}" y1="{cy - r * math.sin(t):.1f}" x2="{cx + (r - l) * math.cos(t):.1f}" y2="{cy - (r - l) * math.sin(t):.1f}" stroke="#8fa8c4" stroke-width="2"/>'
+    body += (f'<line x1="{cx}" y1="{cy}" x2="{cx - r}" y2="{cy}" stroke="#3d5a7a" stroke-width="5" stroke-linecap="round"/>'
+             f'<line x1="{cx}" y1="{cy}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{CY}" stroke-width="7" stroke-linecap="round"/>'
+             f'<circle cx="{cx}" cy="{cy}" r="14" fill="#04101f" stroke="{CY}" stroke-width="4"/>')
+    out = (tx(30, 22, 400, 'Rango de movimiento · ejemplo', 15, '#8fa8c4', 'mono')
+           + tx(cx - 150, cy - 110, 120, f'{ang}°', 40, CY, 'h', 'center')
+           + tx(cx - r - 30, cy + 14, 60, '0°', 15, '#8fa8c4', 'k', 'center') + tx(cx + r - 30, cy + 14, 60, '180°', 15, '#8fa8c4', 'k', 'center')
+           + tx(30, 392, 440, 'Abducción del hombro', 22, '#e8eef6', 't'))
+    lvl = ['Cuerpo completo en 3D', 'Región clínica', 'Músculo por músculo', 'Ficha con su fuente citada']
+    for i, l in enumerate(lvl):
+        y = 52 + i * 96
+        body += f'<line x1="560" y1="{y + 58}" x2="560" y2="{y + 96}" stroke="#23415f" stroke-width="3"/>' if i < 3 else ''
+        out += (f'<div class="abs" style="left:{520 + i * 16}px;top:{y}px;width:{340 - i * 16}px;height:58px;border-radius:12px;'
+                f'border:2px solid {CY if i == 3 else "#23415f"};background:{"#08243a" if i == 3 else "#04101f"}"></div>'
+                + tx(540 + i * 16, y, 310 - i * 16, l, 20, CY if i == 3 else '#e8eef6', 'p', 'left', 58))
+    return vpanel() + svg(body) + out
+
+
+def v_audit():
+    import math
+    cx, cy, r = 220, 300, 160
+    c = math.pi * r
+    body = (f'<path d="M{cx - r} {cy} A{r} {r} 0 0 1 {cx + r} {cy}" fill="none" stroke="#15304d" stroke-width="30" stroke-linecap="round"/>'
+            f'<path d="M{cx - r} {cy} A{r} {r} 0 0 1 {cx + r} {cy}" fill="none" stroke="{OR}" stroke-width="30" stroke-linecap="round" stroke-dasharray="{c * 0.33:.1f} {c:.1f}"/>')
+    out = (tx(30, 22, 400, 'Informe BPM · planta de ejemplo', 15, '#8fa8c4', 'mono')
+           + tx(cx - 120, cy - 82, 240, '33 %', 64, OR, 'h', 'center') + tx(cx - 120, cy - 10, 240, 'Preparación · no lista', 18, '#c6d4e4', 'p', 'center')
+           + tx(60, 360, 340, 'Hoy', 18, OR, 'mono', 'center') )
+    for i, (n, l, col) in enumerate([('1', 'Crítico', RED), ('1', 'Mayor', OR), ('2', 'Menor', YEL)]):
+        x = 480 + i * 140
+        out += (f'<div class="abs" style="left:{x}px;top:60px;width:120px;height:120px;border-radius:16px;border:2px solid {col};background:{col}18"></div>'
+                + tx(x, 70, 120, n, 56, col, 'h', 'center', 64) + tx(x, 140, 120, l, 16, col, 'mono', 'center'))
+    out += tx(480, 214, 400, 'CAPA', 16, '#8fa8c4', 'mono')
+    out += (f'<div class="abs" style="left:480px;top:244px;width:{9 * 40}px;height:30px;border-radius:6px;background:{OR}"></div>'
+            + tx(480, 244, 360, '9 abiertas', 17, '#04101f', 'k', 'left', 30, ';padding-left:12px')
+            + f'<div class="abs" style="left:480px;top:284px;width:{4 * 40}px;height:30px;border-radius:6px;background:{GRN}"></div>'
+            + tx(480, 284, 160, '4 cerradas', 17, '#04101f', 'k', 'left', 30, ';padding-left:12px')
+            + tx(480, 340, 400, 'Con BOUW', 16, CY, 'mono')
+            + tx(480, 368, 400, 'La lista en verde y el lote liberado.', 22, '#e8eef6', 't', 'left', 28))
+    return vpanel() + svg(body) + out
+
+
+def v_planta():
+    """Plano de planta con 6 puntos de desperdicio (el juego del sitio, dibujado)."""
+    out = vpanel()
+    body = '<rect x="30" y="30" width="852" height="400" rx="10" fill="none" stroke="#23415f" stroke-width="3"/>'
+    body += '<path d="M30 230 H882" stroke="#15304d" stroke-width="40"/>'
+    for (x, y, w, h, n) in [(70, 60, 170, 120, 'Corte'), (290, 60, 170, 120, 'Ensamble'), (510, 60, 150, 120, 'Pintura'), (710, 60, 140, 120, 'Empaque'),
+                            (70, 290, 220, 110, 'Almacén MP'), (350, 290, 180, 110, 'Inspección'), (600, 290, 250, 110, 'Producto terminado')]:
+        body += f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="8" fill="#0b2036" stroke="#3a5878" stroke-width="2"/>'
+        out += tx(x, y + h / 2 - 12, w, n, 17, '#8fa8c4', 'mono', 'center')
+    body += '<path d="M150 180 C 200 260, 600 200, 680 290 M380 180 C 420 250, 140 230, 170 290" fill="none" stroke="#f79b4a" stroke-width="2.5" stroke-dasharray="6 6"/>'
+    for i, (x, y) in enumerate([(200, 150), (460, 230), (585, 200), (300, 330), (520, 360), (820, 240)]):
+        body += (f'<circle cx="{x}" cy="{y}" r="26" fill="{OR}" fill-opacity=".22"/>'
+                 f'<circle cx="{x}" cy="{y}" r="15" fill="{OR}"/>')
+        out += tx(x - 15, y - 15, 30, str(i + 1), 17, '#04101f', 'h', 'center', 30)
+    return vpanel() + svg(body) + out[len(vpanel()):]
+
+
+def v_firmas():
+    out = vpanel() + tx(30, 26, 400, 'Hoy · en serie', 16, OR, 'mono')
+    body = ''
+    for i in range(4):
+        x = 40 + i * 190
+        out += box(x, 66, 150, 64, f'Firma {i + 1}', OR, '#e8eef6', 20)
+        if i < 3:
+            body += f'<line x1="{x + 150}" y1="98" x2="{x + 190}" y2="98" stroke="{OR}" stroke-width="3"/>'
+    out += box(800, 66, 80, 64, '⏳', RED, RED, 26)
+    out += tx(40, 146, 820, 'El lote espera a que aparezca cada papel, uno tras otro.', 20, '#c6d4e4')
+    out += tx(30, 214, 400, 'Con BOUW · en paralelo', 16, CY, 'mono')
+    for i in range(3):
+        y = 250 + i * 64
+        out += box(40, y, 300, 50, f'Revisión {i + 1} · 1 firma', CY, '#e8eef6', 18)
+        body += f'<path d="M340 {y + 25} C 420 {y + 25}, 420 316, 500 316" fill="none" stroke="{CY}" stroke-width="3"/>'
+    out += box(500, 284, 360, 64, '✓ Lote liberado', GRN, GRN, 24)
+    return vpanel() + svg(body) + out[len(vpanel()):]
+
+
 # =====================================================================
 # 1. PERFIL Y PORTADAS
 # =====================================================================
@@ -407,7 +672,7 @@ post('L09-donde-pierde-horas',
      header(9, 'Pruébalo · 30 segundos')
      + title('¿Dónde pierde horas esta planta?', 76, top=214)
      + para('Hay seis desperdicios escondidos. Toca la planta donde veas uno y te decimos qué es, qué cuesta y cómo se ve arreglado.', 400, size=27, lh=37)
-     + photo('juego-planta', M, 520, IW, 560)
+     + vis(v_planta(), M, 540, 1.0)
      + f'<div class="abs h" style="left:{W - M - 230}px;top:1090px;width:200px;text-align:right;font-size:56px;line-height:60px">0<span class="dim">/6</span></div>'
      + f'<div class="abs mono" style="left:{M}px;top:1110px;width:600px;font-size:17px;line-height:24px">Encontrados</div>'
      + footer('Seis desperdicios. ¿Cuántos ves?', 'Pruébalo'))
@@ -464,12 +729,13 @@ car.append(header(1, f'Carrusel · 1 / {N}', True)
                      for i, p in enumerate(PROY))
            + f'<div class="abs mono" style="left:{M}px;top:1214px;width:400px;font-size:20px;line-height:30px;color:#4fd6e8">Desliza →</div>'
            + f'<div class="abs serif" style="left:{M + 360}px;top:1200px;width:{IW - 360}px;text-align:right;font-size:46px;line-height:52px">{LEMA}</div>')
+VISUAL = {'anatris-movimiento': v_anatris, 'lean-es-poster': v_vsm, 'contable-excel-es-poster': v_contable, 'charms': v_charms, 'cumplimiento-es-poster': v_audit}
 for i, (n, tag, name, desc, img, st, res, tech) in enumerate(PROY):
     car.append(header(i + 2, f'Carrusel · {i + 2} / {N}', True)
                + f'<div class="abs h" style="left:{M}px;top:196px;width:300px;font-size:120px;line-height:120px;color:#15304d">{n}</div>'
                + f'<div class="abs mono" style="left:{M + 230}px;top:214px;width:{IW - 230}px;font-size:18px;line-height:28px;color:#4fd6e8">{e(tag)}</div>'
                + f'<div class="abs h" style="left:{M + 230}px;top:250px;width:{IW - 230}px;font-size:62px;line-height:66px">{e(name)}</div>'
-               + photo(img, M, 352, IW, 420)
+               + vis(VISUAL[img](), M + 40, 352, 420 / 460)
                + para(e(desc), 800, size=29, lh=40, color='#e8eef6')
                + stats(st, 914, num=60)
                + para('<span class="k" style="font-size:17px;letter-spacing:0.2em">RESULTADO&nbsp;&nbsp;</span>' + e(res), 1076, size=23, lh=32)
@@ -513,46 +779,6 @@ add('A01-anuncio-la-cuenta-1200x627', 1200, 627,
 #    Todo sale del sitio: servicio Cumplimiento & BPM, informe de auditoría, Programa contable,
 #    "¿Cuál te suena?" y la calculadora con sus tres veredictos.
 # =====================================================================
-OR, CY, RED, YEL, GRN = '#f79b4a', '#4fd6e8', '#ff6b5e', '#f2c94c', '#5ad19a'
-
-
-def serie(code, n, tema, color):
-    return (logo(M, 50, 190)
-            + f'<div class="abs" style="left:{W - M - 330}px;top:78px;width:330px;height:44px;border:2px solid {color};border-radius:22px"></div>'
-            + f'<div class="abs mono" style="left:{W - M - 330}px;top:78px;width:330px;height:44px;text-align:center;font-size:16px;line-height:40px;color:{color}">{tema} · {n} / 5</div>'
-            + f'<div class="rule" style="left:{M}px;top:156px;width:{IW}px"></div>')
-
-
-def check(x, y, txt, col=GRN, size=28, w=IW):
-    return (f'<div class="abs" style="left:{x}px;top:{y + 4}px;width:36px;height:36px;border-radius:18px;background:{col};color:#04101f;'
-            f'font-family:Archivo;font-weight:800;font-size:24px;line-height:36px;text-align:center">✓</div>'
-            f'<div class="abs p" style="left:{x + 56}px;top:{y}px;width:{w - 56}px;font-size:{size}px;line-height:44px;color:#e8eef6">{txt}</div>')
-
-
-def cross(x, y, txt, size=28, w=IW):
-    return (f'<div class="abs" style="left:{x}px;top:{y + 4}px;width:36px;height:36px;border-radius:18px;border:2px solid {RED};color:{RED};'
-            f'font-family:Archivo;font-weight:800;font-size:22px;line-height:32px;text-align:center">✕</div>'
-            f'<div class="abs p" style="left:{x + 56}px;top:{y}px;width:{w - 56}px;font-size:{size}px;line-height:44px;color:#c6d4e4">{txt}</div>')
-
-
-def box(x, y, w, h, txt, col='#23415f', tc='#e8eef6', fs=24, bg='#071a2f'):
-    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:{bg};border:2px solid {col};border-radius:12px"></div>'
-            f'<div class="abs k" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;text-align:center;font-size:{fs}px;line-height:{h}px;color:{tc}">{txt}</div>')
-
-
-def line(x1, y1, x2, y2, col='#23415f', wd=3, dash=''):
-    d = f' stroke-dasharray="{dash}"' if dash else ''
-    return (f'<svg class="abs" style="left:0;top:0" width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">'
-            f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{col}" stroke-width="{wd}"{d}/></svg>')
-
-
-def callout(top, h, label, txt, col=CY, size=27):
-    return (f'<div class="panel" style="left:{M}px;top:{top}px;width:{IW}px;height:{h}px"></div>'
-            f'<div class="abs" style="left:{M}px;top:{top}px;width:6px;height:{h}px;background:{col};border-radius:3px"></div>'
-            f'<div class="abs mono" style="left:{M + 40}px;top:{top + 26}px;width:600px;font-size:17px;line-height:24px;color:{col}">{label}</div>'
-            + para(txt, top + 62, size=size, lh=round(size * 1.38), color='#e8eef6', width=IW - 80, left=M + 40))
-
-
 # ---------- CALIDAD ----------
 post('Q01-calidad-el-inspector',
      serie('Q', 1, 'Calidad', OR)
@@ -634,7 +860,7 @@ post('Q05-calidad-lotes-retenidos',
      serie('Q', 5, 'Calidad', OR)
      + kicker('Burocracia y lotes retenidos', color=OR)
      + title('Ningún lote debería esperar a que aparezca un papel.', 80, top=256)
-     + photo('cumplimiento-es-poster', M, 520, IW, 380)
+     + vis(v_firmas(), M, 520, 380 / 460)
      + hoy_bouw('Papeles sueltos, archivadores desbordados, la alarma encendida y un lote retenido.',
                 'Revisiones en paralelo y una sola firma por paso. Expedientes en orden y el lote liberado.', 930, 216)
      + footer('Agenda un diagnóstico de calidad gratis.', 'Diagnóstico gratis'))
@@ -674,7 +900,7 @@ post('Z03-automatizacion-cierre-de-mes',
      serie('Z', 3, 'Automatización', CY)
      + kicker('Proyecto real · Programa contable')
      + title('El cierre de mes ya no se arma a mano.', 84, top=256)
-     + photo('contable-excel-pantalla-poster', M, 460, IW, 400, pos='top')
+     + vis(v_contable(), M + 60, 460, 400 / 460)
      + stats([('11', 'Hojas conectadas'), ('1', 'Archivo, cero licencias'), ('0', 'Migraciones de sistema')], 890, num=80)
      + para('<span class="k" style="font-size:17px;letter-spacing:0.2em">RESULTADO&nbsp;&nbsp;</span>Se genera solo desde los movimientos ya capturados. El equipo siguió en el Excel que ya sabía usar.', 1060, size=24, lh=33)
      + footer('Excel · VBA · Inventario · Kits / BOM · Dashboard', 'Hablemos'))
@@ -722,6 +948,49 @@ post('Z05-automatizacion-no-todo',
      + para('Nuestra calculadora te lo dice antes que nosotros. Así decidimos qué vale la pena:', 470, size=28, lh=38)
      + ver
      + footer('Haz la cuenta con tu tarea en 30 segundos.', 'Hacer la cuenta'))
+
+# =====================================================================
+# 7. SERIE PROYECTOS (P01–P07): un proyecto del sitio por publicación, todo dibujado
+# =====================================================================
+PR = [
+    ('P01-proyecto-mejora-continua', 'Caso · Mejora continua · Lean Six Sigma', 'Menos espera, menos reproceso, mejor producto.',
+     'Una línea de dos turnos. Trabajamos en piso con producción y calidad para que el producto saliera bien a la primera.',
+     v_mejora, [('−15 %', 'Tiempo de preparación'), ('−20 %', 'Reprocesos'), ('4', 'Operadores capacitados')],
+     'Agenda una evaluación técnica de tu línea.', 'Optimiza tu línea'),
+    ('P02-proyecto-mejora-continua-metodo', 'Caso · Mejora continua · Método', 'Así lo hicimos, paso a paso.',
+     'Cada minuto de preparación es un minuto sin producir, y una pieza fuera de especificación se paga dos veces.',
+     v_dmaic, [('2', 'Turnos, mismo criterio'), ('VSM', 'Estado actual mapeado'), ('5S', 'Estaciones reorganizadas')],
+     'La causa se busca en el proceso, no en la persona.', 'Hablemos'),
+    ('P03-proyecto-simulacion-de-flujos', 'Simulación de flujos &amp; visión analítica', '29 minutos de entrega. Solo 3,7 agregan valor.',
+     'Con los datos de tu operación armamos un modelo de la línea y probamos ahí cada cambio, antes de mover un solo equipo.',
+     v_vsm, [('29 min', 'Tiempo de entrega'), ('3,7 min', 'Valor agregado'), ('13 %', 'Del tiempo agrega valor')],
+     'Sin parar la producción para hacer pruebas.', 'Probar la simulación'),
+    ('P04-proyecto-programa-contable', 'Automatización · Gestión · Taller de manufactura', 'El cierre de mes, mapeado como una línea.',
+     'Un taller que fabrica kits y tótems armaba el cierre a mano. Vimos dónde nace cada dato y cuántas veces se vuelve a escribir.',
+     v_contable, [('11', 'Hojas conectadas'), ('1', 'Archivo, cero licencias'), ('0', 'Migraciones de sistema')],
+     'El cierre sale de los movimientos ya capturados.', 'Hablemos'),
+    ('P05-proyecto-charms-ecuador', 'Web · Pedidos por WhatsApp · Charms Ecuador', 'El pedido llega a WhatsApp ya escrito.',
+     'Web para un taller de regalos en porcelana fría que cierra sus ventas por WhatsApp. Sin servidor ni base de datos.',
+     v_charms, [('15', 'Modelos con foto real'), ('4', 'Pasos del cotizador'), ('$0', 'Costo de hosting')],
+     'El cliente llega con pieza, detalles y precio.', 'Quiero algo así'),
+    ('P06-proyecto-anatris', 'Salud · Atlas 3D · Producto propio', 'La anatomía en 3D, en el navegador.',
+     'Atlas de anatomía y biomecánica para fisioterapia: rangos de movimiento reales y cada dato clínico con su fuente.',
+     v_anatris, [('6', 'Regiones clínicas'), ('113', 'Músculos con ficha'), ('79', 'Tests con sens/spec')],
+     'En línea y en producción: anatris.vercel.app', 'Verlo en vivo'),
+    ('P07-proyecto-informe-de-auditoria', 'Hoy → BOUW · Informe de auditoría', 'La misma planta, hoy y con BOUW.',
+     'Los hallazgos del inspector, las CAPA, los lotes retenidos y el rastro de un lote hasta su materia prima.',
+     v_audit, [('9', 'CAPA abiertas hoy'), ('3', 'Lotes retenidos'), ('1', 'Hallazgo crítico')],
+     'Prepara tu planta antes de la inspección.', 'Agendar diagnóstico'),
+]
+for i, (name, kick, ttl, sub, fn, st, ph, cta) in enumerate(PR, 1):
+    post(name,
+         serie('P', i, 'Proyectos', CY).replace(f'· {i} / 5', f'· {i} / {len(PR)}')
+         + kicker(kick)
+         + title(ttl, 66, top=246)
+         + para(sub, 400, size=25, lh=35)
+         + vis(fn(), M, 494)
+         + stats(st, 978, num=62)
+         + footer(ph, cta))
 
 # ---------- escribir ----------
 for f in os.listdir(OUT):

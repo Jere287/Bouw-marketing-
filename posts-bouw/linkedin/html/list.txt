@@ -32,3 +32,10 @@ Z02-automatizacion-copiar-datos:1080x1350
 Z03-automatizacion-cierre-de-mes:1080x1350
 Z04-automatizacion-tres-archivos:1080x1350
 Z05-automatizacion-no-todo:1080x1350
+P01-proyecto-mejora-continua:1080x1350
+P02-proyecto-mejora-continua-metodo:1080x1350
+P03-proyecto-simulacion-de-flujos:1080x1350
+P04-proyecto-programa-contable:1080x1350
+P05-proyecto-charms-ecuador:1080x1350
+P06-proyecto-anatris:1080x1350
+P07-proyecto-informe-de-auditoria:1080x1350
