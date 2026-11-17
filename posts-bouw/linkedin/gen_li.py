@@ -1157,232 +1157,214 @@ manif('M10-dos-sedes', 10, 'Dónde estamos',
       'Respondemos en menos de 24 h hábiles.', 'Escríbenos', size=100)
 
 # =====================================================================
-# 9. NUEVA LÍNEA (N01–N08): formatos de consultora (señales, mito/realidad, caso con foto real,
-#    encuesta, cita, checklist, errores). Claro y oscuro alternados; el dragón solo en el logo.
+# 9. NUEVA LÍNEA v2 (N01–N14) · sistema profesional pensado para el celular:
+#    etiqueta de categoría arriba, titular grande, poco texto (mínimo 32 px), retícula de plano,
+#    barra de marca abajo con el logo. Sin botones falsos. El dragón solo en el logo.
 # =====================================================================
 LBG, INK, SUB, CYD, LLN = '#f3f0ea', '#0b1b2e', '#4a5d73', '#0e8fa8', '#d9d3c7'
 LOGO_CL = 'file://' + os.path.join(ROOT, 'sitio', 'dragon', 'capturas', 'dragon-claro-realidad-transparente.png')
+NAVY = '#04101f'
 
 
-def lhead(tag, dark=False):
+def bp_grid(dark):
+    col, op = ('#4fd6e8', .05) if dark else ('#0b1b2e', .055)
+    d = ''.join(f'M{x} 0V{H}' for x in range(54, W, 54)) + ''.join(f'M0 {y}H{W}' for y in range(54, H, 54))
+    return (f'<svg class="abs" style="left:0;top:0" width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">'
+            f'<path d="{d}" fill="none" stroke="{col}" stroke-opacity="{op}" stroke-width="1.5"/></svg>')
+
+
+def pill(txt, col, dark, x=M, y=72):
+    w = int(len(html.unescape(txt)) * 17.4 + 70)
+    bg = 'rgba(4,16,31,.55)' if dark else 'rgba(255,255,255,.6)'
+    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:50px;border-radius:25px;border:2px solid {col};background:{bg}"></div>'
+            f'<div class="abs" style="left:{x + 24}px;top:{y + 19}px;width:12px;height:12px;border-radius:6px;background:{col}"></div>'
+            f'<div class="abs mono" style="left:{x + 46}px;top:{y}px;width:{w - 50}px;font-size:21px;line-height:50px;color:{col};letter-spacing:.16em">{txt}</div>')
+
+
+def brandbar(dark):
     src = LOGO if dark else LOGO_CL
-    col = '#8fa8c4' if dark else SUB
-    return (f'<img class="abs" alt="BOUW" src="{src}" style="left:{M}px;top:50px;width:190px;height:{round(190 / LOGO_R)}px">'
-            f'<div class="abs mono" style="left:{W - M - 560}px;top:88px;width:560px;text-align:right;font-size:17px;line-height:26px;color:{col}">{tag}</div>')
+    ln, tc = ('rgba(79,214,232,.25)', '#9fb3c8') if dark else ('#d3ccbf', SUB)
+    return (f'<div class="abs" style="left:{M}px;top:1214px;width:{IW}px;height:2px;background:{ln}"></div>'
+            f'<img class="abs" alt="BOUW" src="{src}" style="left:{M}px;top:1236px;width:160px;height:{round(160 / LOGO_R)}px">'
+            f'<div class="abs mono" style="left:{W - M - 560}px;top:1262px;width:560px;text-align:right;font-size:21px;line-height:30px;color:{tc};letter-spacing:.14em">Quito · Monterrey</div>')
 
 
-def lfoot(phrase, cta, dark=False):
-    cw = int(len(cta) * 14 + 76)
-    ln, ph, mt, bg, fg = (('#15304d', '#c6d4e4', '#5d7690', '#22b5cf', '#04101f') if dark
-                          else (LLN, INK, '#7d8a99', CYD, '#ffffff'))
-    return (f'<div class="abs" style="left:{M}px;top:1170px;width:{IW}px;height:2px;background:{ln}"></div>'
-            + f'<div class="abs p" style="left:{M}px;top:1206px;width:{IW - cw - 36}px;font-size:25px;line-height:33px;color:{ph}">{phrase}</div>'
-            + f'<div class="abs" style="left:{W - M - cw}px;top:1206px;width:{cw}px;height:68px;border-radius:4px;background:{bg};color:{fg};'
-              f'font-family:Archivo;font-weight:700;font-size:24px;line-height:68px;text-align:center">{e(cta)}</div>'
-            + f'<div class="abs mono" style="left:{M}px;top:1296px;width:{IW}px;font-size:15px;line-height:22px;color:{mt}">bouw-eight.vercel.app · +593 96 368 4012</div>')
+def frame(name, dark, tag, tagcol, body, foto=None, pos='center', shade=None):
+    bg = ''
+    if foto:
+        bg = photo(foto, 0, 0, W, H, pos=pos).replace('border-radius:18px', 'border-radius:0')
+        bg += (f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:'
+               f'{shade or "linear-gradient(180deg,rgba(4,16,31,.85) 0%,rgba(4,16,31,.1) 20%,rgba(4,16,31,.2) 40%,rgba(4,16,31,.94) 64%,#04101f 100%)"}"></div>')
+    else:
+        bg = f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:{NAVY if dark else LBG}"></div>' + bp_grid(dark)
+    pieces.append((name, W, H, bg + pill(tag, tagcol, dark) + body + brandbar(dark)))
 
 
-def light(name, body):
-    pieces.append((name, W, H, f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:{LBG}"></div>' + body))
+def T(t, size, top, col=None, dark=False, width=IW, left=M, lh=1.0, cls='h'):
+    col = col or ('#ffffff' if dark else INK)
+    return f'<div class="abs {cls}" style="left:{left}px;top:{top}px;width:{width}px;font-size:{size}px;line-height:{round(size * lh)}px;color:{col}">{t}</div>'
 
 
-def fullphoto(name, foto, body, pos='center'):
-    img = photo(foto, 0, 0, W, H, pos=pos).replace('border-radius:18px', 'border-radius:0')
-    shade = ('<div class="abs" style="left:0;top:0;width:1080px;height:1350px;'
-             'background:linear-gradient(180deg,rgba(4,16,31,.82) 0%,rgba(4,16,31,.15) 22%,rgba(4,16,31,.25) 42%,rgba(4,16,31,.92) 66%,#04101f 100%)"></div>')
-    pieces.append((name, W, H, img + shade + body))
+def Pp(t, top, size=34, col=None, dark=False, width=IW, left=M, lh=1.38):
+    col = col or ('#c9d6e3' if dark else SUB)
+    return f'<div class="abs p" style="left:{left}px;top:{top}px;width:{width}px;font-size:{size}px;line-height:{round(size * lh)}px;color:{col}">{t}</div>'
 
 
-def ltitle(t, size, top, col=INK, width=IW):
-    return f'<div class="abs h" style="left:{M}px;top:{top}px;width:{width}px;font-size:{size}px;line-height:{round(size * 1.02)}px;color:{col}">{t}</div>'
+C_ = lambda t: f'<span style="color:{CY}">{t}</span>'      # cian sobre oscuro
+CL_ = lambda t: f'<span style="color:{CYD}">{t}</span>'    # cian sobre claro
+O_ = lambda t: f'<span style="color:{OR}">{t}</span>'
 
-
-def lpara(t, top, size=28, col=SUB, width=IW, left=M, lh=None):
-    return f'<div class="abs p" style="left:{left}px;top:{top}px;width:{width}px;font-size:{size}px;line-height:{lh or round(size * 1.42)}px;color:{col}">{t}</div>'
-
-
-# N01 · 5 señales (claro)
-sen = ['El cierre de mes lo arma alguien a mano, juntando archivos.',
-       'Nadie sabe cuánto tarda de verdad una pieza en salir.',
-       'Se repite trabajo por errores que se detectan tarde.',
-       'Cada persona hace la misma tarea a su manera.',
-       'La misma información vive en tres archivos y ninguno cuadra.']
+# ---------- N01 · 5 señales (claro) ----------
 rows = ''
-for i, t_ in enumerate(sen):
-    y = 528 + i * 120
-    rows += (f'<div class="abs" style="left:{M}px;top:{y - 18}px;width:{IW}px;height:2px;background:{LLN}"></div>'
-             + f'<div class="abs h" style="left:{M}px;top:{y}px;width:90px;font-size:56px;line-height:64px;color:{OR}">{i + 1}</div>'
-             + lpara(e(t_), y + 6, 31, INK, IW - 100, M + 100, 42))
-light('N01-senales-planta-pierde-horas',
-      lhead('Para dueños y jefes de planta')
-      + ltitle('5 señales de que tu empresa está perdiendo horas sin darse cuenta', 70, 214)
-      + rows
-      + lfoot('¿Cuántas marcaste? Con dos ya vale la pena medir.', 'Agendar diagnóstico'))
+for i, t_ in enumerate(['El cierre de mes se arma a mano', 'Nadie sabe cuánto tarda una pieza', 'Los errores se detectan tarde',
+                        'Cada quien hace la tarea a su manera', 'Tres archivos y ninguno cuadra']):
+    y = 548 + i * 128
+    rows += (f'<div class="abs" style="left:{M}px;top:{y - 22}px;width:{IW}px;height:2px;background:{LLN}"></div>'
+             + T(f'0{i + 1}', 54, y, OR, lh=1.1) + T(e(t_), 38, y + 6, INK, width=IW - 120, left=M + 120, lh=1.2, cls='t'))
+frame('N01-senales-planta-pierde-horas', False, 'Diagnóstico rápido', CYD,
+      T(f'5 señales de que tu empresa {CL_("pierde horas")} sin darse cuenta', 84, 176, lh=1.02) + rows)
 
-# N02 · Mito vs realidad (mitad clara, mitad oscura)
+# ---------- N02 · Mito vs. realidad (claro arriba, oscuro abajo) ----------
 pieces.append(('N02-mito-realidad-automatizar', W, H,
-    f'<div class="abs" style="left:0;top:0;width:{W}px;height:660px;background:{LBG}"></div>'
-    f'<div class="abs" style="left:0;top:660px;width:{W}px;height:690px;background:#04101f"></div>'
-    + lhead('Mito vs. realidad')
-    + f'<div class="abs mono" style="left:{M}px;top:236px;width:300px;font-size:22px;line-height:30px;color:{OR};letter-spacing:.3em">✕ Mito</div>'
-    + ltitle('“Automatizar es caro y obliga a cambiar todo el sistema.”', 64, 290, INK)
-    + f'<div class="abs mono" style="left:{M}px;top:720px;width:400px;font-size:22px;line-height:30px;color:{CY};letter-spacing:.3em">✓ Realidad</div>'
-    + ltitle('Un taller automatizó su cierre de mes <span class="c">sin cambiar de sistema.</span>', 54, 774, '#e8eef6')
-    + lpara('Lo hicimos sobre el Excel que el equipo ya usaba: 11 hojas conectadas, cero licencias nuevas, cero migraciones.', 960, 27, '#c6d4e4')
-    + lfoot('Empieza por lo que ya tienes.', 'Hablemos', dark=True)))
+    f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:{LBG}"></div>' + bp_grid(False)
+    + f'<div class="abs" style="left:0;top:600px;width:{W}px;height:750px;background:{NAVY}"></div>'
+    + pill('✕ Mito', OR, False)
+    + T('“Automatizar es caro y obliga a cambiar todo el sistema.”', 76, 176, INK, lh=1.05)
+    + pill('✓ Realidad', CY, True, y=652)
+    + T(f'Un taller automatizó su cierre de mes {C_("sin cambiar de sistema.")}', 60, 740, '#ffffff', lh=1.08)
+    + ''.join(T(n_, 88, 950, CY, lh=1) + Pp(l_, 1052, 26, '#c9d6e3', True, 280, M + i * 312) .replace(f'left:{M + i * 312}px', f'left:{M + i * 312}px')
+              if False else T(n_, 88, 950, CY, left=M + i * 312, width=280, lh=1) + Pp(l_, 1050, 27, None, True, 280, M + i * 312, 1.3)
+              for i, (n_, l_) in enumerate([('11', 'hojas conectadas'), ('0', 'licencias nuevas'), ('0', 'migraciones')]))
+    + brandbar(True)))
 
-# N03 · Caso real con foto de la línea
-fullphoto('N03-caso-dos-turnos-foto', 'mejora-linea-extrusion',
-    lhead('Caso real · Mejora continua', dark=True)
-    + f'<div class="abs mono" style="left:{M}px;top:690px;width:600px;font-size:18px;line-height:26px;color:{OR}">Línea de producción · 2 turnos</div>'
-    + ltitle('Dos turnos. Una línea.<br><span class="c">−20 % de reprocesos.</span>', 78, 730, '#ffffff')
-    + lpara('Lo difícil no fue el método. Fue lograr que los dos turnos midieran con el mismo criterio. Desde ahí, la preparación bajó 15 % y los reprocesos 20 %.', 930, 27, '#d6e0ea')
-    + lfoot('Medimos en piso antes de proponer nada.', 'Ver el caso', dark=True), pos='center 35%')
+# ---------- N03 · Caso real con foto ----------
+frame('N03-caso-dos-turnos-foto', True, 'Caso real · Mejora continua', OR,
+      T('−20 %', 220, 600, CY, lh=1)
+      + T('de reprocesos en una línea de dos turnos.', 58, 836, '#ffffff', lh=1.08)
+      + Pp(f'Y {C_("−15 %")} en tiempo de preparación, con 4 operadores capacitados.', 1000, 34, '#d6e0ea', True),
+      foto='mejora-linea-extrusion', pos='center 35%')
 
-# N04 · Encuesta (claro)
-opts = [('A', 'El papeleo de calidad y las auditorías'), ('B', 'El cierre de mes'), ('C', 'Las esperas en la línea'), ('D', 'Copiar datos de un sistema a otro')]
+# ---------- N04 · Encuesta (claro) ----------
 op = ''
-for i, (l_, t_) in enumerate(opts):
-    y = 560 + i * 132
-    op += (f'<div class="abs" style="left:{M}px;top:{y}px;width:{IW}px;height:108px;border-radius:16px;background:#ffffff;border:2px solid {LLN}"></div>'
-           f'<div class="abs" style="left:{M + 26}px;top:{y + 22}px;width:64px;height:64px;border-radius:32px;background:{CYD}"></div>'
-           + tx(M + 26, y + 22, 64, l_, 32, '#ffffff', 'h', 'center', 64)
-           + lpara(e(t_), y + 30, 31, INK, IW - 150, M + 120, 48))
-light('N04-encuesta-que-te-quita-horas',
-      lhead('Pregunta de la semana')
-      + ltitle('¿Qué le quita más horas a tu equipo esta semana?', 80, 220)
+for i, (l_, t_) in enumerate([('A', 'Papeleo de calidad y auditorías'), ('B', 'El cierre de mes'), ('C', 'Esperas en la línea'), ('D', 'Copiar datos de un sistema a otro')]):
+    y = 500 + i * 160
+    op += (f'<div class="abs" style="left:{M}px;top:{y}px;width:{IW}px;height:134px;border-radius:20px;background:#ffffff;border:2px solid {LLN};box-shadow:0 10px 30px -18px rgba(11,27,46,.35)"></div>'
+           f'<div class="abs" style="left:{M + 30}px;top:{y + 27}px;width:80px;height:80px;border-radius:40px;background:{CYD}"></div>'
+           + T(l_, 42, y + 27, '#ffffff', width=80, left=M + 30, lh=1.9).replace('text-align:left', '') .replace(f'width:80px;font-size:42px', 'width:80px;text-align:center;font-size:42px')
+           + T(e(t_), 38, y + 44, INK, width=IW - 170, left=M + 140, lh=1.2, cls='t'))
+frame('N04-encuesta-que-te-quita-horas', False, 'Pregunta de la semana', CYD,
+      T(f'¿Qué le quita más horas a {CL_("tu equipo")}?', 92, 176, lh=1.02)
       + op
-      + lfoot('Responde con la letra en los comentarios.', 'Comentar'))
+      + Pp('Responde con la letra en los comentarios.', 1146, 30, SUB))
 
-# N05 · Cita de ingeniero (oscuro, tipográfica)
-add('N05-cita-ordena-antes-de-automatizar', W, H,
-    lhead('Desde la planta', dark=True)
-    + f'<div class="abs serif" style="left:{M - 10}px;top:150px;width:300px;font-size:300px;line-height:300px;color:{CY}">“</div>'
-    + f'<div class="abs serif" style="left:{M}px;top:380px;width:{IW}px;font-size:78px;line-height:84px">Antes de automatizar un proceso, ordénalo. Automatizar el desorden solo te da <span class="o">desorden más rápido.</span></div>'
-    + f'<div class="abs" style="left:{M}px;top:900px;width:60px;height:3px;background:{CY}"></div>'
-    + f'<div class="abs t" style="left:{M}px;top:930px;width:{IW}px;font-size:30px;line-height:38px">Equipo BOUW</div>'
-    + f'<div class="abs mono" style="left:{M}px;top:976px;width:{IW}px;font-size:17px;line-height:26px">Ingeniería de procesos · Quito y Monterrey</div>'
-    + lfoot('Primero el flujo. Después la herramienta.', 'Hablemos', dark=True))
+# ---------- N05 · Frase (oscuro) ----------
+frame('N05-cita-ordena-antes-de-automatizar', True, 'Desde la planta', CY,
+      f'<div class="abs serif" style="left:{M - 12}px;top:150px;width:300px;font-size:320px;line-height:320px;color:{CY}">“</div>'
+      + T(f'Antes de automatizar un proceso, ordénalo. Automatizar el desorden solo te da {O_("desorden más rápido.")}', 84, 400, '#ffffff', lh=1.06, cls='serif')
+      + f'<div class="abs" style="left:{M}px;top:1010px;width:70px;height:4px;background:{CY}"></div>'
+      + T('Equipo de ingeniería BOUW', 36, 1040, '#ffffff', lh=1.2, cls='t'))
 
-# N06 · Checklist para contratar una consultora (claro)
-qs = ['¿Mide mi proceso antes de proponerme algo?', '¿Me da el precio cerrado y por escrito?', '¿Veré avances cada semana?',
-      '¿Qué pasa después de que entrega?', '¿Me diría si no me conviene hacerlo?']
+# ---------- N06 · Checklist (claro) ----------
 ck = ''
-for i, q in enumerate(qs):
-    y = 512 + i * 100
-    ck += (f'<div class="abs" style="left:{M}px;top:{y}px;width:44px;height:44px;border-radius:8px;border:3px solid {CYD}"></div>'
-           + lpara(e(q), y + 0, 31, INK, IW - 70, M + 70, 44))
-light('N06-checklist-antes-de-contratar',
-      lhead('Guía rápida')
-      + ltitle('Antes de contratar a una consultora, pregúntale esto:', 72, 220)
+for i, q in enumerate(['¿Mide antes de proponer?', '¿Precio cerrado y por escrito?', '¿Avances cada semana?', '¿Qué pasa después de entregar?', '¿Te diría si no te conviene?']):
+    y = 470 + i * 112
+    ck += (f'<div class="abs" style="left:{M}px;top:{y}px;width:56px;height:56px;border-radius:10px;border:3px solid {CYD};background:#fff"></div>'
+           + T('✓', 40, y + 2, CYD, width=56, left=M, lh=1.35).replace('width:56px;font-size', 'width:56px;text-align:center;font-size')
+           + T(e(q), 40, y + 4, INK, width=IW - 90, left=M + 90, lh=1.2, cls='t'))
+frame('N06-checklist-antes-de-contratar', False, 'Guía rápida', CYD,
+      T(f'Antes de contratar una consultora, {CL_("pregúntale esto:")}', 80, 176, lh=1.04)
       + ck
-      + f'<div class="abs" style="left:{M}px;top:1022px;width:{IW}px;height:116px;border-radius:16px;background:#04101f"></div>'
-      + f'<div class="abs t" style="left:{M + 36}px;top:1022px;width:{IW - 72}px;font-size:32px;line-height:116px;color:#ffffff">En BOUW, la respuesta a las cinco es <span class="c">sí.</span></div>'
-      + lfoot('Guárdala para tu próxima cotización.', 'Hablemos'))
+      + f'<div class="abs" style="left:{M}px;top:1052px;width:{IW}px;height:124px;border-radius:20px;background:{NAVY}"></div>'
+      + T(f'En BOUW, las cinco son {C_("sí.")}', 46, 1052, '#ffffff', width=IW - 80, left=M + 40, lh=2.7, cls='t'))
 
-# N07 · Foto real: medimos en la línea
-fullphoto('N07-medimos-en-la-linea-foto', 'mejora-termometro',
-    lhead('Así trabajamos', dark=True)
-    + ltitle('Medimos en la línea.<br><span class="c">No en la oficina.</span>', 84, 760, '#ffffff')
-    + lpara('Tiempos, esperas, inventarios y hasta la temperatura del agua de enfriamiento: las variables del proceso se toman donde pasan.', 960, 27, '#d6e0ea')
-    + lfoot('Diagnóstico de 1 a 2 semanas en tu planta.', 'Agendar', dark=True), pos='center 75%')
+# ---------- N07 · Foto: medimos en la línea ----------
+frame('N07-medimos-en-la-linea-foto', True, 'Así trabajamos', CY,
+      T(f'Medimos en la línea.<br>{C_("No en la oficina.")}', 100, 700, '#ffffff', lh=1.02)
+      + Pp('Tiempos, esperas, inventarios y hasta la temperatura del agua de enfriamiento.', 960, 34, '#d6e0ea', True),
+      foto='mejora-termometro', pos='center 75%')
 
-# N08 · 3 errores al automatizar (oscuro)
-err = [('Automatizar sin saber cuánto cuesta hoy', 'Haz la cuenta primero. Menos de 40 h al año no vale un proyecto.'),
-       ('Cambiar de sistema cuando el equipo ya sabe usar uno', 'Construye sobre lo que ya funciona.'),
-       ('Entregarlo todo al final', 'Entrega algo que funcione cada semana y corrige a tiempo.')]
+# ---------- N08 · 3 errores (oscuro) ----------
 er = ''
-for i, (a_, b_) in enumerate(err):
-    y = 470 + i * 220
-    er += (f'<div class="abs h" style="left:{M}px;top:{y}px;width:80px;font-size:64px;line-height:64px;color:#15304d">0{i + 1}</div>'
-           + f'<div class="abs t" style="left:{M + 110}px;top:{y}px;width:{IW - 110}px;font-size:34px;line-height:42px;color:#e8eef6"><span style="color:{RED}">✕</span> {e(a_)}</div>'
-           + f'<div class="abs p" style="left:{M + 110}px;top:{y + 96}px;width:{IW - 110}px;font-size:27px;line-height:38px;color:#c6d4e4"><span class="c">✓</span> {e(b_)}</div>')
-add('N08-errores-al-automatizar', W, H,
-    lhead('Aprendido en planta', dark=True)
-    + title('3 errores al automatizar <span class="c">(y cómo evitarlos)</span>', 72, top=220)
-    + er
-    + lfoot('Si se repite, se automatiza. Bien.', 'Hablemos', dark=True))
+for i, (a_, b_) in enumerate([('Automatizar sin hacer la cuenta', 'Menos de 40 h al año no vale un proyecto.'),
+                              ('Cambiar de sistema porque sí', 'Construye sobre lo que tu equipo ya usa.'),
+                              ('Entregarlo todo al final', 'Entrega algo que funcione cada semana.')]):
+    y = 470 + i * 236
+    er += (f'<div class="abs" style="left:{M}px;top:{y}px;width:{IW}px;height:206px;border-radius:20px;background:#071a2f;border:2px solid #15304d"></div>'
+           + T(f'<span style="color:{RED}">✕</span> {e(a_)}', 42, y + 34, '#ffffff', width=IW - 70, left=M + 36, lh=1.15, cls='t')
+           + Pp(f'{C_("✓")} {e(b_)}', y + 112, 33, '#c9d6e3', True, IW - 70, M + 36, 1.3))
+frame('N08-errores-al-automatizar', True, 'Aprendido en planta', CY,
+      T(f'3 errores al automatizar {C_("y cómo evitarlos")}', 80, 176, '#ffffff', lh=1.04) + er)
 
-# =====================================================================
-# 10. NUEVA LÍNEA · AUTOMATIZACIÓN (N09–N14)
-# =====================================================================
-# N09 · Antes / después del cierre de mes (claro, dos columnas)
+# ---------- N09 · Antes / después (claro) ----------
 ad = ''
-for c_, (lab, col, items) in enumerate([('Antes', OR, ['Alguien junta archivos a mano', 'La misma cifra se escribe varias veces', 'Nadie confía en el total', 'El cierre se arma al final del mes']),
-                                         ('Después', CYD, ['Cada movimiento se captura una vez', 'Las hojas se hablan solas', 'Un tablero que se recalcula solo', 'El cierre sale de lo ya capturado'])]):
+for c_, (lab, col, items) in enumerate([('Antes', OR, ['Archivos juntados a mano', 'La misma cifra, varias veces', 'Nadie confía en el total']),
+                                         ('Después', CYD, ['Cada dato se captura una vez', 'Las hojas se hablan solas', 'El cierre sale solo'])]):
     x = M + c_ * 468
-    ad += (f'<div class="abs" style="left:{x}px;top:470px;width:444px;height:620px;border-radius:18px;background:{"#ffffff" if c_ else "#ece6db"};border:2px solid {LLN}"></div>'
-           f'<div class="abs mono" style="left:{x + 34}px;top:500px;width:300px;font-size:22px;line-height:30px;color:{col};letter-spacing:.3em">{lab}</div>')
+    ad += (f'<div class="abs" style="left:{x}px;top:470px;width:444px;height:640px;border-radius:22px;background:{"#ffffff" if c_ else "#ebe4d8"};border:2px solid {LLN}"></div>'
+           + pill(lab, col, False, x + 30, 500))
     for i, it in enumerate(items):
-        y = 566 + i * 128
-        ad += (f'<div class="abs h" style="left:{x + 34}px;top:{y}px;width:40px;font-size:30px;line-height:40px;color:{col}">{"✕" if not c_ else "✓"}</div>'
-               + lpara(e(it), y, 29, INK, 340, x + 84, 40))
-light('N09-antes-despues-cierre-de-mes',
-      lhead('Automatización · caso real')
-      + ltitle('El mismo cierre de mes. <span style="color:#0e8fa8">Sin armarlo a mano.</span>', 70, 220)
-      + ad
-      + lfoot('Taller de manufactura · Excel + macros, sin cambiar de sistema.', 'Quiero esto'))
+        y = 600 + i * 166
+        ad += (T('✓' if c_ else '✕', 44, y, col, width=50, left=x + 32, lh=1.1)
+               + T(e(it), 36, y + 2, INK, width=340, left=x + 86, lh=1.2, cls='t'))
+frame('N09-antes-despues-cierre-de-mes', False, 'Automatización · caso real', CYD,
+      T(f'El cierre de mes, {CL_("sin armarlo a mano.")}', 84, 176, lh=1.02) + ad
+      + Pp('Taller de manufactura · sobre el mismo Excel, sin cambiar de sistema.', 1136, 26, SUB))
 
-# N10 · Qué se puede automatizar (oscuro, rejilla de 6)
-ej = [('Cotizaciones', 'que hoy se calculan a mano y se mandan por WhatsApp'), ('Cierre de mes', 'que se arma juntando archivos'),
-      ('Inventario y kits', 'que se cuadra contando en el almacén'), ('Reportes de producción', 'que alguien copia de la línea al Excel'),
-      ('Registros de calidad', 'que viven en papel hasta la auditoría'), ('Pedidos', 'que llegan incompletos y se piden tres veces')]
-grid6 = ''
-for i, (a_, b_) in enumerate(ej):
+# ---------- N10 · Qué se puede automatizar (oscuro) ----------
+g6 = ''
+for i, a_ in enumerate(['Cotizaciones', 'Cierre de mes', 'Inventario y kits', 'Reportes de producción', 'Registros de calidad', 'Pedidos por WhatsApp']):
     x = M + (i % 2) * 468
-    y = 450 + (i // 2) * 228
-    grid6 += (f'<div class="panel" style="left:{x}px;top:{y}px;width:444px;height:204px"></div>'
-              f'<div class="abs k" style="left:{x + 30}px;top:{y + 26}px;width:60px;font-size:20px;line-height:28px;color:{OR}">0{i + 1}</div>'
-              f'<div class="abs t" style="left:{x + 30}px;top:{y + 60}px;width:384px;font-size:34px;line-height:40px">{a_}</div>'
-              + para(e(b_), y + 110, size=23, lh=32, width=384, left=x + 30))
-add('N10-que-se-puede-automatizar', W, H,
-    lhead('Automatización', dark=True)
-    + title('¿Qué se puede automatizar en tu empresa? <span class="c">Más de lo que crees.</span>', 66, top=214)
-    + grid6
-    + lfoot('Si se repite cada semana, probablemente se puede.', 'Hablemos', dark=True))
+    y = 470 + (i // 2) * 206
+    g6 += (f'<div class="abs" style="left:{x}px;top:{y}px;width:444px;height:184px;border-radius:20px;background:#071a2f;border:2px solid #15304d"></div>'
+           + T(f'0{i + 1}', 26, y + 28, OR, width=100, left=x + 32, lh=1.2, cls='k')
+           + T(a_, 42, y + 74, '#ffffff', width=390, left=x + 32, lh=1.12, cls='t'))
+frame('N10-que-se-puede-automatizar', True, 'Automatización', CY,
+      T(f'¿Qué se puede automatizar en tu empresa?', 80, 176, '#ffffff', lh=1.04) + g6
+      + Pp(f'Si se repite cada semana, {C_("probablemente se puede.")}', 1112, 34, '#c9d6e3', True))
 
-# N11 · La regla de las 150 horas (claro, número gigante)
-light('N11-regla-150-horas',
-      lhead('La cuenta')
-      + f'<div class="abs h" style="left:{M - 8}px;top:200px;width:{IW + 20}px;font-size:300px;line-height:300px;color:{CYD};letter-spacing:-0.05em">150 h</div>'
-      + ltitle('al año. Ahí automatizar ya sale a cuenta.', 62, 520)
-      + lpara('Es casi un mes de trabajo de una persona, todos los años. Debajo de 40 horas no vale un proyecto. Entre 40 y 150, depende de si además te está costando errores.', 700, 30, SUB, IW, M, 44)
-      + f'<div class="abs" style="left:{M}px;top:900px;width:{IW}px;height:170px;border-radius:16px;background:#ffffff;border:2px solid {LLN}"></div>'
-      + lpara('<b style="color:#0b1b2e">Haz tu cuenta:</b> veces por semana × minutos × personas × 48 semanas ÷ 60.', 934, 30, INK, IW - 68, M + 34, 44)
-      + lfoot('O hazla en 30 segundos en nuestra calculadora.', 'Hacer la cuenta'))
+# ---------- N11 · La regla de las 150 horas (claro) ----------
+frame('N11-regla-150-horas', False, 'La cuenta', CYD,
+      T('150 h', 330, 150, CYD, lh=1).replace('letter-spacing', 'x') .replace('class="abs h"', 'class="abs h" ')
+      + T('al año: ahí automatizar ya sale a cuenta.', 64, 500, INK, lh=1.08)
+      + Pp('Es casi un mes de trabajo de una persona, cada año.', 660, 36, SUB)
+      + f'<div class="abs" style="left:{M}px;top:820px;width:{IW}px;height:300px;border-radius:22px;background:{NAVY}"></div>'
+      + T('Tu cuenta', 24, 856, CY, width=400, left=M + 44, lh=1.2, cls='mono')
+      + T('veces por semana × minutos × personas × 48 ÷ 60', 44, 906, '#ffffff', width=IW - 88, left=M + 44, lh=1.2, cls='t')
+      + Pp(f'{O_("< 40 h")} no vale · {O_("40–150 h")} depende · {C_("> 150 h")} sí', 1040, 30, '#c9d6e3', True, IW - 88, M + 44))
 
-# N12 · WhatsApp: el cliente ya está ahí (oscuro + chat dibujado)
-add('N12-cotizar-por-whatsapp', W, H,
-    lhead('Automatización · ventas', dark=True)
-    + title('Tus clientes ya te escriben por WhatsApp. <span class="c">¿Y tus cotizaciones?</span>', 66, top=214)
-    + para('Para un taller de regalos hicimos que el pedido llegue completo: la pieza, los detalles y el precio estimado, ya escritos. Sin ir y venir de mensajes.', 440, size=27, lh=38)
-    + vis(v_charms(), M, 600, 1.0)
-    + lfoot('Sin servidor y sin costo mensual de hosting.', 'Quiero algo así', dark=True))
+# ---------- N12 · WhatsApp (oscuro, teléfono grande) ----------
+px, py = 300, 470
+wa = (f'<div class="abs" style="left:{px}px;top:{py}px;width:480px;height:700px;border-radius:52px;border:5px solid #3a5878;background:#0b141a;box-shadow:0 30px 80px -30px rgba(79,214,232,.4)"></div>'
+      f'<div class="abs" style="left:{px + 5}px;top:{py + 5}px;width:470px;height:104px;border-radius:47px 47px 0 0;background:#1f2c34"></div>'
+      f'<div class="abs" style="left:{px + 36}px;top:{py + 30}px;width:56px;height:56px;border-radius:28px;background:#e8a6b8"></div>'
+      + T('Cliente', 32, py + 26, '#e9edef', width=300, left=px + 110, lh=1.2, cls='t') + T('en línea', 22, py + 66, '#8696a0', width=300, left=px + 110, lh=1.2, cls='p')
+      + f'<div class="abs" style="left:{px + 70}px;top:{py + 150}px;width:370px;height:360px;border-radius:24px 4px 24px 24px;background:#005c4b"></div>'
+      + T('Hola, quiero hacer este pedido:', 30, py + 176, '#e9edef', width=320, left=px + 100, lh=1.3, cls='p')
+      + ''.join(T(f'✓ {t_}', 34, py + 280 + j * 56, '#e9edef', width=320, left=px + 100, lh=1.3, cls='t') for j, t_ in enumerate(['Pieza', 'Detalles', 'Precio estimado']))
+      + f'<div class="abs" style="left:{px + 30}px;top:{py + 590}px;width:420px;height:70px;border-radius:35px;background:#1f2c34"></div>'
+      + T('Mensaje ya escrito ✓✓', 22, py + 590, GRN, width=420, left=px + 30, lh=3.2, cls='mono').replace('width:420px;font-size', 'width:420px;text-align:center;font-size'))
+frame('N12-cotizar-por-whatsapp', True, 'Automatización · ventas', CY,
+      T(f'Tus clientes ya están en WhatsApp. {C_("¿Tus cotizaciones?")}', 76, 176, '#ffffff', lh=1.04) + wa)
 
-# N13 · Tip: haz esta cuenta antes de llamarnos (claro, 3 pasos)
-pasos3 = ''
-for i, (a_, b_) in enumerate([('Cuenta cuántas veces por semana se hace', 'Ejemplo: 5 veces'), ('Mide cuánto tarda cada vez y cuántas personas', 'Ejemplo: 30 minutos, 2 personas'),
-                              ('Multiplica por 48 semanas', '5 × 30 min × 2 × 48 = 240 horas al año')]):
-    y = 470 + i * 180
-    pasos3 += (f'<div class="abs" style="left:{M}px;top:{y}px;width:88px;height:88px;border-radius:44px;background:{CYD}"></div>'
-               + tx(M, y, 88, str(i + 1), 44, '#ffffff', 'h', 'center', 88)
-               + lpara(f'<b style="color:{INK}">{e(a_)}</b>', y + 2, 32, INK, IW - 130, M + 124, 42)
-               + lpara(e(b_), y + 92, 26, SUB, IW - 130, M + 124, 36))
-light('N13-tip-haz-esta-cuenta',
-      lhead('Tip de la semana')
-      + ltitle('¿Esa tarea repetitiva vale la pena automatizarla? <span style="color:#0e8fa8">Averígualo en 3 pasos.</span>', 62, 214)
-      + pasos3
-      + f'<div class="abs" style="left:{M}px;top:1020px;width:{IW}px;height:110px;border-radius:16px;background:#04101f"></div>'
-      + f'<div class="abs t" style="left:{M + 34}px;top:1020px;width:{IW - 68}px;font-size:30px;line-height:110px;color:#ffffff">Más de 150 h al año: <span class="c">automatízala.</span></div>'
-      + lfoot('Guárdala y hazla con tu equipo.', 'Hacer la cuenta'))
+# ---------- N13 · Tip en 3 pasos (claro) ----------
+p3 = ''
+for i, (a_, b_) in enumerate([('Cuántas veces por semana', 'ej. 5'), ('Cuánto tarda y cuántas personas', 'ej. 30 min · 2 personas'), ('Multiplica por 48 semanas', '5 × 30 × 2 × 48 = 240 h')]):
+    y = 470 + i * 186
+    p3 += (f'<div class="abs" style="left:{M}px;top:{y}px;width:96px;height:96px;border-radius:48px;background:{CYD}"></div>'
+           + T(str(i + 1), 50, y, '#ffffff', width=96, left=M, lh=1.92).replace('width:96px;font-size', 'width:96px;text-align:center;font-size')
+           + T(e(a_), 42, y + 2, INK, width=IW - 140, left=M + 136, lh=1.15, cls='t')
+           + Pp(e(b_), y + 64, 32, SUB, False, IW - 140, M + 136, 1.3))
+frame('N13-tip-haz-esta-cuenta', False, 'Tip de la semana', CYD,
+      T(f'¿Vale la pena automatizar esa tarea? {CL_("3 pasos.")}', 80, 176, lh=1.04) + p3
+      + f'<div class="abs" style="left:{M}px;top:1040px;width:{IW}px;height:130px;border-radius:20px;background:{NAVY}"></div>'
+      + T(f'Más de 150 h al año: {C_("automatízala.")}', 44, 1040, '#ffffff', width=IW - 80, left=M + 40, lh=2.95, cls='t'))
 
-# N14 · Automatizar no es reemplazar personas (oscuro, frase)
-add('N14-no-es-reemplazar-personas', W, H,
-    lhead('Lo que creemos', dark=True)
-    + f'<div class="abs h" style="left:{M}px;top:240px;width:{IW}px;font-size:96px;line-height:98px">Automatizar no es reemplazar personas.</div>'
-    + f'<div class="abs serif" style="left:{M}px;top:600px;width:{IW}px;font-size:76px;line-height:82px">Es quitarles lo que <span class="c">nunca debió ser su trabajo.</span></div>'
-    + para('Copiar datos, cuadrar archivos, armar reportes a mano. Muchas veces lo hace justo la persona que menos debería estar haciéndolo.', 900, size=29, lh=41)
-    + lfoot('Si se repite, se automatiza.', 'Hablemos', dark=True))
+# ---------- N14 · No es reemplazar personas (oscuro) ----------
+frame('N14-no-es-reemplazar-personas', True, 'Lo que creemos', CY,
+      T('Automatizar no es reemplazar personas.', 104, 220, '#ffffff', lh=1.0)
+      + f'<div class="abs" style="left:{M}px;top:600px;width:90px;height:5px;background:{CY}"></div>'
+      + T(f'Es quitarles lo que {C_("nunca debió ser su trabajo.")}', 88, 650, '#ffffff', lh=1.05, cls='serif')
+      + Pp('Copiar datos. Cuadrar archivos. Armar reportes a mano.', 1010, 36, '#c9d6e3', True))
 
 # ---------- escribir ----------
 for f in os.listdir(OUT):
