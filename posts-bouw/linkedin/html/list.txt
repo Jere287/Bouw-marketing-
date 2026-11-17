@@ -39,3 +39,8 @@ P04-proyecto-programa-contable:1080x1350
 P05-proyecto-charms-ecuador:1080x1350
 P06-proyecto-anatris:1080x1350
 P07-proyecto-informe-de-auditoria:1080x1350
+P01-caso-anatris:1080x1350
+P02-caso-charms-ecuador:1080x1350
+P03-caso-mejora-continua-planta:1080x1350
+P04-caso-hoy-vs-bouw:1080x1350
+P05-cierre-de-ano-la-cuenta:1080x1350

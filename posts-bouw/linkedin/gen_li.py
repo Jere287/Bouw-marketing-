@@ -992,6 +992,91 @@ for i, (name, kick, ttl, sub, fn, st, ph, cta) in enumerate(PR, 1):
          + stats(st, 978, num=62)
          + footer(ph, cta))
 
+# =====================================================================
+# 6. SERIE CASOS 1080×1350 (P01–P05): un proyecto real del sitio por publicación,
+#    con sus fotos y capturas (sitio/imagenes/) y sus cifras tal cual aparecen en la página.
+# =====================================================================
+def caso(n):
+    return serie('P', n, 'Casos', OR)
+
+
+def tag(x, y, txt, col=CY, w=None, fs=17):
+    w = w or int(len(txt) * fs * 0.72 + 40)
+    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:40px;background:rgba(4,16,31,.86);border:2px solid {col};border-radius:20px"></div>'
+            f'<div class="abs mono" style="left:{x}px;top:{y}px;width:{w}px;height:40px;text-align:center;font-size:{fs}px;line-height:36px;color:{col};letter-spacing:.14em">{e(txt)}</div>')
+
+
+# P01 · Anatris: producto propio, en vivo
+post('P01-caso-anatris',
+     caso(1)
+     + kicker('Producto propio · Salud · Atlas 3D &#8212; En vivo')
+     + title('Un atlas 3D de anatomía que corre en el navegador.', 76, top=256)
+     + para('El cuerpo completo como modelo navegable: por región clínica, músculo por músculo y con rangos de movimiento reales. '
+            'Cada dato clínico va con su fuente citada.', 446, size=27, lh=38)
+     + photo('anatris-cuerpo', M, 590, IW, 452, pos='center')
+     + tag(M + 24, 614, 'anatris.vercel.app')
+     + stats([('6', 'Regiones clínicas'), ('113', 'Músculos con ficha'), ('79', 'Tests con sens/spec')], 1046, num=56)
+     + footer('React · Three.js · WebGL · Supabase · PWA', 'Verlo en vivo'))
+
+# P02 · Charms Ecuador: la web que entrega el pedido ya escrito en WhatsApp
+ph = ''
+for i, nm in enumerate(['charms-movil-inicio', 'charms-movil-cotizar', 'charms-movil-pedidos']):
+    x = M + i * 312
+    ph += (f'<div class="abs" style="left:{x - 6}px;top:564px;width:{288 + 12}px;height:{570 + 12}px;border-radius:30px;background:#0b2036;border:2px solid #23415f"></div>'
+           + photo(nm, x, 570, 288, 570, pos='top').replace('border-radius:18px', 'border-radius:24px'))
+post('P02-caso-charms-ecuador',
+     caso(2)
+     + kicker('Web · Pedidos por WhatsApp &#8212; En vivo')
+     + title('El cliente llega a WhatsApp con el pedido <span class="c">ya escrito.</span>', 70, top=256)
+     + para('Para un taller de regalos en porcelana fría: catálogo con fotos reales, cotizador en 4 pasos y un muñeco 3D que se gira con el dedo.', 446, size=26, lh=36)
+     + ph
+     + footer('<span class="c">15</span> modelos · <span class="c">4</span> pasos · <span class="c">$0</span> de hosting', 'Quiero algo así'))
+
+# P03 · Mejora continua en una línea de extrusión: fotos reales de planta
+post('P03-caso-mejora-continua-planta',
+     caso(3)
+     + kicker('Mejora continua · Línea de extrusión', color=OR)
+     + title('Esto no es un render. <span class="o">Es una planta real.</span>', 76, top=256)
+     + photo('mejora-linea-extrusion', M, 470, 440, 560, pos='center 40%')
+     + photo('mejora-termometro', M + 464, 470, IW - 464, 268, pos='center 30%')
+     + photo('mejora-producto-paletizado', M + 464, 762, IW - 464, 268, pos='center 45%')
+     + tag(M + 20, 490, 'En planta', OR)
+     + stats([('−15 %', 'Tiempo de preparación'), ('−20 %', 'Reprocesos'), ('4', 'Operadores con estándar')], 1050, num=60)
+     + footer('Medimos en piso antes de proponer nada.', 'Diagnóstico'))
+
+# P04 · Lean: la misma planta, hoy y con BOUW (ilustraciones del sitio)
+post('P04-caso-hoy-vs-bouw',
+     caso(4)
+     + kicker('Lean manufacturing &amp; ingeniería de planta')
+     + title('La misma planta. <span class="dim">Otro flujo.</span>', 68, top=262)
+     + photo('lean-antes', M, 400, IW, 392, pos='center')
+     + tag(M + 20, 420, 'Hoy', OR)
+     + photo('lean-despues', M, 810, IW, 336, pos='center 55%')
+     + tag(M + 20, 830, 'Con BOUW', CY)
+     + footer('De recorridos cruzados a un solo flujo.', 'Evaluación técnica'))
+
+# P05 · Cierre de año: la cuenta de 2026
+calc5 = f'<div class="panel" style="left:{M}px;top:600px;width:{IW}px;height:330px"></div>'
+for i, (l_, v_) in enumerate([('La tarea', 'Armar el cierre de mes'), ('Veces al año', '12'), ('Horas cada vez', '× 16'), ('Personas', '× 2')]):
+    y = 600 + i * 64
+    calc5 += (f'<div class="abs p" style="left:{M + 34}px;top:{y + 14}px;width:400px;font-size:26px;line-height:36px">{l_}</div>'
+              f'<div class="abs k" style="left:{W - M - 534}px;top:{y + 14}px;width:500px;text-align:right;font-size:26px;line-height:36px">{v_}</div>'
+              f'<div class="rule" style="left:{M + 2}px;top:{y + 63}px;width:{IW - 4}px"></div>')
+calc5 += (f'<div class="abs" style="left:{M + 2}px;top:858px;width:{IW - 4}px;height:70px;background:#0d2b48;border-radius:0 0 16px 16px"></div>'
+          f'<div class="abs mono" style="left:{M + 34}px;top:882px;width:300px;font-size:18px;line-height:24px;color:#c6d4e4">En 2026</div>'
+          f'<div class="abs h" style="left:{W - M - 434}px;top:864px;width:400px;text-align:right;font-size:54px;line-height:58px;color:{OR}">384 horas</div>')
+post('P05-cierre-de-ano-la-cuenta',
+     caso(5).replace('Casos · 5 / 5', 'Cierre de año')
+     + hero(680, 180, 330, 0.4)
+     + kicker('La cuenta de 2026', top=206, color=OR)
+     + title('¿Cuántas horas<br>se fueron a mano<br><span class="o">en 2026?</span>', 66, top=258, width=600)
+     + para('Un ejemplo que vemos seguido:', 540, size=26, lh=36)
+     + calc5
+     + f'<div class="abs mono" style="left:{M}px;top:962px;width:300px;font-size:17px;line-height:24px;color:{GRN}">Veredicto</div>'
+     + f'<div class="abs t" style="left:{M}px;top:994px;width:{IW}px;font-size:44px;line-height:50px">Aquí sí. Y en 2027 no se repite.</div>'
+     + para('Haz tu cuenta antes de planificar el año: 30 segundos en la calculadora del sitio.', 1060, size=24, lh=33)
+     + footer('Si no compensa automatizarla, también te lo dice.', 'Hacer la cuenta'))
+
 # ---------- escribir ----------
 for f in os.listdir(OUT):
     if f.endswith('.html'):
