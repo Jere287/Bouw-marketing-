@@ -1077,6 +1077,85 @@ post('P05-cierre-de-ano-la-cuenta',
      + para('Haz tu cuenta antes de planificar el año: 30 segundos en la calculadora del sitio.', 1060, size=24, lh=33)
      + footer('Si no compensa automatizarla, también te lo dice.', 'Hacer la cuenta'))
 
+# =====================================================================
+# 8. SERIE "QUÉ ES BOUW" (M01–M10): frases de posicionamiento, el problema primero.
+#    Estilo: una frase grande que contrasta (lo tachado = lo que NO hacemos) + 2-3 líneas del sitio.
+# =====================================================================
+def tach(t):
+    return (f'<span style="color:#8fa8c4;text-decoration:line-through;text-decoration-color:{OR};'
+            f'text-decoration-thickness:9px">{t}</span>')
+
+
+def manif(name, n, kick, frase, body, ph, cta, size=92, body_top=780, drag=True):
+    bw = IW - 440 if drag else IW
+    post(name,
+         serie('M', n, 'Qué es BOUW', CY).replace(f'· {n} / 5', f'· {n} / 10')
+         + kicker(kick)
+         + f'<div class="abs h" style="left:{M}px;top:252px;width:{IW}px;font-size:{size}px;line-height:{round(size * 1.02)}px">{frase}</div>'
+         + f'<div class="abs" style="left:{M}px;top:{body_top - 34}px;width:90px;height:4px;background:{CY}"></div>'
+         + para(body, body_top, size=31, lh=44, width=bw)
+         + (hero(W - M - 430, body_top - 40, 430, 0.5) if drag else '')
+         + footer(ph, cta))
+
+
+manif('M01-no-vendemos-software', 1, 'Lo que vendemos',
+      f'No vendemos {tach("software")}.<br>Te devolvemos <span class="c">horas.</span>',
+      'El software es solo la herramienta. Lo que importa es que la tarea que hoy le quita horas a tu equipo deje de hacerse a mano.',
+      'Si se repite, se automatiza.', 'Hablemos', size=104)
+manif('M02-somos-ingenieros', 2, 'Quiénes somos',
+      f'Somos ingenieros de procesos. <span class="c">No vendedores de herramientas.</span>',
+      'Ordenamos la planta, blindamos la calidad y automatizamos lo que se repite. Más de 7 años en piso, entre Ecuador y México.',
+      'Del diseño a la realidad.', 'Conócenos', size=88)
+manif('M03-primero-medimos', 3, 'Cómo empezamos',
+      'Primero medimos.<br><span class="c">Después opinamos.</span>',
+      'Diagnóstico de 1 a 2 semanas en tu proceso real, antes de proponer nada. Si al final no hay proyecto, la medición se queda contigo.',
+      'Sin propuestas de escritorio.', 'Pedir diagnóstico', size=104)
+manif('M04-te-lo-decimos', 4, 'Honestidad',
+      f'Si no compensa automatizarlo, <span class="o">te lo decimos.</span>',
+      'Menos de 40 horas al año no justifica un proyecto. Preferimos perder una venta a venderte algo que no necesitas.',
+      'Haz la cuenta en 30 segundos.', 'Hacer la cuenta', size=96)
+manif('M05-no-es-excel', 5, 'El problema real',
+      f'Tu problema no es {tach("Excel")}.<br>Es que <span class="c">nada está conectado.</span>',
+      'La misma información en tres archivos y ninguno cuadra. Lo resolvimos con un solo archivo y 11 hojas conectadas, sin cambiar de sistema.',
+      'Usa lo que tu equipo ya sabe usar.', 'Hablemos', size=92)
+manif('M06-es-el-proceso', 6, 'El problema real',
+      f'El problema casi nunca es la {tach("persona")}. <span class="c">Es el proceso.</span>',
+      'Cuando algo falla buscamos el paso que lo deja pasar, no al culpable. Así la desviación se cierra y no vuelve el mes siguiente.',
+      'La causa está en el proceso.', 'Hablemos', size=92)
+manif('M07-auditoria-sistema', 7, 'Calidad',
+      f'Una auditoría no se prepara {tach("la semana antes")}. <span class="c">Se prepara con un sistema.</span>',
+      'Expedientes estandarizados, cada registro con su responsable y la carpeta lista 24/7. Si llega un inspector sin aviso, ya está armada.',
+      'Diagnóstico de calidad gratis.', 'Agendar', size=84)
+manif('M08-precio-cerrado', 8, 'Sin sorpresas',
+      'Precio cerrado.<br>Por escrito.<br><span class="c">Antes de empezar.</span>',
+      'Alcance, entregables, plazo y precio en 3 a 5 días. Si algo no se puede prometer, lo decimos desde el principio.',
+      'Y entregamos algo que funciona cada semana.', 'Hablemos', size=104)
+
+# M09 · Qué vamos a hacer contigo (las condiciones del sitio, como camino)
+pasos = ''
+for i, (n_, pl, d) in enumerate([('Medimos', '1–2 semanas', 'Diagnóstico en tu proceso real.'),
+                                  ('Te damos precio cerrado', '3–5 días', 'Alcance, plazo y precio por escrito.'),
+                                  ('Construimos contigo', '4–10 semanas', 'Cada semana ves algo que ya funciona.'),
+                                  ('Nos quedamos', '30 días', 'Acompañamiento sin contrato nuevo.')]):
+    y = 520 + i * 152
+    pasos += (f'<div class="abs" style="left:{M}px;top:{y}px;width:84px;height:84px;border-radius:42px;border:3px solid {CY};background:#04101f"></div>'
+              + tx(M, y, 84, f'{i + 1}', 40, CY, 'h', 'center', 84)
+              + (f'<div class="abs" style="left:{M + 41}px;top:{y + 86}px;width:3px;height:64px;background:#23415f"></div>' if i < 3 else '')
+              + tx(M + 120, y + 4, 520, n_, 38, '#e8eef6', 't', 'left', 44)
+              + tx(M + 120, y + 52, 560, d, 25, '#c6d4e4', 'p')
+              + tx(W - M - 260, y + 12, 260, pl, 24, OR, 'k', 'right'))
+post('M09-que-vamos-a-hacer',
+     serie('M', 9, 'Qué es BOUW', CY).replace('· 9 / 5', '· 9 / 10')
+     + kicker('Qué vamos a hacer contigo')
+     + f'<div class="abs h" style="left:{M}px;top:252px;width:{IW}px;font-size:96px;line-height:98px">Así trabajamos. <span class="c">Sin sorpresas.</span></div>'
+     + pasos
+     + footer('Si algo no se puede prometer, lo decimos.', 'Empezar'))
+
+manif('M10-dos-sedes', 10, 'Dónde estamos',
+      'Quito y Monterrey.<br><span class="c">Un mismo estándar.</span>',
+      'Quito desde 2019, Monterrey desde 2023. Nueve horas al día en común: siempre hay alguien para responderte.',
+      'Respondemos en menos de 24 h hábiles.', 'Escríbenos', size=100)
+
 # ---------- escribir ----------
 for f in os.listdir(OUT):
     if f.endswith('.html'):

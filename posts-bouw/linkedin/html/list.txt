@@ -44,3 +44,13 @@ P02-caso-charms-ecuador:1080x1350
 P03-caso-mejora-continua-planta:1080x1350
 P04-caso-hoy-vs-bouw:1080x1350
 P05-cierre-de-ano-la-cuenta:1080x1350
+M01-no-vendemos-software:1080x1350
+M02-somos-ingenieros:1080x1350
+M03-primero-medimos:1080x1350
+M04-te-lo-decimos:1080x1350
+M05-no-es-excel:1080x1350
+M06-es-el-proceso:1080x1350
+M07-auditoria-sistema:1080x1350
+M08-precio-cerrado:1080x1350
+M09-que-vamos-a-hacer:1080x1350
+M10-dos-sedes:1080x1350
