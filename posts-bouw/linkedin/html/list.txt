@@ -62,3 +62,9 @@ N05-cita-ordena-antes-de-automatizar:1080x1350
 N06-checklist-antes-de-contratar:1080x1350
 N07-medimos-en-la-linea-foto:1080x1350
 N08-errores-al-automatizar:1080x1350
+N09-antes-despues-cierre-de-mes:1080x1350
+N10-que-se-puede-automatizar:1080x1350
+N11-regla-150-horas:1080x1350
+N12-cotizar-por-whatsapp:1080x1350
+N13-tip-haz-esta-cuenta:1080x1350
+N14-no-es-reemplazar-personas:1080x1350

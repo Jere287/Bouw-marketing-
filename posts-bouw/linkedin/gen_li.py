@@ -1303,6 +1303,87 @@ add('N08-errores-al-automatizar', W, H,
     + er
     + lfoot('Si se repite, se automatiza. Bien.', 'Hablemos', dark=True))
 
+# =====================================================================
+# 10. NUEVA LÍNEA · AUTOMATIZACIÓN (N09–N14)
+# =====================================================================
+# N09 · Antes / después del cierre de mes (claro, dos columnas)
+ad = ''
+for c_, (lab, col, items) in enumerate([('Antes', OR, ['Alguien junta archivos a mano', 'La misma cifra se escribe varias veces', 'Nadie confía en el total', 'El cierre se arma al final del mes']),
+                                         ('Después', CYD, ['Cada movimiento se captura una vez', 'Las hojas se hablan solas', 'Un tablero que se recalcula solo', 'El cierre sale de lo ya capturado'])]):
+    x = M + c_ * 468
+    ad += (f'<div class="abs" style="left:{x}px;top:470px;width:444px;height:620px;border-radius:18px;background:{"#ffffff" if c_ else "#ece6db"};border:2px solid {LLN}"></div>'
+           f'<div class="abs mono" style="left:{x + 34}px;top:500px;width:300px;font-size:22px;line-height:30px;color:{col};letter-spacing:.3em">{lab}</div>')
+    for i, it in enumerate(items):
+        y = 566 + i * 128
+        ad += (f'<div class="abs h" style="left:{x + 34}px;top:{y}px;width:40px;font-size:30px;line-height:40px;color:{col}">{"✕" if not c_ else "✓"}</div>'
+               + lpara(e(it), y, 29, INK, 340, x + 84, 40))
+light('N09-antes-despues-cierre-de-mes',
+      lhead('Automatización · caso real')
+      + ltitle('El mismo cierre de mes. <span style="color:#0e8fa8">Sin armarlo a mano.</span>', 70, 220)
+      + ad
+      + lfoot('Taller de manufactura · Excel + macros, sin cambiar de sistema.', 'Quiero esto'))
+
+# N10 · Qué se puede automatizar (oscuro, rejilla de 6)
+ej = [('Cotizaciones', 'que hoy se calculan a mano y se mandan por WhatsApp'), ('Cierre de mes', 'que se arma juntando archivos'),
+      ('Inventario y kits', 'que se cuadra contando en el almacén'), ('Reportes de producción', 'que alguien copia de la línea al Excel'),
+      ('Registros de calidad', 'que viven en papel hasta la auditoría'), ('Pedidos', 'que llegan incompletos y se piden tres veces')]
+grid6 = ''
+for i, (a_, b_) in enumerate(ej):
+    x = M + (i % 2) * 468
+    y = 450 + (i // 2) * 228
+    grid6 += (f'<div class="panel" style="left:{x}px;top:{y}px;width:444px;height:204px"></div>'
+              f'<div class="abs k" style="left:{x + 30}px;top:{y + 26}px;width:60px;font-size:20px;line-height:28px;color:{OR}">0{i + 1}</div>'
+              f'<div class="abs t" style="left:{x + 30}px;top:{y + 60}px;width:384px;font-size:34px;line-height:40px">{a_}</div>'
+              + para(e(b_), y + 110, size=23, lh=32, width=384, left=x + 30))
+add('N10-que-se-puede-automatizar', W, H,
+    lhead('Automatización', dark=True)
+    + title('¿Qué se puede automatizar en tu empresa? <span class="c">Más de lo que crees.</span>', 66, top=214)
+    + grid6
+    + lfoot('Si se repite cada semana, probablemente se puede.', 'Hablemos', dark=True))
+
+# N11 · La regla de las 150 horas (claro, número gigante)
+light('N11-regla-150-horas',
+      lhead('La cuenta')
+      + f'<div class="abs h" style="left:{M - 8}px;top:200px;width:{IW + 20}px;font-size:300px;line-height:300px;color:{CYD};letter-spacing:-0.05em">150 h</div>'
+      + ltitle('al año. Ahí automatizar ya sale a cuenta.', 62, 520)
+      + lpara('Es casi un mes de trabajo de una persona, todos los años. Debajo de 40 horas no vale un proyecto. Entre 40 y 150, depende de si además te está costando errores.', 700, 30, SUB, IW, M, 44)
+      + f'<div class="abs" style="left:{M}px;top:900px;width:{IW}px;height:170px;border-radius:16px;background:#ffffff;border:2px solid {LLN}"></div>'
+      + lpara('<b style="color:#0b1b2e">Haz tu cuenta:</b> veces por semana × minutos × personas × 48 semanas ÷ 60.', 934, 30, INK, IW - 68, M + 34, 44)
+      + lfoot('O hazla en 30 segundos en nuestra calculadora.', 'Hacer la cuenta'))
+
+# N12 · WhatsApp: el cliente ya está ahí (oscuro + chat dibujado)
+add('N12-cotizar-por-whatsapp', W, H,
+    lhead('Automatización · ventas', dark=True)
+    + title('Tus clientes ya te escriben por WhatsApp. <span class="c">¿Y tus cotizaciones?</span>', 66, top=214)
+    + para('Para un taller de regalos hicimos que el pedido llegue completo: la pieza, los detalles y el precio estimado, ya escritos. Sin ir y venir de mensajes.', 440, size=27, lh=38)
+    + vis(v_charms(), M, 600, 1.0)
+    + lfoot('Sin servidor y sin costo mensual de hosting.', 'Quiero algo así', dark=True))
+
+# N13 · Tip: haz esta cuenta antes de llamarnos (claro, 3 pasos)
+pasos3 = ''
+for i, (a_, b_) in enumerate([('Cuenta cuántas veces por semana se hace', 'Ejemplo: 5 veces'), ('Mide cuánto tarda cada vez y cuántas personas', 'Ejemplo: 30 minutos, 2 personas'),
+                              ('Multiplica por 48 semanas', '5 × 30 min × 2 × 48 = 240 horas al año')]):
+    y = 470 + i * 180
+    pasos3 += (f'<div class="abs" style="left:{M}px;top:{y}px;width:88px;height:88px;border-radius:44px;background:{CYD}"></div>'
+               + tx(M, y, 88, str(i + 1), 44, '#ffffff', 'h', 'center', 88)
+               + lpara(f'<b style="color:{INK}">{e(a_)}</b>', y + 2, 32, INK, IW - 130, M + 124, 42)
+               + lpara(e(b_), y + 92, 26, SUB, IW - 130, M + 124, 36))
+light('N13-tip-haz-esta-cuenta',
+      lhead('Tip de la semana')
+      + ltitle('¿Esa tarea repetitiva vale la pena automatizarla? <span style="color:#0e8fa8">Averígualo en 3 pasos.</span>', 62, 214)
+      + pasos3
+      + f'<div class="abs" style="left:{M}px;top:1020px;width:{IW}px;height:110px;border-radius:16px;background:#04101f"></div>'
+      + f'<div class="abs t" style="left:{M + 34}px;top:1020px;width:{IW - 68}px;font-size:30px;line-height:110px;color:#ffffff">Más de 150 h al año: <span class="c">automatízala.</span></div>'
+      + lfoot('Guárdala y hazla con tu equipo.', 'Hacer la cuenta'))
+
+# N14 · Automatizar no es reemplazar personas (oscuro, frase)
+add('N14-no-es-reemplazar-personas', W, H,
+    lhead('Lo que creemos', dark=True)
+    + f'<div class="abs h" style="left:{M}px;top:240px;width:{IW}px;font-size:96px;line-height:98px">Automatizar no es reemplazar personas.</div>'
+    + f'<div class="abs serif" style="left:{M}px;top:600px;width:{IW}px;font-size:76px;line-height:82px">Es quitarles lo que <span class="c">nunca debió ser su trabajo.</span></div>'
+    + para('Copiar datos, cuadrar archivos, armar reportes a mano. Muchas veces lo hace justo la persona que menos debería estar haciéndolo.', 900, size=29, lh=41)
+    + lfoot('Si se repite, se automatiza.', 'Hablemos', dark=True))
+
 # ---------- escribir ----------
 for f in os.listdir(OUT):
     if f.endswith('.html'):
