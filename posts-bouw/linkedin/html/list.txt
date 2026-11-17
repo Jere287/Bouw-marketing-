@@ -54,3 +54,11 @@ M07-auditoria-sistema:1080x1350
 M08-precio-cerrado:1080x1350
 M09-que-vamos-a-hacer:1080x1350
 M10-dos-sedes:1080x1350
+N01-senales-planta-pierde-horas:1080x1350
+N02-mito-realidad-automatizar:1080x1350
+N03-caso-dos-turnos-foto:1080x1350
+N04-encuesta-que-te-quita-horas:1080x1350
+N05-cita-ordena-antes-de-automatizar:1080x1350
+N06-checklist-antes-de-contratar:1080x1350
+N07-medimos-en-la-linea-foto:1080x1350
+N08-errores-al-automatizar:1080x1350

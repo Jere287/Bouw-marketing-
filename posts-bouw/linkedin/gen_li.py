@@ -1156,6 +1156,153 @@ manif('M10-dos-sedes', 10, 'Dónde estamos',
       'Quito desde 2019, Monterrey desde 2023. Nueve horas al día en común: siempre hay alguien para responderte.',
       'Respondemos en menos de 24 h hábiles.', 'Escríbenos', size=100)
 
+# =====================================================================
+# 9. NUEVA LÍNEA (N01–N08): formatos de consultora (señales, mito/realidad, caso con foto real,
+#    encuesta, cita, checklist, errores). Claro y oscuro alternados; el dragón solo en el logo.
+# =====================================================================
+LBG, INK, SUB, CYD, LLN = '#f3f0ea', '#0b1b2e', '#4a5d73', '#0e8fa8', '#d9d3c7'
+LOGO_CL = 'file://' + os.path.join(ROOT, 'sitio', 'dragon', 'capturas', 'dragon-claro-realidad-transparente.png')
+
+
+def lhead(tag, dark=False):
+    src = LOGO if dark else LOGO_CL
+    col = '#8fa8c4' if dark else SUB
+    return (f'<img class="abs" alt="BOUW" src="{src}" style="left:{M}px;top:50px;width:190px;height:{round(190 / LOGO_R)}px">'
+            f'<div class="abs mono" style="left:{W - M - 560}px;top:88px;width:560px;text-align:right;font-size:17px;line-height:26px;color:{col}">{tag}</div>')
+
+
+def lfoot(phrase, cta, dark=False):
+    cw = int(len(cta) * 14 + 76)
+    ln, ph, mt, bg, fg = (('#15304d', '#c6d4e4', '#5d7690', '#22b5cf', '#04101f') if dark
+                          else (LLN, INK, '#7d8a99', CYD, '#ffffff'))
+    return (f'<div class="abs" style="left:{M}px;top:1170px;width:{IW}px;height:2px;background:{ln}"></div>'
+            + f'<div class="abs p" style="left:{M}px;top:1206px;width:{IW - cw - 36}px;font-size:25px;line-height:33px;color:{ph}">{phrase}</div>'
+            + f'<div class="abs" style="left:{W - M - cw}px;top:1206px;width:{cw}px;height:68px;border-radius:4px;background:{bg};color:{fg};'
+              f'font-family:Archivo;font-weight:700;font-size:24px;line-height:68px;text-align:center">{e(cta)}</div>'
+            + f'<div class="abs mono" style="left:{M}px;top:1296px;width:{IW}px;font-size:15px;line-height:22px;color:{mt}">bouw-eight.vercel.app · +593 96 368 4012</div>')
+
+
+def light(name, body):
+    pieces.append((name, W, H, f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:{LBG}"></div>' + body))
+
+
+def fullphoto(name, foto, body, pos='center'):
+    img = photo(foto, 0, 0, W, H, pos=pos).replace('border-radius:18px', 'border-radius:0')
+    shade = ('<div class="abs" style="left:0;top:0;width:1080px;height:1350px;'
+             'background:linear-gradient(180deg,rgba(4,16,31,.82) 0%,rgba(4,16,31,.15) 22%,rgba(4,16,31,.25) 42%,rgba(4,16,31,.92) 66%,#04101f 100%)"></div>')
+    pieces.append((name, W, H, img + shade + body))
+
+
+def ltitle(t, size, top, col=INK, width=IW):
+    return f'<div class="abs h" style="left:{M}px;top:{top}px;width:{width}px;font-size:{size}px;line-height:{round(size * 1.02)}px;color:{col}">{t}</div>'
+
+
+def lpara(t, top, size=28, col=SUB, width=IW, left=M, lh=None):
+    return f'<div class="abs p" style="left:{left}px;top:{top}px;width:{width}px;font-size:{size}px;line-height:{lh or round(size * 1.42)}px;color:{col}">{t}</div>'
+
+
+# N01 · 5 señales (claro)
+sen = ['El cierre de mes lo arma alguien a mano, juntando archivos.',
+       'Nadie sabe cuánto tarda de verdad una pieza en salir.',
+       'Se repite trabajo por errores que se detectan tarde.',
+       'Cada persona hace la misma tarea a su manera.',
+       'La misma información vive en tres archivos y ninguno cuadra.']
+rows = ''
+for i, t_ in enumerate(sen):
+    y = 528 + i * 120
+    rows += (f'<div class="abs" style="left:{M}px;top:{y - 18}px;width:{IW}px;height:2px;background:{LLN}"></div>'
+             + f'<div class="abs h" style="left:{M}px;top:{y}px;width:90px;font-size:56px;line-height:64px;color:{OR}">{i + 1}</div>'
+             + lpara(e(t_), y + 6, 31, INK, IW - 100, M + 100, 42))
+light('N01-senales-planta-pierde-horas',
+      lhead('Para dueños y jefes de planta')
+      + ltitle('5 señales de que tu empresa está perdiendo horas sin darse cuenta', 70, 214)
+      + rows
+      + lfoot('¿Cuántas marcaste? Con dos ya vale la pena medir.', 'Agendar diagnóstico'))
+
+# N02 · Mito vs realidad (mitad clara, mitad oscura)
+pieces.append(('N02-mito-realidad-automatizar', W, H,
+    f'<div class="abs" style="left:0;top:0;width:{W}px;height:660px;background:{LBG}"></div>'
+    f'<div class="abs" style="left:0;top:660px;width:{W}px;height:690px;background:#04101f"></div>'
+    + lhead('Mito vs. realidad')
+    + f'<div class="abs mono" style="left:{M}px;top:236px;width:300px;font-size:22px;line-height:30px;color:{OR};letter-spacing:.3em">✕ Mito</div>'
+    + ltitle('“Automatizar es caro y obliga a cambiar todo el sistema.”', 64, 290, INK)
+    + f'<div class="abs mono" style="left:{M}px;top:720px;width:400px;font-size:22px;line-height:30px;color:{CY};letter-spacing:.3em">✓ Realidad</div>'
+    + ltitle('Un taller automatizó su cierre de mes <span class="c">sin cambiar de sistema.</span>', 54, 774, '#e8eef6')
+    + lpara('Lo hicimos sobre el Excel que el equipo ya usaba: 11 hojas conectadas, cero licencias nuevas, cero migraciones.', 960, 27, '#c6d4e4')
+    + lfoot('Empieza por lo que ya tienes.', 'Hablemos', dark=True)))
+
+# N03 · Caso real con foto de la línea
+fullphoto('N03-caso-dos-turnos-foto', 'mejora-linea-extrusion',
+    lhead('Caso real · Mejora continua', dark=True)
+    + f'<div class="abs mono" style="left:{M}px;top:690px;width:600px;font-size:18px;line-height:26px;color:{OR}">Línea de producción · 2 turnos</div>'
+    + ltitle('Dos turnos. Una línea.<br><span class="c">−20 % de reprocesos.</span>', 78, 730, '#ffffff')
+    + lpara('Lo difícil no fue el método. Fue lograr que los dos turnos midieran con el mismo criterio. Desde ahí, la preparación bajó 15 % y los reprocesos 20 %.', 930, 27, '#d6e0ea')
+    + lfoot('Medimos en piso antes de proponer nada.', 'Ver el caso', dark=True), pos='center 35%')
+
+# N04 · Encuesta (claro)
+opts = [('A', 'El papeleo de calidad y las auditorías'), ('B', 'El cierre de mes'), ('C', 'Las esperas en la línea'), ('D', 'Copiar datos de un sistema a otro')]
+op = ''
+for i, (l_, t_) in enumerate(opts):
+    y = 560 + i * 132
+    op += (f'<div class="abs" style="left:{M}px;top:{y}px;width:{IW}px;height:108px;border-radius:16px;background:#ffffff;border:2px solid {LLN}"></div>'
+           f'<div class="abs" style="left:{M + 26}px;top:{y + 22}px;width:64px;height:64px;border-radius:32px;background:{CYD}"></div>'
+           + tx(M + 26, y + 22, 64, l_, 32, '#ffffff', 'h', 'center', 64)
+           + lpara(e(t_), y + 30, 31, INK, IW - 150, M + 120, 48))
+light('N04-encuesta-que-te-quita-horas',
+      lhead('Pregunta de la semana')
+      + ltitle('¿Qué le quita más horas a tu equipo esta semana?', 80, 220)
+      + op
+      + lfoot('Responde con la letra en los comentarios.', 'Comentar'))
+
+# N05 · Cita de ingeniero (oscuro, tipográfica)
+add('N05-cita-ordena-antes-de-automatizar', W, H,
+    lhead('Desde la planta', dark=True)
+    + f'<div class="abs serif" style="left:{M - 10}px;top:150px;width:300px;font-size:300px;line-height:300px;color:{CY}">“</div>'
+    + f'<div class="abs serif" style="left:{M}px;top:380px;width:{IW}px;font-size:78px;line-height:84px">Antes de automatizar un proceso, ordénalo. Automatizar el desorden solo te da <span class="o">desorden más rápido.</span></div>'
+    + f'<div class="abs" style="left:{M}px;top:900px;width:60px;height:3px;background:{CY}"></div>'
+    + f'<div class="abs t" style="left:{M}px;top:930px;width:{IW}px;font-size:30px;line-height:38px">Equipo BOUW</div>'
+    + f'<div class="abs mono" style="left:{M}px;top:976px;width:{IW}px;font-size:17px;line-height:26px">Ingeniería de procesos · Quito y Monterrey</div>'
+    + lfoot('Primero el flujo. Después la herramienta.', 'Hablemos', dark=True))
+
+# N06 · Checklist para contratar una consultora (claro)
+qs = ['¿Mide mi proceso antes de proponerme algo?', '¿Me da el precio cerrado y por escrito?', '¿Veré avances cada semana?',
+      '¿Qué pasa después de que entrega?', '¿Me diría si no me conviene hacerlo?']
+ck = ''
+for i, q in enumerate(qs):
+    y = 512 + i * 100
+    ck += (f'<div class="abs" style="left:{M}px;top:{y}px;width:44px;height:44px;border-radius:8px;border:3px solid {CYD}"></div>'
+           + lpara(e(q), y + 0, 31, INK, IW - 70, M + 70, 44))
+light('N06-checklist-antes-de-contratar',
+      lhead('Guía rápida')
+      + ltitle('Antes de contratar a una consultora, pregúntale esto:', 72, 220)
+      + ck
+      + f'<div class="abs" style="left:{M}px;top:1022px;width:{IW}px;height:116px;border-radius:16px;background:#04101f"></div>'
+      + f'<div class="abs t" style="left:{M + 36}px;top:1022px;width:{IW - 72}px;font-size:32px;line-height:116px;color:#ffffff">En BOUW, la respuesta a las cinco es <span class="c">sí.</span></div>'
+      + lfoot('Guárdala para tu próxima cotización.', 'Hablemos'))
+
+# N07 · Foto real: medimos en la línea
+fullphoto('N07-medimos-en-la-linea-foto', 'mejora-termometro',
+    lhead('Así trabajamos', dark=True)
+    + ltitle('Medimos en la línea.<br><span class="c">No en la oficina.</span>', 84, 760, '#ffffff')
+    + lpara('Tiempos, esperas, inventarios y hasta la temperatura del agua de enfriamiento: las variables del proceso se toman donde pasan.', 960, 27, '#d6e0ea')
+    + lfoot('Diagnóstico de 1 a 2 semanas en tu planta.', 'Agendar', dark=True), pos='center 75%')
+
+# N08 · 3 errores al automatizar (oscuro)
+err = [('Automatizar sin saber cuánto cuesta hoy', 'Haz la cuenta primero. Menos de 40 h al año no vale un proyecto.'),
+       ('Cambiar de sistema cuando el equipo ya sabe usar uno', 'Construye sobre lo que ya funciona.'),
+       ('Entregarlo todo al final', 'Entrega algo que funcione cada semana y corrige a tiempo.')]
+er = ''
+for i, (a_, b_) in enumerate(err):
+    y = 470 + i * 220
+    er += (f'<div class="abs h" style="left:{M}px;top:{y}px;width:80px;font-size:64px;line-height:64px;color:#15304d">0{i + 1}</div>'
+           + f'<div class="abs t" style="left:{M + 110}px;top:{y}px;width:{IW - 110}px;font-size:34px;line-height:42px;color:#e8eef6"><span style="color:{RED}">✕</span> {e(a_)}</div>'
+           + f'<div class="abs p" style="left:{M + 110}px;top:{y + 96}px;width:{IW - 110}px;font-size:27px;line-height:38px;color:#c6d4e4"><span class="c">✓</span> {e(b_)}</div>')
+add('N08-errores-al-automatizar', W, H,
+    lhead('Aprendido en planta', dark=True)
+    + title('3 errores al automatizar <span class="c">(y cómo evitarlos)</span>', 72, top=220)
+    + er
+    + lfoot('Si se repite, se automatiza. Bien.', 'Hablemos', dark=True))
+
 # ---------- escribir ----------
 for f in os.listdir(OUT):
     if f.endswith('.html'):
