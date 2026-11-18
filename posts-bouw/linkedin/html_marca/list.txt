@@ -1,0 +1,14 @@
+D01-tip-haz-la-cuenta:1080x1350
+D02-caso-reprocesos:1080x1350
+D03-carrusel-1-portada:1080x1350
+D03-carrusel-2-error-1:1080x1350
+D03-carrusel-3-error-2:1080x1350
+D03-carrusel-4-error-3:1080x1350
+D03-carrusel-5-cierre:1080x1350
+D04-frase-si-se-repite:1080x1350
+D05-caso-cierre-de-mes:1080x1350
+D06-pregunta-auditoria:1080x1350
+D07-caso-whatsapp:1080x1350
+D08-tip-tres-archivos:1080x1350
+D09-como-trabajamos:1080x1350
+D10-cuentanos:1080x1350

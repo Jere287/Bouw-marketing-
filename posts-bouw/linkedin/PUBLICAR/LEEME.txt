@@ -1,0 +1,8 @@
+BOUW · LinkedIn · 10 publicaciones listas (serie D, estilo consultora)
+
+Cada carpeta es un día:
+  imagen.png (o el PDF del carrusel)  -> lo que se sube
+  publicar.txt                        -> fecha, texto para pegar, texto alternativo y primer comentario
+
+Editables en Adobe Express:
+https://new.express.adobe.com/id/urn:aaid:sc:US:1d45185b-5547-4284-9996-82cf2dd3ebde

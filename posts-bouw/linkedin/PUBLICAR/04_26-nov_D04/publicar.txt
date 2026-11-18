@@ -1,0 +1,24 @@
+FECHA: Jueves 26 nov 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO (copiar y pegar):
+
+Si se repite, se automatiza.
+
+Es la regla con la que trabajamos en BOUW, y tiene dos partes que importan igual:
+• Si una tarea no se repite, no se automatiza: se ordena.
+• Si un proceso no se mide, todavía no se toca.
+
+Automatizar sin estas dos reglas es invertir a ciegas.
+
+¿Qué tarea se repite todas las semanas en tu empresa? Cuéntanos y te decimos si vale la pena automatizarla.
+
+#BOUW #FraseDeLaSemana #Automatización #MejoraContinua
+
+2) IMAGEN: imagen.png
+   Al subirla toca "Texto alternativo" y pega:
+   Frase de la semana de BOUW: "Si se repite, se automatiza", sobre la foto de una pieza extruida.
+
+3) PRIMER COMENTARIO (apenas salga la publicación):
+   bouw-eight.vercel.app
+
+4) Responde todos los comentarios en la primera hora. A quien diga que le pasa, escríbele por mensaje privado.
