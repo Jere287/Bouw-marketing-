@@ -1,0 +1,18 @@
+FECHA: Jueves 19 nov 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO DE LA PUBLICACIÓN (copiar y pegar):
+
+Somos BOUW, una firma de ingeniería de procesos con sedes en Quito y Monterrey.
+
+Trabajamos con empresas que fabrican, en tres frentes: mejora de planta, sistemas de calidad y automatización de los procesos que hoy se hacen a mano.
+
+Llevamos más de siete años haciéndolo entre Ecuador y México. Entre las dos sedes compartimos nueve horas de horario laboral, así que siempre hay alguien para responder.
+
+#IngenieríaIndustrial #MejoraContinua #Manufactura
+
+2) IMAGEN: imagen.png
+   Al subirla, toca "Texto alternativo" y pega:
+   Línea de extrusión en una planta real, con el titular "Ingeniería de procesos para empresas que fabrican".
+
+3) PRIMER COMENTARIO (publícalo apenas salga el post):
+   Proyectos y forma de trabajo: bouw-eight.vercel.app

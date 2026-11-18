@@ -61,8 +61,7 @@ body{{background:{PAPER}}}
 
 def label(t, color, top=80, left=M):
     """Etiqueta superior: una línea corta de cian y el tema, sin mayúsculas forzadas."""
-    return (f'<div class="abs" style="left:{left}px;top:{top + 15}px;width:36px;height:3px;background:{color}"></div>'
-            f'<div class="abs lab" style="left:{left + 52}px;top:{top}px;width:800px;color:{color}">{e(t)}</div>')
+    return f'<div class="abs lab" style="left:{left}px;top:{top}px;width:800px;color:{color}">{e(t)}</div>'
 
 
 def firma(dark=False, top=H - 120):
@@ -112,14 +111,14 @@ add('E01-quienes-somos', INK,
     photo(site('mejora-linea-extrusion'), 0, 0, W, H, pos='center 35%')
     + f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:linear-gradient(180deg,rgba(6,16,31,.15) 0%,rgba(6,16,31,.35) 40%,rgba(6,16,31,.92) 72%,#06101f 100%)"></div>'
     + f'<div class="abs" style="left:0;top:0;width:{W}px;height:260px;background:linear-gradient(180deg,rgba(6,16,31,.75),rgba(6,16,31,0))"></div>'
-    + label('Quito · Monterrey', '#ffffff', top=80)
+    + label('Quito y Monterrey', '#ffffff', top=80)
     + f'<div class="abs hl" style="left:{M}px;top:760px;width:880px;font-size:76px;color:#fff">Ingeniería de procesos para empresas que fabrican.</div>'
     + f'<div class="abs tx" style="left:{M}px;top:1030px;width:820px;font-size:28px;color:rgba(255,255,255,.82)">Mejora de planta, calidad y automatización. Más de 7 años entre Ecuador y México.</div>'
     + firma(dark=True))
 
 # E02 · Un dato grande del caso de mejora continua
 add('E02-dato-reprocesos', PAPER,
-    label('Caso · Línea de extrusión', CYAN_D)
+    label('Caso real', CYAN_D)
     + f'<div class="abs hl" style="left:{M - 8}px;top:250px;width:1000px;font-size:300px;line-height:1;color:{NAVY};letter-spacing:-0.05em">−20 %</div>'
     + f'<div class="abs hl" style="left:{M}px;top:580px;width:900px;font-size:58px;color:{INK}">de reprocesos en la línea.</div>'
     + f'<div class="abs tx" style="left:{M}px;top:690px;width:820px;font-size:28px;color:{MUTED}">Sin comprar maquinaria nueva: ordenando el flujo y dejando un trabajo estándar que el equipo sí sigue.</div>'
@@ -132,7 +131,7 @@ add('E03-primero-medimos', NAVY,
     + f'<div class="abs hl" style="left:{M}px;top:300px;width:200px;font-size:200px;line-height:1;color:{CYAN}">“</div>'
     + f'<div class="abs hl" style="left:{M}px;top:470px;width:900px;font-size:74px;line-height:1.1;color:#fff">Medimos tu proceso real antes de proponer nada.</div>'
     + f'<div class="abs tx" style="left:{M}px;top:760px;width:820px;font-size:32px;color:rgba(255,255,255,.78)">Si al final no hay proyecto, la medición se queda contigo igual.</div>'
-    + f'<div class="abs tx" style="left:{M}px;top:1080px;width:820px;font-size:24px;color:rgba(255,255,255,.55)">Diagnóstico en 1 a 2 semanas · Precio cerrado por escrito en 3 a 5 días</div>'
+    + f'<div class="abs tx" style="left:{M}px;top:1080px;width:820px;font-size:24px;color:rgba(255,255,255,.55)">El diagnóstico toma de una a dos semanas.</div>'
     + firma(dark=True))
 
 # E04 · Foto de medición en piso + titular
@@ -145,7 +144,7 @@ add('E04-medimos-en-piso', PAPER,
 
 # E05 · Caso Programa contable
 add('E05-caso-programa-contable', PAPER,
-    label('Caso · Taller de manufactura', CYAN_D)
+    label('Caso real', CYAN_D)
     + f'<div class="abs hl" style="left:{M}px;top:150px;width:900px;font-size:66px;color:{INK}">Un ERP completo dentro de un solo Excel.</div>'
     + f'<div class="abs tx" style="left:{M}px;top:310px;width:880px;font-size:27px;color:{MUTED}">Inventario, kits, ventas y caja en once hojas conectadas. El equipo siguió en la herramienta que ya sabía usar.</div>'
     + shot(site('contable-excel-es-poster'), M, 450, W - 2 * M, 520, pos='top')
@@ -156,7 +155,7 @@ add('E05-caso-programa-contable', PAPER,
 ph = ''.join(shot(site(n), M + i * 312, 440, 288, 560, pos='top', radius=22)
              for i, n in enumerate(['charms-movil-inicio', 'charms-movil-cotizar', 'charms-movil-pedidos']))
 add('E06-caso-charms-ecuador', NAVY,
-    label('Caso · Taller de regalos', CYAN)
+    label('Caso real', CYAN)
     + f'<div class="abs hl" style="left:{M}px;top:150px;width:900px;font-size:66px;color:#fff">El pedido llega a WhatsApp ya escrito.</div>'
     + f'<div class="abs tx" style="left:{M}px;top:310px;width:880px;font-size:27px;color:rgba(255,255,255,.75)">Catálogo con fotos reales y un cotizador en cuatro pasos. El taller solo confirma.</div>'
     + ph
@@ -165,7 +164,7 @@ add('E06-caso-charms-ecuador', NAVY,
 
 # E07 · Caso Anatris
 add('E07-caso-anatris', PAPER,
-    label('Producto propio · Salud', CYAN_D)
+    label('Producto propio', CYAN_D)
     + f'<div class="abs hl" style="left:{M}px;top:150px;width:900px;font-size:66px;color:{INK}">Un atlas 3D de anatomía que funciona en el navegador.</div>'
     + f'<div class="abs tx" style="left:{M}px;top:310px;width:880px;font-size:27px;color:{MUTED}">Para fisioterapia: cada músculo con su ficha y cada dato clínico con su fuente.</div>'
     + shot(site('anatris-cuerpo'), M, 450, W - 2 * M, 520, pos='center')

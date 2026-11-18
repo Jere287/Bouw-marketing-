@@ -1,0 +1,15 @@
+BOUW · LinkedIn · 9 publicaciones listas
+
+Cada carpeta es un día. Adentro hay:
+  imagen.png    -> la imagen para subir (1080 x 1350)
+  publicar.txt  -> fecha, texto para pegar, texto alternativo y primer comentario
+
+Cómo publicar (página de empresa BOUW):
+  1. Inicia una publicación desde la página y sube imagen.png.
+  2. En la imagen toca "Texto alternativo" y pega el de publicar.txt.
+  3. Pega el texto de la publicación y publica (o prográmala con el reloj).
+  4. Apenas salga, escribe el primer comentario con el enlace.
+  5. Responde los comentarios durante la primera hora.
+
+Editables en Adobe Express:
+https://new.express.adobe.com/id/urn:aaid:sc:US:88a53097-3aa1-41e5-803b-6ca04ee2cef3

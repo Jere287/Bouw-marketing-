@@ -1,0 +1,18 @@
+FECHA: Jueves 3 dic 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO DE LA PUBLICACIÓN (copiar y pegar):
+
+Anatris es un producto propio: un atlas 3D de anatomía y biomecánica para fisioterapia que funciona en el navegador.
+
+Tiene 113 músculos con ficha, 79 tests clínicos con su sensibilidad y especificidad, y cada dato clínico con su fuente citada. Está en producción.
+
+Lo construimos con el mismo método que aplicamos con los clientes: entregas semanales y nada que no se pueda medir.
+
+#ProductoDigital #Fisioterapia #Salud
+
+2) IMAGEN: imagen.png
+   Al subirla, toca "Texto alternativo" y pega:
+   Modelo 3D de un torso con los deltoides resaltados dentro de Anatris, con los datos 113 músculos, 79 tests y 6 regiones.
+
+3) PRIMER COMENTARIO (publícalo apenas salga el post):
+   anatris.vercel.app

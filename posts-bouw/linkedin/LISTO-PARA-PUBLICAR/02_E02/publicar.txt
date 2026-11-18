@@ -1,0 +1,18 @@
+FECHA: Martes 24 nov 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO DE LA PUBLICACIÓN (copiar y pegar):
+
+En una línea de extrusión bajamos los reprocesos un 20 % y el tiempo de preparación un 15 %.
+
+No compramos maquinaria. Ordenamos el flujo, estandarizamos el cambio de formato y capacitamos a cuatro operadores para sostener el estándar en piso.
+
+En la mayoría de las plantas que visitamos, la capacidad ya está ahí. Lo que falta es que el flujo tenga sentido.
+
+#Lean #MejoraContinua #Manufactura
+
+2) IMAGEN: imagen.png
+   Al subirla, toca "Texto alternativo" y pega:
+   Cifra "−20 % de reprocesos en la línea" con la foto de un perfil extruido.
+
+3) PRIMER COMENTARIO (publícalo apenas salga el post):
+   El caso completo: bouw-eight.vercel.app

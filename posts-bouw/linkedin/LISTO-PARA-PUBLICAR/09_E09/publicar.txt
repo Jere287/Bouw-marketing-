@@ -1,0 +1,18 @@
+FECHA: Miércoles 9 dic 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO DE LA PUBLICACIÓN (copiar y pegar):
+
+Del diseño a la realidad.
+
+Es la frase que resume lo que hacemos: tomar lo que funciona en un plano o en una pantalla y lograr que una línea lo fabrique igual, todos los días.
+
+Esta es una de esas piezas.
+
+#Manufactura #IngenieríaIndustrial #MejoraContinua
+
+2) IMAGEN: imagen.png
+   Al subirla, toca "Texto alternativo" y pega:
+   Mano sosteniendo un perfil extruido que muestra su sección.
+
+3) PRIMER COMENTARIO (publícalo apenas salga el post):
+   bouw-eight.vercel.app
