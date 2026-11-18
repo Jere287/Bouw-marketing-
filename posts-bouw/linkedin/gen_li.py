@@ -132,7 +132,7 @@ OR, CY, RED, YEL, GRN = '#f79b4a', '#4fd6e8', '#ff6b5e', '#f2c94c', '#5ad19a'
 def serie(code, n, tema, color):
     return (logo(M, 50, 190)
             + f'<div class="abs" style="left:{W - M - 330}px;top:78px;width:330px;height:44px;border:2px solid {color};border-radius:22px"></div>'
-            + f'<div class="abs mono" style="left:{W - M - 330}px;top:78px;width:330px;height:44px;text-align:center;font-size:16px;line-height:40px;color:{color}">{tema} · {n} / 5</div>'
+            + f'<div class="abs mono" style="left:{W - M - 330}px;top:78px;width:330px;height:44px;text-align:center;font-size:18px;line-height:40px;color:{color}">{tema}</div>'
             + f'<div class="rule" style="left:{M}px;top:156px;width:{IW}px"></div>')
 
 
@@ -447,24 +447,24 @@ IW = W - 2 * M
 
 def header(n, tema, raw=False):
     return (logo(M, 50, 190)
-            + f'<div class="abs mono" style="left:{W - M - 640}px;top:84px;width:640px;text-align:right;font-size:19px;line-height:28px">'
-              f'{e(tema) if raw else f"Pliego {n:02d} · {e(tema)}"}</div>'
+            + f'<div class="abs mono" style="left:{W - M - 640}px;top:84px;width:640px;text-align:right;font-size:21px;line-height:28px">'
+              f'{e(tema)}</div>'
             + f'<div class="rule" style="left:{M}px;top:156px;width:{IW}px"></div>')
 
 
 def footer(phrase, cta, serif=False):
-    cw = int(len(cta) * 14 + 76)
+    cw = int(len(cta) * 15.5 + 60)
     cls = 'serif' if serif else 'p'
     fs = 'font-size:36px;line-height:40px;color:#e8eef6' if serif else 'font-size:24px;line-height:32px;color:#93a7bf'
     return (f'<div class="rule" style="left:{M}px;top:1170px;width:{IW}px"></div>'
             + f'<div class="abs {cls}" style="left:{M}px;top:1206px;width:{IW - cw - 36}px;{fs}">{phrase}</div>'
-            + f'<div class="btn" style="left:{W - M - cw}px;top:1206px;width:{cw}px;height:68px;font-size:24px;line-height:68px;border-radius:4px">{e(cta)}</div>'
-            + f'<div class="abs mono" style="left:{M}px;top:1296px;width:{IW}px;font-size:15px;line-height:22px;color:#5d7690">bouw-eight.vercel.app · +593 96 368 4012</div>')
+            + f'<div class="abs t" style="left:{W - M - cw}px;top:1204px;width:{cw}px;text-align:right;font-size:28px;line-height:36px;font-weight:700;color:#4fd6e8">{e(cta)}&nbsp;→</div>'
+            + f'<div class="abs mono" style="left:{M}px;top:1290px;width:{IW}px;font-size:18px;line-height:26px;color:#6f88a3;letter-spacing:.14em">bouw-eight.vercel.app · WhatsApp +593 96 368 4012</div>')
 
 
 def kicker(t, top=206, color='#4fd6e8'):
     return (f'<div class="abs" style="left:{M}px;top:{top + 10}px;width:12px;height:12px;border-radius:6px;background:{color}"></div>'
-            f'<div class="abs mono" style="left:{M + 26}px;top:{top}px;width:{IW - 26}px;font-size:19px;line-height:32px;color:{color}">{t}</div>')
+            f'<div class="abs mono" style="left:{M + 26}px;top:{top}px;width:{IW - 26}px;font-size:21px;line-height:32px;color:{color}">{t}</div>')
 
 
 def title(t, size, top=256, width=IW):
@@ -517,7 +517,7 @@ post('L01-presentacion',
      f'<div class="abs mono" style="left:{M}px;top:84px;width:300px;font-size:19px;line-height:28px;color:#4fd6e8">Quito · Monterrey</div>'
      + dash(M, 124, 150)
      + f'<div class="abs mono" style="left:{M}px;top:140px;width:300px;font-size:19px;line-height:28px">Est. 7+</div>'
-     + f'<div class="abs mono" style="left:{W - M - 400}px;top:84px;width:400px;text-align:right;font-size:19px;line-height:30px">Pliego 01 · Quiénes somos</div>'
+     + f'<div class="abs mono" style="left:{W - M - 400}px;top:84px;width:400px;text-align:right;font-size:21px;line-height:30px">Quiénes somos</div>'
      + hero(150, 150, 840, 0.5)
      + title('<span class="dim">Del dis</span>eño<br><span class="dim">a la rea</span><span class="c">lidad</span>', 112, top=760)
      + f'<div class="abs serif" style="left:{M}px;top:990px;width:{IW}px;font-size:64px;line-height:70px">{LEMA}</div>'
@@ -554,7 +554,7 @@ post('L03-cumplimiento-normativo-bpm',
 # L04 · Proyecto: Programa contable (ERP sobre Excel)
 post('L04-programa-contable-excel',
      header(4, 'Proyectos')
-     + kicker('03 · Automatización · Gestión &#8212; En vivo')
+     + kicker('Proyecto real · Automatización · Gestión')
      + title('Un ERP pequeño montado sobre Excel: inventario, kits, ventas y caja en un solo archivo.', 62)
      + para('Once hojas conectadas por macros: clientes, productos, componentes, kits con su despiece, ventas, compras y gastos, '
             'anticipos y un tablero que se recalcula solo. El equipo siguió trabajando en la herramienta que ya sabía usar.', 520, size=27, lh=38)
@@ -594,7 +594,7 @@ vsm += (f'<div class="abs mono" style="left:{M}px;top:992px;width:200px;font-siz
         f'<span style="font-size:34px;color:#8fa8c4">(13 %)</span></div>')
 post('L05-simulacion-de-flujos',
      header(5, 'Proyectos')
-     + kicker('02 · Hoy → BOUW')
+     + kicker('Proyecto · Simulación de la línea')
      + title('Simulación de flujos &amp; visión analítica.', 70)
      + para('Con los datos de tu operación armamos un modelo de la línea y probamos ahí cada cambio de layout o de proceso. '
             'Sabes cuánto mejora el flujo antes de mover un solo equipo, sin parar la producción para hacer pruebas.', 430, size=28, lh=39)
@@ -621,7 +621,7 @@ for i, f in enumerate(FRASES):
 post('L06-cual-te-suena',
      header(6, 'Qué te pasa')
      + title('¿Cuál te suena?', 92, top=214)
-     + para('Son frases que nos dicen los clientes cuando nos llaman. Marca las que se parezcan a tu semana.', 322, size=28, lh=40)
+     + para('Son frases que nos dicen los clientes cuando nos llaman. ¿Cuál dices tú? Cuéntanos en los comentarios.', 322, size=28, lh=40)
      + fr
      + footer('¿Ninguna? Puede que todavía no nos necesites, y preferimos decírtelo.', 'Cuéntanos'))
 
@@ -663,19 +663,19 @@ calc += (f'<div class="abs" style="left:{M + 2}px;top:802px;width:{IW - 4}px;hei
 post('L08-la-cuenta',
      header(8, 'La cuenta')
      + title('Cuánto cuesta hacerlo a mano.', 80, top=214)
-     + para('Rellena la fila con una tarea que hoy se haga a mano. Si no compensa automatizarla, también te lo dice.', 390, size=27, lh=37)
+     + para('Un ejemplo de la calculadora del sitio. Si no compensa automatizarla, también te lo dice.', 390, size=27, lh=37)
      + calc
      + footer('Haz tu cuenta en la calculadora del sitio.', 'Hacer la cuenta'))
 
 # L09 · ¿Dónde pierde horas esta planta? (el juego del sitio)
 post('L09-donde-pierde-horas',
-     header(9, 'Pruébalo · 30 segundos')
+     header(9, 'Reto · 30 segundos')
      + title('¿Dónde pierde horas esta planta?', 76, top=214)
-     + para('Hay seis desperdicios escondidos. Toca la planta donde veas uno y te decimos qué es, qué cuesta y cómo se ve arreglado.', 400, size=27, lh=37)
+     + para('Hay seis desperdicios escondidos. ¿Cuántos ves? En el sitio te decimos cuáles son, qué cuestan y cómo se ven arreglados.', 400, size=27, lh=37)
      + vis(v_planta(), M, 540, 1.0)
-     + f'<div class="abs h" style="left:{W - M - 230}px;top:1090px;width:200px;text-align:right;font-size:56px;line-height:60px">0<span class="dim">/6</span></div>'
-     + f'<div class="abs mono" style="left:{M}px;top:1110px;width:600px;font-size:17px;line-height:24px">Encontrados</div>'
-     + footer('Seis desperdicios. ¿Cuántos ves?', 'Pruébalo'))
+     + f'<div class="abs h" style="left:{W - M - 230}px;top:1090px;width:200px;text-align:right;font-size:56px;line-height:60px">¿?<span class="dim">/6</span></div>'
+     + f'<div class="abs mono" style="left:{M}px;top:1110px;width:600px;font-size:19px;line-height:24px">Tu puntaje</div>'
+     + footer('Comenta cuántos encontraste.', 'Juega en el sitio'))
 
 # L10 · Contacto
 post('L10-contacto',
@@ -760,10 +760,10 @@ for i, b in enumerate(car, 1):
 # =====================================================================
 add('A01-anuncio-la-cuenta-1200x627', 1200, 627,
     logo(72, 58, 170)
-    + '<div class="abs mono" style="left:628px;width:500px;top:84px;text-align:right;font-size:15px;line-height:24px">Pliego 04 · La cuenta</div>'
+    + '<div class="abs mono" style="left:628px;width:500px;top:84px;text-align:right;font-size:17px;line-height:24px">La cuenta</div>'
     + '<div class="rule" style="left:72px;top:150px;width:1056px"></div>'
     + '<div class="abs h" style="left:72px;top:190px;width:640px;font-size:68px;line-height:68px">Cuánto cuesta hacerlo a mano.</div>'
-    + '<div class="abs p" style="left:72px;top:352px;width:620px;font-size:24px;line-height:34px">Rellena la fila con una tarea que hoy se haga a mano. Si no compensa automatizarla, también te lo dice.</div>'
+    + '<div class="abs p" style="left:72px;top:352px;width:620px;font-size:24px;line-height:34px">Pon tu tarea en la calculadora y mira la cuenta del año. Si no compensa automatizarla, también te lo dice.</div>'
     + '<div class="btn" style="left:72px;top:480px;width:290px;height:66px;font-size:24px;line-height:66px;border-radius:4px">Hacer la cuenta</div>'
     + '<div class="abs mono" style="left:392px;top:500px;width:400px;font-size:15px;line-height:24px;color:#4fd6e8">bouw-eight.vercel.app</div>'
     + '<div class="panel" style="left:780px;top:190px;width:348px;height:356px"></div>'
@@ -889,7 +889,7 @@ post('Z02-automatizacion-copiar-datos',
      serie('Z', 2, 'Automatización', CY)
      + kicker('La cuenta')
      + title('Alguien pasa horas cada semana copiando datos de un sitio a otro.', 66, top=256)
-     + para('Media hora, cinco veces por semana, entre dos personas. Parece poco. Haz la cuenta:', 470, size=27, lh=37)
+     + para('Media hora, 5 veces por semana, entre 2 personas. Haz la cuenta:', 478, size=27, lh=37)
      + calc2
      + f'<div class="abs mono" style="left:{M}px;top:920px;width:300px;font-size:17px;line-height:24px;color:{GRN}">Veredicto</div>'
      + f'<div class="abs t" style="left:{M}px;top:952px;width:{IW}px;font-size:44px;line-height:50px">Aquí sí.</div>'
@@ -902,7 +902,7 @@ post('Z03-automatizacion-cierre-de-mes',
      + title('El cierre de mes ya no se arma a mano.', 84, top=256)
      + vis(v_contable(), M + 60, 460, 400 / 460)
      + stats([('11', 'Hojas conectadas'), ('1', 'Archivo, cero licencias'), ('0', 'Migraciones de sistema')], 890, num=80)
-     + para('<span class="k" style="font-size:17px;letter-spacing:0.2em">RESULTADO&nbsp;&nbsp;</span>Se genera solo desde los movimientos ya capturados. El equipo siguió en el Excel que ya sabía usar.', 1060, size=24, lh=33)
+     + para('<span class="k" style="font-size:17px;letter-spacing:0.2em">RESULTADO&nbsp;&nbsp;</span>Se genera solo desde los movimientos ya capturados. El equipo siguió en el Excel que ya sabía usar.', 1078, size=24, lh=33)
      + footer('Excel · VBA · Inventario · Kits / BOM · Dashboard', 'Hablemos'))
 
 files = ''
@@ -997,7 +997,7 @@ for i, (name, kick, ttl, sub, fn, st, ph, cta) in enumerate(PR, 1):
 #    con sus fotos y capturas (sitio/imagenes/) y sus cifras tal cual aparecen en la página.
 # =====================================================================
 def caso(n):
-    return serie('K', n, 'Casos', OR)
+    return serie('K', n, 'Caso real', OR)
 
 
 def tag(x, y, txt, col=CY, w=None, fs=17):
@@ -1066,7 +1066,7 @@ calc5 += (f'<div class="abs" style="left:{M + 2}px;top:858px;width:{IW - 4}px;he
           f'<div class="abs mono" style="left:{M + 34}px;top:882px;width:300px;font-size:18px;line-height:24px;color:#c6d4e4">En 2026</div>'
           f'<div class="abs h" style="left:{W - M - 434}px;top:864px;width:400px;text-align:right;font-size:54px;line-height:58px;color:{OR}">384 horas</div>')
 post('K05-cierre-de-ano-la-cuenta',
-     caso(5).replace('Casos · 5 / 5', 'Cierre de año')
+     caso(5).replace('>Caso real<', '>Cierre de año<')
      + hero(680, 180, 330, 0.4)
      + kicker('La cuenta de 2026', top=206, color=OR)
      + title('¿Cuántas horas<br>se fueron a mano<br><span class="o">en 2026?</span>', 66, top=258, width=600)
