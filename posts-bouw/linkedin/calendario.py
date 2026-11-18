@@ -159,5 +159,5 @@ for i, (fecha, f) in enumerate(CAL, 1):
     tabla.append(f'{i:02d}  {fecha} {year}  {code}')
 open(os.path.join(base, 'CALENDARIO.txt'), 'w').write(
     'BOUW · LinkedIn · calendario (martes, miércoles y jueves, 08:00 Quito / 07:00 Monterrey)\n'
-    'Pausa del 18 de diciembre al 4 de enero.\n\n' + '\n'.join(tabla) + '\n')
+    'Pausa del 19 de diciembre al 4 de enero.\n\n' + '\n'.join(tabla) + '\n')
 print('\n'.join(tabla))

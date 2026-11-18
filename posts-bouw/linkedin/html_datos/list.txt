@@ -1,0 +1,9 @@
+S01-hojas-de-calculo:1080x1350
+S02-45-por-ciento:1080x1350
+S03-costo-mala-calidad:1080x1350
+S04-buscando-informacion:1080x1350
+S05-trabajo-sobre-el-trabajo:1080x1350
+S06-paros-no-planificados:1080x1350
+S07-de-4-horas-a-3-minutos:1080x1350
+S08-mensajeria-mexico:1080x1350
+S09-mipymes-latam:1080x1350
