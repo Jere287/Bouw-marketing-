@@ -15,8 +15,8 @@ OUT = os.path.join(HERE, 'express')
 os.makedirs(OUT, exist_ok=True)
 
 DOCS = {
-    'bouw-li-casos': ['P01-caso-anatris', 'P02-caso-charms-ecuador', 'P03-caso-mejora-continua-planta',
-                      'P04-caso-hoy-vs-bouw', 'P05-cierre-de-ano-la-cuenta'],
+    'bouw-li-casos': ['K01-caso-anatris', 'K02-caso-charms-ecuador', 'K03-caso-mejora-continua-planta',
+                      'K04-caso-hoy-vs-bouw', 'K05-cierre-de-ano-la-cuenta'],
     'bouw-li-campana-1': ['L01-presentacion', 'L02-lean-ingenieria-de-planta', 'L03-cumplimiento-normativo-bpm',
                           'L04-programa-contable-excel', 'L05-simulacion-de-flujos'],
     'bouw-li-campana-2': ['L06-cual-te-suena', 'L07-en-que-condiciones', 'L08-la-cuenta',

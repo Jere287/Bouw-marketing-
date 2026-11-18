@@ -993,11 +993,11 @@ for i, (name, kick, ttl, sub, fn, st, ph, cta) in enumerate(PR, 1):
          + footer(ph, cta))
 
 # =====================================================================
-# 6. SERIE CASOS 1080×1350 (P01–P05): un proyecto real del sitio por publicación,
+# 6. SERIE CASOS 1080×1350 (K01–K05): un proyecto real del sitio por publicación,
 #    con sus fotos y capturas (sitio/imagenes/) y sus cifras tal cual aparecen en la página.
 # =====================================================================
 def caso(n):
-    return serie('P', n, 'Casos', OR)
+    return serie('K', n, 'Casos', OR)
 
 
 def tag(x, y, txt, col=CY, w=None, fs=17):
@@ -1007,7 +1007,7 @@ def tag(x, y, txt, col=CY, w=None, fs=17):
 
 
 # P01 · Anatris: producto propio, en vivo
-post('P01-caso-anatris',
+post('K01-caso-anatris',
      caso(1)
      + kicker('Producto propio · Salud · Atlas 3D &#8212; En vivo')
      + title('Un atlas 3D de anatomía que corre en el navegador.', 76, top=256)
@@ -1024,7 +1024,7 @@ for i, nm in enumerate(['charms-movil-inicio', 'charms-movil-cotizar', 'charms-m
     x = M + i * 312
     ph += (f'<div class="abs" style="left:{x - 6}px;top:564px;width:{288 + 12}px;height:{570 + 12}px;border-radius:30px;background:#0b2036;border:2px solid #23415f"></div>'
            + photo(nm, x, 570, 288, 570, pos='top').replace('border-radius:18px', 'border-radius:24px'))
-post('P02-caso-charms-ecuador',
+post('K02-caso-charms-ecuador',
      caso(2)
      + kicker('Web · Pedidos por WhatsApp &#8212; En vivo')
      + title('El cliente llega a WhatsApp con el pedido <span class="c">ya escrito.</span>', 70, top=256)
@@ -1033,7 +1033,7 @@ post('P02-caso-charms-ecuador',
      + footer('<span class="c">15</span> modelos · <span class="c">4</span> pasos · <span class="c">$0</span> de hosting', 'Quiero algo así'))
 
 # P03 · Mejora continua en una línea de extrusión: fotos reales de planta
-post('P03-caso-mejora-continua-planta',
+post('K03-caso-mejora-continua-planta',
      caso(3)
      + kicker('Mejora continua · Línea de extrusión', color=OR)
      + title('Esto no es un render. <span class="o">Es una planta real.</span>', 76, top=256)
@@ -1045,7 +1045,7 @@ post('P03-caso-mejora-continua-planta',
      + footer('Medimos en piso antes de proponer nada.', 'Diagnóstico'))
 
 # P04 · Lean: la misma planta, hoy y con BOUW (ilustraciones del sitio)
-post('P04-caso-hoy-vs-bouw',
+post('K04-caso-hoy-vs-bouw',
      caso(4)
      + kicker('Lean manufacturing &amp; ingeniería de planta')
      + title('La misma planta. <span class="dim">Otro flujo.</span>', 68, top=262)
@@ -1065,7 +1065,7 @@ for i, (l_, v_) in enumerate([('La tarea', 'Armar el cierre de mes'), ('Veces al
 calc5 += (f'<div class="abs" style="left:{M + 2}px;top:858px;width:{IW - 4}px;height:70px;background:#0d2b48;border-radius:0 0 16px 16px"></div>'
           f'<div class="abs mono" style="left:{M + 34}px;top:882px;width:300px;font-size:18px;line-height:24px;color:#c6d4e4">En 2026</div>'
           f'<div class="abs h" style="left:{W - M - 434}px;top:864px;width:400px;text-align:right;font-size:54px;line-height:58px;color:{OR}">384 horas</div>')
-post('P05-cierre-de-ano-la-cuenta',
+post('K05-cierre-de-ano-la-cuenta',
      caso(5).replace('Casos · 5 / 5', 'Cierre de año')
      + hero(680, 180, 330, 0.4)
      + kicker('La cuenta de 2026', top=206, color=OR)
