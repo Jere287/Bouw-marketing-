@@ -522,7 +522,11 @@ Todas las piezas están en Adobe Express con texto editable, por si quieres camb
 
 | Documento | Contenido | Enlace |
 |---|---|---|
-| (se completa al exportar) | | |
+| Casos | P01–P05 (Anatris, Charms Ecuador, planta real, hoy vs. BOUW, cuenta de 2026) | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:d2dfa98a-5a15-43f4-b1bf-61b3cfb69af4) |
+| Calidad | Q01–Q05 | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:d7608067-ae60-41db-ba8b-e5dc1ec8f045) |
+| Automatización | Z01–Z05 | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:f52d625b-28cc-4b17-b8a8-9a24812a7125) |
+| Carrusel | C01–C07 "Lo que hemos construido" | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:86651f46-2d6b-4280-a104-ce936812b240) |
+| Campaña L01–L10 | Todavía no está en Express. Los archivos listos para subir son `express/bouw-li-campana-1.html` y `express/bouw-li-campana-2.html`. Por ahora usa los PNG de `png/` | — |
 
 **Cómo usarlas:**
 1. Abre el enlace, duplica la página y cambia el texto.
