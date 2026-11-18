@@ -1,0 +1,20 @@
+BOUW · LinkedIn · calendario (martes, miércoles y jueves, 08:00 Quito / 07:00 Monterrey)
+Pausa del 18 de diciembre al 4 de enero.
+
+01  Jueves 19 nov 2026  D02
+02  Martes 24 nov 2026  A11
+03  Miércoles 25 nov 2026  A13
+04  Jueves 26 nov 2026  D06
+05  Martes 1 dic 2026  A18-carrusel
+06  Miércoles 2 dic 2026  D05
+07  Jueves 3 dic 2026  A14
+08  Martes 8 dic 2026  A12
+09  Miércoles 9 dic 2026  D07
+10  Jueves 10 dic 2026  A15
+11  Martes 15 dic 2026  D03-carrusel
+12  Miércoles 16 dic 2026  A16
+13  Jueves 17 dic 2026  D09
+14  Martes 5 ene 2027  A17
+15  Miércoles 6 ene 2027  D04
+16  Jueves 7 ene 2027  D08
+17  Martes 12 ene 2027  D10

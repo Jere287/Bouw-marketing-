@@ -1,0 +1,27 @@
+FECHA: Miércoles 2 dic 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO (copiar y pegar):
+
+El cierre de mes que se armaba a mano, ahora sale solo.
+
+Un taller de manufactura llevaba inventario, kits, ventas y caja en archivos separados. Cada fin de mes, alguien pasaba días juntándolos.
+
+Lo que hicimos:
+• Un ERP pequeño dentro de un solo Excel, con 11 hojas conectadas.
+• Un tablero que se recalcula con cada movimiento.
+• Cero licencias nuevas y cero migración: el equipo siguió en la herramienta que ya conocía.
+
+No siempre hace falta un sistema nuevo. A veces hace falta que el que ya tienes trabaje solo.
+
+Si tu cierre de mes todavía se arma a mano, escríbenos.
+
+#BOUW #Automatización #Excel #Pymes
+
+2) IMAGEN: imagen.png
+   Al subirla toca "Texto alternativo" y pega:
+   Caso real de BOUW: tablero del Programa contable en Excel, con 11 hojas conectadas y 0 licencias.
+
+3) PRIMER COMENTARIO (apenas salga la publicación):
+   Mira el proyecto: bouw-eight.vercel.app
+
+4) Responde todos los comentarios en la primera hora. A quien diga que le pasa, escríbele por mensaje privado.

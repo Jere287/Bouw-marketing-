@@ -1,4 +1,4 @@
-"""Textos de la serie D y armado de la carpeta PUBLICAR-D (una carpeta por día con imagen + publicar.txt).
+"""Textos de la serie D (los usa calendario.py para armar la carpeta PUBLICAR).
 
 Formato copiado de lo que publica Hanova Consulting en LinkedIn (pregunta o idea de entrada, explicación corta,
 lista de 3 puntos con viñeta, frase de cierre, hashtags con el nombre de la firma), con una diferencia:
@@ -168,19 +168,4 @@ Correo: bouw.contacto@gmail.com
      'BOUW invita a contar qué proceso cuesta horas, con su WhatsApp +593 96 368 4012.'),
 ]
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-base = os.path.join(HERE, 'PUBLICAR')
-shutil.rmtree(base, ignore_errors=True)
-os.makedirs(base)
-for i, (fecha, img, txt, com, alt) in enumerate(POSTS, 1):
-    d = os.path.join(base, f'{i:02d}_{fecha.split()[1]}-{fecha.split()[2]}_{('D03-carrusel' if img.endswith('.pdf') else img.split('-')[0])}')
-    os.makedirs(d)
-    src = os.path.join(HERE, 'png', img) if img.endswith('.png') else os.path.join(HERE, img)
-    shutil.copy(src, os.path.join(d, img if img.endswith('.pdf') else 'imagen.png'))
-    paso2 = ('2) DOCUMENTO: sube el PDF con "Añadir documento" (no como imagen) y ponle de título:\n   3 errores al automatizar tu empresa'
-             if img.endswith('.pdf') else f'2) IMAGEN: imagen.png\n   Al subirla toca "Texto alternativo" y pega:\n   {alt}')
-    open(os.path.join(d, 'publicar.txt'), 'w').write(
-        f'FECHA: {fecha} 2026, 08:00 Quito / 07:00 Monterrey\n\n1) TEXTO (copiar y pegar):\n\n{txt}\n\n{paso2}\n\n'
-        f'3) PRIMER COMENTARIO (apenas salga la publicación):\n   {com}\n\n'
-        f'4) Responde todos los comentarios en la primera hora. A quien diga que le pasa, escríbele por mensaje privado.\n')
-print(sorted(os.listdir(base)))
+# La carpeta PUBLICAR la arma calendario.py, que mezcla esta serie con la serie A.

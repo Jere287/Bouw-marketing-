@@ -1,8 +1,9 @@
-BOUW · LinkedIn · 10 publicaciones listas (serie D, estilo consultora)
+BOUW · LinkedIn · 17 publicaciones listas (series D y A, colores alternados)
 
-Cada carpeta es un día:
+Cada carpeta es un día (ver CALENDARIO.txt):
   imagen.png (o el PDF del carrusel)  -> lo que se sube
   publicar.txt                        -> fecha, texto para pegar, texto alternativo y primer comentario
 
 Editables en Adobe Express:
-https://new.express.adobe.com/id/urn:aaid:sc:US:1d45185b-5547-4284-9996-82cf2dd3ebde
+  Serie D (consultora, azul):      https://new.express.adobe.com/id/urn:aaid:sc:US:1d45185b-5547-4284-9996-82cf2dd3ebde
+  Serie A (automatización, color): https://new.express.adobe.com/id/urn:aaid:sc:US:7dd75b45-cddd-4e3e-a4c1-e251e78d0f98
