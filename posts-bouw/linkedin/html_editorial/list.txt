@@ -1,0 +1,9 @@
+E01-quienes-somos:1080x1350
+E02-dato-reprocesos:1080x1350
+E03-primero-medimos:1080x1350
+E04-medimos-en-piso:1080x1350
+E05-caso-programa-contable:1080x1350
+E06-caso-charms-ecuador:1080x1350
+E07-caso-anatris:1080x1350
+E08-como-trabajamos:1080x1350
+E09-del-diseno-a-la-realidad:1080x1350
