@@ -1,0 +1,24 @@
+FECHA: Viernes 15 ene 2027, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO (copiar y pegar):
+
+¿Sabías que Toyota bajó un cambio de formato de 4 horas a 3 minutos?
+
+Lo logró Shigeo Shingo con un método que hoy se usa en plantas de todo el mundo: SMED.
+
+La idea central es simple: separar lo que solo se puede hacer con la máquina parada de lo que se puede preparar mientras sigue produciendo.
+
+No hace falta llegar a 3 minutos para que valga la pena. En una línea de extrusión bajamos el tiempo de preparación un 15 % con este mismo principio.
+
+¿Cuánto tarda hoy un cambio de formato en tu línea? Escríbenos y lo medimos juntos.
+
+#BOUW #SMED #Lean #Manufactura
+
+2) IMAGEN: imagen.png
+   Al subirla toca "Texto alternativo" y pega:
+   ¿Sabías que…? Toyota bajó un cambio de formato de 4 horas a 3 minutos con el método SMED.
+
+3) PRIMER COMENTARIO (con la fuente, apenas salga la publicación):
+   Fuente: Shigeo Shingo, "A Revolution in Manufacturing: The SMED System". Más en bouw-eight.vercel.app
+
+4) Responde todos los comentarios en la primera hora. A quien diga que le pasa, escríbele por mensaje privado.
