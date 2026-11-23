@@ -1,6 +1,6 @@
 # Serie LinkedIn "Proyectos": P01 a P07
 
-Son 7 publicaciones verticales de **1080×1350**, una por cada proyecto de bouw-eight.vercel.app. Están en `png/P0*.png`.
+Son 7 publicaciones verticales de **1080×1350**, una por cada proyecto de www.bouwlatam.com. Están en `png/P0*.png`.
 
 **No hay capturas de la página:** cada gráfico (barras, DMAIC, mapa de flujo, red de hojas, chat de WhatsApp, goniómetro e informe) está dibujado a partir de los datos y textos que el sitio da de cada proyecto.
 
@@ -52,7 +52,7 @@ Resultado medido:
 
 #LeanSixSigma #MejoraContinua #Manufactura #VSM #5S #Quito #Monterrey
 ```
-**Primer comentario:** `El caso completo, con fotos de la línea 👉 bouw-eight.vercel.app`
+**Primer comentario:** `El caso completo, con fotos de la línea 👉 www.bouwlatam.com`
 
 ### P02 · Así lo hicimos, paso a paso (DMAIC)
 
@@ -72,7 +72,7 @@ la causa se busca en el proceso, no en la persona. 🤝
 
 #DMAIC #SixSigma #MejoraContinua #Calidad #Operaciones
 ```
-**Primer comentario:** `Cómo trabajamos 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Cómo trabajamos 👉 www.bouwlatam.com`
 
 ### P03 · Simulación de flujos: 29 minutos, solo 3,7 agregan valor
 
@@ -91,7 +91,7 @@ Por eso, con los datos de tu operación, armamos un modelo de la línea y probam
 
 #Simulación #VSM #Lean #Manufactura #Productividad
 ```
-**Primer comentario:** `Prueba la simulación en vivo 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Prueba la simulación en vivo 👉 www.bouwlatam.com`
 
 ### P04 · Programa contable: del piso a la oficina
 
@@ -112,7 +112,7 @@ Un proceso administrativo también tiene esperas y reprocesos. ¿Cuántas veces 
 
 #Excel #VBA #Automatización #Pymes #Contabilidad
 ```
-**Primer comentario:** `Míralo en video 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Míralo en video 👉 www.bouwlatam.com`
 
 ### P05 · Charms Ecuador: el pedido llega a WhatsApp ya escrito
 
@@ -177,4 +177,4 @@ No es magia, es sistema: cada registro con su sitio y su responsable.
 
 #BPM #Auditoría #Calidad #CAPA #ISO
 ```
-**Primer comentario:** `Diagnóstico de calidad gratis 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Diagnóstico de calidad gratis 👉 www.bouwlatam.com`

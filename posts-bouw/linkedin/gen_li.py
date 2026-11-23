@@ -417,7 +417,7 @@ add('06-perfil-logo-completo-720x720', 720, 720,
 add('03-portada-empresa-1128x191', 1128, 191,
     '<div class="abs mono" style="left:300px;top:34px;width:520px;font-size:12px;line-height:18px;color:#4fd6e8">Quito · Monterrey &#8212; Est. 7+</div>'
     + f'<div class="abs serif" style="left:300px;top:60px;width:560px;font-size:50px;line-height:58px">{LEMA}</div>'
-    + '<div class="abs mono" style="left:300px;top:136px;width:560px;font-size:11px;line-height:18px">Ingeniería de procesos, calidad y automatización</div>'
+    + '<div class="abs mono" style="left:300px;top:136px;width:560px;font-size:11px;line-height:18px">Ingeniería de procesos, calidad y automatización · <span style="color:#4fd6e8">www.bouwlatam.com</span></div>'
     + glow(970, 96, 160, 0.45) + logo(836, 24, 268),
     step=30)
 
@@ -436,7 +436,7 @@ add('04-banner-perfil-personal-1584x396', 1584, 396,
     + f'<div class="abs serif" style="left:560px;top:198px;width:700px;font-size:58px;line-height:64px">{LEMA}</div>'
     + chips
     + glow(1400, 160, 220, 0.4) + logo(1236, 44, 320)
-    + '<div class="abs mono" style="left:1236px;top:226px;width:320px;text-align:center;font-size:12px;line-height:20px;letter-spacing:0.24em">Automation &amp; Digital Solutions</div>')
+    + '<div class="abs mono" style="left:1236px;top:222px;width:320px;text-align:center;font-size:20px;line-height:28px;letter-spacing:0.08em;color:#4fd6e8;text-transform:none">www.bouwlatam.com</div>')
 
 # =====================================================================
 # 2. PUBLICACIONES 1080×1350
@@ -459,7 +459,7 @@ def footer(phrase, cta, serif=False):
     return (f'<div class="rule" style="left:{M}px;top:1170px;width:{IW}px"></div>'
             + f'<div class="abs {cls}" style="left:{M}px;top:1206px;width:{IW - cw - 36}px;{fs}">{phrase}</div>'
             + f'<div class="btn" style="left:{W - M - cw}px;top:1206px;width:{cw}px;height:68px;font-size:24px;line-height:68px;border-radius:4px">{e(cta)}</div>'
-            + f'<div class="abs mono" style="left:{M}px;top:1296px;width:{IW}px;font-size:15px;line-height:22px;color:#5d7690">bouw-eight.vercel.app · +593 96 368 4012</div>')
+            + f'<div class="abs mono" style="left:{M}px;top:1296px;width:{IW}px;font-size:15px;line-height:22px;color:#5d7690">www.bouwlatam.com · +593 96 368 4012</div>')
 
 
 def kicker(t, top=206, color='#4fd6e8'):
@@ -765,7 +765,7 @@ add('A01-anuncio-la-cuenta-1200x627', 1200, 627,
     + '<div class="abs h" style="left:72px;top:190px;width:640px;font-size:68px;line-height:68px">Cuánto cuesta hacerlo a mano.</div>'
     + '<div class="abs p" style="left:72px;top:352px;width:620px;font-size:24px;line-height:34px">Rellena la fila con una tarea que hoy se haga a mano. Si no compensa automatizarla, también te lo dice.</div>'
     + '<div class="btn" style="left:72px;top:480px;width:290px;height:66px;font-size:24px;line-height:66px;border-radius:4px">Hacer la cuenta</div>'
-    + '<div class="abs mono" style="left:392px;top:500px;width:400px;font-size:15px;line-height:24px;color:#4fd6e8">bouw-eight.vercel.app</div>'
+    + '<div class="abs mono" style="left:392px;top:500px;width:400px;font-size:15px;line-height:24px;color:#4fd6e8">www.bouwlatam.com</div>'
     + '<div class="panel" style="left:780px;top:190px;width:348px;height:356px"></div>'
     + ''.join(f'<div class="abs p" style="left:808px;top:{214 + i * 56}px;width:200px;font-size:20px;line-height:30px">{a}</div>'
               f'<div class="abs k" style="left:1000px;top:{214 + i * 56}px;width:100px;text-align:right;font-size:22px;line-height:30px">{b}</div>'
@@ -1183,21 +1183,59 @@ def pill(txt, col, dark, x=M, y=72):
 
 def brandbar(dark):
     src = LOGO if dark else LOGO_CL
-    ln, tc = ('rgba(79,214,232,.25)', '#9fb3c8') if dark else ('#d3ccbf', SUB)
+    ln, tc, dc = ('rgba(79,214,232,.25)', '#9fb3c8', CY) if dark else ('#d3ccbf', SUB, CYD)
     return (f'<div class="abs" style="left:{M}px;top:1214px;width:{IW}px;height:2px;background:{ln}"></div>'
             f'<img class="abs" alt="BOUW" src="{src}" style="left:{M}px;top:1236px;width:160px;height:{round(160 / LOGO_R)}px">'
-            f'<div class="abs mono" style="left:{W - M - 560}px;top:1262px;width:560px;text-align:right;font-size:21px;line-height:30px;color:{tc};letter-spacing:.14em">Quito · Monterrey</div>')
+            f'<div class="abs mono" style="left:{M + 186}px;top:1270px;width:300px;font-size:17px;line-height:24px;color:{tc};letter-spacing:.16em">Quito · Monterrey</div>'
+            f'<div class="abs" style="left:{W - M - 560}px;top:1256px;width:560px;text-align:right;font-family:Archivo;font-weight:700;'
+            f'font-size:31px;line-height:40px;letter-spacing:-0.01em;color:{dc}">www.bouwlatam.com</div>')
 
 
-def frame(name, dark, tag, tagcol, body, foto=None, pos='center', shade=None):
-    bg = ''
+def imgsrc(name):
+    for ext in ('webp', 'jpg', 'png'):
+        p = os.path.join(IMGS, f'{name}.{ext}')
+        if os.path.exists(p):
+            return b64(p)
+    return ''
+
+
+def duo(name, x, y, w, h, pos='center', r=0, veil=None):
+    """Foto en duotono azul BOUW (blanco y negro + multiplicar navy + trama cian), como un tratamiento de Photoshop."""
+    v = f'<div style="position:absolute;inset:0;background:{veil}"></div>' if veil else ''
+    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;overflow:hidden;border-radius:{r}px;isolation:isolate;background:#04101f">'
+            f'<img alt="" src="{imgsrc(name)}" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:{pos};'
+            f'filter:grayscale(1) contrast(1.35) brightness(1.15)">'
+            f'<div style="position:absolute;inset:0;background:#2f86b0;mix-blend-mode:multiply"></div>'
+            f'<div style="position:absolute;inset:0;background:linear-gradient(140deg,#4fd6e8 0%,#0b2a44 55%,#04101f 100%);mix-blend-mode:screen;opacity:.42"></div>'
+            f'{v}</div>')
+
+
+GRAIN = ('<svg class="abs" style="left:0;top:0;mix-blend-mode:overlay;opacity:.16" width="1080" height="1350" xmlns="http://www.w3.org/2000/svg">'
+         '<filter id="gr"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>'
+         '<rect width="1080" height="1350" filter="url(#gr)"/></svg>')
+
+
+def light_fx(dark):
+    if dark:
+        return ('<div class="abs" style="left:520px;top:-260px;width:900px;height:900px;border-radius:50%;'
+                'background:radial-gradient(circle,rgba(79,214,232,.16) 0%,rgba(79,214,232,0) 65%)"></div>'
+                '<div class="abs" style="left:-380px;top:880px;width:800px;height:800px;border-radius:50%;'
+                'background:radial-gradient(circle,rgba(247,155,74,.08) 0%,rgba(247,155,74,0) 65%)"></div>')
+    return ('<div class="abs" style="left:0;top:0;width:1080px;height:1350px;'
+            'background:radial-gradient(ellipse at 80% 0%,rgba(255,255,255,.75) 0%,rgba(255,255,255,0) 55%),'
+            'radial-gradient(ellipse at 0% 100%,rgba(196,186,168,.35) 0%,rgba(196,186,168,0) 60%)"></div>')
+
+
+def frame(name, dark, tag, tagcol, body, foto=None, pos='center', shade=None, under=''):
     if foto:
-        bg = photo(foto, 0, 0, W, H, pos=pos).replace('border-radius:18px', 'border-radius:0')
+        bg = photo(foto, 0, 0, W, H, pos=pos).replace('border-radius:18px', 'border-radius:0;filter:contrast(1.08) saturate(.85)')
+        bg += ('<div class="abs" style="left:0;top:0;width:1080px;height:1350px;background:linear-gradient(160deg,#4fd6e8,#04101f);mix-blend-mode:soft-light;opacity:.55"></div>')
         bg += (f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:'
                f'{shade or "linear-gradient(180deg,rgba(4,16,31,.85) 0%,rgba(4,16,31,.1) 20%,rgba(4,16,31,.2) 40%,rgba(4,16,31,.94) 64%,#04101f 100%)"}"></div>')
     else:
-        bg = f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:{NAVY if dark else LBG}"></div>' + bp_grid(dark)
-    pieces.append((name, W, H, bg + pill(tag, tagcol, dark) + body + brandbar(dark)))
+        bg = (f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:{NAVY if dark else LBG}"></div>'
+              + under + light_fx(dark) + bp_grid(dark))
+    pieces.append((name, W, H, bg + pill(tag, tagcol, dark) + body + brandbar(dark) + GRAIN))
 
 
 def T(t, size, top, col=None, dark=False, width=IW, left=M, lh=1.0, cls='h'):
@@ -1227,7 +1265,8 @@ frame('N01-senales-planta-pierde-horas', False, 'Diagnóstico rápido', CYD,
 # ---------- N02 · Mito vs. realidad (claro arriba, oscuro abajo) ----------
 pieces.append(('N02-mito-realidad-automatizar', W, H,
     f'<div class="abs" style="left:0;top:0;width:{W}px;height:{H}px;background:{LBG}"></div>' + bp_grid(False)
-    + f'<div class="abs" style="left:0;top:600px;width:{W}px;height:750px;background:{NAVY}"></div>'
+    + duo('mejora-perfil-estudio', 0, 600, W, 750, 'center 40%', 0, 'linear-gradient(180deg,rgba(4,16,31,.45) 0%,rgba(4,16,31,.78) 40%,rgba(4,16,31,.96) 100%)')
+    + light_fx(False).replace('height:1350px', 'height:600px')
     + pill('✕ Mito', OR, False)
     + T('“Automatizar es caro y obliga a cambiar todo el sistema.”', 76, 176, INK, lh=1.05)
     + pill('✓ Realidad', CY, True, y=652)
@@ -1235,7 +1274,7 @@ pieces.append(('N02-mito-realidad-automatizar', W, H,
     + ''.join(T(n_, 88, 950, CY, lh=1) + Pp(l_, 1052, 26, '#c9d6e3', True, 280, M + i * 312) .replace(f'left:{M + i * 312}px', f'left:{M + i * 312}px')
               if False else T(n_, 88, 950, CY, left=M + i * 312, width=280, lh=1) + Pp(l_, 1050, 27, None, True, 280, M + i * 312, 1.3)
               for i, (n_, l_) in enumerate([('11', 'hojas conectadas'), ('0', 'licencias nuevas'), ('0', 'migraciones')]))
-    + brandbar(True)))
+    + brandbar(True) + GRAIN))
 
 # ---------- N03 · Caso real con foto ----------
 frame('N03-caso-dos-turnos-foto', True, 'Caso real · Mejora continua', OR,
@@ -1258,7 +1297,7 @@ frame('N04-encuesta-que-te-quita-horas', False, 'Pregunta de la semana', CYD,
       + Pp('Responde con la letra en los comentarios.', 1146, 30, SUB))
 
 # ---------- N05 · Frase (oscuro) ----------
-frame('N05-cita-ordena-antes-de-automatizar', True, 'Desde la planta', CY,
+frame('N05-cita-ordena-antes-de-automatizar', True, 'Desde la planta', CY, under=duo('mejora-planta-poster', 0, 0, W, H, 'center', 0, 'linear-gradient(180deg,rgba(4,16,31,.78) 0%,rgba(4,16,31,.55) 45%,rgba(4,16,31,.9) 100%)'), body=
       f'<div class="abs serif" style="left:{M - 12}px;top:150px;width:300px;font-size:320px;line-height:320px;color:{CY}">“</div>'
       + T(f'Antes de automatizar un proceso, ordénalo. Automatizar el desorden solo te da {O_("desorden más rápido.")}', 84, 400, '#ffffff', lh=1.06, cls='serif')
       + f'<div class="abs" style="left:{M}px;top:1010px;width:70px;height:4px;background:{CY}"></div>'
@@ -1292,7 +1331,7 @@ for i, (a_, b_) in enumerate([('Automatizar sin hacer la cuenta', 'Menos de 40 h
     er += (f'<div class="abs" style="left:{M}px;top:{y}px;width:{IW}px;height:206px;border-radius:20px;background:#071a2f;border:2px solid #15304d"></div>'
            + T(f'<span style="color:{RED}">✕</span> {e(a_)}', 42, y + 34, '#ffffff', width=IW - 70, left=M + 36, lh=1.15, cls='t')
            + Pp(f'{C_("✓")} {e(b_)}', y + 112, 33, '#c9d6e3', True, IW - 70, M + 36, 1.3))
-frame('N08-errores-al-automatizar', True, 'Aprendido en planta', CY,
+frame('N08-errores-al-automatizar', True, 'Aprendido en planta', CY, under=duo('mejora-linea-extrusion', 0, 0, W, H, 'center 30%', 0, 'linear-gradient(180deg,rgba(4,16,31,.8) 0%,rgba(4,16,31,.62) 40%,rgba(4,16,31,.9) 100%)'), body=
       T(f'3 errores al automatizar {C_("y cómo evitarlos")}', 80, 176, '#ffffff', lh=1.04) + er)
 
 # ---------- N09 · Antes / después (claro) ----------
@@ -1360,7 +1399,7 @@ frame('N13-tip-haz-esta-cuenta', False, 'Tip de la semana', CYD,
       + T(f'Más de 150 h al año: {C_("automatízala.")}', 44, 1040, '#ffffff', width=IW - 80, left=M + 40, lh=2.95, cls='t'))
 
 # ---------- N14 · No es reemplazar personas (oscuro) ----------
-frame('N14-no-es-reemplazar-personas', True, 'Lo que creemos', CY,
+frame('N14-no-es-reemplazar-personas', True, 'Lo que creemos', CY, under=duo('mejora-perfil-seccion', 0, 0, W, H, 'center', 0, 'linear-gradient(100deg,rgba(4,16,31,.95) 0%,rgba(4,16,31,.7) 50%,rgba(4,16,31,.15) 100%)'), body=
       T('Automatizar no es reemplazar personas.', 104, 220, '#ffffff', lh=1.0)
       + f'<div class="abs" style="left:{M}px;top:600px;width:90px;height:5px;background:{CY}"></div>'
       + T(f'Es quitarles lo que {C_("nunca debió ser su trabajo.")}', 88, 650, '#ffffff', lh=1.05, cls='serif')

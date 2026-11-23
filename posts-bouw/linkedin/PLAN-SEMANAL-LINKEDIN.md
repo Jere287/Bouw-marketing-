@@ -230,7 +230,7 @@ Si se repite, se automatiza. 🐉
 #Automatización #Personas #Productividad
 ```
 
-**Primer comentario de todas:** `Más en bouw-eight.vercel.app`. En N11 y N13, cámbialo por: `Haz tu cuenta en 30 segundos 👉 bouw-eight.vercel.app`.
+**Primer comentario de todas:** `Más en www.bouwlatam.com`. En N11 y N13, cámbialo por: `Haz tu cuenta en 30 segundos 👉 www.bouwlatam.com`.
 
 ## 6. Cómo medir (cada viernes, 10 minutos)
 

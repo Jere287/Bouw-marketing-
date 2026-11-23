@@ -4,7 +4,7 @@ Son 10 publicaciones verticales de **1080×1350** que están en `png/`:
 - **Calidad:** `Q01` a `Q05`
 - **Automatización:** `Z01` a `Z05`
 
-Todo el contenido sale de bouw-eight.vercel.app:
+Todo el contenido sale de www.bouwlatam.com:
 - el servicio Cumplimiento normativo & BPM;
 - el informe de auditoría de la planta de ejemplo;
 - el proyecto Programa contable;
@@ -53,7 +53,7 @@ Así una visita sorpresa es un trámite, no un incendio.
 
 #BPM #Calidad #ISO #Auditoría #Manufactura #Quito #Monterrey
 ```
-**Primer comentario:** `Agenda un diagnóstico de calidad gratis antes de tu próxima inspección 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Agenda un diagnóstico de calidad gratis antes de tu próxima inspección 👉 www.bouwlatam.com`
 
 ### Q02 · El rastro se corta en MP-12
 
@@ -73,7 +73,7 @@ Del producto terminado a sus materias primas, sus equipos y quién lo hizo. Sin 
 
 #Trazabilidad #BPM #Calidad #ControlDeLotes #IndustriaAlimentaria #Farma
 ```
-**Primer comentario:** `Mira el informe de auditoría completo (hoy vs. con BOUW) en bouw-eight.vercel.app`
+**Primer comentario:** `Mira el informe de auditoría completo (hoy vs. con BOUW) en www.bouwlatam.com`
 
 ### Q03 · Preparación: 33 %. No lista.
 
@@ -94,7 +94,7 @@ Con BOUW: la lista en verde y el lote liberado.
 
 #AuditoríaBPM #Calidad #CAPA #ISO9001 #Manufactura
 ```
-**Primer comentario:** `Agenda tu diagnóstico 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Agenda tu diagnóstico 👉 www.bouwlatam.com`
 
 ### Q04 · Si la desviación vuelve cada mes, no está cerrada
 
@@ -114,7 +114,7 @@ Cada desviación se cierra con su causa, su acción y la evidencia, para que no 
 
 #CAPA #8D #CausaRaíz #MejoraContinua #Calidad
 ```
-**Primer comentario:** `Así trabajamos calidad en BOUW 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Así trabajamos calidad en BOUW 👉 www.bouwlatam.com`
 
 ### Q05 · Ningún lote debería esperar a que aparezca un papel
 
@@ -130,7 +130,7 @@ Cada día que un lote espera es inventario parado, un cliente esperando y dinero
 
 #LiberaciónDeLotes #BPM #Calidad #Operaciones #Manufactura
 ```
-**Primer comentario:** `Diagnóstico de calidad gratis 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Diagnóstico de calidad gratis 👉 www.bouwlatam.com`
 
 ---
 
@@ -152,7 +152,7 @@ Si marcaste al menos una, cuéntanos cuál en los comentarios y te decimos qué 
 
 #Automatización #TransformaciónDigital #Excel #Pymes #Quito #Monterrey
 ```
-**Primer comentario:** `Más en bouw-eight.vercel.app ⚙️`
+**Primer comentario:** `Más en www.bouwlatam.com ⚙️`
 
 ### Z02 · Copiar datos de un sitio a otro
 
@@ -171,7 +171,7 @@ Haz la cuenta con tu propia tarea. Tarda 30 segundos.
 
 #Automatización #Productividad #Excel #Procesos #Pymes
 ```
-**Primer comentario:** `Calculadora 👉 bouw-eight.vercel.app (sección "La cuenta")`
+**Primer comentario:** `Calculadora 👉 www.bouwlatam.com (sección "La cuenta")`
 
 ### Z03 · El cierre de mes ya no se arma a mano
 
@@ -190,7 +190,7 @@ No siempre necesitas un sistema nuevo. A veces necesitas que el tuyo trabaje sol
 
 #Excel #VBA #Automatización #Contabilidad #Pymes
 ```
-**Primer comentario:** `Mira el proyecto en video 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Mira el proyecto en video 👉 www.bouwlatam.com`
 
 ### Z04 · Tres archivos que no cuadran
 
@@ -208,7 +208,7 @@ Con BOUW: un solo archivo con 11 hojas conectadas. Una sola fuente de verdad, si
 
 #Excel #Datos #Automatización #Administración #Pymes
 ```
-**Primer comentario:** `Cuéntanos tu caso 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Cuéntanos tu caso 👉 www.bouwlatam.com`
 
 ### Z05 · No todo hay que automatizarlo
 
@@ -227,7 +227,7 @@ Si no compensa, te lo decimos. Preferimos eso a venderte algo que no necesitas.
 
 #Automatización #Honestidad #Procesos #Pymes #Consultoría
 ```
-**Primer comentario:** `Haz la cuenta en 30 segundos 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Haz la cuenta en 30 segundos 👉 www.bouwlatam.com`
 
 ---
 

@@ -2,7 +2,7 @@
 
 **Del 17 de noviembre de 2026 al 28 de enero de 2027: 9 semanas, 27 publicaciones.**
 
-Todo sale de bouw-eight.vercel.app:
+Todo sale de www.bouwlatam.com:
 - **El logo:** el dragón 3D.
 - **Los proyectos:** Anatris, Simulación de flujos, Programa contable, Charms Ecuador e Informe de auditoría.
 - **Las cifras, los servicios y las herramientas del sitio:** "¿Cuál te suena?", la calculadora y el juego de la planta.
@@ -140,7 +140,7 @@ Nuestra regla es simple: si se repite, se automatiza.
 
 #Quito #Monterrey #Manufactura #Automatización #MejoraContinua
 ```
-**Primer comentario:** `Mira los proyectos y haz la cuenta de lo que te cuesta hacerlo a mano 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Mira los proyectos y haz la cuenta de lo que te cuesta hacerlo a mano 👉 www.bouwlatam.com`
 **Texto alternativo:** Dragón 3D de BOUW sobre fondo azul noche con el título "Del diseño a la realidad" y el lema "Si se repite, se automatiza".
 
 ### S1 · Mié 18 nov · L06 · ¿Cuál te suena?
@@ -160,7 +160,7 @@ Si ninguna se parece a tu semana, puede que todavía no nos necesites. Y preferi
 
 #Pymes #Operaciones #Manufactura #Quito #Monterrey
 ```
-**Primer comentario:** `Las 9 frases completas, y qué haríamos con cada una 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Las 9 frases completas, y qué haríamos con cada una 👉 www.bouwlatam.com`
 **Texto alternativo:** Lista de nueve frases que dicen los clientes de BOUW, como "El cierre de mes lo arma alguien a mano", con casillas para marcar.
 
 ### S1 · Jue 19 nov · P03 · Esto es una planta real
@@ -181,7 +181,7 @@ Sin comprar máquinas nuevas: ordenando el flujo que ya existía.
 
 #MejoraContinua #Lean #SMED #Extrusión #Manufactura
 ```
-**Primer comentario:** `Agenda una evaluación técnica de tu línea 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Agenda una evaluación técnica de tu línea 👉 www.bouwlatam.com`
 **Texto alternativo:** Tres fotos reales de una línea de extrusión: la máquina, una medición con termómetro infrarrojo y el producto paletizado, con −15 % en preparación y −20 % en reprocesos.
 
 ### S2 · Mar 24 nov · L02 · Lean manufacturing e ingeniería de planta
@@ -205,7 +205,7 @@ Primero medimos cuánto camina cada pieza y cada operador. Después acercamos lo
 
 #Lean #VSM #5S #IngenieríaIndustrial #Quito
 ```
-**Primer comentario:** `Evaluación técnica de tus procesos 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Evaluación técnica de tus procesos 👉 www.bouwlatam.com`
 **Texto alternativo:** Servicio de Lean manufacturing de BOUW con −15 % en tiempo de preparación, −20 % en reprocesos y una comparación de la planta hoy y con BOUW.
 
 ### S2 · Mié 25 nov · Carrusel · Lo que hemos construido
@@ -225,7 +225,7 @@ Guárdalo para cuando te toque decidir qué automatizar primero. 🔖
 
 #Proyectos #Automatización #Ingeniería #Quito #Monterrey
 ```
-**Primer comentario:** `Todos los proyectos en vivo 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Todos los proyectos en vivo 👉 www.bouwlatam.com`
 
 ### S2 · Jue 26 nov · Z01 · Si se repite, se automatiza
 **Imagen:** `Z01-automatizacion-si-se-repite.png`. Texto en `SERIE-CALIDAD-Y-AUTOMATIZACION.md` → Z01.
@@ -250,7 +250,7 @@ El resultado: una carpeta de inspección lista 24/7 y el lote liberado.
 
 #BPM #ISO9001 #Calidad #IndustriaAlimentaria #Farma
 ```
-**Primer comentario:** `Diagnóstico de calidad gratis, antes de tu próxima inspección 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Diagnóstico de calidad gratis, antes de tu próxima inspección 👉 www.bouwlatam.com`
 **Texto alternativo:** Servicio de cumplimiento normativo y BPM de BOUW, con la planta hoy (papeles sueltos, lote retenido) y con BOUW (expedientes en orden, lote liberado).
 
 ### S3 · Mié 2 dic · P01 · Anatris
@@ -272,7 +272,7 @@ Lo contamos por esto: si construimos un atlas 3D desde cero, tu idea de producto
 
 #ProductoDigital #Fisioterapia #3D #React #ThreeJS
 ```
-**Primer comentario:** `Ábrelo en vivo 👉 anatris.vercel.app · Más proyectos 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Ábrelo en vivo 👉 anatris.vercel.app · Más proyectos 👉 www.bouwlatam.com`
 **Texto alternativo:** Captura de Anatris, el atlas 3D de anatomía, con los deltoides resaltados en un torso 3D y las cifras 6 regiones clínicas, 113 músculos y 79 tests.
 
 ### S3 · Jue 3 dic · Q01 · ¿Y si el inspector llega mañana?
@@ -296,7 +296,7 @@ La mayoría de las plantas no necesita invertir en equipos. Necesita que el fluj
 
 #Lean #LayoutDePlanta #Manufactura #Operaciones #Monterrey
 ```
-**Primer comentario:** `Juega a encontrar los 6 desperdicios en 30 segundos 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Juega a encontrar los 6 desperdicios en 30 segundos 👉 www.bouwlatam.com`
 **Texto alternativo:** Ilustración isométrica de una planta antes (desordenada, con cajas y recorridos cruzados) y después de BOUW (un solo flujo ordenado con tablero visual).
 
 ### S4 · Mié 9 dic · L04 · Programa contable
@@ -317,7 +317,7 @@ Resultado: el cierre mensual dejó de ser un armado manual.
 
 #Excel #VBA #ERP #Pymes #Automatización
 ```
-**Primer comentario:** `Míralo por dentro 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Míralo por dentro 👉 www.bouwlatam.com`
 **Texto alternativo:** Proyecto Programa contable de BOUW: un ERP sobre Excel con 11 hojas conectadas, 1 archivo y 0 migraciones.
 
 ### S4 · Jue 10 dic · Z02 · Copiar datos de un sitio a otro
@@ -364,7 +364,7 @@ Haz la cuenta con tu tarea. Si no compensa automatizarla, la calculadora tambié
 
 #Planificación2027 #Automatización #Productividad #Pymes #Quito
 ```
-**Primer comentario:** `La calculadora, 30 segundos 👉 bouw-eight.vercel.app`
+**Primer comentario:** `La calculadora, 30 segundos 👉 www.bouwlatam.com`
 **Texto alternativo:** Dragón de BOUW y la cuenta del cierre de mes: 12 veces al año, 16 horas y 2 personas dan 384 horas en 2026. Veredicto: aquí sí.
 
 ### S5 · Jue 17 dic · L07 · En qué condiciones
@@ -384,7 +384,7 @@ Agenda en diciembre y empezamos el diagnóstico la primera semana de enero. 📅
 
 #Consultoría #Pymes #Transparencia #Quito #Monterrey
 ```
-**Primer comentario:** `Escríbenos y agendamos tu diagnóstico 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Escríbenos y agendamos tu diagnóstico 👉 www.bouwlatam.com`
 **Texto alternativo:** Las cuatro condiciones de trabajo de BOUW: diagnóstico (1–2 semanas), precio cerrado (3–5 días), entrega semanal (4–10 semanas) y acompañamiento (30 días).
 
 ### S6 · Mar 5 ene · L08 · La cuenta
@@ -402,7 +402,7 @@ Sí, una empresa que automatiza te dice "espera". Por eso hicimos la calculadora
 
 #Automatización #Productividad #Planificación #Pymes
 ```
-**Primer comentario:** `Haz tu cuenta 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Haz tu cuenta 👉 www.bouwlatam.com`
 **Texto alternativo:** Calculadora de BOUW: 3 veces por semana, 20 minutos, 1 persona y 48 semanas dan 48 horas al año. Veredicto: está en la frontera.
 
 ### S6 · Mié 6 ene · Q02 · Trazabilidad
@@ -429,7 +429,7 @@ Con los datos de tu operación armamos un modelo de la línea y probamos ahí ca
 
 #VSM #SimulaciónDeProcesos #Lean #IngenieríaIndustrial #Manufactura
 ```
-**Primer comentario:** `Prueba la simulación 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Prueba la simulación 👉 www.bouwlatam.com`
 **Texto alternativo:** Mapa de flujo de valor de una línea de 4 estaciones con tiempos de ciclo e inventarios: entrega de 29 minutos y valor agregado de 3,7 minutos (13 %).
 
 ### S7 · Mié 13 ene · Q03 · Informe de auditoría
@@ -451,7 +451,7 @@ Comenta tu puntaje: X/6 👇
 
 #Lean #Desperdicios #MejoraContinua #Reto #Manufactura
 ```
-**Primer comentario:** `Juega aquí 👉 bouw-eight.vercel.app`
+**Primer comentario:** `Juega aquí 👉 www.bouwlatam.com`
 **Texto alternativo:** Planta industrial isométrica con seis desperdicios escondidos y el contador 0/6, del juego "¿Dónde pierde horas esta planta?".
 
 ### S8 · Mar 19 ene · Q04 · CAPA y 8D

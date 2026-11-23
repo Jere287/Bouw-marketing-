@@ -1,6 +1,6 @@
 # LinkedIn BOUW: perfil, portadas y campaña "Del diseño a la realidad"
 
-> Todo sale de **bouw-eight.vercel.app**:
+> Todo sale de **www.bouwlatam.com**:
 > - **El logo:** el dragón 3D de la portada del sitio, sacado del modelo original `/dragon.glb` y renderizado con la luz de la página (`marca/dragon-3d/`), y el dragón sobre las letras BOUW en 3D del encabezado (`sitio/dragon/capturas/`).
 > - **Los colores y las letras:** los del sitio: Archivo, IBM Plex Sans, IBM Plex Mono e Instrument Serif.
 > - **El contenido:** el lema *Si se repite, se automatiza.*, los servicios, los proyectos, "¿Cuál te suena?", la calculadora, las condiciones y el contacto.
@@ -30,7 +30,7 @@ Todo está listo para subir en `png/`, y el carrusel en `BOUW-carrusel-proyectos
 - Nombre: **BOUW**
 - Eslogan: *Si se repite, se automatiza. Ingeniería de procesos, calidad y automatización para empresas que fabrican.*
 - Sector: Servicios y consultoría empresarial · Tamaño: 2–10 empleados · Sedes: Quito (principal) y Monterrey
-- Sitio web: bouw-eight.vercel.app · Botón personalizado **"Contactar"** → WhatsApp +593 96 368 4012
+- Sitio web: www.bouwlatam.com · Botón personalizado **"Contactar"** → WhatsApp +593 96 368 4012
 - "Acerca de":
   > Del diseño a la realidad. Automatizamos procesos y convertimos ideas de ingeniería en productos que funcionan. Llevamos más de 7 años haciéndolo entre Ecuador y México.
   > Lean manufacturing e ingeniería de planta · Cumplimiento normativo y BPM · Automatización · Simulación de flujos · Web y producto.
@@ -94,7 +94,7 @@ Todo está listo para subir en `png/`, y el carrusel en `BOUW-carrusel-proyectos
 > Automatizamos procesos y convertimos ideas de ingeniería en productos que funcionan. Llevamos más de 7 años haciéndolo entre Ecuador y México.
 > Quito desde 2019 · Monterrey desde 2023. Nueve horas al día en común: siempre hay alguien para responderte.
 > Si se repite, se automatiza.
-> bouw-eight.vercel.app
+> www.bouwlatam.com
 > #Quito #Monterrey #Manufactura #Automatización
 
 **L02 · Lean manufacturing & ingeniería de planta**
@@ -102,7 +102,7 @@ Todo está listo para subir en `png/`, y el carrusel en `BOUW-carrusel-proyectos
 > Hoy: recorridos que se cruzan, piezas apiladas en los pasillos y una máquina que frena a todas.
 > Con BOUW: un solo flujo, cada cosa en su sitio y el mapa de valor con su tablero vigilando la línea.
 > En el caso de mejora continua: −15 % en tiempo de preparación, −20 % en reprocesos y 4 operadores capacitados.
-> Agenda una evaluación técnica de tus procesos: bouw-eight.vercel.app
+> Agenda una evaluación técnica de tus procesos: www.bouwlatam.com
 > #Lean #SMED #VSM #5S
 
 **L03 · Cumplimiento normativo & BPM**
@@ -124,7 +124,7 @@ Todo está listo para subir en `png/`, y el carrusel en `BOUW-carrusel-proyectos
 **L05 · Simulación de flujos**
 > Con los datos de tu operación armamos un modelo de la línea y probamos ahí cada cambio de layout o de proceso.
 > Sabes cuánto mejora el flujo antes de mover un solo equipo, sin parar la producción para hacer pruebas.
-> Pruébala en bouw-eight.vercel.app
+> Pruébala en www.bouwlatam.com
 
 **L06 · ¿Cuál te suena?**
 > Son frases que nos dicen los clientes cuando nos llaman. ¿Cuál dices tú? Te leemos en los comentarios.
@@ -139,18 +139,18 @@ Todo está listo para subir en `png/`, y el carrusel en `BOUW-carrusel-proyectos
 **L08 · La cuenta**
 > 3 veces por semana × 20 minutos × 1 persona × 48 semanas = 48 horas al año.
 > Veredicto: está en la frontera. Sale a cuenta si además te está costando errores. Si solo son las horas, espera.
-> Haz la cuenta con tu tarea en la calculadora: bouw-eight.vercel.app
+> Haz la cuenta con tu tarea en la calculadora: www.bouwlatam.com
 
 **L09 · ¿Dónde pierde horas esta planta?**
 > Hay seis desperdicios escondidos. ¿Cuántos ves?
-> Pruébalo en 30 segundos en bouw-eight.vercel.app: toca la planta y te decimos qué es, qué cuesta y cómo se ve arreglado.
+> Pruébalo en 30 segundos en www.bouwlatam.com: toca la planta y te decimos qué es, qué cuesta y cómo se ve arreglado.
 
 **L10 · Contacto**
 > Cuéntanos qué proceso te está costando horas y te respondemos con un plan concreto.
 > WhatsApp +593 96 368 4012 · bouw.contacto@gmail.com
 > Respondemos en menos de 24 horas hábiles.
 
-**A01 · Anuncio** (enlace a bouw-eight.vercel.app)
+**A01 · Anuncio** (enlace a www.bouwlatam.com)
 > Titular: Cuánto cuesta hacerlo a mano · Texto: Rellena la fila con una tarea que hoy se haga a mano. Si no compensa automatizarla, también te lo dice.
 
 ---
