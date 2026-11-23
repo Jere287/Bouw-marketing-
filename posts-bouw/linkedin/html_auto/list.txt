@@ -1,0 +1,14 @@
+A11-lunes-a-mano:1080x1350
+A12-antes-despues-cotizar:1080x1350
+A13-240-horas:1080x1350
+A14-mito-realidad:1080x1350
+A15-semaforo:1080x1350
+A16-chat-whatsapp:1080x1350
+A17-reporte-del-lunes:1080x1350
+A18-carrusel-1-portada:1080x1350
+A18-carrusel-2-01:1080x1350
+A18-carrusel-3-02:1080x1350
+A18-carrusel-4-03:1080x1350
+A18-carrusel-5-04:1080x1350
+A18-carrusel-6-05:1080x1350
+A18-carrusel-7-cierre:1080x1350

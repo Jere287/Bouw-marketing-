@@ -1,0 +1,27 @@
+FECHA: Miércoles 9 dic 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO (copiar y pegar):
+
+¿Tu negocio vende por WhatsApp?
+
+Entonces conoces la conversación: "Hola, ¿cuánto cuesta?", y después veinte mensajes para saber qué quiere el cliente.
+
+Para un taller de regalos en porcelana fría hicimos una web que resuelve eso:
+• Catálogo con fotos reales de 15 modelos.
+• Cotizador de cuatro pasos que calcula el precio mientras el cliente elige.
+• El pedido llega a WhatsApp ya escrito, con la pieza, los detalles y el precio.
+
+Además, no necesita servidor: mantenerla en línea cuesta $0 al mes.
+
+Si vendes por WhatsApp y quieres algo así, escríbenos.
+
+#BOUW #WhatsAppBusiness #ComercioElectrónico #Ecuador
+
+2) IMAGEN: imagen.png
+   Al subirla toca "Texto alternativo" y pega:
+   Caso real de BOUW: tres pantallas de celular de la web de Charms Ecuador con su catálogo y cotizador.
+
+3) PRIMER COMENTARIO (apenas salga la publicación):
+   Pruébala: charms-ecuador.vercel.app
+
+4) Responde todos los comentarios en la primera hora. A quien diga que le pasa, escríbele por mensaje privado.

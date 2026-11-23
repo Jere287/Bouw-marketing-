@@ -1,0 +1,24 @@
+FECHA: Martes 8 dic 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO (copiar y pegar):
+
+Cotizar a mano tiene seis pasos. Y se repiten con cada cliente.
+
+Leer el mensaje, buscar el precio, calcular, escribir la cotización, enviarla y esperar respuesta.
+
+Con un cotizador en la web el cliente elige, el precio se calcula solo y el pedido llega a tu WhatsApp ya escrito. Tú solo confirmas.
+
+Así lo hicimos para un taller de regalos que vende por chat.
+
+Si tu equipo pasa horas cotizando, escríbenos y te mostramos cómo funciona.
+
+#BOUW #Automatización #Ventas #WhatsAppBusiness
+
+2) IMAGEN: imagen.png
+   Al subirla toca "Texto alternativo" y pega:
+   Antes y después de BOUW: cotizar a mano en 6 pasos frente a un pedido que llega escrito.
+
+3) PRIMER COMENTARIO (apenas salga la publicación):
+   Pruébalo: charms-ecuador.vercel.app
+
+4) Responde todos los comentarios en la primera hora. A quien diga que le pasa, escríbele por mensaje privado.

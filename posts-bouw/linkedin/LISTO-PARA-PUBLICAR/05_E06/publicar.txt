@@ -1,0 +1,18 @@
+FECHA: Martes 1 dic 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO DE LA PUBLICACIÓN (copiar y pegar):
+
+Charms Ecuador fabrica regalos en porcelana fría y cierra sus ventas por WhatsApp.
+
+Les hicimos una web con catálogo de fotos reales y un cotizador de cuatro pasos. El cliente llega al chat con la pieza, los detalles y el precio estimado ya escritos, y el taller solo confirma.
+
+No necesita servidor ni base de datos, así que mantenerla en línea no cuesta nada.
+
+#ComercioElectrónico #WhatsAppBusiness #Ecuador
+
+2) IMAGEN: imagen.png
+   Al subirla, toca "Texto alternativo" y pega:
+   Tres pantallas de celular de la web de Charms Ecuador: portada, cotizador y los productos más pedidos.
+
+3) PRIMER COMENTARIO (publícalo apenas salga el post):
+   charms-ecuador.vercel.app

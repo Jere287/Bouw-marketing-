@@ -1,0 +1,27 @@
+FECHA: Jueves 7 ene 2027, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO (copiar y pegar):
+
+ventas_final.xlsx, ventas_final_v2.xlsx, ventas_REAL.xlsx.
+
+Si en tu empresa existen archivos así, la información ya no cuadra. Y en cada reunión alguien llega con un número distinto.
+
+Las señales más comunes:
+• Los mismos datos se capturan en más de un lugar.
+• Nadie sabe cuál es la versión correcta.
+• Los reportes se arman copiando y pegando.
+
+La solución no siempre es un sistema nuevo. Muchas veces basta con una sola fuente de datos bien conectada.
+
+¿Te suena? Escríbenos y revisamos tu caso.
+
+#BOUW #Datos #Excel #Pymes
+
+2) IMAGEN: imagen.png
+   Al subirla toca "Texto alternativo" y pega:
+   Tip del día de BOUW: si tienes ventas_final_v2.xlsx, tienes un problema.
+
+3) PRIMER COMENTARIO (apenas salga la publicación):
+   www.bouwlatam.com
+
+4) Responde todos los comentarios en la primera hora. A quien diga que le pasa, escríbele por mensaje privado.

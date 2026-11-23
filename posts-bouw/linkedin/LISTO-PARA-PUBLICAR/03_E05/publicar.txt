@@ -1,0 +1,18 @@
+FECHA: Miércoles 25 nov 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO DE LA PUBLICACIÓN (copiar y pegar):
+
+Un taller de manufactura llevaba inventario, kits, ventas y caja en archivos separados. Cada cierre de mes había que armarlo a mano.
+
+Construimos un ERP pequeño dentro de un solo Excel: once hojas conectadas por macros y un tablero que se recalcula con cada movimiento.
+
+El equipo siguió trabajando en la herramienta que ya conocía, sin licencias nuevas ni migración de sistema. El cierre ahora sale de los movimientos que ya se capturan.
+
+#Automatización #Excel #Pymes
+
+2) IMAGEN: imagen.png
+   Al subirla, toca "Texto alternativo" y pega:
+   Tablero del Programa contable en Excel con indicadores y gráficos, y los datos 11 hojas conectadas, 0 licencias nuevas y 1 archivo.
+
+3) PRIMER COMENTARIO (publícalo apenas salga el post):
+   Ver el proyecto: www.bouwlatam.com

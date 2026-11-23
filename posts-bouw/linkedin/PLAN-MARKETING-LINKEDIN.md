@@ -29,10 +29,10 @@ LinkedIn no vende directamente. Lo que vende es que, el día que al gerente le d
 
 | Cliente | Quién es | Qué le duele | Qué le mostramos |
 |---|---|---|---|
-| **A · Planta que fabrica** (alimentos, plásticos, extrusión, metalmecánica, cosmética) | Gerente de planta, jefe de producción u operaciones; dueño de una pyme industrial | Cuellos de botella, setups lentos, reprocesos, inventario en proceso, "no sé cuánto tarda una pieza" | P03 planta real, P04 hoy vs. BOUW, L02 Lean, L05 simulación, L09 juego |
+| **A · Planta que fabrica** (alimentos, plásticos, extrusión, metalmecánica, cosmética) | Gerente de planta, jefe de producción u operaciones; dueño de una pyme industrial | Cuellos de botella, setups lentos, reprocesos, inventario en proceso, "no sé cuánto tarda una pieza" | K03 planta real, K04 hoy vs. BOUW, L02 Lean, L05 simulación, L09 juego |
 | **B · Calidad y regulación** (alimentos, farma, cosmética, dispositivos) | Jefe de calidad o aseguramiento, director técnico | Auditorías, trazabilidad, CAPA que regresan, lotes retenidos | L03 BPM, serie Q01–Q05 |
-| **C · Pyme administrativa o comercial** | Dueño, gerente general o administrador | Cierre de mes a mano, tres Excel que no cuadran, copiar datos | L04, L08, serie Z01–Z05, P05 |
-| **D · Emprendedor con producto o servicio digital** | Fundador, marca pequeña, profesional de salud | "Tengo la idea, no sé hacerla" o "vendo por WhatsApp y es un caos" | P01 Anatris, P02 Charms Ecuador, carrusel |
+| **C · Pyme administrativa o comercial** | Dueño, gerente general o administrador | Cierre de mes a mano, tres Excel que no cuadran, copiar datos | L04, L08, serie Z01–Z05, K05 |
+| **D · Emprendedor con producto o servicio digital** | Fundador, marca pequeña, profesional de salud | "Tengo la idea, no sé hacerla" o "vendo por WhatsApp y es un caos" | K01 Anatris, K02 Charms Ecuador, carrusel |
 
 **Dónde:** Quito, Guayaquil y Cuenca (Ecuador) y Monterrey y el área metropolitana (México).
 **Cargos para anuncios:** Dueño, Gerente general, Gerente o jefe de planta, Producción, Operaciones, Calidad, Administración. Empresas de 11 a 500 empleados.
@@ -68,10 +68,10 @@ LinkedIn no vende directamente. Lo que vende es que, el día que al gerente le d
 
 | Pilar | % | Para qué | Piezas |
 |---|---|---|---|
-| **Prueba: proyectos reales** | 35 % | Credibilidad: "esto ya lo hicieron" | P01–P04, L04, L05, carrusel, Z03 |
+| **Prueba: proyectos reales** | 35 % | Credibilidad: "esto ya lo hicieron" | K01–K04, L04, L05, carrusel, Z03 |
 | **Dolor: "eso me pasa"** | 30 % | Reconocimiento y comentarios | L06, Q01, Q02, Q04, Q05, Z02, Z04 |
 | **Método y confianza** | 15 % | Quitar el miedo a contratar | L01, L02, L03, L07, Q03 |
-| **Herramientas y conversación** | 20 % | Llevar gente al sitio y abrir chats | L08, L09, L10, Z01, Z05, P05, encuesta |
+| **Herramientas y conversación** | 20 % | Llevar gente al sitio y abrir chats | L08, L09, L10, Z01, Z05, K05, encuesta |
 
 ---
 
@@ -109,11 +109,11 @@ LinkedIn no vende directamente. Lo que vende es que, el día que al gerente le d
 
 | Semana | Martes | Miércoles | Jueves |
 |---|---|---|---|
-| **S1** | 17 nov · **L01** Presentación *(fijarla)* | 18 nov · **L06** ¿Cuál te suena? | 19 nov · **P03** Planta real |
+| **S1** | 17 nov · **L01** Presentación *(fijarla)* | 18 nov · **L06** ¿Cuál te suena? | 19 nov · **K03** Planta real |
 | **S2** | 24 nov · **L02** Lean | 25 nov · **Carrusel** Lo que hemos construido (PDF) | 26 nov · **Z01** Si se repite |
-| **S3** | 1 dic · **L03** BPM | 2 dic · **P01** Anatris | 3 dic · **Q01** El inspector |
-| **S4** | 8 dic · **P04** Hoy vs. BOUW | 9 dic · **L04** Programa contable | 10 dic · **Z02** Copiar datos |
-| **S5** | 15 dic · **P02** Charms Ecuador | 16 dic · **P05** La cuenta de 2026 | 17 dic · **L07** En qué condiciones |
+| **S3** | 1 dic · **L03** BPM | 2 dic · **K01** Anatris | 3 dic · **Q01** El inspector |
+| **S4** | 8 dic · **K04** Hoy vs. BOUW | 9 dic · **L04** Programa contable | 10 dic · **Z02** Copiar datos |
+| **S5** | 15 dic · **K02** Charms Ecuador | 16 dic · **K05** La cuenta de 2026 | 17 dic · **L07** En qué condiciones |
 | **S6** | 5 ene · **L08** La cuenta | 6 ene · **Q02** Trazabilidad | 7 ene · **Z03** Cierre de mes |
 | **S7** | 12 ene · **L05** Simulación de flujos | 13 ene · **Q03** Informe de auditoría | 14 ene · **L09** ¿Dónde pierde horas? |
 | **S8** | 19 ene · **Q04** CAPA y 8D | 20 ene · **Z04** Tres archivos | 21 ene · **Encuesta** (solo texto) |
@@ -163,8 +163,8 @@ Si ninguna se parece a tu semana, puede que todavía no nos necesites. Y preferi
 **Primer comentario:** `Las 9 frases completas, y qué haríamos con cada una 👉 www.bouwlatam.com`
 **Texto alternativo:** Lista de nueve frases que dicen los clientes de BOUW, como "El cierre de mes lo arma alguien a mano", con casillas para marcar.
 
-### S1 · Jue 19 nov · P03 · Esto es una planta real
-**Imagen:** `P03-caso-mejora-continua-planta.png`
+### S1 · Jue 19 nov · K03 · Esto es una planta real
+**Imagen:** `K03-caso-mejora-continua-planta.png`
 ```
 Esto no es un render. Es una planta real. 🏭
 
@@ -253,8 +253,8 @@ El resultado: una carpeta de inspección lista 24/7 y el lote liberado.
 **Primer comentario:** `Diagnóstico de calidad gratis, antes de tu próxima inspección 👉 www.bouwlatam.com`
 **Texto alternativo:** Servicio de cumplimiento normativo y BPM de BOUW, con la planta hoy (papeles sueltos, lote retenido) y con BOUW (expedientes en orden, lote liberado).
 
-### S3 · Mié 2 dic · P01 · Anatris
-**Imagen:** `P01-caso-anatris.png`
+### S3 · Mié 2 dic · K01 · Anatris
+**Imagen:** `K01-caso-anatris.png`
 ```
 113 músculos. 79 tests clínicos. Todo en el navegador. 🦴
 
@@ -279,8 +279,8 @@ Lo contamos por esto: si construimos un atlas 3D desde cero, tu idea de producto
 **Imagen:** `Q01-calidad-el-inspector.png`. Texto en `SERIE-CALIDAD-Y-AUTOMATIZACION.md` → Q01.
 **Texto alternativo:** Pregunta "¿Y si el inspector llega mañana, sin avisar?" con cuatro casillas: expedientes, registros, trazabilidad y carpetas listas.
 
-### S4 · Mar 8 dic · P04 · La misma planta, otro flujo
-**Imagen:** `P04-caso-hoy-vs-bouw.png`
+### S4 · Mar 8 dic · K04 · La misma planta, otro flujo
+**Imagen:** `K04-caso-hoy-vs-bouw.png`
 ```
 Arriba: la planta hoy. Abajo: la misma planta, con BOUW. 👀
 
@@ -324,8 +324,8 @@ Resultado: el cierre mensual dejó de ser un armado manual.
 **Imagen:** `Z02-automatizacion-copiar-datos.png`. Texto en `SERIE-CALIDAD-Y-AUTOMATIZACION.md` → Z02.
 **Texto alternativo:** La cuenta de una tarea manual: 5 veces por semana, 30 minutos, 2 personas y 48 semanas dan 240 horas al año. Veredicto: aquí sí.
 
-### S5 · Mar 15 dic · P02 · Charms Ecuador
-**Imagen:** `P02-caso-charms-ecuador.png`
+### S5 · Mar 15 dic · K02 · Charms Ecuador
+**Imagen:** `K02-caso-charms-ecuador.png`
 ```
 "Hola, ¿cuánto cuesta?" 💬
 Si vendes por WhatsApp, sabes que ahí empiezan 20 mensajes.
@@ -347,8 +347,8 @@ El cliente llega con la pieza, los detalles y el precio estimado. El taller solo
 **Primer comentario:** `Pruébala 👉 charms-ecuador.vercel.app`
 **Texto alternativo:** Tres pantallas de celular de la web de Charms Ecuador: portada, cotizador y "Los más pedidos", con 15 modelos, 4 pasos y $0 de hosting.
 
-### S5 · Mié 16 dic · P05 · La cuenta de 2026
-**Imagen:** `P05-cierre-de-ano-la-cuenta.png`
+### S5 · Mié 16 dic · K05 · La cuenta de 2026
+**Imagen:** `K05-cierre-de-ano-la-cuenta.png`
 ```
 Antes de planificar 2027, haz esta cuenta. 🧮
 
@@ -522,7 +522,11 @@ Todas las piezas están en Adobe Express con texto editable, por si quieres camb
 
 | Documento | Contenido | Enlace |
 |---|---|---|
-| (se completa al exportar) | | |
+| Casos | K01–K05 (Anatris, Charms Ecuador, planta real, hoy vs. BOUW, cuenta de 2026) | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:d2dfa98a-5a15-43f4-b1bf-61b3cfb69af4) |
+| Calidad | Q01–Q05 | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:d7608067-ae60-41db-ba8b-e5dc1ec8f045) |
+| Automatización | Z01–Z05 | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:f52d625b-28cc-4b17-b8a8-9a24812a7125) |
+| Carrusel | C01–C07 "Lo que hemos construido" | [Abrir](https://new.express.adobe.com/id/urn:aaid:sc:US:86651f46-2d6b-4280-a104-ce936812b240) |
+| Campaña L01–L10 | Todavía no está en Express. Los archivos listos para subir son `express/bouw-li-campana-1.html` y `express/bouw-li-campana-2.html`. Por ahora usa los PNG de `png/` | — |
 
 **Cómo usarlas:**
 1. Abre el enlace, duplica la página y cambia el texto.

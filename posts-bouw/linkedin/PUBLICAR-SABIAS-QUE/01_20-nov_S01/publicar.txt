@@ -1,0 +1,27 @@
+FECHA: Viernes 20 nov 2026, 08:00 Quito / 07:00 Monterrey
+
+1) TEXTO (copiar y pegar):
+
+¿Sabías que 9 de cada 10 hojas de cálculo auditadas tenían errores?
+
+En una auditoría de 54 hojas de cálculo usadas en empresas reales, 49 tenían al menos un error. Lo documentó Raymond Panko, investigador de la Universidad de Hawái que lleva años estudiando el tema.
+
+El problema no es Excel. Es que muchas decisiones importantes (precios, inventario, pagos) salen de archivos que nadie revisó desde que se hicieron.
+
+Tres señales de que tu archivo necesita una revisión:
+• Varias personas lo editan y nadie sabe qué cambió.
+• Hay fórmulas que nadie se atreve a tocar.
+• Los totales no cuadran con otros reportes.
+
+Si tus números salen de un Excel, escríbenos y lo revisamos contigo.
+
+#BOUW #Excel #Datos #Pymes
+
+2) IMAGEN: imagen.png
+   Al subirla toca "Texto alternativo" y pega:
+   ¿Sabías que…? 9 de cada 10 hojas de cálculo auditadas tenían errores. Fuente: Raymond Panko, Universidad de Hawái.
+
+3) PRIMER COMENTARIO (con la fuente, apenas salga la publicación):
+   Fuente: Raymond R. Panko, "What We Know About Spreadsheet Errors", Universidad de Hawái. Más en www.bouwlatam.com
+
+4) Responde todos los comentarios en la primera hora. A quien diga que le pasa, escríbele por mensaje privado.
