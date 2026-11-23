@@ -1405,6 +1405,142 @@ frame('N14-no-es-reemplazar-personas', True, 'Lo que creemos', CY, under=duo('me
       + T(f'Es quitarles lo que {C_("nunca debió ser su trabajo.")}', 88, 650, '#ffffff', lh=1.05, cls='serif')
       + Pp('Copiar datos. Cuadrar archivos. Armar reportes a mano.', 1010, 36, '#c9d6e3', True))
 
+# =====================================================================
+# 11. ANTES / CON BOUW (AD..): la misma escena antes y después, imágenes del sitio
+# =====================================================================
+def fimg(name):
+    for ext in ('png', 'webp', 'jpg'):
+        for base in (IMGS, os.path.join(ROOT, 'sitio', 'antes-despues')):
+            for sub in ('', 'pares', 'juego'):
+                p = os.path.join(base, sub, f'{name}.{ext}')
+                if os.path.exists(p):
+                    return 'file://' + p
+    raise FileNotFoundError(name)
+
+
+def ad_panel(src, x, y, w, h, label, col, text, zoom=None, before=False):
+    """Una vista (antes o después). zoom=(cx, cy, escala) en coordenadas 0–1 de la imagen original."""
+    if zoom:
+        cx, cy, sc = zoom
+        bg = f'background-image:url({src});background-size:{sc * 100:.0f}% auto;background-position:{cx * 100:.1f}% {cy * 100:.1f}%;'
+    else:
+        bg = f'background-image:url({src});background-size:cover;background-position:center;'
+    filt = 'filter:saturate(.72) contrast(1.05) brightness(.92);' if before else 'filter:saturate(1.08) contrast(1.04);'
+    lw = int(len(label) * 17 + 70)
+    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;border-radius:22px;overflow:hidden;'
+            f'box-shadow:0 24px 60px -24px rgba(0,0,0,.7);border:2px solid {col}55">'
+            f'<div style="position:absolute;inset:0;{bg}{filt}"></div>'
+            f'<div style="position:absolute;left:0;right:0;bottom:0;height:52%;background:linear-gradient(180deg,rgba(4,16,31,0),rgba(4,16,31,.7) 45%,rgba(4,16,31,.96))"></div>'
+            f'<div style="position:absolute;left:24px;top:22px;width:{lw}px;height:50px;border-radius:25px;background:{col};'
+            f'font-family:PlexMono;font-weight:500;font-size:21px;line-height:50px;letter-spacing:.16em;color:#04101f;text-align:center">{label}</div>'
+            f'<div class="p" style="position:absolute;left:28px;right:28px;bottom:22px;font-size:30px;line-height:38px;color:#ffffff;font-weight:400;text-shadow:0 2px 10px rgba(0,0,0,.6)">{text}</div>'
+            f'</div>')
+
+
+def antes_despues(name, tag, titulo, a_src, a_txt, d_src, d_txt, zoom=None, size=72):
+    ph = 418
+    body = (T(titulo, size, 168, '#ffffff', lh=1.02)
+            + ad_panel(a_src, M, 300, IW, ph, 'ANTES', OR, a_txt, zoom, True)
+            + ad_panel(d_src, M, 300 + ph + 40, IW, ph, 'CON BOUW', CY, d_txt, zoom)
+            + f'<div class="abs" style="left:{W // 2 - 34}px;top:{300 + ph + 20 - 34}px;width:68px;height:68px;border-radius:34px;background:{CY};'
+              f'box-shadow:0 0 0 8px {NAVY};font-family:Archivo;font-weight:800;font-size:36px;line-height:68px;text-align:center;color:#04101f">↓</div>')
+    frame(name, True, tag, CY, body)
+
+
+antes_despues('AD01-planta-antes-despues', 'Antes y después · Lean', f'La misma planta. {C_("Otro flujo.")}',
+              fimg('lean-antes'), 'Recorridos que se cruzan y piezas apiladas en los pasillos.',
+              fimg('lean-despues'), 'Un solo flujo, cada cosa en su sitio y el tablero vigilando la línea.')
+
+# ---------- AD02 · Simulación: la ventana "Hoy / Con BOUW" del sitio ----------
+def ad02():
+    x0, y0, cw, ch = M, 250, IW, 942
+    G, BE, CR = '#1f7a4f', '#e8b48a', '#fdfbf7'
+    o = (f'<div class="abs" style="left:{x0}px;top:{y0}px;width:{cw}px;height:{ch}px;border-radius:26px;background:{CR};'
+         f'box-shadow:0 40px 90px -30px rgba(0,0,0,.75),0 0 0 2px rgba(79,214,232,.25)"></div>'
+         f'<div class="abs" style="left:{x0}px;top:{y0}px;width:{cw}px;height:62px;border-radius:26px 26px 0 0;background:#f2ece2"></div>')
+    for i in range(3):
+        o += f'<div class="abs" style="left:{x0 + 28 + i * 26}px;top:{y0 + 24}px;width:14px;height:14px;border-radius:7px;background:#d6cdbf"></div>'
+    o += T('value-stream-map · línea de 4 estaciones', 19, y0 + 18, '#6b6457', width=cw, left=x0, lh=1.4, cls='mono').replace('text-align:left', '').replace(f'width:{cw}px;font-size:19px', f'width:{cw}px;text-align:center;font-size:19px')
+    # toggle
+    ty = y0 + 82
+    o += (f'<div class="abs" style="left:{x0 + 24}px;top:{ty}px;width:330px;height:58px;border-radius:29px;background:#f2ece2;border:2px solid #e6dccb"></div>'
+          f'<div class="abs" style="left:{x0 + 172}px;top:{ty + 5}px;width:176px;height:48px;border-radius:24px;background:#e2efe6"></div>'
+          + T(f'<span style="color:{OR}">●</span> Hoy', 24, ty + 12, '#6b6457', width=140, left=x0 + 50, lh=1.4, cls='t')
+          + T(f'<span style="color:{G}">●</span> Con BOUW', 24, ty + 12, '#0b1b2e', width=180, left=x0 + 190, lh=1.4, cls='t')
+          + T('Mapa de flujo de valor', 18, ty + 18, '#6b6457', width=420, left=x0 + cw - 444, lh=1.3, cls='mono').replace('width:420px;font-size', 'width:420px;text-align:right;font-size'))
+    # imagen de la planta con BOUW
+    iy = y0 + 158
+    o += (f'<div class="abs" style="left:{x0 + 24}px;top:{iy}px;width:{cw - 48}px;height:300px;border-radius:16px;overflow:hidden;'
+          f'background-image:url({fimg("lean-despues")});background-size:cover;background-position:center 55%"></div>'
+          f'<div class="abs" style="left:{x0 + 40}px;top:{iy + 244}px;width:290px;height:40px;border-radius:20px;background:rgba(4,16,31,.85)"></div>'
+          + T(f'<span style="color:{GRN}">●</span> Planta · con BOUW', 17, iy + 252, '#ffffff', width=290, left=x0 + 56, lh=1.4, cls='mono'))
+    # barras
+    by = iy + 322
+    for i, (lab, chip, b, d) in enumerate([('Tiempo de preparación', 'CASO', .85, '−15 %'), ('Reprocesos', 'CASO', .80, '−20 %'), ('Tiempo de entrega', 'MODELO', .28, '−72 %')]):
+        y = by + i * 98
+        o += (f'<div class="abs" style="left:{x0 + 24}px;top:{y}px;width:{cw - 48}px;height:86px;border-radius:14px;border:2px solid #ece3d4;background:#fffdf9"></div>'
+              + T(lab, 19, y + 12, '#6b6457', width=400, left=x0 + 44, lh=1.3, cls='mono')
+              + T(chip, 15, y + 12, '#9a6a3d', width=120, left=x0 + 470, lh=1.4, cls='mono')
+              + T('Hoy', 15, y + 40, '#8b8475', width=60, left=x0 + 44, lh=1.3, cls='mono')
+              + T('BOUW', 15, y + 60, '#8b8475', width=60, left=x0 + 44, lh=1.3, cls='mono')
+              + f'<div class="abs" style="left:{x0 + 118}px;top:{y + 44}px;width:480px;height:12px;border-radius:6px;background:{BE}"></div>'
+              + f'<div class="abs" style="left:{x0 + 118}px;top:{y + 64}px;width:480px;height:12px;border-radius:6px;background:#efe7da"></div>'
+              + f'<div class="abs" style="left:{x0 + 118}px;top:{y + 64}px;width:{int(480 * b)}px;height:12px;border-radius:6px;background:{G}"></div>'
+              + T(d, 54, y + 14, G, width=230, left=x0 + cw - 254, lh=1.1).replace('width:230px;font-size', 'width:230px;text-align:right;font-size'))
+    # VSM
+    vy = by + 3 * 98 + 6
+    o += f'<div class="abs" style="left:{x0 + 24}px;top:{vy}px;width:{cw - 48}px;height:150px;border-radius:14px;border:2px solid #ece3d4;background:#fffdf9"></div>'
+    for i, (n, ct, inv) in enumerate([('E1', '57 s', '0,3'), ('E2', '60 s', '1,1'), ('E3', '54 s', '0,4'), ('Insp.', '48 s', '0,3')]):
+        sx = x0 + 104 + i * 206
+        o += (f'<svg class="abs" style="left:{sx - 70}px;top:{vy + 18}px" width="40" height="36" viewBox="0 0 40 36"><path d="M20 3 L37 33 H3 Z" fill="none" stroke="#6b6457" stroke-width="2.5"/></svg>'
+              + T(inv, 17, vy + 56, '#0b1b2e', width=60, left=sx - 80, lh=1.3, cls='k').replace('width:60px;font-size', 'width:60px;text-align:center;font-size')
+              + f'<div class="abs" style="left:{sx + 6}px;top:{vy + 14}px;width:138px;height:70px;border-radius:10px;background:#f4ede2;border:2px solid #e6dccb"></div>'
+              + T(n, 22, vy + 18, '#0b1b2e', width=150, left=sx, lh=1.3, cls='t').replace('width:150px;font-size', 'width:150px;text-align:center;font-size')
+              + T('C/T ' + ct, 15, vy + 50, '#6b6457', width=150, left=sx, lh=1.3, cls='k').replace('width:150px;font-size', 'width:150px;text-align:center;font-size'))
+    o += (T(f'Entrega <b style="color:{G};font-size:30px">8 min</b> &nbsp;·&nbsp; Valor agregado <b style="color:#0b1b2e;font-size:30px">3,7 min</b> (45 %)', 21, vy + 100, '#6b6457', width=cw - 80, left=x0 + 40, lh=1.4, cls='p')
+          + T('antes: 29 min', 18, vy + 106, OR, width=220, left=x0 + cw - 250, lh=1.4, cls='mono').replace('width:220px;font-size', 'width:220px;text-align:right;font-size'))
+    frame('AD02-simulacion-hoy-vs-bouw', True, 'Antes y después · simulación', CY,
+          T(f'Tu línea, {C_("antes de mover un equipo.")}', 58, 160, '#ffffff', lh=1.05) + o)
+
+
+ad02()
+
+
+# ---------- AD03 · El sistema en Excel, en una laptop con lo que hace cada parte ----------
+def ad03():
+    src = fimg('contable-excel-es-poster')
+    # recorte de la ventana de Excel dentro del póster (1200×900): x 33–1167, y 29–769
+    sw, sh = 872, int(872 * 740 / 1134)
+    sc = sw / 1134
+    lx, ly = M + 20, 336
+    o = (f'<div class="abs" style="left:{lx - 20}px;top:{ly - 20}px;width:{sw + 40}px;height:{sh + 40}px;border-radius:26px 26px 8px 8px;background:#11161d;'
+         f'box-shadow:0 50px 100px -40px rgba(79,214,232,.45),0 0 0 2px #2b3744"></div>'
+         f'<div class="abs" style="left:{lx}px;top:{ly}px;width:{sw}px;height:{sh}px;overflow:hidden;border-radius:4px;'
+         f'background-image:url({src});background-size:{1200 * sc:.0f}px {900 * sc:.0f}px;background-position:-{33 * sc:.0f}px -{29 * sc:.0f}px"></div>'
+         f'<div class="abs" style="left:{M - 60}px;top:{ly + sh + 20}px;width:{IW + 120}px;height:30px;border-radius:0 0 30px 30px;'
+         f'background:linear-gradient(180deg,#c9d0d8,#8d98a5)"></div>'
+         f'<div class="abs" style="left:{W // 2 - 90}px;top:{ly + sh + 20}px;width:180px;height:12px;border-radius:0 0 12px 12px;background:#6f7a87"></div>')
+    # marcadores sobre la pantalla (coordenadas del recorte)
+    pts = [(1, 140, 110), (2, 300, 330), (3, 800, 300), (4, 400, 520)]
+    for n, px, py in pts:
+        cx, cy = lx + px * sc, ly + py * sc
+        o += (f'<div class="abs" style="left:{cx - 24:.0f}px;top:{cy - 24:.0f}px;width:48px;height:48px;border-radius:24px;background:{OR};'
+              f'box-shadow:0 0 0 6px rgba(247,155,74,.3);font-family:Archivo;font-weight:800;font-size:26px;line-height:48px;text-align:center;color:#04101f">{n}</div>')
+    leg = [('Resultado del mes', 'ingresos y gastos, al instante'), ('Flujo de caja de 6 meses', 'se dibuja solo'),
+           ('Margen por unidad de negocio', 'sin armar tablas'), ('Facturas pendientes', 'con sus días de atraso')]
+    for i, (a_, b_) in enumerate(leg):
+        x = M + (i % 2) * 468
+        y = ly + sh + 82 + (i // 2) * 100
+        o += (f'<div class="abs" style="left:{x}px;top:{y}px;width:40px;height:40px;border-radius:20px;background:{OR};font-family:Archivo;font-weight:800;'
+              f'font-size:22px;line-height:40px;text-align:center;color:#04101f">{i + 1}</div>'
+              + T(a_, 27, y - 2, '#ffffff', width=400, left=x + 56, lh=1.2, cls='t')
+              + T(b_, 24, y + 34, '#9fb3c8', width=400, left=x + 56, lh=1.2, cls='p'))
+    frame('AD03-sistema-excel-en-accion', True, 'Automatización · el sistema', CY,
+          T(f'Un solo Excel. {C_("El cierre de mes se arma solo.")}', 58, 160, '#ffffff', lh=1.05) + o)
+
+
+ad03()
+
 # ---------- escribir ----------
 for f in os.listdir(OUT):
     if f.endswith('.html'):
