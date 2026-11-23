@@ -86,3 +86,5 @@ UT01-productividad:1080x1350
 UT02-costos-de-produccion:1080x1350
 UT03-rentabilidad:1080x1350
 UT04-eficiencia-operativa:1080x1350
+UT05-caso-real-planta:1080x1350
+UT06-caso-real-automatizacion:1080x1350

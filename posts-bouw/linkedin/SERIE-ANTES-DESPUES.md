@@ -168,3 +168,40 @@ Hashtags según la versión:
 - **UT04:** `#EficienciaOperativa #ExcelenciaOperacional #Lean #MejoraContinua #Manufactura #Monterrey`
 
 Primer comentario: `Agenda tu diagnóstico 👉 www.bouwlatam.com`
+
+---
+
+**UT05 · Caso real con fotos de planta** (`png/UT05-caso-real-planta.png`)
+```
+¿Produces más y ganas lo mismo? 💰
+
+Casi nunca es falta de ventas: muchas veces la rentabilidad se queda en el proceso.
+Por eso evaluamos tu proceso en piso y te damos la solución. Caso real, en una línea de producción de dos turnos:
+
+1️⃣ Evaluamos: medimos en la línea tiempos, esperas y hasta la temperatura del agua de enfriamiento, con el mismo criterio en los 2 turnos.
+2️⃣ Encontramos: mucho tiempo en preparar y piezas que se fabricaban dos veces (cada pieza mala se paga doble).
+3️⃣ Resolvimos: trabajo estándar, 5S y 4 operadores capacitados.
+➡️ Resultado medido: −15 % en tiempo de preparación y −20 % en reprocesos.
+
+¿Quieres saber dónde se te va la rentabilidad? Escríbenos 👇
+
+#Rentabilidad #Productividad #LeanSixSigma #MejoraContinua #Manufactura #Quito #Monterrey
+```
+Primer comentario: `El caso completo, con fotos de la línea 👉 www.bouwlatam.com`
+
+**UT06 · Caso real de automatización con pantallas del sistema** (`png/UT06-caso-real-automatizacion.png`)
+```
+¿Tu cierre de mes todavía se arma a mano? 💻
+
+Evaluamos tu proceso y lo automatizamos. Caso real, en un taller de manufactura:
+
+1️⃣ Evaluamos: seguimos cada dato desde que nace hasta el cierre de mes. El cierre se armaba a mano, juntando archivos.
+2️⃣ Conectamos: clientes, productos, kits, ventas y gastos en un solo archivo de Excel, con 11 hojas conectadas por macros.
+3️⃣ Automatizamos: las facturas electrónicas del SRI entran solas, cada kit se costea desde su despiece y el tablero se recalcula solo.
+➡️ El cierre mensual sale de los movimientos ya capturados. 0 licencias nuevas, 0 migraciones de sistema.
+
+Si se repite, se automatiza. ¿Qué proceso de tu empresa sigue a mano? 👇
+
+#AutomatizaciónDeProcesos #Automatización #Excel #VBA #Contabilidad #FacturaciónElectrónica #Pymes #Ecuador
+```
+Primer comentario: `Míralo funcionando en video 👉 www.bouwlatam.com`

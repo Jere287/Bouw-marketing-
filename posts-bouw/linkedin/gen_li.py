@@ -1685,6 +1685,49 @@ for _n, _t in [('UT01-productividad', f'¿Por qué tu planta no es {C_("más pro
                ('UT04-eficiencia-operativa', f'¿Dónde se pierde tu {C_("eficiencia operativa?")}')]:
     ut01(_n, _t)
 
+# ---------- UT05 / UT06 · Diagnóstico con imágenes REALES (fotos de planta y pantallas del sistema) ----------
+FR = 'file://' + os.path.join(ROOT, 'sitio', 'antes-despues', 'frames', 'contable-excel-es')
+
+
+def utreal(name, tag, titulo, sub, hero, hero_pos, hero_tag, cards, hero_size='cover'):
+    o = (T(titulo, 72, 164, '#ffffff', lh=1.02)
+         + Pp(sub, 330, 29, '#c9d6e3', True, IW, M, 1.3))
+    hy, hh = 430, 236
+    o += (f'<div class="abs" style="left:{M}px;top:{hy}px;width:{IW}px;height:{hh}px;border-radius:18px;overflow:hidden;border:2px solid rgba(79,214,232,.35);box-shadow:0 24px 60px -24px rgba(0,0,0,.8)">'
+          f'<div style="position:absolute;inset:0;background-image:url({hero});background-size:{hero_size};background-position:{hero_pos};filter:contrast(1.05) saturate(.95)"></div>'
+          f'<div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,16,31,.75),rgba(4,16,31,0) 45%)"></div></div>'
+          + pill(hero_tag, CY, True, M + 18, hy + hh - 68))
+    cw, sy = 288, 694
+    for i, (n, ttl, d, img, pos, big, lab, col) in enumerate(cards):
+        x = M + i * (cw + 24)
+        o += (f'<div class="abs" style="left:{x}px;top:{sy}px;width:{cw}px;height:490px;border-radius:20px;background:#071a2f;border:2px solid #15304d;overflow:hidden">'
+              f'<div style="position:absolute;left:0;top:0;width:{cw}px;height:176px;background-image:url({img});background-size:cover;background-position:{pos}"></div>'
+              f'<div style="position:absolute;left:0;top:120px;width:{cw}px;height:56px;background:linear-gradient(180deg,rgba(7,26,47,0),#071a2f)"></div></div>'
+              f'<div class="abs" style="left:{x + 20}px;top:{sy + 150}px;width:44px;height:44px;border-radius:22px;background:{CY};box-shadow:0 0 0 5px #071a2f;'
+              f'font-family:Archivo;font-weight:800;font-size:23px;line-height:44px;text-align:center;color:#04101f">{n}</div>'
+              + T(ttl, 30, sy + 206, '#ffffff', width=cw - 40, left=x + 20, lh=1.15, cls='t')
+              + Pp(d, sy + 250, 22, '#c9d6e3', True, cw - 40, x + 20, 1.35)
+              + f'<div class="abs" style="left:{x + 20}px;top:{sy + 374}px;width:{cw - 40}px;height:2px;background:#15304d"></div>'
+              + T(big, 50, sy + 388, col, width=cw - 40, left=x + 20, lh=1.05)
+              + Pp(lab, sy + 446, 18, '#8fa8c4', True, cw - 40, x + 20, 1.3))
+    frame(name, True, tag, CY, o)
+
+
+utreal('UT05-caso-real-planta', 'Diagnóstico BOUW · caso real', f'¿Produces más y {C_("ganas lo mismo?")}',
+       f'Evaluamos tu proceso y te damos la solución. <b style="color:#fff">Caso real, en esta línea:</b>',
+       fimg('mejora-linea-extrusion'), 'center 58%', 'Línea de producción · 2 turnos',
+       [('1', 'Evaluamos', 'Medimos en la línea: tiempos, esperas y hasta el agua de enfriamiento.', fimg('mejora-termometro'), 'center 70%', '2', 'turnos, mismo criterio', '#ffffff'),
+        ('2', 'Encontramos', 'Mucho tiempo en preparar y piezas que se fabricaban dos veces.', fimg('mejora-perfil-seccion'), 'center 45%', '×2', 'se pagaba cada pieza mala', OR),
+        ('3', 'Resolvimos', 'Trabajo estándar, 5S y 4 operadores capacitados. Preparación −15 %.', fimg('mejora-producto-paletizado'), 'center 50%', '−20 %', 'menos reprocesos (medido)', GRN)])
+
+utreal('UT06-caso-real-automatizacion', 'Automatización · caso real', f'¿Tu cierre de mes {C_("todavía se arma a mano?")}',
+       f'Evaluamos tu proceso y lo automatizamos. <b style="color:#fff">Caso real, en este sistema:</b>',
+       f'{FR}/13.jpg', 'center 14%', 'Taller de manufactura · Excel + VBA',
+       [('1', 'Evaluamos', 'Seguimos cada dato desde que nace hasta el cierre de mes.', f'{FR}/05.jpg', 'left 8%', 'a mano', 'así se armaba el cierre', OR),
+        ('2', 'Conectamos', 'Clientes, productos, kits, ventas y gastos en un solo archivo.', f'{FR}/09.jpg', 'left 10%', '11', 'hojas conectadas por macros', '#ffffff'),
+        ('3', 'Automatizamos', 'Las facturas del SRI entran solas y el tablero se recalcula.', f'{FR}/04.jpg', 'center 12%', '0', 'licencias nuevas', GRN)],
+       hero_size='118% auto')
+
 # ---------- escribir ----------
 for f in os.listdir(OUT):
     if f.endswith('.html'):
