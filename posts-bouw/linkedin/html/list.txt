@@ -71,3 +71,14 @@ N14-no-es-reemplazar-personas:1080x1350
 AD01-planta-antes-despues:1080x1350
 AD02-simulacion-hoy-vs-bouw:1080x1350
 AD03-sistema-excel-en-accion:1080x1350
+AD04-cumplimiento-antes-despues:1080x1350
+AD05-auditoria-33-a-100:1080x1350
+AD06-linea-cuello-de-botella:1080x1350
+AD10-desperdicios-01-portada:1080x1350
+AD10-desperdicios-02-espera:1080x1350
+AD10-desperdicios-03-inventario:1080x1350
+AD10-desperdicios-04-movimiento:1080x1350
+AD10-desperdicios-05-transporte:1080x1350
+AD10-desperdicios-06-sobreproduccion:1080x1350
+AD10-desperdicios-07-defectos:1080x1350
+AD10-desperdicios-08-cierre:1080x1350
