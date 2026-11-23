@@ -82,3 +82,4 @@ AD10-desperdicios-05-transporte:1080x1350
 AD10-desperdicios-06-sobreproduccion:1080x1350
 AD10-desperdicios-07-defectos:1080x1350
 AD10-desperdicios-08-cierre:1080x1350
+UT01-por-que-no-crece-tu-utilidad:1080x1350

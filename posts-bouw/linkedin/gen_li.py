@@ -1646,6 +1646,41 @@ frame('AD10-desperdicios-08-cierre', True, 'Carrusel · 8 / 8', CY,
       + T('¿Cuál de los seis tiene tu planta?', 44, 1060, '#ffffff', lh=1.2, cls='t')
       + Pp('Medimos en piso de 1 a 2 semanas antes de proponer nada.', 1120, 28, '#c9d6e3', True))
 
+# ---------- UT01 · ¿No sabes por qué tu utilidad no crece? (evaluamos → encontramos → resolvemos) ----------
+def ut01():
+    o = (T(f'¿No sabes por qué tu utilidad {C_("no crece?")}', 76, 168, '#ffffff', lh=1.02)
+         + Pp(f'Evaluamos tu proceso y te damos la solución. <b style="color:#ffffff">Por ejemplo, en esta línea:</b>', 342, 31, '#c9d6e3', True, IW, M, 1.3))
+    # antes / con BOUW lado a lado
+    iw, ih, iy = 444, 270, 452
+    for i, (src, lab, col, filt) in enumerate([(fimg('lean-antes'), 'ANTES', OR, 'saturate(.72) brightness(.92)'), (fimg('lean-despues'), 'CON BOUW', CY, 'saturate(1.08)')]):
+        x = M + i * (iw + 24)
+        lw = int(len(lab) * 15 + 56)
+        o += (f'<div class="abs" style="left:{x}px;top:{iy}px;width:{iw}px;height:{ih}px;border-radius:18px;overflow:hidden;border:2px solid {col}66;box-shadow:0 20px 50px -24px rgba(0,0,0,.8)">'
+              f'<div style="position:absolute;inset:0;background-image:url({src});background-size:cover;background-position:center;filter:{filt}"></div></div>'
+              f'<div class="abs" style="left:{x + 16}px;top:{iy + 16}px;width:{lw}px;height:42px;border-radius:21px;background:{col};font-family:PlexMono;font-weight:500;'
+              f'font-size:18px;line-height:42px;letter-spacing:.14em;color:#04101f;text-align:center">{lab}</div>')
+    o += (f'<div class="abs" style="left:{W // 2 - 30}px;top:{iy + ih // 2 - 30}px;width:60px;height:60px;border-radius:30px;background:{CY};'
+          f'box-shadow:0 0 0 7px {NAVY};font-family:Archivo;font-weight:800;font-size:32px;line-height:60px;text-align:center;color:#04101f">→</div>')
+    # 3 pasos
+    steps = [('1', 'Evaluamos', 'Medimos la línea en piso: tiempos, esperas e inventarios.', '4', 'estaciones medidas', '#ffffff'),
+             ('2', 'Encontramos', 'Solo 3,7 de 29 minutos agregaban valor. La estación 2 frenaba a todas.', '13 %', 'del tiempo agregaba valor', OR),
+             ('3', 'Resolvimos', 'Balanceo de línea, 5S y acciones correctivas con su causa raíz.', '29→8', 'min de entrega (modelo)', GRN)]
+    cw, sy = 288, 760
+    for i, (n, ttl, d, big, lab, col) in enumerate(steps):
+        x = M + i * (cw + 24)
+        o += (f'<div class="abs" style="left:{x}px;top:{sy}px;width:{cw}px;height:420px;border-radius:20px;background:#071a2f;border:2px solid #15304d"></div>'
+              f'<div class="abs" style="left:{x + 24}px;top:{sy + 24}px;width:46px;height:46px;border-radius:23px;background:{CY};font-family:Archivo;font-weight:800;'
+              f'font-size:24px;line-height:46px;text-align:center;color:#04101f">{n}</div>'
+              + T(ttl, 30, sy + 31, '#ffffff', width=cw - 90, left=x + 82, lh=1.15, cls='t')
+              + Pp(d, sy + 96, 24, '#c9d6e3', True, cw - 48, x + 24, 1.35)
+              + f'<div class="abs" style="left:{x + 24}px;top:{sy + 286}px;width:{cw - 48}px;height:2px;background:#15304d"></div>'
+              + T(big, 58, sy + 302, col, width=cw - 48, left=x + 24, lh=1.05)
+              + Pp(lab, sy + 368, 20, '#8fa8c4', True, cw - 48, x + 24, 1.3))
+    frame('UT01-por-que-no-crece-tu-utilidad', True, 'Diagnóstico BOUW', CY, o)
+
+
+ut01()
+
 # ---------- escribir ----------
 for f in os.listdir(OUT):
     if f.endswith('.html'):

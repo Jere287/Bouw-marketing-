@@ -131,3 +131,24 @@ Desliza y dinos cuál de los seis tiene tu planta.
 #Lean #Desperdicios #Manufactura #MejoraContinua
 ```
 Primer comentario: `Encuéntralos tú mismo en 30 segundos en www.bouwlatam.com`
+
+---
+
+**UT01 · ¿No sabes por qué tu utilidad no crece?** (`png/UT01-por-que-no-crece-tu-utilidad.png`)
+```
+¿No sabes por qué tu utilidad no crece? 📉
+
+Casi nunca es falta de ventas. Muchas veces el dinero se queda en el proceso.
+
+Por eso, antes de proponer nada, evaluamos tu proceso y te damos la solución. Por ejemplo, en esta línea:
+
+1️⃣ Evaluamos: medimos en piso tiempos, esperas e inventarios de 4 estaciones.
+2️⃣ Encontramos: de 29 minutos, solo 3,7 agregaban valor (13 %). La estación 2 frenaba a todas.
+3️⃣ Resolvimos: balanceo de línea, 5S y acciones correctivas con su causa raíz.
+➡️ Tiempo de entrega de 29 a 8 minutos en el modelo. En el caso real: −15 % preparación y −20 % reprocesos.
+
+¿Quieres saber dónde se te está yendo la utilidad? Escríbenos 👇
+
+#Utilidad #Rentabilidad #Lean #MejoraContinua #Manufactura #Quito #Monterrey
+```
+Primer comentario: `Agenda tu diagnóstico 👉 www.bouwlatam.com`
