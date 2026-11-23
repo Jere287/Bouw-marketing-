@@ -134,21 +134,37 @@ Primer comentario: `Encuéntralos tú mismo en 30 segundos en www.bouwlatam.com`
 
 ---
 
-**UT01 · ¿No sabes por qué tu utilidad no crece?** (`png/UT01-por-que-no-crece-tu-utilidad.png`)
+**UT01–UT04 · Diagnóstico BOUW (elige una versión)**
+
+Las cuatro llevan la misma imagen de ejemplo; cambia el titular y la palabra clave. LinkedIn indexa las primeras líneas del texto y los hashtags, así que **la palabra clave va en la primera línea y en los hashtags**.
+
+| Versión | Imagen | Palabra clave | Primera línea del texto |
+|---|---|---|---|
+| UT01 | `png/UT01-productividad.png` | productividad | ¿Por qué tu planta no es más productiva? 🏭 |
+| UT02 | `png/UT02-costos-de-produccion.png` | costos de producción | ¿Tus costos de producción no bajan? 📉 |
+| UT03 | `png/UT03-rentabilidad.png` | rentabilidad | ¿Produces más y ganas lo mismo? 💰 |
+| UT04 | `png/UT04-eficiencia-operativa.png` | eficiencia operativa | ¿Dónde se pierde tu eficiencia operativa? ⚙️ |
+
+Texto (la primera línea es la de la versión elegida):
 ```
-¿No sabes por qué tu utilidad no crece? 📉
+[PRIMERA LÍNEA DE LA VERSIÓN]
 
-Casi nunca es falta de ventas. Muchas veces el dinero se queda en el proceso.
+Casi nunca es falta de ventas: muchas veces la productividad y la rentabilidad se quedan en el proceso.
 
-Por eso, antes de proponer nada, evaluamos tu proceso y te damos la solución. Por ejemplo, en esta línea:
+Por eso, antes de proponer nada, hacemos un diagnóstico de tu proceso y te damos la solución. Por ejemplo, en esta línea de producción:
 
 1️⃣ Evaluamos: medimos en piso tiempos, esperas e inventarios de 4 estaciones.
-2️⃣ Encontramos: de 29 minutos, solo 3,7 agregaban valor (13 %). La estación 2 frenaba a todas.
+2️⃣ Encontramos: de 29 minutos, solo 3,7 agregaban valor (13 %). La estación 2 era el cuello de botella.
 3️⃣ Resolvimos: balanceo de línea, 5S y acciones correctivas con su causa raíz.
-➡️ Tiempo de entrega de 29 a 8 minutos en el modelo. En el caso real: −15 % preparación y −20 % reprocesos.
+➡️ Tiempo de entrega de 29 a 8 minutos en el modelo. En el caso real: −15 % tiempo de preparación y −20 % reprocesos.
 
-¿Quieres saber dónde se te está yendo la utilidad? Escríbenos 👇
-
-#Utilidad #Rentabilidad #Lean #MejoraContinua #Manufactura #Quito #Monterrey
+¿Quieres saber dónde está tu cuello de botella? Escríbenos 👇
 ```
+
+Hashtags según la versión:
+- **UT01:** `#Productividad #ProductividadIndustrial #Lean #MejoraContinua #Manufactura #Quito #Monterrey`
+- **UT02:** `#CostosDeProducción #ReducciónDeCostos #Lean #Manufactura #Quito #Monterrey`
+- **UT03:** `#Rentabilidad #Utilidad #Productividad #Lean #Pymes #Quito #Monterrey`
+- **UT04:** `#EficienciaOperativa #ExcelenciaOperacional #Lean #MejoraContinua #Manufactura #Monterrey`
+
 Primer comentario: `Agenda tu diagnóstico 👉 www.bouwlatam.com`

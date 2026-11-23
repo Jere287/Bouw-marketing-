@@ -1647,8 +1647,8 @@ frame('AD10-desperdicios-08-cierre', True, 'Carrusel · 8 / 8', CY,
       + Pp('Medimos en piso de 1 a 2 semanas antes de proponer nada.', 1120, 28, '#c9d6e3', True))
 
 # ---------- UT01 · ¿No sabes por qué tu utilidad no crece? (evaluamos → encontramos → resolvemos) ----------
-def ut01():
-    o = (T(f'¿No sabes por qué tu utilidad {C_("no crece?")}', 76, 168, '#ffffff', lh=1.02)
+def ut01(name, titulo):
+    o = (T(titulo, 76, 168, '#ffffff', lh=1.02)
          + Pp(f'Evaluamos tu proceso y te damos la solución. <b style="color:#ffffff">Por ejemplo, en esta línea:</b>', 342, 31, '#c9d6e3', True, IW, M, 1.3))
     # antes / con BOUW lado a lado
     iw, ih, iy = 444, 270, 452
@@ -1676,10 +1676,14 @@ def ut01():
               + f'<div class="abs" style="left:{x + 24}px;top:{sy + 286}px;width:{cw - 48}px;height:2px;background:#15304d"></div>'
               + T(big, 58, sy + 302, col, width=cw - 48, left=x + 24, lh=1.05)
               + Pp(lab, sy + 368, 20, '#8fa8c4', True, cw - 48, x + 24, 1.3))
-    frame('UT01-por-que-no-crece-tu-utilidad', True, 'Diagnóstico BOUW', CY, o)
+    frame(name, True, 'Diagnóstico BOUW', CY, o)
 
 
-ut01()
+for _n, _t in [('UT01-productividad', f'¿Por qué tu planta no es {C_("más productiva?")}'),
+               ('UT02-costos-de-produccion', f'¿Tus costos de producción {C_("no bajan?")}'),
+               ('UT03-rentabilidad', f'¿Produces más y {C_("ganas lo mismo?")}'),
+               ('UT04-eficiencia-operativa', f'¿Dónde se pierde tu {C_("eficiencia operativa?")}')]:
+    ut01(_n, _t)
 
 # ---------- escribir ----------
 for f in os.listdir(OUT):
