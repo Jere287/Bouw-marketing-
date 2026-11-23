@@ -1405,6 +1405,329 @@ frame('N14-no-es-reemplazar-personas', True, 'Lo que creemos', CY, under=duo('me
       + T(f'Es quitarles lo que {C_("nunca debió ser su trabajo.")}', 88, 650, '#ffffff', lh=1.05, cls='serif')
       + Pp('Copiar datos. Cuadrar archivos. Armar reportes a mano.', 1010, 36, '#c9d6e3', True))
 
+# =====================================================================
+# 11. ANTES / CON BOUW (AD..): la misma escena antes y después, imágenes del sitio
+# =====================================================================
+def fimg(name):
+    for ext in ('png', 'webp', 'jpg'):
+        for base in (IMGS, os.path.join(ROOT, 'sitio', 'antes-despues')):
+            for sub in ('', 'pares', 'juego'):
+                p = os.path.join(base, sub, f'{name}.{ext}')
+                if os.path.exists(p):
+                    return 'file://' + p
+    raise FileNotFoundError(name)
+
+
+def ad_panel(src, x, y, w, h, label, col, text, zoom=None, before=False):
+    """Una vista (antes o después). zoom=(cx, cy, escala) en coordenadas 0–1 de la imagen original."""
+    if zoom:
+        cx, cy, sc = zoom
+        bg = f'background-image:url({src});background-size:{sc * 100:.0f}% auto;background-position:{cx * 100:.1f}% {cy * 100:.1f}%;'
+    else:
+        bg = f'background-image:url({src});background-size:cover;background-position:center;'
+    filt = 'filter:saturate(.72) contrast(1.05) brightness(.92);' if before else 'filter:saturate(1.08) contrast(1.04);'
+    lw = int(len(label) * 17 + 70)
+    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;border-radius:22px;overflow:hidden;'
+            f'box-shadow:0 24px 60px -24px rgba(0,0,0,.7);border:2px solid {col}55">'
+            f'<div style="position:absolute;inset:0;{bg}{filt}"></div>'
+            f'<div style="position:absolute;left:0;right:0;bottom:0;height:52%;background:linear-gradient(180deg,rgba(4,16,31,0),rgba(4,16,31,.7) 45%,rgba(4,16,31,.96))"></div>'
+            f'<div style="position:absolute;left:24px;top:22px;width:{lw}px;height:50px;border-radius:25px;background:{col};'
+            f'font-family:PlexMono;font-weight:500;font-size:21px;line-height:50px;letter-spacing:.16em;color:#04101f;text-align:center">{label}</div>'
+            f'<div class="p" style="position:absolute;left:28px;right:28px;bottom:22px;font-size:30px;line-height:38px;color:#ffffff;font-weight:400;text-shadow:0 2px 10px rgba(0,0,0,.6)">{text}</div>'
+            f'</div>')
+
+
+def antes_despues(name, tag, titulo, a_src, a_txt, d_src, d_txt, zoom=None, size=72):
+    ph = 418
+    body = (T(titulo, size, 168, '#ffffff', lh=1.02)
+            + ad_panel(a_src, M, 300, IW, ph, 'ANTES', OR, a_txt, zoom, True)
+            + ad_panel(d_src, M, 300 + ph + 40, IW, ph, 'CON BOUW', CY, d_txt, zoom)
+            + f'<div class="abs" style="left:{W // 2 - 34}px;top:{300 + ph + 20 - 34}px;width:68px;height:68px;border-radius:34px;background:{CY};'
+              f'box-shadow:0 0 0 8px {NAVY};font-family:Archivo;font-weight:800;font-size:36px;line-height:68px;text-align:center;color:#04101f">↓</div>')
+    frame(name, True, tag, CY, body)
+
+
+antes_despues('AD01-planta-antes-despues', 'Antes y después · Lean', f'La misma planta. {C_("Otro flujo.")}',
+              fimg('lean-antes'), 'Recorridos que se cruzan y piezas apiladas en los pasillos.',
+              fimg('lean-despues'), 'Un solo flujo, cada cosa en su sitio y el tablero vigilando la línea.')
+
+# ---------- AD02 · Simulación: la ventana "Hoy / Con BOUW" del sitio ----------
+def ad02():
+    x0, y0, cw, ch = M, 250, IW, 942
+    G, BE, CR = '#1f7a4f', '#e8b48a', '#fdfbf7'
+    o = (f'<div class="abs" style="left:{x0}px;top:{y0}px;width:{cw}px;height:{ch}px;border-radius:26px;background:{CR};'
+         f'box-shadow:0 40px 90px -30px rgba(0,0,0,.75),0 0 0 2px rgba(79,214,232,.25)"></div>'
+         f'<div class="abs" style="left:{x0}px;top:{y0}px;width:{cw}px;height:62px;border-radius:26px 26px 0 0;background:#f2ece2"></div>')
+    for i in range(3):
+        o += f'<div class="abs" style="left:{x0 + 28 + i * 26}px;top:{y0 + 24}px;width:14px;height:14px;border-radius:7px;background:#d6cdbf"></div>'
+    o += T('value-stream-map · línea de 4 estaciones', 19, y0 + 18, '#6b6457', width=cw, left=x0, lh=1.4, cls='mono').replace('text-align:left', '').replace(f'width:{cw}px;font-size:19px', f'width:{cw}px;text-align:center;font-size:19px')
+    # toggle
+    ty = y0 + 82
+    o += (f'<div class="abs" style="left:{x0 + 24}px;top:{ty}px;width:330px;height:58px;border-radius:29px;background:#f2ece2;border:2px solid #e6dccb"></div>'
+          f'<div class="abs" style="left:{x0 + 172}px;top:{ty + 5}px;width:176px;height:48px;border-radius:24px;background:#e2efe6"></div>'
+          + T(f'<span style="color:{OR}">●</span> Hoy', 24, ty + 12, '#6b6457', width=140, left=x0 + 50, lh=1.4, cls='t')
+          + T(f'<span style="color:{G}">●</span> Con BOUW', 24, ty + 12, '#0b1b2e', width=180, left=x0 + 190, lh=1.4, cls='t')
+          + T('Mapa de flujo de valor', 18, ty + 18, '#6b6457', width=420, left=x0 + cw - 444, lh=1.3, cls='mono').replace('width:420px;font-size', 'width:420px;text-align:right;font-size'))
+    # imagen de la planta con BOUW
+    iy = y0 + 158
+    o += (f'<div class="abs" style="left:{x0 + 24}px;top:{iy}px;width:{cw - 48}px;height:300px;border-radius:16px;overflow:hidden;'
+          f'background-image:url({fimg("lean-despues")});background-size:cover;background-position:center 55%"></div>'
+          f'<div class="abs" style="left:{x0 + 40}px;top:{iy + 244}px;width:290px;height:40px;border-radius:20px;background:rgba(4,16,31,.85)"></div>'
+          + T(f'<span style="color:{GRN}">●</span> Planta · con BOUW', 17, iy + 252, '#ffffff', width=290, left=x0 + 56, lh=1.4, cls='mono'))
+    # barras
+    by = iy + 322
+    for i, (lab, chip, b, d) in enumerate([('Tiempo de preparación', 'CASO', .85, '−15 %'), ('Reprocesos', 'CASO', .80, '−20 %'), ('Tiempo de entrega', 'MODELO', .28, '−72 %')]):
+        y = by + i * 98
+        o += (f'<div class="abs" style="left:{x0 + 24}px;top:{y}px;width:{cw - 48}px;height:86px;border-radius:14px;border:2px solid #ece3d4;background:#fffdf9"></div>'
+              + T(lab, 19, y + 12, '#6b6457', width=400, left=x0 + 44, lh=1.3, cls='mono')
+              + T(chip, 15, y + 12, '#9a6a3d', width=120, left=x0 + 470, lh=1.4, cls='mono')
+              + T('Hoy', 15, y + 40, '#8b8475', width=60, left=x0 + 44, lh=1.3, cls='mono')
+              + T('BOUW', 15, y + 60, '#8b8475', width=60, left=x0 + 44, lh=1.3, cls='mono')
+              + f'<div class="abs" style="left:{x0 + 118}px;top:{y + 44}px;width:480px;height:12px;border-radius:6px;background:{BE}"></div>'
+              + f'<div class="abs" style="left:{x0 + 118}px;top:{y + 64}px;width:480px;height:12px;border-radius:6px;background:#efe7da"></div>'
+              + f'<div class="abs" style="left:{x0 + 118}px;top:{y + 64}px;width:{int(480 * b)}px;height:12px;border-radius:6px;background:{G}"></div>'
+              + T(d, 54, y + 14, G, width=230, left=x0 + cw - 254, lh=1.1).replace('width:230px;font-size', 'width:230px;text-align:right;font-size'))
+    # VSM
+    vy = by + 3 * 98 + 6
+    o += f'<div class="abs" style="left:{x0 + 24}px;top:{vy}px;width:{cw - 48}px;height:150px;border-radius:14px;border:2px solid #ece3d4;background:#fffdf9"></div>'
+    for i, (n, ct, inv) in enumerate([('E1', '57 s', '0,3'), ('E2', '60 s', '1,1'), ('E3', '54 s', '0,4'), ('Insp.', '48 s', '0,3')]):
+        sx = x0 + 104 + i * 206
+        o += (f'<svg class="abs" style="left:{sx - 70}px;top:{vy + 18}px" width="40" height="36" viewBox="0 0 40 36"><path d="M20 3 L37 33 H3 Z" fill="none" stroke="#6b6457" stroke-width="2.5"/></svg>'
+              + T(inv, 17, vy + 56, '#0b1b2e', width=60, left=sx - 80, lh=1.3, cls='k').replace('width:60px;font-size', 'width:60px;text-align:center;font-size')
+              + f'<div class="abs" style="left:{sx + 6}px;top:{vy + 14}px;width:138px;height:70px;border-radius:10px;background:#f4ede2;border:2px solid #e6dccb"></div>'
+              + T(n, 22, vy + 18, '#0b1b2e', width=150, left=sx, lh=1.3, cls='t').replace('width:150px;font-size', 'width:150px;text-align:center;font-size')
+              + T('C/T ' + ct, 15, vy + 50, '#6b6457', width=150, left=sx, lh=1.3, cls='k').replace('width:150px;font-size', 'width:150px;text-align:center;font-size'))
+    o += (T(f'Entrega <b style="color:{G};font-size:30px">8 min</b> &nbsp;·&nbsp; Valor agregado <b style="color:#0b1b2e;font-size:30px">3,7 min</b> (45 %)', 21, vy + 100, '#6b6457', width=cw - 80, left=x0 + 40, lh=1.4, cls='p')
+          + T('antes: 29 min', 18, vy + 106, OR, width=220, left=x0 + cw - 250, lh=1.4, cls='mono').replace('width:220px;font-size', 'width:220px;text-align:right;font-size'))
+    frame('AD02-simulacion-hoy-vs-bouw', True, 'Antes y después · simulación', CY,
+          T(f'Tu línea, {C_("antes de mover un equipo.")}', 58, 160, '#ffffff', lh=1.05) + o)
+
+
+ad02()
+
+
+# ---------- AD03 · El sistema en Excel, en una laptop con lo que hace cada parte ----------
+def ad03():
+    src = fimg('contable-excel-es-poster')
+    # recorte de la ventana de Excel dentro del póster (1200×900): x 33–1167, y 29–769
+    sw, sh = 872, int(872 * 740 / 1134)
+    sc = sw / 1134
+    lx, ly = M + 20, 336
+    o = (f'<div class="abs" style="left:{lx - 20}px;top:{ly - 20}px;width:{sw + 40}px;height:{sh + 40}px;border-radius:26px 26px 8px 8px;background:#11161d;'
+         f'box-shadow:0 50px 100px -40px rgba(79,214,232,.45),0 0 0 2px #2b3744"></div>'
+         f'<div class="abs" style="left:{lx}px;top:{ly}px;width:{sw}px;height:{sh}px;overflow:hidden;border-radius:4px;'
+         f'background-image:url({src});background-size:{1200 * sc:.0f}px {900 * sc:.0f}px;background-position:-{33 * sc:.0f}px -{29 * sc:.0f}px"></div>'
+         f'<div class="abs" style="left:{M - 60}px;top:{ly + sh + 20}px;width:{IW + 120}px;height:30px;border-radius:0 0 30px 30px;'
+         f'background:linear-gradient(180deg,#c9d0d8,#8d98a5)"></div>'
+         f'<div class="abs" style="left:{W // 2 - 90}px;top:{ly + sh + 20}px;width:180px;height:12px;border-radius:0 0 12px 12px;background:#6f7a87"></div>')
+    # marcadores sobre la pantalla (coordenadas del recorte)
+    pts = [(1, 140, 110), (2, 300, 330), (3, 800, 300), (4, 400, 520)]
+    for n, px, py in pts:
+        cx, cy = lx + px * sc, ly + py * sc
+        o += (f'<div class="abs" style="left:{cx - 24:.0f}px;top:{cy - 24:.0f}px;width:48px;height:48px;border-radius:24px;background:{OR};'
+              f'box-shadow:0 0 0 6px rgba(247,155,74,.3);font-family:Archivo;font-weight:800;font-size:26px;line-height:48px;text-align:center;color:#04101f">{n}</div>')
+    leg = [('Resultado del mes', 'ingresos y gastos, al instante'), ('Flujo de caja de 6 meses', 'se dibuja solo'),
+           ('Margen por unidad de negocio', 'sin armar tablas'), ('Facturas pendientes', 'con sus días de atraso')]
+    for i, (a_, b_) in enumerate(leg):
+        x = M + (i % 2) * 468
+        y = ly + sh + 82 + (i // 2) * 100
+        o += (f'<div class="abs" style="left:{x}px;top:{y}px;width:40px;height:40px;border-radius:20px;background:{OR};font-family:Archivo;font-weight:800;'
+              f'font-size:22px;line-height:40px;text-align:center;color:#04101f">{i + 1}</div>'
+              + T(a_, 27, y - 2, '#ffffff', width=400, left=x + 56, lh=1.2, cls='t')
+              + T(b_, 24, y + 34, '#9fb3c8', width=400, left=x + 56, lh=1.2, cls='p'))
+    frame('AD03-sistema-excel-en-accion', True, 'Automatización · el sistema', CY,
+          T(f'Un solo Excel. {C_("El cierre de mes se arma solo.")}', 58, 160, '#ffffff', lh=1.05) + o)
+
+
+ad03()
+
+# ---------- AD04 · Cumplimiento: las dos escenas del video del sitio ----------
+antes_despues('AD04-cumplimiento-antes-despues', 'Antes y después · calidad', f'Calidad: hoy vs. {C_("con BOUW.")}',
+              fimg('cumplimiento-antes'), 'Desviaciones que vuelven, un registro perdido y el lote retenido.',
+              fimg('cumplimiento-despues'), 'Carpeta lista, cada registro en su sitio y el lote liberado.')
+
+
+# ---------- AD05 · Informe de auditoría: de 33 % a 100 % ----------
+def ad05():
+    o = ''
+    # dos medidores
+    import math
+    for i, (val, lab, col, sub) in enumerate([(33, 'Antes', OR, 'No lista'), (100, 'Con BOUW', GRN, 'Lista para inspección')]):
+        cx = M + 228 + i * 456
+        cy = 560
+        r = 150
+        c = math.pi * r
+        o += (f'<svg class="abs" style="left:0;top:0" width="{W}" height="{H}" viewBox="0 0 {W} {H}">'
+              f'<path d="M{cx - r} {cy} A{r} {r} 0 0 1 {cx + r} {cy}" fill="none" stroke="#15304d" stroke-width="28" stroke-linecap="round"/>'
+              f'<path d="M{cx - r} {cy} A{r} {r} 0 0 1 {cx + r} {cy}" fill="none" stroke="{col}" stroke-width="28" stroke-linecap="round" stroke-dasharray="{c * val / 100:.1f} {c:.1f}"/></svg>'
+              + T(f'{val} %', 74, cy - 74, col, width=300, left=cx - 150, lh=1).replace('width:300px;font-size', 'width:300px;text-align:center;font-size')
+              + T(sub, 24, cy + 30, '#c9d6e3', width=320, left=cx - 160, lh=1.3, cls='p').replace('width:320px;font-size', 'width:320px;text-align:center;font-size')
+              + pill(lab.upper(), col, True, cx - (int(len(lab) * 17.4 + 70)) // 2, 316))
+    rows = [('Hallazgos críticos', '1', '0'), ('CAPA abiertas', '9', '0'), ('CAPA cerradas', '4', '13'), ('Lotes retenidos', '3', '0')]
+    for i, (l_, a_, b_) in enumerate(rows):
+        y = 690 + i * 118
+        o += (f'<div class="abs" style="left:{M}px;top:{y}px;width:{IW}px;height:100px;border-radius:18px;background:#071a2f;border:2px solid #15304d"></div>'
+              + T(l_, 34, y + 30, '#ffffff', width=440, left=M + 34, lh=1.2, cls='t')
+              + T(a_, 52, y + 22, OR, width=110, left=M + 520, lh=1.1).replace('width:110px;font-size', 'width:110px;text-align:center;font-size')
+              + T('→', 40, y + 26, '#5d7690', width=60, left=M + 640, lh=1.2, cls='t')
+              + T(b_, 52, y + 22, GRN, width=150, left=M + 720, lh=1.1).replace('width:150px;font-size', 'width:150px;text-align:center;font-size'))
+    frame('AD05-auditoria-33-a-100', True, 'Antes y después · auditoría BPM', CY,
+          T(f'De “no lista” a {C_("lista para inspección.")}', 60, 160, '#ffffff', lh=1.05) + o)
+
+
+ad05()
+
+
+# ---------- AD06 · Simulación de la línea (mejora continua) ----------
+def ad06():
+    o = (Pp('La estación 2 trabajaba al límite: recibía piezas nuevas y las que volvían de reproceso. Le quitamos carga.', 300, 32, '#c9d6e3', True))
+    for i, (l_, b_, d_, good) in enumerate([('Ritmo de salida', 111, '+11', True), ('Inventario en la línea', 31, '−69', True), ('Tiempo de una pieza', 28, '−72', True)]):
+        y = 500 + i * 210
+        o += (T(l_, 36, y, '#ffffff', width=600, left=M, lh=1.2, cls='t')
+              + T(d_, 64, y - 14, GRN, width=260, left=W - M - 260, lh=1.1).replace('width:260px;font-size', 'width:260px;text-align:right;font-size')
+              + T('Antes', 18, y + 70, '#8fa8c4', width=120, left=M, lh=1.3, cls='mono')
+              + f'<div class="abs" style="left:{M + 150}px;top:{y + 72}px;width:600px;height:22px;border-radius:11px;background:{OR}"></div>'
+              + T('100', 22, y + 68, OR, width=100, left=M + 770, lh=1.3, cls='k')
+              + T('Con BOUW', 18, y + 116, '#8fa8c4', width=140, left=M, lh=1.3, cls='mono')
+              + f'<div class="abs" style="left:{M + 150}px;top:{y + 118}px;width:{int(600 * b_ / 111)}px;height:22px;border-radius:11px;background:{GRN}"></div>'
+              + T(str(b_), 22, y + 114, GRN, width=100, left=M + 160 + int(600 * b_ / 111), lh=1.3, cls='k'))
+    o += Pp('Índice, antes = 100. Simulación de la línea del caso de mejora continua.', 1140, 22, '#7d93ab', True)
+    frame('AD06-linea-cuello-de-botella', True, 'Antes y después · simulación', CY,
+          T(f'Un cuello de botella menos. {C_("Toda la línea cambia.")}', 60, 160, '#ffffff', lh=1.05) + o)
+
+
+ad06()
+
+
+# ---------- AD10 · Carrusel: los 6 desperdicios del juego del sitio, antes y con BOUW ----------
+DESP = [(1, .328, .48, 'Espera', 'VSM', 'Un operador parado, esperando a que la estación de antes le pase piezas.', 'Cada estación al ritmo de la línea, con el mapa de flujo de valor.'),
+        (2, .242, .589, 'Inventario en proceso', 'WIP', 'Piezas apiladas frente a la máquina más lenta: ahí está el cuello de botella.', 'Las piezas pasan una a una por la banda, sin montones.'),
+        (3, .703, .443, 'Movimiento', '5S', 'Buscar herramientas y piezas entre el desorden, varias veces por turno.', '5S y trabajo estándar: cada cosa en su sitio. La preparación bajó 15 %.'),
+        (4, .586, .809, 'Transporte', 'Layout', 'Recorridos largos que se cruzan para llevar una caja de un lado a otro.', 'Lo que se usa junto va junto, y el flujo va en un solo sentido.'),
+        (5, .50, .431, 'Sobreproducción', 'VSM', 'Cajas hechas antes de que alguien las pida, bloqueando el pasillo.', 'Producir al ritmo de lo que se vende, con el mapa de valor a la vista.'),
+        (6, .629, .251, 'Defectos', 'Causa raíz', 'Máquina en rojo: piezas que vuelven a pasar por reproceso.', 'Acciones correctivas con su causa raíz. Los reprocesos bajaron 20 %.')]
+
+
+def zpanel(src, px, py, x, y, w, h, label, col, text, before):
+    k = 2.0                       # la imagen se ve al doble del ancho del panel
+    iw, ih = w * k, w * k * 899 / 1400
+    bx = max(0, min(1, (px * iw - w / 2) / (iw - w)))
+    by = max(0, min(1, (py * ih - h / 2) / (ih - h)))
+    filt = 'filter:saturate(.72) contrast(1.05) brightness(.92);' if before else 'filter:saturate(1.08) contrast(1.04);'
+    lw = int(len(label) * 17 + 70)
+    return (f'<div class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px -24px rgba(0,0,0,.7);border:2px solid {col}55">'
+            f'<div style="position:absolute;inset:0;background-image:url({src});background-size:{iw:.0f}px {ih:.0f}px;background-position:{bx * 100:.1f}% {by * 100:.1f}%;{filt}"></div>'
+            f'<div style="position:absolute;left:0;right:0;bottom:0;height:52%;background:linear-gradient(180deg,rgba(4,16,31,0),rgba(4,16,31,.7) 45%,rgba(4,16,31,.96))"></div>'
+            f'<div style="position:absolute;left:24px;top:22px;width:{lw}px;height:50px;border-radius:25px;background:{col};font-family:PlexMono;font-weight:500;font-size:21px;line-height:50px;letter-spacing:.16em;color:#04101f;text-align:center">{label}</div>'
+            f'<div class="p" style="position:absolute;left:28px;right:28px;bottom:22px;font-size:30px;line-height:38px;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,.6)">{text}</div></div>')
+
+
+A_SRC, D_SRC = fimg('lean-antes'), fimg('lean-despues')
+# portada con los 6 puntos
+dots = ''
+for n, px, py, *_ in DESP:
+    cx, cy = M + px * IW, 470 + py * IW * 899 / 1400
+    dots += (f'<div class="abs" style="left:{cx - 26:.0f}px;top:{cy - 26:.0f}px;width:52px;height:52px;border-radius:26px;background:{OR};'
+             f'box-shadow:0 0 0 8px rgba(247,155,74,.35);font-family:Archivo;font-weight:800;font-size:28px;line-height:52px;text-align:center;color:#04101f">{n}</div>')
+frame('AD10-desperdicios-01-portada', True, 'Carrusel · 1 / 8', CY,
+      T(f'6 desperdicios que le roban horas {C_("a tu planta.")}', 70, 170, '#ffffff', lh=1.04)
+      + f'<div class="abs" style="left:{M}px;top:470px;width:{IW}px;height:{int(IW * 899 / 1400)}px;border-radius:22px;background-image:url({A_SRC});background-size:cover;box-shadow:0 30px 70px -30px rgba(0,0,0,.8)"></div>'
+      + dots
+      + T('Desliza y mira cómo se ve cada uno arreglado →', 30, 1100, CY, lh=1.3, cls='t'))
+for n, px, py, nom, et, a_, d_ in DESP:
+    frame(f'AD10-desperdicios-{n + 1:02d}-' + nom.split()[0].lower().translate(str.maketrans('áéíóú', 'aeiou')), True, f'Desperdicio {n} / 6 · {et}', CY,
+          T(nom + '.', 76, 168, '#ffffff', lh=1.0)
+          + zpanel(A_SRC, px, py, M, 300, IW, 418, 'ANTES', OR, a_, True)
+          + zpanel(D_SRC, px, py, M, 758, IW, 418, 'CON BOUW', CY, d_, False)
+          + f'<div class="abs" style="left:{W // 2 - 34}px;top:704px;width:68px;height:68px;border-radius:34px;background:{CY};box-shadow:0 0 0 8px {NAVY};font-family:Archivo;font-weight:800;font-size:36px;line-height:68px;text-align:center;color:#04101f">↓</div>')
+frame('AD10-desperdicios-08-cierre', True, 'Carrusel · 8 / 8', CY,
+      T(f'Los encontraste todos. {C_("Así se ve la misma planta con un solo flujo.")}', 62, 170, '#ffffff', lh=1.05)
+      + f'<div class="abs" style="left:{M}px;top:440px;width:{IW}px;height:{int(IW * 899 / 1400)}px;border-radius:22px;background-image:url({D_SRC});background-size:cover;box-shadow:0 30px 70px -30px rgba(79,214,232,.5)"></div>'
+      + T('¿Cuál de los seis tiene tu planta?', 44, 1060, '#ffffff', lh=1.2, cls='t')
+      + Pp('Medimos en piso de 1 a 2 semanas antes de proponer nada.', 1120, 28, '#c9d6e3', True))
+
+# ---------- UT01 · ¿No sabes por qué tu utilidad no crece? (evaluamos → encontramos → resolvemos) ----------
+def ut01(name, titulo):
+    o = (T(titulo, 76, 168, '#ffffff', lh=1.02)
+         + Pp(f'Evaluamos tu proceso y te damos la solución. <b style="color:#ffffff">Por ejemplo, en esta línea:</b>', 342, 31, '#c9d6e3', True, IW, M, 1.3))
+    # antes / con BOUW lado a lado
+    iw, ih, iy = 444, 270, 452
+    for i, (src, lab, col, filt) in enumerate([(fimg('lean-antes'), 'ANTES', OR, 'saturate(.72) brightness(.92)'), (fimg('lean-despues'), 'CON BOUW', CY, 'saturate(1.08)')]):
+        x = M + i * (iw + 24)
+        lw = int(len(lab) * 15 + 56)
+        o += (f'<div class="abs" style="left:{x}px;top:{iy}px;width:{iw}px;height:{ih}px;border-radius:18px;overflow:hidden;border:2px solid {col}66;box-shadow:0 20px 50px -24px rgba(0,0,0,.8)">'
+              f'<div style="position:absolute;inset:0;background-image:url({src});background-size:cover;background-position:center;filter:{filt}"></div></div>'
+              f'<div class="abs" style="left:{x + 16}px;top:{iy + 16}px;width:{lw}px;height:42px;border-radius:21px;background:{col};font-family:PlexMono;font-weight:500;'
+              f'font-size:18px;line-height:42px;letter-spacing:.14em;color:#04101f;text-align:center">{lab}</div>')
+    o += (f'<div class="abs" style="left:{W // 2 - 30}px;top:{iy + ih // 2 - 30}px;width:60px;height:60px;border-radius:30px;background:{CY};'
+          f'box-shadow:0 0 0 7px {NAVY};font-family:Archivo;font-weight:800;font-size:32px;line-height:60px;text-align:center;color:#04101f">→</div>')
+    # 3 pasos
+    steps = [('1', 'Evaluamos', 'Medimos la línea en piso: tiempos, esperas e inventarios.', '4', 'estaciones medidas', '#ffffff'),
+             ('2', 'Encontramos', 'Solo 3,7 de 29 minutos agregaban valor. La estación 2 frenaba a todas.', '13 %', 'del tiempo agregaba valor', OR),
+             ('3', 'Resolvimos', 'Balanceo de línea, 5S y acciones correctivas con su causa raíz.', '29→8', 'min de entrega (modelo)', GRN)]
+    cw, sy = 288, 760
+    for i, (n, ttl, d, big, lab, col) in enumerate(steps):
+        x = M + i * (cw + 24)
+        o += (f'<div class="abs" style="left:{x}px;top:{sy}px;width:{cw}px;height:420px;border-radius:20px;background:#071a2f;border:2px solid #15304d"></div>'
+              f'<div class="abs" style="left:{x + 24}px;top:{sy + 24}px;width:46px;height:46px;border-radius:23px;background:{CY};font-family:Archivo;font-weight:800;'
+              f'font-size:24px;line-height:46px;text-align:center;color:#04101f">{n}</div>'
+              + T(ttl, 30, sy + 31, '#ffffff', width=cw - 90, left=x + 82, lh=1.15, cls='t')
+              + Pp(d, sy + 96, 24, '#c9d6e3', True, cw - 48, x + 24, 1.35)
+              + f'<div class="abs" style="left:{x + 24}px;top:{sy + 286}px;width:{cw - 48}px;height:2px;background:#15304d"></div>'
+              + T(big, 58, sy + 302, col, width=cw - 48, left=x + 24, lh=1.05)
+              + Pp(lab, sy + 368, 20, '#8fa8c4', True, cw - 48, x + 24, 1.3))
+    frame(name, True, 'Diagnóstico BOUW', CY, o)
+
+
+for _n, _t in [('UT01-productividad', f'¿Por qué tu planta no es {C_("más productiva?")}'),
+               ('UT02-costos-de-produccion', f'¿Tus costos de producción {C_("no bajan?")}'),
+               ('UT03-rentabilidad', f'¿Produces más y {C_("ganas lo mismo?")}'),
+               ('UT04-eficiencia-operativa', f'¿Dónde se pierde tu {C_("eficiencia operativa?")}')]:
+    ut01(_n, _t)
+
+# ---------- UT05 / UT06 · Diagnóstico con imágenes REALES (fotos de planta y pantallas del sistema) ----------
+FR = 'file://' + os.path.join(ROOT, 'sitio', 'antes-despues', 'frames', 'contable-excel-es')
+
+
+def utreal(name, tag, titulo, sub, hero, hero_pos, hero_tag, cards, hero_size='cover'):
+    o = (T(titulo, 72, 164, '#ffffff', lh=1.02)
+         + Pp(sub, 330, 29, '#c9d6e3', True, IW, M, 1.3))
+    hy, hh = 430, 236
+    o += (f'<div class="abs" style="left:{M}px;top:{hy}px;width:{IW}px;height:{hh}px;border-radius:18px;overflow:hidden;border:2px solid rgba(79,214,232,.35);box-shadow:0 24px 60px -24px rgba(0,0,0,.8)">'
+          f'<div style="position:absolute;inset:0;background-image:url({hero});background-size:{hero_size};background-position:{hero_pos};filter:contrast(1.05) saturate(.95)"></div>'
+          f'<div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,16,31,.75),rgba(4,16,31,0) 45%)"></div></div>'
+          + pill(hero_tag, CY, True, M + 18, hy + hh - 68))
+    cw, sy = 288, 694
+    for i, (n, ttl, d, img, pos, big, lab, col) in enumerate(cards):
+        x = M + i * (cw + 24)
+        o += (f'<div class="abs" style="left:{x}px;top:{sy}px;width:{cw}px;height:490px;border-radius:20px;background:#071a2f;border:2px solid #15304d;overflow:hidden">'
+              f'<div style="position:absolute;left:0;top:0;width:{cw}px;height:176px;background-image:url({img});background-size:cover;background-position:{pos}"></div>'
+              f'<div style="position:absolute;left:0;top:120px;width:{cw}px;height:56px;background:linear-gradient(180deg,rgba(7,26,47,0),#071a2f)"></div></div>'
+              f'<div class="abs" style="left:{x + 20}px;top:{sy + 150}px;width:44px;height:44px;border-radius:22px;background:{CY};box-shadow:0 0 0 5px #071a2f;'
+              f'font-family:Archivo;font-weight:800;font-size:23px;line-height:44px;text-align:center;color:#04101f">{n}</div>'
+              + T(ttl, 30, sy + 206, '#ffffff', width=cw - 40, left=x + 20, lh=1.15, cls='t')
+              + Pp(d, sy + 250, 22, '#c9d6e3', True, cw - 40, x + 20, 1.35)
+              + f'<div class="abs" style="left:{x + 20}px;top:{sy + 374}px;width:{cw - 40}px;height:2px;background:#15304d"></div>'
+              + T(big, 50, sy + 388, col, width=cw - 40, left=x + 20, lh=1.05)
+              + Pp(lab, sy + 446, 18, '#8fa8c4', True, cw - 40, x + 20, 1.3))
+    frame(name, True, tag, CY, o)
+
+
+utreal('UT05-caso-real-planta', 'Diagnóstico BOUW · caso real', f'¿Produces más y {C_("ganas lo mismo?")}',
+       f'Evaluamos tu proceso y te damos la solución. <b style="color:#fff">Caso real, en esta línea:</b>',
+       fimg('mejora-linea-extrusion'), 'center 58%', 'Línea de producción · 2 turnos',
+       [('1', 'Evaluamos', 'Medimos en la línea: tiempos, esperas y hasta el agua de enfriamiento.', fimg('mejora-termometro'), 'center 70%', '2', 'turnos, mismo criterio', '#ffffff'),
+        ('2', 'Encontramos', 'Mucho tiempo en preparar y piezas que se fabricaban dos veces.', fimg('mejora-perfil-seccion'), 'center 45%', '×2', 'se pagaba cada pieza mala', OR),
+        ('3', 'Resolvimos', 'Trabajo estándar, 5S y 4 operadores capacitados. Preparación −15 %.', fimg('mejora-producto-paletizado'), 'center 50%', '−20 %', 'menos reprocesos (medido)', GRN)])
+
+utreal('UT06-caso-real-automatizacion', 'Automatización · caso real', f'¿Tu cierre de mes {C_("todavía se arma a mano?")}',
+       f'Evaluamos tu proceso y lo automatizamos. <b style="color:#fff">Caso real, en este sistema:</b>',
+       f'{FR}/13.jpg', 'center 14%', 'Taller de manufactura · Excel + VBA',
+       [('1', 'Evaluamos', 'Seguimos cada dato desde que nace hasta el cierre de mes.', f'{FR}/05.jpg', 'left 8%', 'a mano', 'así se armaba el cierre', OR),
+        ('2', 'Conectamos', 'Clientes, productos, kits, ventas y gastos en un solo archivo.', f'{FR}/09.jpg', 'left 10%', '11', 'hojas conectadas por macros', '#ffffff'),
+        ('3', 'Automatizamos', 'Las facturas del SRI entran solas y el tablero se recalcula.', f'{FR}/04.jpg', 'center 12%', '0', 'licencias nuevas', GRN)],
+       hero_size='118% auto')
+
 # ---------- escribir ----------
 for f in os.listdir(OUT):
     if f.endswith('.html'):
