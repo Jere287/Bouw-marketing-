@@ -15,5 +15,9 @@ Applying Lean Manufacturing (5S, Flow, Standard work, Kaizen): We fix the proces
 WITH BOUW: Organized. Released. On its way.
 
 5
-00:00:13,000 --> 00:00:16,200
+00:00:13,000 --> 00:00:15,600
+Measured result: −15 % setup time · −20 % rework
+
+6
+00:00:15,600 --> 00:00:18,800
 We don’t change your people. We improve your process. · www.bouwlatam.com

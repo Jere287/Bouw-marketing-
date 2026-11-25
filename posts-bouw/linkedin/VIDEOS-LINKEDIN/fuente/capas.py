@@ -97,6 +97,17 @@ def build(cfg):
             f'<div class="a h" style="left:{(W - 640) // 2}px;top:930px;width:640px;text-align:center;font-size:44px;line-height:96px;color:#04101f;letter-spacing:-0.01em">www.bouwlatam.com</div>'
             f'<div class="a m" style="left:0;top:1070px;width:{W}px;text-align:center;font-size:22px;line-height:32px;color:#9fb3c8">{e["sub"]}</div>')
     files['end'] = page(endb)
+    if cfg.get('stats'):
+        st_ = cfg['stats']
+        sb = (f'<div class="a m" style="left:0;top:330px;width:{W}px;text-align:center;font-size:24px;line-height:32px;color:{CY};letter-spacing:.3em">{st_["kicker"]}</div>'
+              f'<div class="a h" style="left:{M}px;top:380px;width:{W - 2 * M}px;text-align:center;font-size:60px;line-height:66px">{st_["title"]}</div>')
+        for j, (num, lab) in enumerate(st_['items']):
+            x = M + j * ((W - 2 * M) // 2)
+            sb += (f'<div class="a" style="left:{x + 12}px;top:540px;width:{(W - 2 * M) // 2 - 24}px;height:330px;border-radius:26px;background:#071a2f;border:2px solid rgba(79,214,232,.4)"></div>'
+                   f'<div class="a h" style="left:{x}px;top:590px;width:{(W - 2 * M) // 2}px;text-align:center;font-size:112px;line-height:160px;color:{GRN}">{num}</div>'
+                   f'<div class="a h" style="left:{x}px;top:770px;width:{(W - 2 * M) // 2}px;text-align:center;font-size:36px;line-height:44px;font-weight:600">{lab}</div>')
+        sb += f'<div class="a p" style="left:0;top:930px;width:{W}px;text-align:center;font-size:26px;line-height:36px;color:#9fb3c8">{st_["foot"]}</div>'
+        files['stats'] = page(sb)
     # barra de progreso
     files['bar'] = (f'<!doctype html><html><head><style>*{{margin:0}}body{{background:transparent}}</style></head><body>'
                     f'<div style="width:{W - 2 * M}px;height:6px;border-radius:3px;background:linear-gradient(90deg,{CY},{GRN})"></div></body></html>')
@@ -115,6 +126,7 @@ CFGS = [
       caps=[(0, 5.2, 'HOY', OR, f'Buscando. Esperando.<br>{O("Detenido.")}'),
             (5.2, 7.6, 'LEAN', CY, f'Ordenamos el proceso,<br>{C("paso a paso.")}'),
             (7.6, 13.0, 'CON BOUW', GRN, f'Ordenado. Liberado.<br>{C("En camino.")}')],
+      stats=dict(kicker='Resultado medido', title='Caso real de mejora continua', items=[('−15 %', 'tiempo de<br>preparación'), ('−20 %', 'reprocesos')], foot='Línea de producción de dos turnos · 4 operadores capacitados'),
       cs=58, end=dict(lema='Del diseño a la realidad.', cta='No cambiamos a tu gente.<br>Mejoramos tu proceso.', sub='Mejora de procesos · Mejora continua · Producción')),
  dict(key='excel-es', src='v3', trim=34.0, crop=(1440, 962, 0, 0), box=(M, 360, W - 2 * M, round((W - 2 * M) * 962 / 1440)),
       tag='Automatización · Excel + VBA', hook=f'¿Tu cierre de mes todavía se arma {C("a mano?")}', hs=70,
@@ -130,6 +142,7 @@ CFGS = [
       caps=[(0, 5.2, 'TODAY', OR, f'Searching. Waiting.<br>{O("Stuck.")}'),
             (5.2, 7.6, 'LEAN', CY, f'We fix the process,<br>{C("step by step.")}'),
             (7.6, 13.0, 'WITH BOUW', GRN, f'Organized. Released.<br>{C("On its way.")}')],
+      stats=dict(kicker='Measured result', title='Real continuous improvement case', items=[('−15 %', 'setup<br>time'), ('−20 %', 'rework')], foot='Two-shift production line · 4 operators trained'),
       cs=58, end=dict(lema='From design to reality.', cta='We don’t change your people.<br>We improve your process.', sub='Process improvement · Continuous improvement · Production')),
  dict(key='excel-en', src='v2', trim=34.0, crop=(1440, 962, 0, 0), box=(M, 360, W - 2 * M, round((W - 2 * M) * 962 / 1440)),
       tag='Automation · Excel + VBA', hook=f'Is your month-end close still {C("done by hand?")}', hs=70,

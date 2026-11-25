@@ -15,5 +15,9 @@ Aplicando Lean Manufacturing (5S, Flujo continuo, Trabajo estándar, Kaizen): Or
 CON BOUW: Ordenado. Liberado. En camino.
 
 5
-00:00:13,000 --> 00:00:16,200
+00:00:13,000 --> 00:00:15,600
+Resultado medido: −15 % tiempo de preparación · −20 % reprocesos
+
+6
+00:00:15,600 --> 00:00:18,800
 No cambiamos a tu gente. Mejoramos tu proceso. · www.bouwlatam.com
