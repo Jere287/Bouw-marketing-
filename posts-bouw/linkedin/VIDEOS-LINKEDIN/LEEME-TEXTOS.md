@@ -58,21 +58,21 @@ Primer comentario: `Haz la cuenta de cuánto te cuesta hacerlo a mano 👉 www.b
 
 ### 2. `BOUW-mejora-de-procesos-hoy-vs-con-BOUW` (español)
 
-Palabras clave: mejora de procesos, mejora continua, productividad, 5S, Lean.
+Palabras clave: mejora de procesos, trazabilidad, liberación de lotes, tiempo de entrega.
 
 ```
-¿Tu equipo pierde horas buscando papeles? 📂
+Tu pedido ya está listo. ¿Por qué no sale? 📦
 
-HOY: papeles por todos lados, información que nadie encuentra y producto detenido esperando.
-CON BOUW: cada cosa en su sitio, la información en pantalla y el producto fluye. ✅
+HOY: la analista busca el registro del lote entre papeles. El operador espera de brazos cruzados junto al pallet, porque no puede salir sin ese papel.
+CON BOUW: el registro aparece en pantalla en minutos, el lote se libera y el pedido sale. ✅
 
-Mismo equipo. Mismo espacio. Otro proceso.
+El producto estaba listo. Faltaba el proceso.
 
-Eso es mejora de procesos: medimos cómo trabaja hoy tu operación, encontramos dónde se pierde el tiempo y lo ordenamos para que no vuelva a pasar.
+Eso es mejora de procesos: encontrar dónde se frena tu operación (muchas veces fuera de la línea) y ordenarlo para que no vuelva a pasar.
 
-¿Cuántas horas a la semana pierde tu equipo buscando información? 👇
+¿Cuánto tiempo pasa en tu empresa entre "producto terminado" y "pedido despachado"? 👇
 
-#MejoraDeProcesos #MejoraContinua #Productividad #5S #Lean #EficienciaOperativa #Pymes #Manufactura #Quito #Monterrey
+#MejoraDeProcesos #Trazabilidad #LiberaciónDeLotes #TiempoDeEntrega #MejoraContinua #Calidad #Manufactura #Quito #Monterrey
 ```
 Primer comentario: `Diagnóstico de procesos gratis 👉 www.bouwlatam.com`
 
@@ -102,15 +102,13 @@ First comment: `See it live 👉 www.bouwlatam.com`
 ### 4. `BOUW-process-improvement-today-vs-with-BOUW` (inglés)
 
 ```
-Is your team losing hours searching for paperwork? 📂
+Your order is ready. Why isn't it shipping? 📦
 
-TODAY: paper everywhere, information nobody can find and product stuck waiting.
-WITH BOUW: everything in its place, information on screen and product that flows. ✅
+TODAY: she digs through paper for the lot record. He waits, arms crossed, next to the pallet: it can't ship without that record.
+WITH BOUW: the record is on screen in minutes, the lot is released and the order ships. ✅
 
-Same team. Same space. A better process.
+The product was ready. The process wasn't.
 
-That's process improvement: we measure how your operation works today, find where time is lost and fix it so it doesn't come back.
-
-#ProcessImprovement #ContinuousImprovement #Productivity #Lean #5S #OperationalExcellence #Manufacturing #Nearshoring #Mexico
+#ProcessImprovement #Traceability #LotRelease #LeadTime #ContinuousImprovement #QualityManagement #Manufacturing #Nearshoring #Mexico
 ```
 First comment: `Free process assessment 👉 www.bouwlatam.com`

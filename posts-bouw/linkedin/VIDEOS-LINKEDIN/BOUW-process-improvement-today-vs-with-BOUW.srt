@@ -1,15 +1,15 @@
 1
 00:00:00,000 --> 00:00:01,500
-Is your team losing hours searching for paperwork?
+Your order is ready. Why isn’t it shipping?
 
 2
 00:00:01,500 --> 00:00:06,000
-TODAY: Paper everywhere, information nobody can find and product stuck waiting.
+TODAY: She digs through paper for the lot record. He waits, arms crossed: the pallet can’t ship without it.
 
 3
 00:00:06,000 --> 00:00:13,000
-WITH BOUW: Everything in its place, information on screen and product that flows.
+WITH BOUW: The record is on screen in minutes, the lot is released and the order ships.
 
 4
 00:00:13,000 --> 00:00:16,200
-Same team. Same space. A better process. · www.bouwlatam.com
+The product was ready. The process wasn’t. · www.bouwlatam.com
