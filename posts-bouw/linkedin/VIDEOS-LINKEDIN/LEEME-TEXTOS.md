@@ -35,24 +35,25 @@ Son los 4 videos de www.bouwlatam.com, editados para LinkedIn.
 
 ### 1. `BOUW-automatizacion-cierre-de-mes-Excel` (español) · ⭐ el principal
 
-Palabras clave: automatización de procesos, cierre de mes, Excel, facturación electrónica SRI.
-
 ```
-¿Tu cierre de mes todavía se arma a mano? ⏳
+¿Cuántas horas al mes pierde tu equipo haciendo lo mismo? ⏳
 
-Mira cómo se ve automatizado 👇
-📁 Un solo archivo de Excel con 11 hojas conectadas por macros
-🧾 Las facturas electrónicas del SRI entran solas, sin volver a teclear
-📦 Cada kit se costea desde su despiece y el inventario avisa antes de que falte
-📊 El tablero de ingresos, gastos, cartera y margen se recalcula solo
-✅ El cierre de mes ya no se arma a mano: sale de lo que ya está capturado
+Teclear la misma factura en dos sistemas.
+Contar el inventario para saber qué falta.
+Armar el mismo reporte cada lunes.
+Esperar días para cerrar el mes.
 
-Sin cambiar de sistema. Sin licencias nuevas. Con la herramienta que tu equipo ya sabe usar.
+Con automatización de procesos:
+Las facturas ya no se teclean.
+El inventario ya no se cuenta.
+Los reportes ya no se arman.
+El cierre de mes ya no se espera.
 
-Automatización de procesos para pymes y empresas que fabrican, en Ecuador y México.
-Si se repite, se automatiza. ¿Qué proceso de tu empresa sigue a mano? 👇
+No es más trabajo. Es menos.
 
-#AutomatizaciónDeProcesos #CierreContable #Excel #VBA #FacturaciónElectrónica #SRI #Pymes #TransformaciónDigital #Ecuador #México
+Si se repite, se automatiza. ¿Qué tarea quitarías primero? 👇
+
+#AutomatizaciónDeProcesos #Automatización #Productividad #Excel #Pymes #TransformaciónDigital #Quito #Monterrey
 ```
 Primer comentario: `Haz la cuenta de cuánto te cuesta hacerlo a mano 👉 www.bouwlatam.com`
 
@@ -77,24 +78,25 @@ Primer comentario: `Diagnóstico de procesos gratis 👉 www.bouwlatam.com`
 
 ### 3. `BOUW-month-end-close-automation-Excel` (inglés)
 
-Para clientes de Monterrey que trabajan en inglés o para empresas de fuera.
-
 ```
-Is your month-end close still done by hand? ⏳
+How many hours a month does your team spend doing the same thing? ⏳
 
-Here's what it looks like automated 👇
-📁 One Excel file, 11 sheets wired together with macros
-🧾 E-invoices load themselves, no retyping
-📦 Each kit is costed from its bill of materials, and stock warns before it runs out
-📊 Income, expenses, receivables and margin recalculate on their own
-✅ The close comes straight from what's already captured
+Retyping the same invoice in two systems.
+Counting inventory to see what's missing.
+Building the same report every Monday.
+Waiting days to close the month.
 
-No new system. No new licenses. The tool your team already knows.
+With process automation:
+Invoices: no more retyping.
+Inventory: no more counting.
+Reports: no more building.
+Month-end close: no more waiting.
 
-Process automation for manufacturers in Latin America.
-If it repeats, automate it. 👇
+It's not more work. It's less.
 
-#ProcessAutomation #MonthEndClose #Excel #VBA #Manufacturing #DigitalTransformation #SMB #Mexico #Nearshoring
+If it repeats, automate it. Which task would you remove first? 👇
+
+#ProcessAutomation #Automation #Productivity #Excel #SMB #DigitalTransformation #Mexico
 ```
 First comment: `See it live 👉 www.bouwlatam.com`
 

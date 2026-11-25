@@ -1,27 +1,31 @@
 1
 00:00:00,000 --> 00:00:01,500
-¿Tu cierre de mes todavía se arma a mano?
+¿Cuántas horas al mes pierde tu equipo haciendo lo mismo?
 
 2
 00:00:01,500 --> 00:00:03,000
-UN SOLO ARCHIVO: 11 hojas de Excel conectadas por macros.
+Todo en un solo lugar.
 
 3
 00:00:03,000 --> 00:00:11,000
-01 · FACTURAS: Las facturas electrónicas del SRI entran solas, sin volver a teclear.
+Las facturas: ya no se teclean.
 
 4
 00:00:11,000 --> 00:00:19,000
-02 · INVENTARIO: Cada kit se costea desde su despiece y el stock avisa antes de faltar.
+El inventario: ya no se cuenta.
 
 5
 00:00:19,000 --> 00:00:28,000
-03 · TABLERO: Ingresos, gastos, cartera y margen: se recalcula solo.
+Los reportes: ya no se arman.
 
 6
 00:00:28,000 --> 00:00:34,000
-04 · CIERRE DE MES: El cierre ya no se arma a mano: sale de lo ya capturado.
+El cierre de mes: ya no se espera.
 
 7
-00:00:34,000 --> 00:00:37,200
-¿Qué proceso tuyo sigue a mano? · www.bouwlatam.com
+00:00:34,000 --> 00:00:36,600
+No es más trabajo. Es menos. 11 hojas conectadas · 0 licencias nuevas
+
+8
+00:00:36,600 --> 00:00:39,800
+Si se repite, se automatiza. ¿Qué tarea quitarías primero? · www.bouwlatam.com

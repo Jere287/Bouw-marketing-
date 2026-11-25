@@ -1,27 +1,31 @@
 1
 00:00:00,000 --> 00:00:01,500
-Is your month-end close still done by hand?
+How many hours a month does your team spend doing the same thing?
 
 2
 00:00:01,500 --> 00:00:03,000
-ONE FILE: 11 Excel sheets wired together with macros.
+Everything in one place.
 
 3
 00:00:03,000 --> 00:00:11,000
-01 · INVOICES: E-invoices load themselves, no retyping.
+Invoices: no more retyping.
 
 4
 00:00:11,000 --> 00:00:19,000
-02 · INVENTORY: Each kit is costed from its bill of materials and stock warns before it runs out.
+Inventory: no more counting.
 
 5
 00:00:19,000 --> 00:00:28,000
-03 · DASHBOARD: Income, expenses, receivables and margin: it recalculates itself.
+Reports: no more building.
 
 6
 00:00:28,000 --> 00:00:34,000
-04 · MONTH-END: The close is no longer assembled by hand: it comes from what is already captured.
+Month-end close: no more waiting.
 
 7
-00:00:34,000 --> 00:00:37,200
-Which of your processes is still manual? · www.bouwlatam.com
+00:00:34,000 --> 00:00:36,600
+It’s not more work. It’s less. 11 connected sheets · 0 new licenses
+
+8
+00:00:36,600 --> 00:00:39,800
+If it repeats, automate it. Which task would you remove first? · www.bouwlatam.com
