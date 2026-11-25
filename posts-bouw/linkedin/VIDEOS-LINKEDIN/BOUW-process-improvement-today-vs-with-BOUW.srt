@@ -1,15 +1,15 @@
 1
 00:00:00,000 --> 00:00:01,500
-Your order is ready. Why isn’t it shipping?
+Your product is ready. Your paperwork isn’t.
 
 2
 00:00:01,500 --> 00:00:06,000
-TODAY: She digs through paper for the lot record. He waits, arms crossed: the pallet can’t ship without it.
+TODAY: One lost record. One stalled order.
 
 3
 00:00:06,000 --> 00:00:13,000
-WITH BOUW: The record is on screen in minutes, the lot is released and the order ships.
+WITH BOUW: One click. Lot released. Order on its way.
 
 4
 00:00:13,000 --> 00:00:16,200
-The product was ready. The process wasn’t. · www.bouwlatam.com
+The bottleneck isn’t always on the line. · www.bouwlatam.com

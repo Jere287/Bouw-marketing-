@@ -58,23 +58,26 @@ Primer comentario: `Haz la cuenta de cuánto te cuesta hacerlo a mano 👉 www.b
 
 ### 2. `BOUW-mejora-de-procesos-hoy-vs-con-BOUW` (español)
 
-Palabras clave: mejora de procesos, trazabilidad, liberación de lotes, tiempo de entrega.
+Palabras clave: mejora de procesos, cuello de botella, trazabilidad, tiempo de entrega.
 
 ```
-Tu pedido ya está listo. ¿Por qué no sale? 📦
+Tu producto está listo. Tu papeleo no. 📦
 
-HOY: la analista busca el registro del lote entre papeles. El operador espera de brazos cruzados junto al pallet, porque no puede salir sin ese papel.
-CON BOUW: el registro aparece en pantalla en minutos, el lote se libera y el pedido sale. ✅
+Un papel perdido = un pedido parado.
+Y mientras alguien lo busca, el cliente espera.
 
-El producto estaba listo. Faltaba el proceso.
+Con BOUW: un clic, lote liberado, pedido en camino. ✅
 
-Eso es mejora de procesos: encontrar dónde se frena tu operación (muchas veces fuera de la línea) y ordenarlo para que no vuelva a pasar.
+El cuello de botella no siempre está en la línea de producción.
+A veces está en una carpeta.
 
-¿Cuánto tiempo pasa en tu empresa entre "producto terminado" y "pedido despachado"? 👇
+Lo encontramos y lo resolvemos. Eso es mejora de procesos.
 
-#MejoraDeProcesos #Trazabilidad #LiberaciónDeLotes #TiempoDeEntrega #MejoraContinua #Calidad #Manufactura #Quito #Monterrey
+¿Dónde se frena tu operación? 👇
+
+#MejoraDeProcesos #CuelloDeBotella #Trazabilidad #TiempoDeEntrega #MejoraContinua #Manufactura #Quito #Monterrey
 ```
-Primer comentario: `Diagnóstico de procesos gratis 👉 www.bouwlatam.com`
+Primer comentario: `Encuentra tu cuello de botella: diagnóstico gratis 👉 www.bouwlatam.com`
 
 ### 3. `BOUW-month-end-close-automation-Excel` (inglés)
 
@@ -102,13 +105,18 @@ First comment: `See it live 👉 www.bouwlatam.com`
 ### 4. `BOUW-process-improvement-today-vs-with-BOUW` (inglés)
 
 ```
-Your order is ready. Why isn't it shipping? 📦
+Your product is ready. Your paperwork isn't. 📦
 
-TODAY: she digs through paper for the lot record. He waits, arms crossed, next to the pallet: it can't ship without that record.
-WITH BOUW: the record is on screen in minutes, the lot is released and the order ships. ✅
+One lost record = one stalled order.
+And while someone looks for it, your customer waits.
 
-The product was ready. The process wasn't.
+With BOUW: one click, lot released, order on its way. ✅
 
-#ProcessImprovement #Traceability #LotRelease #LeadTime #ContinuousImprovement #QualityManagement #Manufacturing #Nearshoring #Mexico
+The bottleneck isn't always on the production line.
+Sometimes it's in a folder.
+
+We find it and fix it. That's process improvement.
+
+#ProcessImprovement #Bottleneck #Traceability #LeadTime #ContinuousImprovement #Manufacturing #Nearshoring #Mexico
 ```
-First comment: `Free process assessment 👉 www.bouwlatam.com`
+First comment: `Find your bottleneck, free assessment 👉 www.bouwlatam.com`

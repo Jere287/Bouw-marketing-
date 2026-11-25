@@ -1,15 +1,15 @@
 1
 00:00:00,000 --> 00:00:01,500
-Tu pedido ya está listo. ¿Por qué no sale?
+Tu producto está listo. Tu papeleo no.
 
 2
 00:00:01,500 --> 00:00:06,000
-HOY: Ella busca el registro del lote entre papeles. Él espera de brazos cruzados: el pallet no puede salir sin ese papel.
+HOY: Un papel perdido. Un pedido parado.
 
 3
 00:00:06,000 --> 00:00:13,000
-CON BOUW: El registro aparece en pantalla en minutos, el lote se libera y el pedido sale.
+CON BOUW: Un clic. Lote liberado. Pedido en camino.
 
 4
 00:00:13,000 --> 00:00:16,200
-El producto estaba listo. Faltaba el proceso. · www.bouwlatam.com
+El cuello de botella no siempre está en la línea. · www.bouwlatam.com

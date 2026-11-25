@@ -90,12 +90,13 @@ def build(cfg):
 
 
 C = lambda t: f'<span style="color:{CY}">{t}</span>'
+O = lambda t: f'<span style="color:{OR}">{t}</span>'
 CFGS = [
  dict(key='cumplimiento-es', src='v1', trim=13.0, crop=None, box=(M, 400, W - 2 * M, round((W - 2 * M) * 9 / 16)),
-      tag='Mejora de procesos', hook=f'Tu pedido ya está listo. {C("¿Por qué no sale?")}',
-      caps=[(0, 6.0, 'HOY', OR, 'Ella busca el registro del lote entre papeles. Él espera de brazos cruzados: el pallet no puede salir sin ese papel.'),
-            (6.0, 13.0, 'CON BOUW', GRN, f'El registro aparece en pantalla en minutos, el lote se libera y {C("el pedido sale.")}')],
-      cs=36, end=dict(lema='Del diseño a la realidad.', cta='El producto estaba listo. Faltaba el proceso.', sub='Mejora de procesos · Trazabilidad · Liberación de lotes')),
+      tag='Mejora de procesos', hook=f'Tu producto está listo. {C("Tu papeleo no.")}', hs=80,
+      caps=[(0, 6.0, 'HOY', OR, f'Un papel perdido.<br>{O("Un pedido parado.")}'),
+            (6.0, 13.0, 'CON BOUW', GRN, f'Un clic. Lote liberado.<br>{C("Pedido en camino.")}')],
+      cs=56, end=dict(lema='Del diseño a la realidad.', cta=f'El cuello de botella<br>no siempre está en la línea.', sub='Mejora de procesos · Trazabilidad · Liberación de lotes')),
  dict(key='excel-es', src='v3', trim=34.0, crop=(1440, 962, 0, 0), box=(M, 360, W - 2 * M, round((W - 2 * M) * 962 / 1440)),
       tag='Automatización · Excel + VBA', hook=f'¿Tu cierre de mes todavía se arma {C("a mano?")}', hs=70,
       caps=[(0, 3, 'UN SOLO ARCHIVO', CY, f'11 hojas de Excel {C("conectadas por macros.")}'),
@@ -105,10 +106,10 @@ CFGS = [
             (28, 34, '04 · CIERRE DE MES', GRN, f'El cierre ya no se arma a mano: {C("sale de lo ya capturado.")}')],
       cs=36, end=dict(lema='Si se repite, se automatiza.', cta='¿Qué proceso tuyo sigue a mano?', sub='Automatización de procesos · Excel · VBA · Dashboards')),
  dict(key='compliance-en', src='v0', trim=13.0, crop=None, box=(M, 400, W - 2 * M, round((W - 2 * M) * 9 / 16)),
-      tag='Process improvement', hook=f'Your order is ready. {C("Why isn’t it shipping?")}',
-      caps=[(0, 6.0, 'TODAY', OR, 'She digs through paper for the lot record. He waits, arms crossed: the pallet can’t ship without it.'),
-            (6.0, 13.0, 'WITH BOUW', GRN, f'The record is on screen in minutes, the lot is released and {C("the order ships.")}')],
-      cs=36, end=dict(lema='From design to reality.', cta='The product was ready. The process wasn’t.', sub='Process improvement · Traceability · Lot release')),
+      tag='Process improvement', hook=f'Your product is ready. {C("Your paperwork isn’t.")}', hs=78,
+      caps=[(0, 6.0, 'TODAY', OR, f'One lost record.<br>{O("One stalled order.")}'),
+            (6.0, 13.0, 'WITH BOUW', GRN, f'One click. Lot released.<br>{C("Order on its way.")}')],
+      cs=56, end=dict(lema='From design to reality.', cta='The bottleneck isn’t<br>always on the line.', sub='Process improvement · Traceability · Lot release')),
  dict(key='excel-en', src='v2', trim=34.0, crop=(1440, 962, 0, 0), box=(M, 360, W - 2 * M, round((W - 2 * M) * 962 / 1440)),
       tag='Automation · Excel + VBA', hook=f'Is your month-end close still {C("done by hand?")}', hs=70,
       caps=[(0, 3, 'ONE FILE', CY, f'11 Excel sheets {C("wired together with macros.")}'),
