@@ -3,8 +3,8 @@ V = '/tmp/claude-0/-home-user-Bouw-marketing-/ae718e48-3374-5ea4-b0dc-c539d41ea8
 OUTD = sys.argv[1]
 os.makedirs(OUTD, exist_ok=True)
 END = 3.2
-NAMES = {'cumplimiento-es': 'BOUW-auditoria-BPM-hoy-vs-con-BOUW', 'excel-es': 'BOUW-automatizacion-cierre-de-mes-Excel',
-         'compliance-en': 'BOUW-GMP-audit-today-vs-with-BOUW', 'excel-en': 'BOUW-month-end-close-automation-Excel'}
+NAMES = {'cumplimiento-es': 'BOUW-mejora-de-procesos-hoy-vs-con-BOUW', 'excel-es': 'BOUW-automatizacion-cierre-de-mes-Excel',
+         'compliance-en': 'BOUW-process-improvement-today-vs-with-BOUW', 'excel-en': 'BOUW-month-end-close-automation-Excel'}
 for k in sys.argv[2:]:
     d = f'{V}/build/{k}'
     c = json.load(open(f'{d}/cfg.json'))

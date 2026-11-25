@@ -56,25 +56,25 @@ Si se repite, se automatiza. ¿Qué proceso de tu empresa sigue a mano? 👇
 ```
 Primer comentario: `Haz la cuenta de cuánto te cuesta hacerlo a mano 👉 www.bouwlatam.com`
 
-### 2. `BOUW-auditoria-BPM-hoy-vs-con-BOUW` (español)
+### 2. `BOUW-mejora-de-procesos-hoy-vs-con-BOUW` (español)
 
-Palabras clave: auditoría BPM, cumplimiento normativo, trazabilidad, sistema de gestión de calidad.
+Palabras clave: mejora de procesos, mejora continua, productividad, 5S, Lean.
 
 ```
-¿Tu planta pasaría una auditoría mañana? 🕵️
+¿Tu equipo pierde horas buscando papeles? 📂
 
-HOY: desviaciones que vuelven, registros que nadie encuentra y un lote retenido.
-CON BOUW: carpeta de inspección lista, cada registro en su sitio, trazabilidad en minutos y el lote liberado. ✅
+HOY: papeles por todos lados, información que nadie encuentra y producto detenido esperando.
+CON BOUW: cada cosa en su sitio, la información en pantalla y el producto fluye. ✅
 
-Convertimos la documentación dispersa en un sistema de gestión de calidad sólido y trazable, listo para cualquier inspección de autoridades o clientes.
+Mismo equipo. Mismo espacio. Otro proceso.
 
-BPM · ISO · CAPA · Trazabilidad · Batch records · Auditorías internas
+Eso es mejora de procesos: medimos cómo trabaja hoy tu operación, encontramos dónde se pierde el tiempo y lo ordenamos para que no vuelva a pasar.
 
-Agenda un diagnóstico de calidad gratis antes de tu próxima inspección 👇
+¿Cuántas horas a la semana pierde tu equipo buscando información? 👇
 
-#AuditoríaBPM #CumplimientoNormativo #GestiónDeCalidad #Trazabilidad #ISO9001 #BPM #IndustriaAlimentaria #Manufactura #Quito #Monterrey
+#MejoraDeProcesos #MejoraContinua #Productividad #5S #Lean #EficienciaOperativa #Pymes #Manufactura #Quito #Monterrey
 ```
-Primer comentario: `Diagnóstico de calidad gratis 👉 www.bouwlatam.com`
+Primer comentario: `Diagnóstico de procesos gratis 👉 www.bouwlatam.com`
 
 ### 3. `BOUW-month-end-close-automation-Excel` (inglés)
 
@@ -99,16 +99,18 @@ If it repeats, automate it. 👇
 ```
 First comment: `See it live 👉 www.bouwlatam.com`
 
-### 4. `BOUW-GMP-audit-today-vs-with-BOUW` (inglés)
+### 4. `BOUW-process-improvement-today-vs-with-BOUW` (inglés)
 
 ```
-Would your plant pass an audit tomorrow? 🕵️
+Is your team losing hours searching for paperwork? 📂
 
-TODAY: recurring deviations, records nobody can find and a lot on hold.
-WITH BOUW: inspection folder ready, every record in its place, traceability in minutes and the lot released. ✅
+TODAY: paper everywhere, information nobody can find and product stuck waiting.
+WITH BOUW: everything in its place, information on screen and product that flows. ✅
 
-We turn scattered paperwork into a solid, traceable quality management system, ready for any regulatory or customer audit.
+Same team. Same space. A better process.
 
-#GMP #QualityManagement #RegulatoryCompliance #Traceability #ISO9001 #CAPA #Manufacturing #Nearshoring #Mexico
+That's process improvement: we measure how your operation works today, find where time is lost and fix it so it doesn't come back.
+
+#ProcessImprovement #ContinuousImprovement #Productivity #Lean #5S #OperationalExcellence #Manufacturing #Nearshoring #Mexico
 ```
-First comment: `Free quality assessment 👉 www.bouwlatam.com`
+First comment: `Free process assessment 👉 www.bouwlatam.com`
