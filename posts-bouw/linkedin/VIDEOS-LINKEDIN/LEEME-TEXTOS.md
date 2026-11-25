@@ -62,6 +62,7 @@ Primer comentario: `Haz la cuenta de cuánto te cuesta hacerlo a mano 👉 www.b
 Mismo equipo. Misma planta. Otro resultado. ⚙️
 
 HOY: buscando, esperando, detenido.
+APLICANDO LEAN MANUFACTURING: 5S, flujo continuo, trabajo estándar y kaizen.
 CON BOUW: ordenado, liberado, en camino.
 
 No cambiamos a tu gente. Mejoramos tu proceso.
@@ -70,7 +71,7 @@ Mejora de procesos y mejora continua para empresas que producen, en Ecuador y M�
 
 ¿Qué parte de tu producción se detiene más seguido? 👇
 
-#MejoraDeProcesos #MejoraContinua #Producción #Productividad #Lean #Quito #Monterrey
+#MejoraDeProcesos #MejoraContinua #LeanManufacturing #Producción #5S #Kaizen #Productividad #Quito #Monterrey
 ```
 Primer comentario: `Diagnóstico de procesos gratis 👉 www.bouwlatam.com`
 
@@ -103,12 +104,13 @@ First comment: `See it live 👉 www.bouwlatam.com`
 Same team. Same plant. A different result. ⚙️
 
 TODAY: searching, waiting, stuck.
+APPLYING LEAN MANUFACTURING: 5S, flow, standard work and kaizen.
 WITH BOUW: organized, released, on its way.
 
 We don't change your people. We improve your process.
 
 Process improvement and continuous improvement for manufacturers in Ecuador and Mexico.
 
-#ProcessImprovement #ContinuousImprovement #Production #Productivity #Lean #Manufacturing #Mexico
+#ProcessImprovement #ContinuousImprovement #LeanManufacturing #5S #Kaizen #Production #Manufacturing #Mexico
 ```
 First comment: `Free process assessment 👉 www.bouwlatam.com`

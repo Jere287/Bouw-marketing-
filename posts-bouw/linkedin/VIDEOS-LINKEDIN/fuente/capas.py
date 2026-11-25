@@ -66,6 +66,23 @@ def build(cfg):
     # subtítulos por escena (transparentes)
     cy0 = vy + vh + 26
     for i, (a, b, lab, col, txt) in enumerate(cfg['caps']):
+        if lab.startswith('LEAN'):
+            tools = cfg['lean_tools']
+            cx, cyc = vx + vw // 2, vy + vh // 2
+            chips = ''
+            cw_, gap = 196, 14
+            x0 = cx - (len(tools) * cw_ + (len(tools) - 1) * gap) // 2
+            for j, t_ in enumerate(tools):
+                chips += (f'<div class="a" style="left:{x0 + j * (cw_ + gap)}px;top:{cyc + 40}px;width:{cw_}px;height:52px;border-radius:26px;background:rgba(4,16,31,.85);border:2px solid {CY}"></div>'
+                          f'<div class="a m" style="left:{x0 + j * (cw_ + gap)}px;top:{cyc + 40}px;width:{cw_}px;height:52px;text-align:center;font-size:17px;line-height:52px;color:#fff;letter-spacing:.08em">{t_}</div>')
+            body = (f'<div class="a" style="left:{vx}px;top:{vy}px;width:{vw}px;height:{vh}px;border-radius:24px;background:radial-gradient(ellipse at center,rgba(4,16,31,.78),rgba(4,16,31,.45) 75%)"></div>'
+                    f'<div class="a m" style="left:{vx}px;top:{cyc - 96}px;width:{vw}px;text-align:center;font-size:22px;line-height:30px;color:{CY};letter-spacing:.3em">{cfg["lean_kicker"]}</div>'
+                    f'<div class="a h" style="left:{vx}px;top:{cyc - 58}px;width:{vw}px;text-align:center;font-size:72px;line-height:80px">Lean <span style="color:{CY}">Manufacturing</span></div>'
+                    + chips
+                    + pill(cfg['lean_kicker'], CY, M, cy0, 20, solid=True)
+                    + f'<div class="a h" style="left:{M}px;top:{cy0 + 64}px;width:{W - 2 * M}px;font-size:{cfg.get("cs", 38)}px;line-height:{round(cfg.get("cs", 38) * 1.22)}px;font-weight:600">{txt}</div>')
+            files[f'cap{i}'] = page(body, bg=False)
+            continue
         body = ((pill(lab, col, M, cy0, 20, solid=True) if lab else '')
                 + f'<div class="a h" style="left:{M}px;top:{cy0 + (64 if lab else 0)}px;width:{W - 2 * M}px;font-size:{cfg.get("cs", 38)}px;line-height:{round(cfg.get("cs", 38) * 1.22)}px;'
                   f'font-weight:600;letter-spacing:-0.01em">{txt}</div>')
@@ -94,8 +111,10 @@ O = lambda t: f'<span style="color:{OR}">{t}</span>'
 CFGS = [
  dict(key='cumplimiento-es', src='v1', trim=13.0, crop=None, box=(M, 400, W - 2 * M, round((W - 2 * M) * 9 / 16)),
       tag='Mejora de procesos', hook=f'Mismo equipo. Misma planta. {C("Otro resultado.")}', hs=76,
-      caps=[(0, 6.0, 'HOY', OR, f'Buscando. Esperando.<br>{O("Detenido.")}'),
-            (6.0, 13.0, 'CON BOUW', GRN, f'Ordenado. Liberado.<br>{C("En camino.")}')],
+      lean_kicker='Aplicando', lean_tools=['5S', 'Flujo continuo', 'Trabajo estándar', 'Kaizen'],
+      caps=[(0, 5.2, 'HOY', OR, f'Buscando. Esperando.<br>{O("Detenido.")}'),
+            (5.2, 7.6, 'LEAN', CY, f'Ordenamos el proceso,<br>{C("paso a paso.")}'),
+            (7.6, 13.0, 'CON BOUW', GRN, f'Ordenado. Liberado.<br>{C("En camino.")}')],
       cs=58, end=dict(lema='Del diseño a la realidad.', cta='No cambiamos a tu gente.<br>Mejoramos tu proceso.', sub='Mejora de procesos · Mejora continua · Producción')),
  dict(key='excel-es', src='v3', trim=34.0, crop=(1440, 962, 0, 0), box=(M, 360, W - 2 * M, round((W - 2 * M) * 962 / 1440)),
       tag='Automatización · Excel + VBA', hook=f'¿Tu cierre de mes todavía se arma {C("a mano?")}', hs=70,
@@ -107,8 +126,10 @@ CFGS = [
       cs=36, end=dict(lema='Si se repite, se automatiza.', cta='¿Qué proceso tuyo sigue a mano?', sub='Automatización de procesos · Excel · VBA · Dashboards')),
  dict(key='compliance-en', src='v0', trim=13.0, crop=None, box=(M, 400, W - 2 * M, round((W - 2 * M) * 9 / 16)),
       tag='Process improvement', hook=f'Same team. Same plant. {C("A different result.")}', hs=76,
-      caps=[(0, 6.0, 'TODAY', OR, f'Searching. Waiting.<br>{O("Stuck.")}'),
-            (6.0, 13.0, 'WITH BOUW', GRN, f'Organized. Released.<br>{C("On its way.")}')],
+      lean_kicker='Applying', lean_tools=['5S', 'Flow', 'Standard work', 'Kaizen'],
+      caps=[(0, 5.2, 'TODAY', OR, f'Searching. Waiting.<br>{O("Stuck.")}'),
+            (5.2, 7.6, 'LEAN', CY, f'We fix the process,<br>{C("step by step.")}'),
+            (7.6, 13.0, 'WITH BOUW', GRN, f'Organized. Released.<br>{C("On its way.")}')],
       cs=58, end=dict(lema='From design to reality.', cta='We don’t change your people.<br>We improve your process.', sub='Process improvement · Continuous improvement · Production')),
  dict(key='excel-en', src='v2', trim=34.0, crop=(1440, 962, 0, 0), box=(M, 360, W - 2 * M, round((W - 2 * M) * 962 / 1440)),
       tag='Automation · Excel + VBA', hook=f'Is your month-end close still {C("done by hand?")}', hs=70,

@@ -3,13 +3,17 @@
 Same team. Same plant. A different result.
 
 2
-00:00:01,500 --> 00:00:06,000
+00:00:01,500 --> 00:00:05,200
 TODAY: Searching. Waiting. Stuck.
 
 3
-00:00:06,000 --> 00:00:13,000
-WITH BOUW: Organized. Released. On its way.
+00:00:05,200 --> 00:00:07,600
+Applying Lean Manufacturing (5S, Flow, Standard work, Kaizen): We fix the process, step by step.
 
 4
+00:00:07,600 --> 00:00:13,000
+WITH BOUW: Organized. Released. On its way.
+
+5
 00:00:13,000 --> 00:00:16,200
 We don’t change your people. We improve your process. · www.bouwlatam.com
