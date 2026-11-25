@@ -58,26 +58,21 @@ Primer comentario: `Haz la cuenta de cuánto te cuesta hacerlo a mano 👉 www.b
 
 ### 2. `BOUW-mejora-de-procesos-hoy-vs-con-BOUW` (español)
 
-Palabras clave: mejora de procesos, cuello de botella, trazabilidad, tiempo de entrega.
-
 ```
-Tu producto está listo. Tu papeleo no. 📦
+Mismo equipo. Misma planta. Otro resultado. ⚙️
 
-Un papel perdido = un pedido parado.
-Y mientras alguien lo busca, el cliente espera.
+HOY: buscando, esperando, detenido.
+CON BOUW: ordenado, liberado, en camino.
 
-Con BOUW: un clic, lote liberado, pedido en camino. ✅
+No cambiamos a tu gente. Mejoramos tu proceso.
 
-El cuello de botella no siempre está en la línea de producción.
-A veces está en una carpeta.
+Mejora de procesos y mejora continua para empresas que producen, en Ecuador y México.
 
-Lo encontramos y lo resolvemos. Eso es mejora de procesos.
+¿Qué parte de tu producción se detiene más seguido? 👇
 
-¿Dónde se frena tu operación? 👇
-
-#MejoraDeProcesos #CuelloDeBotella #Trazabilidad #TiempoDeEntrega #MejoraContinua #Manufactura #Quito #Monterrey
+#MejoraDeProcesos #MejoraContinua #Producción #Productividad #Lean #Quito #Monterrey
 ```
-Primer comentario: `Encuentra tu cuello de botella: diagnóstico gratis 👉 www.bouwlatam.com`
+Primer comentario: `Diagnóstico de procesos gratis 👉 www.bouwlatam.com`
 
 ### 3. `BOUW-month-end-close-automation-Excel` (inglés)
 
@@ -105,18 +100,15 @@ First comment: `See it live 👉 www.bouwlatam.com`
 ### 4. `BOUW-process-improvement-today-vs-with-BOUW` (inglés)
 
 ```
-Your product is ready. Your paperwork isn't. 📦
+Same team. Same plant. A different result. ⚙️
 
-One lost record = one stalled order.
-And while someone looks for it, your customer waits.
+TODAY: searching, waiting, stuck.
+WITH BOUW: organized, released, on its way.
 
-With BOUW: one click, lot released, order on its way. ✅
+We don't change your people. We improve your process.
 
-The bottleneck isn't always on the production line.
-Sometimes it's in a folder.
+Process improvement and continuous improvement for manufacturers in Ecuador and Mexico.
 
-We find it and fix it. That's process improvement.
-
-#ProcessImprovement #Bottleneck #Traceability #LeadTime #ContinuousImprovement #Manufacturing #Nearshoring #Mexico
+#ProcessImprovement #ContinuousImprovement #Production #Productivity #Lean #Manufacturing #Mexico
 ```
-First comment: `Find your bottleneck, free assessment 👉 www.bouwlatam.com`
+First comment: `Free process assessment 👉 www.bouwlatam.com`
